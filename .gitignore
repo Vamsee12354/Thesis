@@ -32,7 +32,6 @@ Thumbs.db
 desktop.ini
 
 # Data / large generated files (adjust as needed)
-*.csv
 *.xlsx
 *.parquet
 *.feather
