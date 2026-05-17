@@ -7,5 +7,4 @@ def get_min(dict):
             car=x
     return car,cheap
 
-
- 
+
