@@ -13,7 +13,7 @@ def validate_form(name,email,number):
         else:
             print("Email is invalid")
             return False
-        if(len(number)!=10 or not number.isdigit()):
+        if(len(number)!=10):
             print("Phone number is invalid")
             return False
         print("Form is valid")

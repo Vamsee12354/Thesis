@@ -21,6 +21,6 @@ def IsValidPassword(password):
         return False
 
 
-IsValidPassword("Avac@201")
+
 
  
