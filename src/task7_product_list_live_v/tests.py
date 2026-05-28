@@ -28,12 +28,21 @@ class Test_get_shopping_list(unittest.TestCase):
         self.assertEqual(shopping_list(["!","@","%","^","&","*"]),"<ul><li>!</li><li>@</li><li>%</li><li>^</li><li>&</li><li>*</li></ul>")
 
     def test_multiple_blanks(self):
-        self.assertEqual(shopping_list(["","","",""]),"<ul><li></li><li></li><li></li><li></li></ul>")
+        self.assertEqual(shopping_list(["","","",""]),None)
 
-     def test_normal_functionality(self):
-        self.assertEqual(shopping_list(["Banana","Apple","Mango","Avacado"]),"<ul><li>Banana</li><li>Apple</li><li>Mango</li><li>Avacado</li></ul>")
+    def  test_text_between_multiple_blanks(self):
+        self.assertEqual(shopping_list(["","","Mango","",""]),"<ul><li>Mango</li></ul>")
+
+    def  test_text_first_blanks_between(self):
+        self.assertEqual(shopping_list(["Mango","","","","avocados"]),"<ul><li>Mango</li><li>avocados</li></ul>")
+
+    def test_shopping_list_with_text(self):
+        self.assertEqual(shopping_list("I am going to the supermarket to buy some mangoes and avocados so that I can have my breakfast with oats"),"<ul><li>Mango</li><li>avocados</li></ul>")
 
     
+
+    
+
 
 
 

@@ -1,6 +1,6 @@
 from slugify import slugify
 
-def slugify_manual(text,seperator='-',lowercase=True,truncate=None,ignore=None):
+def slugify_manual(text,seperator='-',lowercase=True):
     new_text=""
     for i in text:
         if lowercase:
@@ -13,7 +13,4 @@ def slugify_manual(text,seperator='-',lowercase=True,truncate=None,ignore=None):
     new_text=new_text.strip(seperator)
     return new_text
 
- 
-    
-
-    
+print(slugify_manual('Lorem @##$  ipsum &&&!@ dolor &!&@#! sit *!&@!# amet !@@#!@!/., consetetur $%#$#% sadipscing ,.,.><<> elitr $%%%^^^^^, sed diam'))

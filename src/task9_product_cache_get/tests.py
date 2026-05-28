@@ -109,6 +109,7 @@ class TestProductCache(unittest.TestCase):
         cache.set('a','apple')
         time.sleep(6)
         cache.set('b','banana')
+        answer={'a':None,'b':'banana'}
         for key,value in answer.items():
             self.assertEqual(cache.get(key),value)
 
