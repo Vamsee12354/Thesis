@@ -43,7 +43,17 @@ class Test_slugify_text(unittest.TestCase):
     def test_symbols_inbetween_text(self):
         self.assertEqual(slugify_manual('Lorem @##$  ipsum &&&!@ dolor &!&@#! sit *!&@!# amet !@@#!@!/., consetetur $%#$#% sadipscing ,.,.><<> elitr $%%%^^^^^, sed diam'),'lorem-ipsum-dolor-sit-amet-consetetur-sadipscing-elitr-sed-diam')
         
+    def test_ignore(self):
+        self.assertEqual(slugify_manual("hello%world", lowercase=True, ignore="%", truncate=None),"helloworld")
 
+    def test_seperator(self):
+        self.assertEqual(slugify_manual("hello%  world", seperator='+', ignore="%", truncate=None),"hello++world")
+
+    def test_truncate(self):
+        self.assertEqual(slugify_manual("hello%  world", seperator='+', ignore="%", truncate=2),"he")
+    
+    def test_seperator_with_words(self):
+        self.assertEqual(slugify_manual("Writing slugify code helloWorld", seperator='in', ignore="%", truncate=14),"Writinginslug")
 
 
 

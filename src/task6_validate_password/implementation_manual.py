@@ -13,14 +13,18 @@ def IsValidPassword(password):
                 upperCase = True
             if(not char.isalnum()):
                 special = True
-        print("The password is valid")
-        return lowerCase and upperCase and num and special
-        
+        result= lowerCase and upperCase and num and special
+        if result:
+            print("The password is valid")
+            return True
+        else:
+            print("Follow the password rules accordingly")
+            return False
+
     else:
-        print("Follow the password rules accordingly")
+        print("Follow the password length and rules accordingly")
         return False
 
 
 
-
- 
+print(IsValidPassword(""))

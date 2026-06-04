@@ -8,3 +8,5 @@ def shopping_list(products):
     return f"<ul>{items}</ul>"
  
  
+ 
+ 

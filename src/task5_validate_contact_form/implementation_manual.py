@@ -1,21 +1,31 @@
-def validate_form(name,email,number):
-    if(name==None or email==None or number==None):
-        print("Please fill all the fields and try agian")
-        return False
+def validate_form(name,email,subject,message,privacy):
+    if(name==None or email==None or subject==None or message==None or privacy==None or name=="" or email=="" or subject=="" or message==""):
+        return "Please fill all the fields and try again"
+        
     else:
         if(len(name)>1):
             pass
         else:
-            print("Name is invalid")
-            return False
+            return "Name is invalid"
         if("@" in email and ".com" in email):
             pass
         else:
-            print("Email is invalid")
-            return False
-        if(len(number)!=10):
-            print("Phone number is invalid")
-            return False
-        print("Form is valid")
-        return True
+            return "Email is invalid"
+        if(len(subject)>1):
+            pass
+        else:
+            return "Please Type Subject"
+        if(len(message)>1):
+            pass
+        else:
+            return ("Please Type Message")
+            
+
+        if(privacy==True):
+            pass
+        else:
+            return ("Please confirm the privacy policy")        
+    
+        return (f"Form is valid. Details are :{name,email,subject,message,privacy} ")
+        
     

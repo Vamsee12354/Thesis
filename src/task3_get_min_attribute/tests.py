@@ -1,31 +1,42 @@
 # Tests for task3_get_min_attribute
 import unittest
-from implementation_manual import get_min
+from implementation_manual import get_min_2_attributes
 
-class Test_get_min(unittest.TestCase):
-    def test_functioning(self):
-        self.assertEqual(get_min({"Mercedes":75000,"Toyota":23000,"Honda":15000,"Audi":67000,"BMV":80000}),("Honda", 15000))
+class Test_get_min(unittest.TestCase): 
+    def test_get_min_2_attributes(self):
+        data = [
+    {"price":49.99,"battery_life":4.0},
+    {"price":29.99,"battery_life":3.5},
+    {"price":None,"battery_life":5.0},   
+    {"battery_life": 2.0}                  
+                ]
+        self.assertEquals(get_min_2_attributes(data,"price"),29.99)
 
-    def test_check_what_if_equal_rates(self):
-        self.assertEqual(get_min({"Mercedes":75000,"Toyota":75000,"Honda":75000,"Audi":75000,"BMV":75000}),("Mercedes", 75000)) 
+    def test_nulls_all_over(self):
+        data = [
+    {"price":None,"battery_life":None},
+    {"price":None,"battery_life":None},
+    {"price":None,"battery_life":None},   
+    {"battery_life": None}                  
+                ]
+        self.assertFalse(get_min_2_attributes(data,"price"))
 
-    def test_negative_items(self):
-        self.assertEqual(get_min({"Mercedes":-75000,"Toyota":-23000,"Honda":-15000,"Audi":2000,"BMV":1000}),("BMV", 1000))
-        
-    def test_null_values(self):
-        self.assertEqual(get_min({"Mercedes":None,"Toyota":None,"Honda":None,"Audi":"","BMV":None}),("Audi",""))
+    def test_get_wrongname_attribute(self):
+        data = [
+    {"price":49.99,"battery_life":4.0},
+    {"price":29.99,"battery_life":3.5},
+    {"price":None,"battery_life":5.0},   
+    {"battery_life": 2.0}                  
+                ]
+        self.assertFalse(get_min_2_attributes(data,"cost"))
+
     
-    def test_get_multiple_options_same_cost(self):
-        self.assertEqual(get_min({"Mercedes":1000,"Toyota":1000,"Honda":3500,"Audi":2100,"BMV":7500}),({"Mercedes":1000,"Toyota":1000}))
 
-    def test_handle_string(self):
-        self.assertEqual(get_min({"Mercedes":"Seventy-Five Thousand","Toyota":"Twenty Three Thousand","Honda":"Fifteen Thousand","Audi":"Sixty Seven Thousand","BMV":"Eighty Thousand"}),("Honda", "Fifteen Thousand"))
 
-    def test_handle_multiple_currencies(self):
-        self.assertEqual(get_min({"Mercedes":"75000$","Toyota":"23000€","Honda":"15000£","Audi":"67000₹","BMV":"80000CHF"}),("Honda", "15000£"))
+    
 
-    def test_big_numbers(self):
-        self.assertEqual(get_min({"Mercedes":10**10,"Toyota":20**15,"Honda":30**10,"Audi":15**12,"BMV":19**18}),("Mercedes",10**10))
+  
+
 
         
 

@@ -5,47 +5,44 @@ class Product_cache_get:
         self.expiry_time=expiry_time
 
     
-    def set(self,key,value):
+    def set(self,key,value,ttl=None):
+        if ttl is not None and ttl<0:
+            return None
+        new_ttl=self.expiry_time
+        if ttl:
+            new_ttl=ttl
+        
         self.cache[key]={
                 'value':value,
-                'inserted_at':time.time()        
+                'inserted_at':time.time(),        
+                'expiry_time':time.time()+new_ttl
         }
-  
+
     
     def get(self,key):
         if key not in self.cache:
-            return None
-        time_left=time.time()-self.cache[key]['inserted_at']
-        if time_left>self.expiry_time:
+            return None        
+        if time.time()>self.cache[key]['expiry_time']:
             print("You can't access that")
+            del self.cache[key]
             return None
+
         else:
             return self.cache[key]['value']
 
     def delete(self,key):
         if key in self.cache:
             del self.cache[key]
- 
+        return "deleted successfully"
 
     def cleanup(self):
-        expired=[]
-        for i in self.cache:
-            time_left=time.time()-self.cache[i]['inserted_at']
-            if time_left>self.expiry_time:
-                expired.append(i)
-        for i in expired:
-            self.delete(i)
-        return {self.cache[i]['value'] for i in self.cache}
+        self.cache={}
+        return "Cleaned successfully"
      
 
-item1=Product_cache_get(expiry_time=4)
-item1.set('a','banana')
-item1.set('b','apple')
-print(item1.get('a'))
-print(item1.get('z'))
-time.sleep(9)
-print(item1.get('a'))
-item1.cleanup()
-print(item1.cache)
 
+cache=Product_cache_get( expiry_time=60)
+cache.set("product-2", {"id": "product-2", "name": "New Product"}, ttl=60_000)
+print(cache.get('product-2'))
 
+ 

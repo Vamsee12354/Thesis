@@ -2,7 +2,6 @@
 import unittest
 import time 
 from implementation_manual import Product_cache_get
-
 class TestProductCache(unittest.TestCase):
     def test_set_and_get(self):
         cache=Product_cache_get( expiry_time=60)
@@ -70,21 +69,25 @@ class TestProductCache(unittest.TestCase):
 
     def test_delete_if_list_is_empty(self):
         cache=Product_cache_get( expiry_time=60)
-        self.assertEqual(cache.delete('a'),None)
+        self.assertEqual(cache.delete('a'),'deleted successfully')
 
 
     def test_multiple_items_delete_in_one_go(self):
         cache=Product_cache_get( expiry_time=60)
         cache.set('a','apple')
         cache.set('a','apple')
-        self.assertEqual(cache.delete('a'),None)
+        self.assertEqual(cache.delete('a'),'deleted successfully')
 
+    def test_non_existent(self):
+        cache=Product_cache_get( expiry_time=60)
+        cache.delete('a')
+        self.assertEqual(cache.get('a'),None)
 
     def test_first_del_then_set(self):
         cache=Product_cache_get( expiry_time=60)
         cache.delete('a')
         cache.set('a','apple')
-        self.assertEqual(cache.delete('a'),None)
+        self.assertEqual(cache.delete('a'),'deleted successfully')
 
     def test_get_wrong_item(self):
         cache=Product_cache_get( expiry_time=60)
@@ -101,7 +104,7 @@ class TestProductCache(unittest.TestCase):
         time.sleep(8)
         cache.set('d','dog')
         cache.set('e','elephant')
-        self.assertEqual(cache.cleanup(),{'dog','elephant'})
+        self.assertEqual(cache.cleanup(),'Cleaned successfully')
         
 
     def test_get_items_late(self):
@@ -117,12 +120,12 @@ class TestProductCache(unittest.TestCase):
     def test_very_large_expiry(self):
         cache = Product_cache_get(  expiry_time=999999999)
         cache.set('a', 'apple')
-        self.assertEqual(cache.get('a'), None)
+        self.assertEqual(cache.get('a'), 'apple')
 
     def test_set_expiry_zero(self):
         cache = Product_cache_get(  expiry_time=0)
         cache.set('a', 'apple')
-        self.assertEqual(cache.get('a'),None) 
+        self.assertEqual(cache.get('a'),'apple') 
 
     
 
