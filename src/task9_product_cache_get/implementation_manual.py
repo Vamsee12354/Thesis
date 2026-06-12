@@ -40,9 +40,8 @@ class Product_cache_get:
         return "Cleaned successfully"
      
 
-
-cache=Product_cache_get( expiry_time=60)
-cache.set("product-2", {"id": "product-2", "name": "New Product"}, ttl=60_000)
-print(cache.get('product-2'))
+cache=Product_cache_get(expiry_time=60)
+cache.set('a','apple')
+print(cache.get('a'))
 
  

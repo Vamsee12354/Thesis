@@ -1,30 +1,32 @@
 def IsValidPassword(password):
-    if(len(password) > 5 and len(password) < 15):
-        lowerCase = False
-        upperCase = False
-        num = False
-        special = False
-        for char in password:
-            if(char.isdigit()):
-                num = True
-            if(char.islower()):
-                lowerCase = True
-            if(char.isupper()):
-                upperCase = True
-            if(not char.isalnum()):
-                special = True
-        result= lowerCase and upperCase and num and special
-        if result:
-            print("The password is valid")
-            return True
-        else:
-            print("Follow the password rules accordingly")
-            return False
-
+    errors=[]
+    if len(password)==0:
+        return "Please fill the password"
+    if len(password)<12 or len(password)>72:
+        errors.append("Length must be between 12 and 72 characters")
+    lowerCase=False
+    upperCase=False
+    num=False
+    special=False
+    for char in password:
+        if(char.isdigit()):
+            num=True
+        if(char.islower()):
+            lowerCase=True
+        if(char.isupper()):
+            upperCase=True
+        if(not char.isalnum() and not char.isspace()):
+            special=True
+            
+    if not lowerCase:
+        errors.append("Password must contain a lowercase letter")
+    if not upperCase:
+        errors.append("Password must contain an uppercase letter")
+    if not special or not num:
+        errors.append("Password must contain a special character or a number")
+    if len(errors)==0:
+        return "The password is valid"
     else:
-        print("Follow the password length and rules accordingly")
-        return False
+        return errors
 
-
-
-print(IsValidPassword(""))
+print(IsValidPassword("abcdefg"))

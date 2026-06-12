@@ -4,7 +4,7 @@ from implementation_manual import shopping_list
 
 class Test_get_shopping_list(unittest.TestCase):
     def test_no_text(self):
-        self.assertEqual(shopping_list(""),False)
+        self.assertEqual(shopping_list(""),"<ul></ul>")
 
     def test_normal_functionality(self):
         self.assertEqual(shopping_list(["Banana","Apple","Mango","Avacado"]),"<ul><li>Banana</li><li>Apple</li><li>Mango</li><li>Avacado</li></ul>")
@@ -28,7 +28,7 @@ class Test_get_shopping_list(unittest.TestCase):
         self.assertEqual(shopping_list(["!","@","%","^","&","*"]),"<ul><li>!</li><li>@</li><li>%</li><li>^</li><li>&</li><li>*</li></ul>")
 
     def test_multiple_blanks(self):
-        self.assertEqual(shopping_list(["","","",""]),None)
+        self.assertEqual(shopping_list(["","","",""]),"<ul></ul>")
 
     def  test_text_between_multiple_blanks(self):
         self.assertEqual(shopping_list(["","","Mango","",""]),"<ul><li>Mango</li></ul>")

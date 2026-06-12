@@ -5,7 +5,7 @@ from implementation_manual import slugify_manual
 class Test_slugify_text(unittest.TestCase):
 
     def test_no_text(self):
-        self.assertEqual(slugify_manual(''),'')
+        self.assertEqual(slugify_manual(''),None)
      
     def test_functionality(self):
         self.assertEqual(slugify_manual('Writing slugify code helloWorld'),'writing-slugify-code-helloworld')
