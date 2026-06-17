@@ -15,7 +15,7 @@ def IsValidPassword(password):
             lowerCase=True
         if(char.isupper()):
             upperCase=True
-        if(not char.isalnum() and not char.isspace()):
+        if(not char.isalnum() or not char.isspace()):
             special=True
             
     if not lowerCase:

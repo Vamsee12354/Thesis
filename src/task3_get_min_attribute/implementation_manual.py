@@ -1,4 +1,4 @@
- 
+
 
 def get_min_2_attributes(data,dict_search):
     cheap=float("inf")
@@ -6,11 +6,6 @@ def get_min_2_attributes(data,dict_search):
         value=item.get(dict_search)
         if value is not None and value<cheap:
             cheap=value
-        if cheap==float('inf'):
-            return None
+    if cheap==float('inf'):
+        return None
     return cheap
-
-
-
-
- 

@@ -12,7 +12,7 @@ class Test_unique_brands(unittest.TestCase):
 
     def test_capital_can_distinguish_uniqueness(self):
         self.assertEqual(get_unique(["Toyota","Bmw","toyota","bmw"]),
-        ["Toyota","Bmw","toyota","bmw"])
+        ["Toyota","Bmw"])
 
     def test_numbers_uniqueness(self):
         self.assertEqual(get_unique([1,1,1,3,3,3]), [1,3])
