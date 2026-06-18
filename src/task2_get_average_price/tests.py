@@ -1,37 +1,42 @@
 # Tests for task2_get_average_price
 import unittest
-from implementation_manual import get_average
+from implementation_manual import get_average_price
 
 
 class Test_get_average_price(unittest.TestCase):
     def test_list_is_empty(self):
-        self.assertEqual(get_average([]),[])
+        self.assertIsNone(get_average_price([]))
 
     def test_working_list_price(self):
-        self.assertEqual(get_average([1.5,2,4,0,-3,3,5]),2.58)
-
-    def test_negatives(self):
-        self.assertFalse(get_average([-1,-3,-4.2,-1.3,-9.1]))
-
-    def test_alphabets(self):
-        self.assertFalse(get_average(['alex','ben','chem','don']))
-
-    def test_alphanumericals(self):
-        self.assertFalse(get_average(['@','!','#','$']))
+        prices=[{'price':1.5},{'price':2},{'price':4},{'price':0},{'price':-3},{'price':3},{'price':5}]
+        self.assertAlmostEqual(get_average_price(prices),1.79)
 
     def test_highvalue_numbers(self):
-        self.assertEqual(get_average([2313213123,1021232122.5323,20311111.76,101112321.21]),863967169.63 )
+        prices=[{'price':2313213123},{'price':1021232122.5323},{'price':20311111.76},{'price':101112321.21}]
+        self.assertAlmostEqual(get_average_price(prices),863967169.63)
 
     def test_zero_value(self):
-        self.assertEqual(get_average([0,0]),0)
+        self.assertEqual(get_average_price([{'price':0},{'price':0}]),0)
 
-    
     def test_null_value(self):
-        self.assertEqual(get_average([12,1232,None,132]),458.67)
+        prices=[{'price':12},{'price':1232},{'price':None}, {'price':132}]
+        self.assertEqual(get_average_price(prices),458.67)
 
-    
     def test_multiple_nulls(self):
-        self.assertEqual(get_average([None,None]),0)
+        self.assertIsNone(get_average_price([{'price':None}, {'price':None}]))
+
+    def test_wrong_key(self):
+        prices=[{'price123':12122},{'price1221':1211},{'price22':211},{'price155':98}]
+        self.assertIsNone(get_average_price(prices))
+
+    def test_no_products(self):
+        prices=[{}]
+        self.assertIsNone(get_average_price(prices))
+        
+    def test_numbers_inwords(self):
+        prices=[{'price':'Twelve'}, {'price':'One Thousand and Thirty Two'}, {'price':None}, {'price':'One hundred and thirty two'}]
+        self.assertIsNone(get_average_price(prices))
+    
 
 if __name__ == "__main__":
     unittest.main()

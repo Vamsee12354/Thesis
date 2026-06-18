@@ -4,7 +4,7 @@ def shopping_list(products):
         return "<ul></ul>"
     else:
         for i in products:
-            if 'title' in i and i['title']!="":
+            if 'title' in i and str(i['title'])!="":
                 items+=f"<li>{i['title']}</li>"
     return f"<ul>{items}</ul>"
 

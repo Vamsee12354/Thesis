@@ -8,9 +8,9 @@ class Product_cache_get:
     def set(self,key,value,ttl=None):
         if ttl is not None and ttl<0:
             return None
-        new_ttl=self.expiry_time
-        if ttl:
-            new_ttl=ttl
+        new_ttl=self.expiry_time/1000
+        if ttl is not None:
+            new_ttl=ttl/1000
         
         self.cache[key]={
                 'value':value,

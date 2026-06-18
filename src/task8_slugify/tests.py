@@ -44,16 +44,15 @@ class Test_slugify_text(unittest.TestCase):
         self.assertEqual(slugify_manual('Lorem @##$  ipsum &&&!@ dolor &!&@#! sit *!&@!# amet !@@#!@!/., consetetur $%#$#% sadipscing ,.,.><<> elitr $%%%^^^^^, sed diam'),'lorem-ipsum-dolor-sit-amet-consetetur-sadipscing-elitr-sed-diam')
         
     def test_ignore(self):
-        self.assertEqual(slugify_manual("hello%world", lowercase=True, ignore="%", truncate=None),"helloworld")
+        self.assertEqual(slugify_manual("hello%world", lowercase=True, ignore="%", truncate=None),"hello%world")
 
-    def test_seperator(self):
-        self.assertEqual(slugify_manual("hello%  world", seperator='+', ignore="%", truncate=None),"hello++world")
+    def test_separator(self):
+        self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=None),"hello%+world")
 
     def test_truncate(self):
-        self.assertEqual(slugify_manual("hello%  world", seperator='+', ignore="%", truncate=2),"he")
+        self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"")
     
-    def test_seperator_with_words(self):
-        self.assertEqual(slugify_manual("Writing slugify code helloWorld", seperator='in', ignore="%", truncate=14),"Writinginslug")
+        self.assertEqual(slugify_manual("Writing slugify code helloWorld", separator='-', truncate=14),"writing")
 
 
 

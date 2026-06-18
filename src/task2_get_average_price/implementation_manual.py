@@ -1,10 +1,18 @@
-def get_average(price_list):
-    filtered_price =[]
-    for x in price_list:
-        if x is not None and x >= 0:
-            filtered_price.append(x)
-        
-    mean_sales=sum(filtered_price)/len(filtered_price)
-    return round(mean_sales, 2)
 
-print(get_average([-5,-2]))
+def get_average_price(price_list):
+    new_price=[]
+    cost=0
+    for i in price_list:
+        if i['price'] is not None:
+            new_price.append(i['price'])
+            cost=cost+i['price']
+    if len(new_price)==0:
+        return None
+
+    average=cost/len(new_price)
+
+    return round(average,2)
+            
+        
+            
+    
