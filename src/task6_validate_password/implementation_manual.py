@@ -15,9 +15,8 @@ def IsValidPassword(password):
             lowerCase=True
         if(char.isupper()):
             upperCase=True
-        if(not char.isalnum() or not char.isspace()):
+        if(not char.isalnum()):
             special=True
-            
     if not lowerCase:
         errors.append("Password must contain a lowercase letter")
     if not upperCase:
@@ -29,4 +28,4 @@ def IsValidPassword(password):
     else:
         return errors
 
-print(IsValidPassword("abcdefg"))
+print(IsValidPassword("abe3A*"))

@@ -33,63 +33,49 @@ Output:
 
 TASK_PROMPT = """
 
-Module Name: Form Validation
-Function_Name: Validate_form
+Module Name: Passsword Validator
+Function_Name: IsValidPassword()
 Purpose
-•	Validates contact form input for required fields , correct formatting , and agreement to privacy .
+•	Validates the strength and presence of a user ’s password in an Ecto changeset .
+•	Ensures the password meets length and complexity requirements before account creation or update .
+•	Intended to enforce secure password rules within user – facing forms or APIs
 Inputs
-o	Expected Keys:
-	First_Name
-	Last_Name
-	Email
-	Subject
-	Message
-	Privacy
-o	Example
-	First_Name => John
-	Last_Name => Marston
-	Email=> john@example.com
-	Subject=> Frage
-	Message=> Hallo!
-	Privacy=> True
+•	Password as a parameter which takes in unique password given by the user as an input.
 Outputs
 o	Success:
-o	Should return:
-Form is valid. Details:{first_name},{last_name},{email},{subject},{message},{privacy}
+o	 Return “The password is valid”
 o	Failure:
-o	On failure always return a list of error messages , even if there is only one error.
-o	Please Type First Name 
-o	Please Type Last Name 
-o	Please Type EmailID
-o	Email standards not followed
-o	Please Type Subject
-o	Please Type Message
-o	Please confirm the privacy policy
-
+o	Should return one or more of the following error messages in a list:
+	Please fill the password
+	Length must be between 12 and 72 characters
+	Password must contain a lowercase letter
+	Password must contain an uppercase letter
+	Password must contain a special character or a number
 Constraints
-o	“first_name”,"last_name " , " email ", " subject " , " message " must be non - empty after trimming whitespace. After trimming email and it turns out to be empty then return ”Please Type EmailID”
-o	" email " must match the regex ~r /^[^\ s@ ]+ @ [^\ s@ ]+\.[^\ s@ ]+ $/ and should verify it only after trimming whitespaces.
-o   error message for invalid ( non - empty ) email : Email standards not followed
-o	error message for missing or invalid privacy : Please confirm the privacy policy
+o	password is required and must not be None or missing .
+o	password must be a string between 12 and 72 characters long
+o	password must include at least :
+o	one lowercase character ([a -z ])
+o	one uppercase character ([A -Z ])
+o	one digit or punctuation character ([!? @#$ %^&* _ 0 -9])
+o	The function does not modify the password value , only validates it . 
 o	Error messages are collected as a list and multiple error messages are appended into that list.
-o	" privacy " must be True. Error message for privacy not being True: Please confirm the privacy policy
-o	Validations are performed in the exact order: First_Name, Last_Name, Email, Subject, Message, Privacy.
-o	Error messages should be appended in the same exact order as well
 Known Edge cases
-o	Missing or blank fields ( including those with only whitespace) fail validation .
-o	" privacy " must be a boolean : True  . Failure to that should return the error message.
-o	If multiple fields are invalid , all errors are returned at once .
-o	if " email " is empty it will not be validated against the regex and only show the error message for being blank  
+o	If : password is missing , It should append “Please fill the password” in errors list
+o	If : password is shorter than 12 or longer than 72 characters , it should append message “ Length must be between 12 and 72 characters” in errors list
+o	If : password lacks one of the required character types , appropriate message is appended into the errors list:
+o	Password must contain a lowercase letter
+o	Password must contain an uppercase letter
+o	Password must contain a special character or a number
 
 Example Calls & Expected Outputs
-1. Normal Functionality   validate_form("Alexa","James","abc@gmail.com","Question","Hallo!",True)
-# => Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True
-2. Rejecting Privacy Policy
-validate_form("Alex",” John”,"abc@gmail.net","Question","Hallo!",False)
-#=> ["Please confirm the privacy policy"]
-3. Empty body
-validate_form("","","","","","") 
-#=> ['Please Type First Name', 'Please Type Last Name', 'Please Type EmailID', 'Please Type Subject', 'Please Type Message', 'Please confirm the privacy policy']
+1. Missing Password  IsValidPassword("")
+# => [“Please fill the password”]
+2. Weak password
+# => ['Length must be between 12 and 72 characters', 'Password must contain an uppercase letter', 'Password must contain a special character or a number']
+3. Strong Password
+# => “The password is valid”
+ 
 
 
 	
