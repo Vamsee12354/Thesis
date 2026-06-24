@@ -29,8 +29,9 @@ def validate_form(first_name,last_name,email,subject,message,privacy):
         else:
             error_msg.append ("Please confirm the privacy policy")        
         if len(error_msg)==0:
-            return (f"Form is valid. Details are :{first_name,last_name,email,subject,message,privacy} ")
+            return (f"Form is valid. Details:{first_name},{last_name},{email},{subject},{message},{privacy}")
         else:
             return error_msg
         
     
+print(validate_form("Axxs","James","abc@gmail.com","Question","Hallo!",True))

@@ -34,7 +34,7 @@ class Test_slugify_text(unittest.TestCase):
     def test_different_language(self):
         self.assertEqual(slugify_manual('Für die WMCE wählen Radiosprecher von Weltmusikprogrammen aus 24 Europäischen Ländern jeden Monat ihre persönliche Top 10 der aktuellen Albumveröffentlichungen.'),'für-die-wmce-wählen-radiosprecher-von-weltmusikprogrammen-aus-24-europäischen-ländern-jeden-monat-ihre-persönliche-top-10-der-aktuellen-albumveröffentlichungen')
 
-    def already_slugified(self):
+    def test_already_slugified(self):
         self.assertEqual(slugify_manual('writing-slugify-code-helloworld'),'writing-slugify-code-helloworld')
 
     def test_multiple_batches_text(self):
@@ -51,7 +51,6 @@ class Test_slugify_text(unittest.TestCase):
 
     def test_truncate(self):
         self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"")
-    
         self.assertEqual(slugify_manual("Writing slugify code helloWorld", separator='-', truncate=14),"writing")
 
 
