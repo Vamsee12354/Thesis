@@ -1,14 +1,11 @@
 def get_unique(brand_list):
-    unique_brand_list=[]
+    list12={}
     for i in brand_list:
-        if i not in unique_brand_list:
-            unique_brand_list.append(i)
-    if len(unique_brand_list) == 0:
-        return []
-    elif len(unique_brand_list) == len(brand_list):
-        return (unique_brand_list)
-    else:
-        return (unique_brand_list)
-    
+        brand=i.get('brand')
+        if brand is not None and brand !="" and brand.lower() not in list12: 
+            list12[brand.lower()]=brand.capitalize()
+    if len(list12)==0:
+        return None
+    return list(list12.values())
 
  

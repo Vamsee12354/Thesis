@@ -33,49 +33,48 @@ Output:
 
 TASK_PROMPT = """
 
-Module Name: Passsword Validator
-Function_Name: IsValidPassword()
+ Module Name: Unique_Brands
+Function_Name: get_unique
 Purpose
-•	Validates the strength and presence of a user ’s password in an Ecto changeset .
-•	Ensures the password meets length and complexity requirements before account creation or update .
-•	Intended to enforce secure password rules within user – facing forms or APIs
+•	Returns a unique , filtered list of all valid brand names from the
+available product dataset  in list format.
+•	Eliminates duplicates and removes any None or empty string values
+•	Addresses the need to extract meaningful brand information from
+raw product data for display or filtering purposes . 
 Inputs
-•	Password as a parameter which takes in unique password given by the user as an input.
+•	Arguments :
+o	brand_list as a parameter taking multiples names of brands
 Outputs
-o	Success:
-o	 Return “The password is valid”
-o	Failure:
-o	Should return one or more of the following error messages in a list:
-	Please fill the password
-	Length must be between 12 and 72 characters
-	Password must contain a lowercase letter
-	Password must contain an uppercase letter
-	Password must contain a special character or a number
+o	Return Type:
+o	List of Strings list[‘string’ ]
+o	Structure :
+o	 A deduplicated list of non-empty, non-None/non-Null strings from the 'brand' field.
+o	Returns None if no valid brand values exist.
 Constraints
-o	password is required and must not be None or missing .
-o	password must be a string between 12 and 72 characters long
-o	password must include at least :
-o	one lowercase character ([a -z ])
-o	one uppercase character ([A -Z ])
-o	one digit or punctuation character ([!? @#$ %^&* _ 0 -9])
-o	The function does not modify the password value , only validates it . 
-o	Error messages are collected as a list and multiple error messages are appended into that list.
+o	Assumes each product dictionary contains a brand key
+o	Brand values must be strings ; None and empty strings are filtered out
+o	The function should ensure case - insensitivity in brand names and normalize them to a capitalized format (e.g ., " Brandname " instead of " brandname ", " BRANDNAME " , etc .)
+o	No external libraries may be used for deduplication or filtering
+o	Do not sort the final output list.
+o	Prioritize dictionaries/lists over sets.
 Known Edge cases
-o	If : password is missing , It should append “Please fill the password” in errors list
-o	If : password is shorter than 12 or longer than 72 characters , it should append message “ Length must be between 12 and 72 characters” in errors list
-o	If : password lacks one of the required character types , appropriate message is appended into the errors list:
-o	Password must contain a lowercase letter
-o	Password must contain an uppercase letter
-o	Password must contain a special character or a number
+o	If all brand values are None or "" , the result is None
+o	If get_all_products /0 returns [] , the result is also None
+
+o	If the same brand appears in lower and upper case , it is treated as the same brand ( case - insensitive ) 
 
 Example Calls & Expected Outputs
-1. Missing Password  IsValidPassword("")
-# => [“Please fill the password”]
-2. Weak password
-# => ['Length must be between 12 and 72 characters', 'Password must contain an uppercase letter', 'Password must contain a special character or a number']
-3. Strong Password
-# => “The password is valid”
+1. Normal case with valid brands
+ get_unique({‘brand’:’Brandname1’},{‘brand’:’Brandname2’},{‘brand’:’Brandname3’})
+[‘Brandname1’,’Brandname2’,’Brandname3’]
  
+2. Only invalid or missing brands
+	      get_unique([]) 
+                   #=> None
+	      3. Mixed with duplicates and blanks:
+	      get_unique (['Brandname', 'BrAnDNAme', ‘BRANDNAME’, ‘brandname’,None, ‘ ‘])
+      # => ['Brandname']
+
 
 
 	
