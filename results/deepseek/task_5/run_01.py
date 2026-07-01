@@ -9,20 +9,21 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
     if not last_name or not last_name.strip():
         errors.append("Please Type Last Name")
     
-    if not email or not email.strip():
+    email = email.strip() if email else ""
+    if not email:
         errors.append("Please Type EmailID")
     else:
-        email_pattern = re.compile(r'^[^\s@]+@[^\s@]+\.[^\s@]+$')
-        if not email_pattern.match(email):
+        email_regex = r'^[^\s@]+@[^\s@]+\.[^\s@]+$'
+        if not re.match(email_regex, email):
             errors.append("Email standards not followed")
-    
+
     if not subject or not subject.strip():
         errors.append("Please Type Subject")
-    
+
     if not message or not message.strip():
         errors.append("Please Type Message")
-    
-    if not isinstance(privacy, bool) or not privacy:
+
+    if privacy is not True:
         errors.append("Please confirm the privacy policy")
 
     if not errors:

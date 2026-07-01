@@ -7,6 +7,8 @@ class Product_cache_get:
     
     def set(self,key,value,ttl=None):
         if ttl is not None and ttl<0:
+            if key in self.cache:
+                del self.cache[key]
             return None
         new_ttl=self.expiry_time/1000
         if ttl is not None:
@@ -23,7 +25,6 @@ class Product_cache_get:
         if key not in self.cache:
             return None        
         if time.time()>self.cache[key]['expiry_time']:
-            print("You can't access that")
             del self.cache[key]
             return None
 
@@ -40,8 +41,6 @@ class Product_cache_get:
         return "Cleaned successfully"
      
 
-cache=Product_cache_get(expiry_time=60)
-cache.set('a','apple')
-print(cache.get('a'))
+ 
 
  

@@ -29,7 +29,7 @@ class Test_slugify_text(unittest.TestCase):
         self.assertEqual(slugify_manual('Lorem          ipsum              dolor sit amet,                  consetetur sadipscing                elitr, sed                   diam'),'lorem-ipsum-dolor-sit-amet-consetetur-sadipscing-elitr-sed-diam')
 
     def test_letters_spaces(self):
-        self.assertEqual(slugify_manual('L o r e m i p s u m d o l o r s i t a m e t , c o n s e t e t u r'),'loremipsumdolorsitametconsetetur')
+        self.assertEqual(slugify_manual('L o r e m i p s u m d o l o r s i t a m e t , c o n s e t e t u r'),'l-o-r-e-m-i-p-s-u-m-d-o-l-o-r-s-i-t-a-m-e-t-c-o-n-s-e-t-e-t-u-r')
 
     def test_different_language(self):
         self.assertEqual(slugify_manual('Für die WMCE wählen Radiosprecher von Weltmusikprogrammen aus 24 Europäischen Ländern jeden Monat ihre persönliche Top 10 der aktuellen Albumveröffentlichungen.'),'für-die-wmce-wählen-radiosprecher-von-weltmusikprogrammen-aus-24-europäischen-ländern-jeden-monat-ihre-persönliche-top-10-der-aktuellen-albumveröffentlichungen')
@@ -41,7 +41,7 @@ class Test_slugify_text(unittest.TestCase):
         self.assertEqual(slugify_manual('WritingslugifycodehelloWorld'),'writingslugifycodehelloworld')
 
     def test_symbols_inbetween_text(self):
-        self.assertEqual(slugify_manual('Lorem @##$  ipsum &&&!@ dolor &!&@#! sit *!&@!# amet !@@#!@!/., consetetur $%#$#% sadipscing ,.,.><<> elitr $%%%^^^^^, sed diam'),'lorem-ipsum-dolor-sit-amet-consetetur-sadipscing-elitr-sed-diam')
+        self.assertEqual(slugify_manual('Lorem @##$  ipsum &&&!@ dolor &!&@#! sit *!&@!# amet !@@#!@!/., consetetur $%#$#% sadipscing ,.,.><< > elitr $%%%^^^^^, sed diam'),'lorem-ipsum-dolor-sit-amet-consetetur-sadipscing-elitr-sed-diam')
         
     def test_ignore(self):
         self.assertEqual(slugify_manual("hello%world", lowercase=True, ignore="%", truncate=None),"hello%world")
@@ -50,7 +50,7 @@ class Test_slugify_text(unittest.TestCase):
         self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=None),"hello%+world")
 
     def test_truncate(self):
-        self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"")
+        self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),None)
         self.assertEqual(slugify_manual("Writing slugify code helloWorld", separator='-', truncate=14),"writing")
 
 
@@ -59,12 +59,10 @@ class Test_slugify_text(unittest.TestCase):
      
 
 
-
     
      
 
     
-
 
 
 

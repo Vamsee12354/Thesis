@@ -1,4 +1,6 @@
 from openai import OpenAI
+import json
+import time
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
@@ -6,6 +8,7 @@ client = OpenAI(
 )
 
 LLM_NAME = "deepseek/deepseek-chat"
+RUNS = 10
 
 UNIVERSAL_PROMPT = """
 You are an expert Python developer.
@@ -15,7 +18,9 @@ Code Style:
 - Use snake_case for variable names, function names, and file names.
 - Use PascalCase for class names.
 - Write concise, readable code with meaningful variable and function names.
-- Do not add any text, explanation, or markdown outside the code block. Return only raw Python code. -Do not add inline comments inside the code.
+- Do not add any text, explanation, or code fences. Return only raw Python code.
+-Return plain raw Python only
+- Entire response should be executable python code only. Do not include any comments or explanations
 Code Structure:
 - Write simple, self-contained functions.
 - Do not use external libraries unless the task explicitly requires them.
@@ -28,65 +33,82 @@ Error Handling:
 Output:
 - Return only the implementation code.
 - Do not include explanations or comments outside the code. 
-
 """
 
 TASK_PROMPT = """
 
- Module Name: Unique_Brands
-Function_Name: get_unique
+Module Name: Slug
+Function_Name: slugify_manual()
 Purpose
-•	Returns a unique , filtered list of all valid brand names from the
-available product dataset  in list format.
-•	Eliminates duplicates and removes any None or empty string values
-•	Addresses the need to extract meaningful brand information from
-raw product data for display or filtering purposes . 
+•	Converts any given string into a URL - friendly slug by transliterating Unicode characters into their alphanumeric equivalents . 
+•	Removes or replaces punctuation and whitespace , with customizable options for separator , casing , truncation , and ignored characters .
+•	Ensures SEO - friendly and standardized slugs for diverse and potentially non - ASCII inputs .
 Inputs
-•	Arguments :
-o	brand_list as a parameter taking multiples names of brands
+•	Parameters :
+o	text: Takes in a string which needs to be slugified
+o	separator= ( binary or UTF -8 integer ): character (s) used to replace spaces between words . Default: ‘ – ‘
+o	lowercase ( string ) : whether to convert the result to lowercase . Default : true
+o	ignore: ( string or list of strings ): characters to preserve in the slug and skip during cleanup. Defaullt: None
+o	truncate: ( positive integer ) : maximum length of the slug , truncating without breaking words .
 Outputs
-o	Return Type:
-o	List of Strings list[‘string’ ]
-o	Structure :
-o	 A deduplicated list of non-empty, non-None/non-Null strings from the 'brand' field.
-o	Returns None if no valid brand values exist.
+o	Type: String
+o	Returns
+o	A slugified string containing only alphanumerics and the configured separator .
+o	Returns None if no valid slug can be generated (e.g .input contains only invalid characters ).
 Constraints
-o	Assumes each product dictionary contains a brand key
-o	Brand values must be strings ; None and empty strings are filtered out
-o	The function should ensure case - insensitivity in brand names and normalize them to a capitalized format (e.g ., " Brandname " instead of " brandname ", " BRANDNAME " , etc .)
-o	No external libraries may be used for deduplication or filtering
-o	Do not sort the final output list.
-o	Prioritize dictionaries/lists over sets.
-Known Edge cases
-o	If all brand values are None or "" , the result is None
-o	If get_all_products /0 returns [] , the result is also None
+o	Slug must include only alphanumeric characters and the configured separator . 
+o	Characters listed in : ignore remain unchanged in the output .
+o	Punctuation is removed unless explicitly preserved via :ignore .
+o	Input must be valid UTF -8
 
-o	If the same brand appears in lower and upper case , it is treated as the same brand ( case - insensitive ) 
+Known Edge Cases
+•	Empty input or punctuation - only input => returns None
+•	Very small : truncate values (e .g., 1 or 2) may eliminate all words if none fit . 
+•	Leading / trailing and repeated whitespace => cleaned up .
+Example : " foo bar " => " foo - bar ".
+•	Mixed - language input => transliterated where possible ( e.g.,
+"\ u4f60 \ u597d " => "ni - hao " unless ignored ) .
+•	Very small : truncate values (e .g., 1 or 2) may eliminate all
+words if none fit
 
 Example Calls & Expected Outputs
-1. Normal case with valid brands
- get_unique({‘brand’:’Brandname1’},{‘brand’:’Brandname2’},{‘brand’:’Brandname3’})
-[‘Brandname1’,’Brandname2’,’Brandname3’]
- 
-2. Only invalid or missing brands
-	      get_unique([]) 
-                   #=> None
-	      3. Mixed with duplicates and blanks:
-	      get_unique (['Brandname', 'BrAnDNAme', ‘BRANDNAME’, ‘brandname’,None, ‘ ‘])
-      # => ['Brandname']
+slugify_manual(" Hello , World !")
+# => " hello - world " slugify_manual(" Madam , I ’m Adam ", separator : "")
+# => " madamimadam "
+slugify_manual(" StUdLy CaPs ", lowercase : false ) # => " StUdLy - CaPs "
+slugify_manual (" Call me maybe ", truncate : 10)
+=> " call - me "
+slugify_manual("\ u4f60 \ u597d \ uff0c \ u4e16 \ u754c ", ignore : ["\ u4f60 ","\ u597d "])
+# => "\ u4f60 \ u597d - shi - jie "
 
 
 
-	
+
+
+
+
 
 """
 
-response = client.chat.completions.create(
-    model=LLM_NAME,
-    messages=[
-        {"role": "system", "content": UNIVERSAL_PROMPT},
-        {"role": "user", "content": TASK_PROMPT}
-    ]
-)
+for i in range(1, RUNS + 1):
+    input(f"Press Enter to generate run {i}/{RUNS}...")  # ADD THIS
 
-print(response.choices[0].message.content)
+    print(f"\n{'=' * 20} RUN {i} {'=' * 20}\n")
+
+    try:
+        response = client.chat.completions.create(
+            model=LLM_NAME,
+            messages=[
+                {"role": "system", "content": UNIVERSAL_PROMPT},
+                {"role": "user", "content": TASK_PROMPT}
+            ]
+        )
+
+        output = response.choices[0].message.content
+        print(output)
+
+    except Exception as e:
+        print(f"ERROR IN RUN {i}: {e}")
+
+    print(f"\n{'=' * 50}\n")
+    time.sleep(3)  

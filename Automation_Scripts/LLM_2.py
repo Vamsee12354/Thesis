@@ -5,9 +5,9 @@ client = OpenAI(
     api_key="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"
 )
 
-LLM_NAME ="google/gemma-3-4b-it:free"
+LLM_NAME="gemma-4-26b-a4b-it:free"
 
-UNIVERSAL_PROMPT = """
+UNIVERSAL_PROMPT="""
 You are an expert Python developer.
 
 Code Style:
@@ -31,57 +31,61 @@ Output:
 
 """
 
-TASK_PROMPT = """
-Module Name: Get_Average_Price 
-Function_Name: get_average_price():
+TASK_PROMPT="""
+
+ Module Name: Unique_Brands
+Function_Name: get_unique
 Purpose
-•	Calculates the average of the : price field from all available products
-•	Excludes products with missing (None) : price values
-If no valid prices are found , returns None  to indicate absence of
-usable data. 
+•	Returns a unique , filtered list of all valid brand names from the
+available product dataset  in list format.
+•	Eliminates duplicates and removes any None or empty string values
+•	Addresses the need to extract meaningful brand information from
+raw product data for display or filtering purposes . 
 Inputs
 •	Arguments :
-o	price_list as a parameter taking list of dictionary of prices which has title ‘price’.
-o	expected to return average price from the given list of prices with price as title. 
+o	brand_list as a parameter taking multiples names of brands
 Outputs
 o	Return Type:
-o	None if no valid price exists.
-o	Returns value in float with rounded to 2 decimals .
+o	List of Strings list[‘string’ ]
+o	Structure :
+o	 A deduplicated list of non-empty, non-None/non-Null strings from the 'brand' field.
+o	Returns None if no valid brand values exist.
 Constraints
-o	Only products with non empty values : price are considered   
-o	The average is calculated as sum of valid prices divided by the number of valid prices
-o	No external libraries are used  
+o	Assumes each product dictionary contains a brand key
+o	Brand values must be strings ; None and empty strings are filtered out
+o	The function should ensure case - insensitivity in brand names and normalize them to a capitalized format (e.g ., " Brandname " instead of " brandname ", " BRANDNAME " , etc .)
+o	No external libraries may be used for deduplication or filtering
+o	Do not sort the final output list.
+o	Prioritize dictionaries/lists over sets.
 Known Edge cases
-o	If get_average_price()returns [] , return None
-o	If all products have price : nil , returns nil
-o	If only one product has a price , returns that price as a float  
+o	If all brand values are None or "" , the result is None
+o	If get_all_products /0 returns [] , the result is also None
+
+o	If the same brand appears in lower and upper case , it is treated as the same brand ( case - insensitive ) 
+
 Example Calls & Expected Outputs
 1. Normal case with valid brands
-price_list=[{‘price’:100},{ ‘price’:200},{’price’:None}, {‘price’:300} ]
-Valid prices : [100 , 200 , 300]
-Average = 600 / 3 = 200.0
-get_average_price(price_list)  #=> 200.0 
-	2. With all products missing price:
-price_list=[{‘price’:None},{‘price’:None}]
-
+ get_unique({‘brand’:’Brandname1’},{‘brand’:’Brandname2’},{‘brand’:’Brandname3’})
+[‘Brandname1’,’Brandname2’,’Brandname3’]
  
-3. With no products:
-	prices_list=[]
-	None
+2. Only invalid or missing brands
+	      get_unique([]) 
+                   #=> None
+	      3. Mixed with duplicates and blanks:
+	      get_unique (['Brandname', 'BrAnDNAme', ‘BRANDNAME’, ‘brandname’,None, ‘ ‘])
+      # => ['Brandname']
 
 
 
-
-
+	
 
 """
 
-response = client.chat.completions.create(
+response=client.chat.completions.create(
     model=LLM_NAME,
     messages=[
-        {"role": "system", "content": UNIVERSAL_PROMPT},
-        {"role": "user", "content": TASK_PROMPT}
+        {"role":"system","content":UNIVERSAL_PROMPT},
+        {"role":"user","content":TASK_PROMPT}
     ]
 )
-
 print(response.choices[0].message.content)
