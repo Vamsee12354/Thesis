@@ -1,4 +1,4 @@
-def IsValidPassword(password):
+def is_valid_password(password):
     errors=[]
     if len(password)==0:
         return "Please fill the password"
@@ -28,4 +28,4 @@ def IsValidPassword(password):
     else:
         return errors
 
-print(IsValidPassword("abe3A*"))
+ 

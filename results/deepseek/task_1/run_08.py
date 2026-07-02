@@ -19,4 +19,3 @@ def get_unique(brand_list):
         return None
 
     return list(unique_brands.values())
-print(get_unique (['Brandname', 'BrAnDNAme', 'BRANDNAME','brandname',None,'']))

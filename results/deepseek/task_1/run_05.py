@@ -4,14 +4,11 @@ def get_unique(brand_list):
 
     unique_brands = {}
     for item in brand_list:
-        if isinstance(item, dict):
-            brand = item.get('brand')
-        else:
-            brand = item
-
-        if isinstance(brand, str) and brand.strip():
-            normalized_brand = brand.strip().capitalize()
-            unique_brands[normalized_brand.lower()] = normalized_brand
+        if isinstance(item, dict) and 'brand' in item:
+            brand = item['brand']
+            if isinstance(brand, str) and brand.strip():
+                normalized_brand = brand.strip().capitalize()
+                unique_brands[normalized_brand.lower()] = normalized_brand
 
     if not unique_brands:
         return None
