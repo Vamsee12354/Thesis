@@ -2,33 +2,25 @@ def get_unique(brand_list):
     if not brand_list:
         return None
 
-    unique_brands = []
-    seen_normalized = []
-
+    unique_brands_dict = {}
+    
     for item in brand_list:
         try:
-            if isinstance(item, dict):
-                brand_val = item.get('brand')
-            else:
-                brand_val = item
-
-            if brand_val is None:
-                continue
-
-            brand_str = str(brand_val).strip()
-
-            if not brand_str:
-                continue
-
-            normalized = brand_str.capitalize()
-
-            if normalized not in seen_normalized:
-                seen_normalized.append(normalized)
-                unique_brands.append(normalized)
+            brand_val = item.get('brand')
+            if brand_val is not None:
+                cleaned_brand = str(brand_val).strip()
+                if cleaned_brand!= "":
+                    normalized = cleaned_brand.capitalize()
+                    if normalized not in unique_brands_dict:
+                        unique_brands_dict[normalized] = normalized
         except (AttributeError, TypeError):
             continue
 
-    if not unique_brands:
+    if not unique_brands_dict:
         return None
 
-    return unique_brands
+    result = []
+    for key in unique_brands_dict:
+        result.append(unique_brands_dict[key])
+        
+    return result

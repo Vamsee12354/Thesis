@@ -1,6 +1,6 @@
 
 import unicodedata
-def slugify_m(text,separator='-',lowercase=True,ignore=None,truncate=None):
+def slugify_manual(text,separator='-',lowercase=True,ignore=None,truncate=None):
     if text is None:
         return None
     text=text.strip()
@@ -33,10 +33,17 @@ def slugify_m(text,separator='-',lowercase=True,ignore=None,truncate=None):
             if lowercase:
                 i=i.lower()
             result+=i
+        else:
+             ascii_text=unicodedata.normalize('NFKD',i).encode('ascii','ignore').decode('ascii')
+             if ascii_text:
+                if lowercase:
+                    ascii_text=ascii_text.lower()
+                result+=ascii_text
+
     result=result.strip(separator)
     if result=='':
         return None
-        if truncate is not None:
+    if truncate is not None:
             if separator=='':
                 result=result[:truncate]
             else:
@@ -54,7 +61,7 @@ def slugify_m(text,separator='-',lowercase=True,ignore=None,truncate=None):
                 result=truncate_result
             if result=='': 
                 return None            
-            return result
+    return result
             
 
 
