@@ -1,9 +1,8 @@
 def shopping_list(product_list):
-    html_list = "<ul>"
+    if not product_list:
+        return "<ul></ul>"
+    items = []
     for product in product_list:
-        if isinstance(product, dict) and "title" in product:
-            title = product["title"]
-            if title is not None:
-                html_list += f"<li>{title}</li>"
-    html_list += "</ul>"
-    return html_list
+        title = product.get("title", "")
+        items.append(f"<li>{title}</li>")
+    return f"<ul>{''.join(items)}</ul>"

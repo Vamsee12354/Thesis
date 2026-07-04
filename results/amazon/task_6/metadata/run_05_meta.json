@@ -1,0 +1,18 @@
+{
+    "run_number": 5,
+    "timestamp": "2026-07-04T23:17:36.904412",
+    "llm_name": "amazon",
+    "model_id": "amazon/nova-lite-v1",
+    "task_number": "6",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "seed": 42,
+    "max_tokens": 3000,
+    "elapsed_time_seconds": 0.8255,
+    "usage": {
+        "prompt_tokens": 699,
+        "completion_tokens": 191,
+        "total_tokens": 890
+    }
+}

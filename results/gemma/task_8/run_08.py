@@ -7,7 +7,7 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
 
     try:
         text.encode('utf-8').decode('utf-8')
-    except UnicodeError:
+    except (UnicodeEncodeError, UnicodeDecodeError):
         return None
 
     if ignore is None:
@@ -19,64 +19,32 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     else:
         ignore_chars = set()
 
-    def transliterate(input_str):
-        normalized = unicodedata.normalize('NFKD', input_str)
+    def transliterate(s):
+        normalized = unicodedata.normalize('NFKD', s)
         return "".join([c for c in normalized if not unicodedata.combining(c)])
 
     processed_text = transliterate(text)
-
-    if lowercase and isinstance(lowercase, bool):
+    
+    if lowercase:
         processed_text = processed_text.lower()
-    elif not isinstance(lowercase, bool):
-        processed_text = text
 
     result_chars = []
     current_word = []
-
-    pattern = re.compile(r'[\w\s]')
-
-    chars = list(processed_text)
-    n = len(chars)
-    i = 0
-
-    final_parts = []
-    temp_word = []
-
-    while i < n:
-        char = chars[i]
-
-        if char in ignore_chars:
-            temp_word.append(char)
-        elif char.isalnum():
-            temp_word.append(char)
-        elif char.isspace():
-            if temp_word:
-                final_parts.append("".join(temp_word))
-                temp_word = []
+    
+    for char in processed_text:
+        if char.isalnum() or char in ignore_chars:
+            current_word.append(char)
         else:
-            if temp_word:
-                final_parts.append("".join(temp_word))
-                temp_word = []
-        i += 1
-    if temp_word:
-        final_parts.append("".join(temp_word))
+            if current_word:
+                result_chars.append("".join(current_word))
+                current_word = []
+    if current_word:
+        result_chars.append("".join(current_word))
 
-    clean_parts = []
-    for part in final_parts:
-        cleaned = ""
-        for c in part:
-            if c.isalnum() or c in ignore_chars:
-                cleaned += c
-        if cleaned:
-            clean_parts.append(cleaned)
-
-    if not clean_parts:
+    if not result_chars:
         return None
 
-    slug = separator.join(clean_parts)
-
-    if not slug:
-        return None
+    slug = separator.join(result_chars)
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
         if len(slug) > truncate:
@@ -86,8 +54,8 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
                 slug = truncated[:last_sep]
             else:
                 slug = truncated
+    
+    if not slug.strip() and not any(c in slug for c in ignore_chars):
+        return None
 
-            if not slug:
-                return None
-
-    return slug
+    return slug.strip(separator)

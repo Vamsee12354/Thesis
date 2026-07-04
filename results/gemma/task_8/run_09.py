@@ -15,67 +15,60 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     elif isinstance(ignore, str):
         ignore_chars = set(ignore)
     elif isinstance(ignore, list):
-        ignore_chars = set(''.join(ignore))
+        ignore_chars = set("".join(ignore))
     else:
         ignore_chars = set()
 
-    if lowercase is True:
-        text = text.lower()
-    elif lowercase is False:
-        pass
-    else:
-        text = text.lower()
+    def transliterate(input_str):
+        normalized = unicodedata.normalize('NFKD', input_str)
+        return "".join([c for c in normalized if not unicodedata.combining(c)])
 
-    normalized = unicodedata.normalize('NFKD', text)
+    processed_text = transliterate(text)
+    
+    if lowercase:
+        processed_text = processed_text.lower()
 
-    char_list = []
-    for char in normalized:
+    result_chars = []
+    for char in processed_text:
         if char in ignore_chars:
-            char_list.append(char)
-            continue
-
-        if char.isalnum():
-            char_list.append(char)
+            result_chars.append(char)
+        elif char.isalnum():
+            result_chars.append(char)
         elif char.isspace():
-            char_list.append(' ')
+            result_chars.append(' ')
         else:
-            continue
+            result_chars.append(' ')
 
-    temp_str = "".join(char_list)
-
+    temp_str = "".join(result_chars)
     words = temp_str.split()
+    
     if not words:
         return None
 
-    result = separator.join(words)
+    joined_slug = separator.join(words)
+    
+    if not joined_slug:
+        return None
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
-        if len(result) > truncate:
-            truncated = result[:truncate]
+        if len(joined_slug) > truncate:
+            truncated = joined_slug[:truncate]
             last_sep = truncated.rfind(separator)
-            if last_sep!= -1 and last_sep > 0:
-                result = truncated[:last_sep]
+            last_space = truncated.rfind(' ')
+            
+            cut_idx = max(last_sep, last_space)
+            
+            if cut_idx!= -1 and cut_idx > 0:
+                joined_slug = joined_slug[:cut_idx].strip(separator)
             else:
-                result = truncated
+                joined_slug = truncated.strip(separator)
+                
+        if not joined_slug:
+            return None
 
-    if not result.strip() and not any(c in result for c in ignore_chars):
+    final_slug = joined_slug.strip(separator)
+    
+    if not final_slug:
         return None
-
-    final_result = ""
-    for char in result:
-        if char.isalnum() or char in ignore_chars or char == separator or char == ':
-            final_result += char
-        else:
-            continue
-
-    final_result = final_result.replace(' ', separator)
-
-    while separator + separator in final_result:
-        final_result = final_result.replace(separator + separator, separator)
-
-    final_result = final_result.strip(separator)
-
-    if not final_result and not any(c in text for c in ignore_chars):
-        return None
-
-    return final_result
+        
+    return final_slug

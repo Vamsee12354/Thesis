@@ -3,34 +3,32 @@ import re
 def validate_form(first_name, last_name, email, subject, message, privacy):
     errors = []
 
-    def get_trimmed(val):
-        if val is None:
-            return ""
-        return str(val).strip()
+    def clean(val):
+        if isinstance(val, str):
+            return val.strip()
+        return val
 
-    t_first_name = get_trimmed(first_name)
-    t_last_name = get_trimmed(last_name)
-    t_email = get_trimmed(email)
-    t_subject = get_trimmed(subject)
-    t_message = get_trimmed(message)
+    f_name = clean(first_name)
+    l_name = clean(last_name)
+    e_mail = clean(email)
+    subj = clean(subject)
+    msg = clean(message)
 
-    if not t_first_name:
+    if not f_name:
         errors.append("Please Type First Name")
-
-    if not t_last_name:
+    
+    if not l_name:
         errors.append("Please Type Last Name")
 
-    if not t_email:
+    if not e_mail:
         errors.append("Please Type EmailID")
-    else:
-        email_regex = r"^[^\s@]+@[^\s@]+\.[^\s@]+$"
-        if not re.match(email_regex, t_email):
-            errors.append("Email standards not followed")
+    elif not re.match(r"^[^\s@]+@[^\s@]+\.[^\s@]+$", e_mail):
+        errors.append("Email standards not followed")
 
-    if not t_subject:
+    if not subj:
         errors.append("Please Type Subject")
 
-    if not t_message:
+    if not msg:
         errors.append("Please Type Message")
 
     if privacy is not True:
@@ -39,4 +37,4 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
     if errors:
         return errors
 
-    return f"Form is valid. Details:{t_first_name},{t_last_name},{t_email},{t_subject},{t_message},{privacy}"
+    return f"Form is valid. Details:{f_name},{l_name},{e_mail},{subj},{msg},{privacy}"

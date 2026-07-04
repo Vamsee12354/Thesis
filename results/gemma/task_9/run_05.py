@@ -1,45 +1,41 @@
 import time
 
-
 class Product_cache_get:
     def __init__(self, expiry_time):
-        try:
-            self.default_expiry = expiry_time
-            self.cache = {}
-        except Exception:
-            self.cache = {}
+        self.default_expiry = expiry_time
+        self.cache = {}
 
     def set(self, key, value, ttl=None):
         try:
             if ttl is not None and ttl < 0:
                 return
-
-            now = time.time() * 1000
+            
+            current_time = time.time() * 1000
             if ttl is None:
-                expiration = now + self.default_expiry
+                expiration = current_time + self.default_expiry
             else:
-                expiration = now + ttl
-
+                expiration = current_time + ttl
+            
             self.cache[key] = {
-                "value": value,
-                "expiry": expiration
+                'value': value,
+                'expiry': expiration
             }
         except Exception:
-            pass
+            return None
 
     def get(self, key):
         try:
             if key not in self.cache:
                 return None
-
+            
             item = self.cache[key]
-            now = time.time() * 1000
-
-            if now > item["expiry"]:
+            current_time = time.time() * 1000
+            
+            if current_time > item['expiry']:
                 del self.cache[key]
                 return None
-
-            return item["value"]
+            
+            return item['value']
         except Exception:
             return None
 

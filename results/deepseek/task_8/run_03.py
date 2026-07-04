@@ -1,27 +1,53 @@
-import re
 import unicodedata
+import re
 
 def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    if not text or not isinstance(text, str):
+    if not text:
         return None
+    
     if ignore is None:
         ignore = []
-    if isinstance(ignore, str):
-        ignore = [ignore]
-    ignore_pattern = '|'.join(re.escape(char) for char in ignore)
-    text = unicodedata.normalize('NFKD', text)
-    cleaned_text = ''.join(c for c in text if unicodedata.category(c) != 'Mn')
-    pattern = r'[^\w\s{}]'.format(re.escape(ignore_pattern)) if ignore_pattern else r'[^\w\s]'
-    cleaned_text = re.sub(pattern, '', cleaned_text)
-    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
-    cleaned_text = cleaned_text.replace(' ', separator)
-    if lowercase:
-        cleaned_text = cleaned_text.lower()
-    if truncate:
-        cleaned_text = cleaned_text[:truncate]
-        last_sep_index = cleaned_text.rfind(separator)
-        if last_sep_index != -1:
-            cleaned_text = cleaned_text[:last_sep_index]
-    if not cleaned_text:
+    
+    normalized_text = unicodedata.normalize('NFKD', text)
+    ascii_text = normalized_text.encode('ascii', 'ignore').decode('unicode-escape')
+    
+    slug_parts = []
+    current_word = []
+    
+    for char in ascii_text:
+        lower_char = char.lower()
+        if char in ignore:
+            if current_word:
+                slug_parts.append(''.join(current_word))
+                current_word = []
+            slug_parts.append(char)
+        elif char.isalnum():
+            current_word.append(lower_char if lowercase else char)
+        else:
+            if current_word:
+                slug_parts.append(''.join(current_word))
+                current_word = []
+    
+    if current_word:
+        slug_parts.append(''.join(current_word))
+    
+    slug = separator.join([part for part in slug_parts if part])
+    
+    if not slug:
         return None
-    return cleaned_text
+    
+    if truncate is not None:
+        parts = slug.split(separator)
+        truncated_slug = []
+        current_length = 0
+        for part in parts:
+            if current_length + len(part) + (1 if truncated_slug else 0) <= truncate:
+                truncated_slug.append(part)
+                current_length += len(part) + (1 if truncated_slug else 0)
+            else:
+                break
+        if not truncated_slug:
+            return None
+        slug = separator.join(truncated_slug)[:truncate]
+    
+    return slug if slug else None

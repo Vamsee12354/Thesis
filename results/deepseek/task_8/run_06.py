@@ -4,52 +4,61 @@ import unicodedata
 def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
     if not isinstance(text, str):
         return None
-
+    
     if ignore is None:
         ignore = []
     elif isinstance(ignore, str):
         ignore = [ignore]
-
+    
     normalized_text = unicodedata.normalize('NFKD', text)
-    slug_chars = []
-
+    slug_parts = []
+    current_word = []
+    
     for char in normalized_text:
         if char in ignore:
-            slug_chars.append(char)
-            continue
-
-        category = unicodedata.category(char)
-        if category.startswith('L') or category.startswith('N'):
-            slug_chars.append(char)
-        elif category.startswith('Z'):
-            slug_chars.append(' ')
-
-    slug = ''.join(slug_chars)
-    slug = re.sub(r'[^\w\s' + re.escape(''.join(ignore)) + ']', '', slug)
-    slug = re.sub(r'\s+', ' ', slug).strip()
-
+            if current_word:
+                slug_parts.append(''.join(current_word))
+                current_word = []
+            slug_parts.append(char)
+        else:
+            category = unicodedata.category(char)
+            if category.startswith('L') or category.startswith('N'):
+                current_word.append(char.lower() if lowercase else char)
+            elif category == 'Zs' or category == 'Po' or category == 'Pd' or category == 'Pc':
+                if current_word:
+                    slug_parts.append(''.join(current_word))
+                    current_word = []
+    
+    if current_word:
+        slug_parts.append(''.join(current_word))
+    
+    slug = []
+    for part in slug_parts:
+        if part in ignore:
+            slug.append(part)
+        else:
+            cleaned_part = re.sub(r'[^\w\s-]', '', part)
+            if cleaned_part:
+                slug.append(cleaned_part)
+    
+    slug = [s for s in slug if s]
     if not slug:
         return None
-
-    slug = re.sub(r'\s', separator, slug)
-
-    if lowercase:
-        slug = slug.lower()
-
+    
+    result = separator.join(slug)
+    
     if truncate is not None and truncate > 0:
-        parts = slug.split(separator)
+        parts = result.split(separator)
         truncated = []
-        current_length = 0
-
+        length = 0
         for part in parts:
-            if current_length + len(part) + (1 if truncated else 0) <= truncate:
+            if length + len(part) + (1 if truncated else 0) <= truncate:
                 truncated.append(part)
-                current_length += len(part) + (1 if truncated else 0)
+                length += len(part) + (1 if truncated else 0)
             else:
                 break
-
-        slug = separator.join(truncated)
-        if not slug:
+        if not truncated:
             return None
-
-    return slug
+        result = separator.join(truncated)
+    
+    return result

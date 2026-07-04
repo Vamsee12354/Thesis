@@ -5,13 +5,16 @@ def get_min_2_attributes(data, dict_search):
     valid_values = []
 
     for item in data:
-        if not isinstance(item, dict):
+        try:
+            if not isinstance(item, dict):
+                continue
+            
+            if dict_search in item:
+                val = item[dict_search]
+                if val is not None and isinstance(val, (int, float)):
+                    valid_values.append(float(val))
+        except (TypeError, ValueError):
             continue
-
-        value = item.get(dict_search)
-
-        if value is not None and isinstance(value, (int, float)):
-            valid_values.append(float(value))
 
     if not valid_values:
         return None

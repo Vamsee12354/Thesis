@@ -2,7 +2,7 @@ def get_unique(brand_list):
     if not brand_list:
         return None
 
-    unique_brands_dict = {}
+    unique_brands_map = {}
     
     for item in brand_list:
         try:
@@ -11,16 +11,16 @@ def get_unique(brand_list):
                 cleaned_brand = str(brand_val).strip()
                 if cleaned_brand!= "":
                     normalized = cleaned_brand.capitalize()
-                    if normalized not in unique_brands_dict:
-                        unique_brands_dict[normalized] = normalized
+                    if normalized not in unique_brands_map:
+                        unique_brands_map[normalized] = normalized
         except (AttributeError, TypeError):
             continue
 
-    if not unique_brands_dict:
+    if not unique_brands_map:
         return None
 
     result = []
-    for key in unique_brands_dict:
-        result.append(unique_brands_dict[key])
+    for key in unique_brands_map:
+        result.append(unique_brands_map[key])
         
     return result

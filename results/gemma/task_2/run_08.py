@@ -1,5 +1,5 @@
 def get_average_price(price_list):
-    if not isinstance(price_list, list) or not price_list:
+    if not price_list:
         return None
 
     valid_prices = []
@@ -15,4 +15,4 @@ def get_average_price(price_list):
         return None
 
     average = sum(valid_prices) / len(valid_prices)
-    return round(float(average), 2)
+    return round(average, 2)

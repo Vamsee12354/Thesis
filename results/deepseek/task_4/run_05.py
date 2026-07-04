@@ -1,9 +1,9 @@
 import math
 
 def get_read_duration(text):
-    if not text.strip():
+    if not isinstance(text, str):
         return 1
     words = text.split()
     word_count = len(words)
     minutes = math.ceil(word_count / 200)
-    return max(minutes, 1)
+    return max(1, minutes)

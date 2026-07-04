@@ -1,55 +1,47 @@
 import re
 import unicodedata
 
-def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
-    if not text or isinstance(text, (int, float, bool)):
+def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
+    if not text:
         return None
-
-    if isinstance(text, str):
-        text = unicodedata.normalize("NFKD", text)
-
-    if ignore:
-        if isinstance(ignore, str):
-            ignore_chars = [ignore]
-        else:
-            ignore_chars = ignore
-        preserved_pattern = re.compile(f"[{''.join(re.escape(char) for char in ignore_chars)}]")
-        preserved_chars = preserved_pattern.findall(text)
-    else:
-        preserved_chars = []
-
-    slug = ""
+    
+    if ignore is None:
+        ignore = []
+    
+    text = unicodedata.normalize('NFKD', text)
+    text = text.encode('ascii', 'ignore').decode('ascii')
+    
+    cleaned_text = []
     for char in text:
-        if char in preserved_chars:
-            slug += char
-            continue
-
-        normalized_char = unicodedata.normalize("NFKD", char)
-        decoded_char = normalized_char.encode("ascii", "ignore").decode("ascii")
-
-        if decoded_char.isalnum():
-            slug += decoded_char
-        elif slug and slug[-1] != separator:
-            slug += separator
-
-    slug = re.sub(f"{separator}+", separator, slug)
+        if char in ignore:
+            cleaned_text.append(char)
+        elif char.isalnum():
+            cleaned_text.append(char)
+        elif char.isspace():
+            cleaned_text.append(separator)
+    
+    slug = ''.join(cleaned_text)
+    slug = re.sub(f'[{re.escape(separator)}]+', separator, slug)
     slug = slug.strip(separator)
-
+    
     if lowercase:
         slug = slug.lower()
-
-    if truncate:
-        slug_parts = slug.split(separator)
+    
+    if truncate is not None and truncate > 0:
+        words = slug.split(separator)
         truncated_slug = []
-        current_length = 0
-
-        for part in slug_parts:
-            if current_length + len(part) <= truncate:
-                truncated_slug.append(part)
-                current_length += len(part) + len(separator)
+        length = 0
+        for word in words:
+            if length + len(word) + (1 if truncated_slug else 0) <= truncate:
+                truncated_slug.append(word)
+                length += len(word) + (1 if truncated_slug else 0)
             else:
                 break
+        slug = separator.join(truncated_slug)
+    
+    if not slug:
+        return None
+    
+    return slug
 
-        slug = separator.join(truncated_slug).strip(separator)
 
-    return slug if slug else None

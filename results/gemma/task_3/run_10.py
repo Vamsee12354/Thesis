@@ -7,18 +7,11 @@ def get_min_2_attributes(data, dict_search):
     for item in data:
         if not isinstance(item, dict):
             continue
-
-        value = item.get(dict_search)
-
-        if value is not None:
-            if isinstance(value, (int, float)):
-                valid_values.append(float(value))
-            elif isinstance(value, str):
-                try:
-                    numeric_val = float(value)
-                    valid_values.append(numeric_val)
-                except (ValueError, TypeError):
-                    continue
+            
+        val = item.get(dict_search)
+        
+        if val is not None and isinstance(val, (int, float)):
+            valid_values.append(val)
 
     if not valid_values:
         return None

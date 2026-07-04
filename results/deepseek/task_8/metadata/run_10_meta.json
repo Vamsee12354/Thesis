@@ -1,0 +1,18 @@
+{
+    "run_number": 10,
+    "timestamp": "2026-07-03T11:26:36.867291",
+    "llm_name": "deepseek",
+    "model_id": "deepseek/deepseek-chat",
+    "task_number": "8",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "seed": 42,
+    "max_tokens": 1000,
+    "elapsed_time_seconds": 8.7894,
+    "usage": {
+        "prompt_tokens": 797,
+        "completion_tokens": 304,
+        "total_tokens": 1101
+    }
+}

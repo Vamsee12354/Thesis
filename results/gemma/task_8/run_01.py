@@ -14,81 +14,53 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         ignore_chars = set()
     elif isinstance(ignore, str):
         ignore_chars = set(ignore)
-    else:
+    elif isinstance(ignore, list):
         ignore_chars = set("".join(ignore))
+    else:
+        ignore_chars = set()
 
     def transliterate(s):
         normalized = unicodedata.normalize('NFKD', s)
         return "".join([c for c in normalized if not unicodedata.combining(c)])
 
-    # Transliteration/Normalization
-    text = transliterate(text)
-
-    # Convert to lowercase if requested
+    processed_text = transliterate(text)
+    
     if lowercase:
-        text = text.lower()
-
-    # Build a pattern of allowed characters
-    # Allowed: Alphanumeric, separator, and characters in ignore
-    # We first handle the characters that are NOT ignored and NOT alphanumeric/separator
-
-    # Step 1: Identify which characters to keep
-    # We will iterate through the string and build a list of tokens
-    # Tokens are sequences of alphanumeric characters or ignored characters
+        processed_text = processed_text.lower()
 
     result_chars = []
-
-    # Clean up text by replacing non-alphanumeric and non-ignored with spaces
-    # But we must treat the separator as a special case
-
-    # Replace punctuation/symbols with space, but keep ignore chars
-    processed_chars = []
-    for char in text:
-        if char.isalnum() or char in ignore_chars or char == separator:
-            processed_chars.append(char)
-        elif char in ignore_chars:
-            processed_chars.append(char)
+    for char in processed_text:
+        if char in ignore_chars:
+            result_chars.append(char)
+        elif char.isalnum():
+            result_chars.append(char)
+        elif char.isspace():
+            result_chars.append(' ')
         else:
-            processed_chars.append(' ')
+            result_chars.append(' ')
 
-    temp_text = "".join(processed_chars)
-
-    # Step 2: Split by whitespace to get words
-    raw_words = temp_text.split()
-
-    # Step 3: Clean words (remove trailing/leading separators from words)
-    cleaned_words = []
-    for word in raw_words:
-        # Remove leading/trailing separators from word
-        w = word.strip(separator)
-        if w:
-            cleaned_words.append(w)
-
-    if not cleaned_words:
+    temp_str = "".join(result_chars)
+    words = temp_str.split()
+    
+    if not words:
         return None
 
-    # Reconstruct using separator
-    full_slug = separator.join(cleaned_words)
+    slug = separator.join(words)
 
-    # Step 4: Truncation logic (without breaking words)
-    if truncate is not None and truncate > 0:
-        if len(full_slug) <= truncate:
-            pass
-        else:
-            # Find the last separator or space within the limit
-            truncated_text = full_slug[:truncate]
-            last_sep = truncated_text.rfind(separator)
+    if not slug:
+        return None
 
-            if last_sep!= -1:
-                full_slug = truncated_text[:last_sep].rstrip(separator)
+    if truncate is not None and isinstance(truncate, int) and truncate > 0:
+        if len(slug) > truncate:
+            truncated = slug[:truncate]
+            last_sep = truncated.rfind(separator)
+            if last_sep!= -1 and last_sep > 0:
+                slug = truncated[:last_sep]
             else:
-                # If no separator exists in the limit, the word is too long
-                # The requirement says "truncating without breaking words"
-                # If the first word is longer than truncate, we might return None
-                # or an empty string. Based on "may eliminate all words", we return None.
-                return None
+                slug = truncated
+            slug = slug.rstrip(separator)
 
-    if not full_slug:
+    if not slug:
         return None
 
-    return full_slug
+    return slug

@@ -1,8 +1,6 @@
-def shopping_list(shopping_list):
-    if not isinstance(shopping_list, list):
+def shopping_list(product_list):
+    if not isinstance(product_list, list):
         return None
-    items = []
-    for product in shopping_list:
-        if isinstance(product, dict) and 'title' in product and product['title']:
-            items.append(f"<li>{product['title']}</li>")
-    return f"<ul>{''.join(items)}</ul>"
+    
+    li_elements = ''.join([f'<li>{product["title"]}</li>' for product in product_list if isinstance(product, dict) and 'title' in product])
+    return f'<ul>{li_elements}</ul>'

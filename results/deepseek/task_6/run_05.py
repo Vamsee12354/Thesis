@@ -1,7 +1,7 @@
 def is_valid_password(password):
     errors = []
-
-    if not password:
+    
+    if not password or len(password.strip()) == 0:
         errors.append("Please fill the password")
         return errors
 

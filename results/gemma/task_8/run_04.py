@@ -6,8 +6,8 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         return None
 
     try:
-        text.encode('utf-8').decode('utf-8')
-    except UnicodeError:
+        text = text.encode('utf-8').decode('utf-8')
+    except (UnicodeEncodeError, UnicodeDecodeError):
         return None
 
     if ignore is None:
@@ -19,73 +19,44 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     else:
         ignore_chars = set()
 
-    def transliterate(input_str):
-        normalized = unicodedata.normalize('NFKD', input_str)
-        return "".join([c for c in normalized if not unicodedata.combining(c)])
-
-    processed_text = transliterate(text)
+    normalized = unicodedata.normalize('NFKD', text)
+    
+    chars = []
+    for char in normalized:
+        if char in ignore_chars:
+            chars.append(char)
+        elif char.isalnum():
+            chars.append(char)
+        elif char.isspace():
+            chars.append(' ')
+        else:
+            continue
+    
+    processed_text = "".join(chars)
 
     if lowercase:
         processed_text = processed_text.lower()
 
-    result_chars = []
-    for char in processed_text:
-        if char in ignore_chars:
-            result_chars.append(char)
-        elif char.isalnum():
-            result_chars.append(char)
-        elif char.isspace():
-            result_chars.append(' ')
-        else:
-            result_chars.append(' ')
-
-    temp_str = "".join(result_chars)
-    words = temp_str.split()
-
+    words = processed_text.split()
+    
     if not words:
         return None
 
-    joined = separator.join(words)
-
-    clean_joined = ""
-    for i, char in enumerate(joined):
-        if char.isalnum() or char in ignore_chars:
-            clean_joined += char
-        elif i > 0 and i < len(joined) - 1 and joined[i-1]!= separator and joined[i+1]!= separator:
-            if separator!= "":
-                clean_joined += separator
-        elif i == 0 or i == len(joined) - 1:
-            continue
-        else:
-            if separator!= "" and (i == 0 or joined[i-1]!= separator):
-                clean_joined += separator
-
-    final_words = []
-    for w in words:
-        word_cleaned = ""
-        for c in w:
-            if c.isalnum() or c in ignore_chars:
-                word_cleaned += c
-            elif c.isspace():
-                continue
-        if word_cleaned:
-            final_words.append(word_cleaned)
-
-    if not final_words:
-        return None
-
-    slug = separator.join(final_words)
+    slug = separator.join(words)
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
         if len(slug) > truncate:
-            truncated_slug = slug[:truncate]
-            last_sep = truncated_slug.rfind(separator)
-            if last_sep!= -1:
-                slug = truncated_slug[:last_sep].rstrip(separator)
+            truncated_part = slug[:truncate]
+            last_sep_idx = truncated_part.rfind(separator)
+            
+            if last_sep_idx != -1:
+                slug = truncated_part[:last_sep_idx]
             else:
-                slug = truncated_slug
+                slug = truncated_part
+                
+            slug = slug.strip(separator)
 
-    if not slug:
+    if not slug and not any(c in slug for c in ignore_chars):
         return None
 
     return slug

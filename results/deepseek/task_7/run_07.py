@@ -1,10 +1,9 @@
-def shopping_list(shopping_list):
-    if not isinstance(shopping_list, list):
-        return None
-
-    html_list = ['<ul>']
-    for product in shopping_list:
-        if isinstance(product, dict) and 'title' in product and product['title'] is not None:
-            html_list.append(f'<li>{product["title"]}</li>')
-    html_list.append('</ul>')
-    return ''.join(html_list)
+def shopping_list(product_list):
+    if not product_list:
+        return "<ul></ul>"
+    items = []
+    for product in product_list:
+        title = product.get("title")
+        if title:
+            items.append(f"<li>{title}</li>")
+    return f"<ul>{''.join(items)}</ul>"

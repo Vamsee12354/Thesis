@@ -8,12 +8,12 @@ def get_min_2_attributes(data, dict_search):
         try:
             if not isinstance(item, dict):
                 continue
-
+            
             if dict_search in item:
                 val = item[dict_search]
                 if val is not None and isinstance(val, (int, float)):
-                    valid_values.append(float(val))
-        except (TypeError, ValueError):
+                    valid_values.append(val)
+        except (TypeError, KeyError):
             continue
 
     if not valid_values:

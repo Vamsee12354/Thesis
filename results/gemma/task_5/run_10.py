@@ -16,7 +16,7 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
 
     if not f_name:
         errors.append("Please Type First Name")
-
+    
     if not l_name:
         errors.append("Please Type Last Name")
 
@@ -37,13 +37,5 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
     if errors:
         return errors
 
-    details = [
-        str(first_name),
-        str(last_name),
-        str(email),
-        str(subject),
-        str(message),
-        str(privacy)
-    ]
-
-    return f"Form is valid. Details:{','.join(details)}"
+    details = f"{f_name},{l_name},{e_mail},{subj},{msg},{privacy}"
+    return f"Form is valid. Details:{details}"

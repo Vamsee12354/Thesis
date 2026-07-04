@@ -8,27 +8,27 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
             return val.strip()
         return val
 
-    c_first_name = clean(first_name)
-    c_last_name = clean(last_name)
-    c_email = clean(email)
-    c_subject = clean(subject)
-    c_message = clean(message)
+    f_name = clean(first_name)
+    l_name = clean(last_name)
+    e_mail = clean(email)
+    subj = clean(subject)
+    msg = clean(message)
 
-    if not c_first_name:
+    if not f_name:
         errors.append("Please Type First Name")
-
-    if not c_last_name:
+    
+    if not l_name:
         errors.append("Please Type Last Name")
 
-    if not c_email:
+    if not e_mail:
         errors.append("Please Type EmailID")
-    elif not re.match(r"^[^\s@]+@[^\s@]+\.[^\s@]+$", c_email):
+    elif not re.match(r"^[^\s@]+@[^\s@]+\.[^\s@]+$", e_mail):
         errors.append("Email standards not followed")
 
-    if not c_subject:
+    if not subj:
         errors.append("Please Type Subject")
 
-    if not c_message:
+    if not msg:
         errors.append("Please Type Message")
 
     if privacy is not True:
@@ -37,4 +37,4 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
     if errors:
         return errors
 
-    return f"Form is valid. Details:{first_name},{last_name},{email},{subject},{message},{privacy}"
+    return f"Form is valid. Details:{f_name},{l_name},{e_mail},{subj},{msg},{privacy}"

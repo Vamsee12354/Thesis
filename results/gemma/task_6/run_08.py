@@ -12,10 +12,10 @@ def is_valid_password(password):
     if len(password) < 12 or len(password) > 72:
         errors.append("Length must be between 12 and 72 characters")
 
-    if not any(char.islower() for char in password):
+    if not any(c.islower() for c in password):
         errors.append("Password must contain a lowercase letter")
 
-    if not any(char.isupper() for char in password):
+    if not any(c.isupper() for c in password):
         errors.append("Password must contain an uppercase letter")
 
     special_or_digit_pattern = r"[!?@#$%^&*()_0-9]"
@@ -24,5 +24,7 @@ def is_valid_password(password):
 
     if not errors:
         return "The password is valid"
-
+    
     return errors
+
+ 

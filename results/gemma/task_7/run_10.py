@@ -1,15 +1,1 @@
-
-def shopping_list(shopping_list):
-    if not isinstance(shopping_list, list):
-        return None
-    
-    try:
-        html_output = "<ul>"
-        for product in shopping_list:
-            if isinstance(product, dict) and "title" in product and product["title"] is not None:
-                title = str(product["title"])
-                html_output += f"<li>{title}</li>"
-        html_output += "</ul>"
-        return html_output
-    except Exception:
-        return None
+ERROR IN RUN 10: 'NoneType' object is not subscriptable

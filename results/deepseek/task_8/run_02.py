@@ -4,63 +4,60 @@ import unicodedata
 def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
     if not isinstance(text, str) or not text.strip():
         return None
-
+    
     if ignore is None:
         ignore = []
     elif isinstance(ignore, str):
         ignore = [ignore]
-
-    normalized_text = unicodedata.normalize('NFKD', text)
-    slug_parts = []
-    current_word = []
-
-    for char in normalized_text:
-        if char in ignore:
-            if current_word:
-                slug_parts.append(''.join(current_word))
-                current_word = []
-            slug_parts.append(char)
-        else:
-            category = unicodedata.category(char)
-            if category.startswith('L') or category.startswith('N'):
-                current_word.append(char.lower() if lowercase else char)
-            elif category.startswith('Z'):
-                if current_word:
-                    slug_parts.append(''.join(current_word))
-                    current_word = []
-            else:
-                pass
-
-    if current_word:
-        slug_parts.append(''.join(current_word))
-
+    
+    preserved_chars = set()
+    for char in ignore:
+        if char in text:
+            preserved_chars.add(char)
+    
+    normalized = unicodedata.normalize('NFKD', text)
     slug = []
-    for part in slug_parts:
-        if part in ignore:
-            slug.append(part)
+    for char in normalized:
+        if char in preserved_chars:
+            slug.append(char)
+            continue
+        if unicodedata.category(char)[0] == 'L':
+            slug.append(char)
+        elif unicodedata.category(char)[0] == 'N':
+            slug.append(char)
+        elif char.isspace():
+            slug.append(' ')
         else:
-            cleaned_part = re.sub(r'[^\w\s]', '', part)
-            if cleaned_part:
-                slug.append(cleaned_part)
-
-    slug = [s for s in slug if s]
+            continue
+    
+    slug = ''.join(slug)
+    slug = re.sub(r'[^\w\s' + re.escape(''.join(preserved_chars)) + ']', '', slug)
+    slug = re.sub(r'\s+', ' ', slug).strip()
+    
     if not slug:
         return None
-
-    result = separator.join(slug)
-
+    
+    if lowercase:
+        slug = slug.lower()
+    
+    slug_parts = slug.split(' ')
+    final_slug = []
+    for part in slug_parts:
+        if part:
+            final_slug.append(part)
+    
+    slug = separator.join(final_slug)
+    
     if truncate is not None and truncate > 0:
-        parts = result.split(separator)
-        truncated = []
-        current_length = 0
-        for part in parts:
-            if current_length + len(part) + (1 if truncated else 0) <= truncate:
-                truncated.append(part)
-                current_length += len(part) + (1 if truncated else 0)
-            else:
-                break
-        if not truncated:
-            return None
-        result = separator.join(truncated)
-
-    return result
+        if len(slug) > truncate:
+            truncated = slug[:truncate]
+            if separator:
+                last_sep = truncated.rfind(separator)
+                if last_sep != -1:
+                    truncated = truncated[:last_sep]
+            slug = truncated
+    
+    if not slug:
+        return None
+    
+    return slug

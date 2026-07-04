@@ -1,15 +1,15 @@
 def get_average_price(price_list):
-    if not isinstance(price_list, list) or not price_list:
+    if not price_list:
         return None
 
     valid_prices = []
     for item in price_list:
-        if isinstance(item, dict) and item.get('price') is not None:
-            try:
-                price_val = float(item['price'])
-                valid_prices.append(price_val)
-            except (ValueError, TypeError):
-                continue
+        try:
+            price = item.get('price')
+            if price is not None:
+                valid_prices.append(float(price))
+        except (TypeError, ValueError):
+            continue
 
     if not valid_prices:
         return None

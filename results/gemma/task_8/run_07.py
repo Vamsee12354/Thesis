@@ -6,8 +6,8 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         return None
 
     try:
-        text.encode('utf-8').decode('utf-8')
-    except UnicodeError:
+        text = text.encode('utf-8').decode('utf-8')
+    except (UnicodeEncodeError, UnicodeDecodeError):
         return None
 
     if ignore is None:
@@ -24,66 +24,38 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         return "".join([c for c in normalized if not unicodedata.combining(c)])
 
     processed_text = transliterate(text)
-
+    
     if lowercase:
         processed_text = processed_text.lower()
 
     result_chars = []
     current_word = []
-
-    allowed_alphanumeric = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
-
+    
     for char in processed_text:
-        if char in ignore_chars:
-            result_chars.append(char)
-        elif char.isalnum():
-            result_chars.append(char)
-        elif char.isspace():
-            result_chars.append(' ')
+        if char.isalnum() or char in ignore_chars:
+            current_word.append(char)
         else:
-            result_chars.append(' ')
+            if current_word:
+                result_chars.append("".join(current_word))
+                current_word = []
+    if current_word:
+        result_chars.append("".join(current_word))
 
-    slug_base = "".join(result_chars)
-    words = slug_base.split()
-
-    if not words:
+    if not result_chars:
         return None
 
-    final_words = []
-    for word in words:
-        clean_word = ""
-        for char in word:
-            if char.isalnum() or char in ignore_chars:
-                clean_word += char
-        if clean_word:
-            final_words.append(clean_word)
-
-    if not final_words:
-        return None
-
-    slug = separator.join(final_words)
+    slug = separator.join(result_chars)
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
         if len(slug) > truncate:
             truncated = slug[:truncate]
-            if len(truncated) > 0 and truncated[-1] == separator[0] if separator else False:
-                truncated = truncated.rstrip(separator)
-
-            last_sep_idx = truncated.rfind(separator)
-            if last_sep_idx!= -1:
-                slug = truncated[:last_sep_idx]
+            last_sep = truncated.rfind(separator)
+            if last_sep!= -1 and last_sep > 0:
+                slug = truncated[:last_sep]
             else:
-                parts = slug.split(separator)
-                temp_slug = ""
-                for p in parts:
-                    if len(temp_slug) + len(p) + len(separator) <= truncate:
-                        temp_slug = (temp_slug + separator + p).strip(separator) if temp_slug else p
-                    else:
-                        break
-                slug = temp_slug if temp_slug else truncated[:truncate]
+                slug = truncated
+                
+    if not any(c.isalnum() for c in slug) and not any(c in ignore_chars for c in slug):
+        return None
 
-            slug = slug.strip(separator)
-            if not slug:
-                return None
-
-    return slug
+    return slug.strip(separator)

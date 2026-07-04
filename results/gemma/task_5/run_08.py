@@ -3,20 +3,20 @@ import re
 def validate_form(first_name, last_name, email, subject, message, privacy):
     errors = []
 
-    def get_trimmed(val):
+    def clean(val):
         if isinstance(val, str):
             return val.strip()
         return val
 
-    f_name = get_trimmed(first_name)
-    l_name = get_trimmed(last_name)
-    e_mail = get_trimmed(email)
-    subj = get_trimmed(subject)
-    msg = get_trimmed(message)
+    f_name = clean(first_name)
+    l_name = clean(last_name)
+    e_mail = clean(email)
+    subj = clean(subject)
+    msg = clean(message)
 
     if not f_name:
         errors.append("Please Type First Name")
-
+    
     if not l_name:
         errors.append("Please Type Last Name")
 
@@ -37,4 +37,5 @@ def validate_form(first_name, last_name, email, subject, message, privacy):
     if errors:
         return errors
 
-    return f"Form is valid. Details:{first_name},{last_name},{email},{subject},{message},{privacy}"
+    details = f"{f_name},{l_name},{e_mail},{subj},{msg},{privacy}"
+    return f"Form is valid. Details:{details}"
