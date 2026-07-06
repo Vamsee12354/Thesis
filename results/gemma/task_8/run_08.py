@@ -6,7 +6,7 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         return None
 
     try:
-        text.encode('utf-8').decode('utf-8')
+        text = text.encode('utf-8').decode('utf-8')
     except (UnicodeEncodeError, UnicodeDecodeError):
         return None
 
@@ -19,43 +19,45 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     else:
         ignore_chars = set()
 
-    def transliterate(s):
-        normalized = unicodedata.normalize('NFKD', s)
-        return "".join([c for c in normalized if not unicodedata.combining(c)])
-
-    processed_text = transliterate(text)
+    normalized = unicodedata.normalize('NFKD', text)
     
+    chars = []
+    for char in normalized:
+        if char in ignore_chars:
+            chars.append(char)
+        elif char.isalnum():
+            chars.append(char)
+        elif char.isspace():
+            chars.append(' ')
+        else:
+            continue
+    
+    processed_text = "".join(chars)
+
     if lowercase:
         processed_text = processed_text.lower()
 
-    result_chars = []
-    current_word = []
+    words = processed_text.split()
     
-    for char in processed_text:
-        if char.isalnum() or char in ignore_chars:
-            current_word.append(char)
-        else:
-            if current_word:
-                result_chars.append("".join(current_word))
-                current_word = []
-    if current_word:
-        result_chars.append("".join(current_word))
-
-    if not result_chars:
+    if not words:
         return None
 
-    slug = separator.join(result_chars)
+    slug = separator.join(words)
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
         if len(slug) > truncate:
             truncated = slug[:truncate]
             last_sep = truncated.rfind(separator)
-            if last_sep!= -1:
-                slug = truncated[:last_sep]
+            last_space = truncated.rfind(' ')
+            
+            best_split = max(last_sep, last_space)
+            
+            if best_split != -1 and best_split > 0:
+                slug = truncated[:best_split].rstrip(separator).rstrip()
             else:
                 slug = truncated
-    
-    if not slug.strip() and not any(c in slug for c in ignore_chars):
+
+    if not any(c.isalnum() or c in ignore_chars for c in slug):
         return None
 
-    return slug.strip(separator)
+    return slug

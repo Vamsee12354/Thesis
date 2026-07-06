@@ -6,69 +6,65 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         return None
 
     try:
-        text.encode('utf-8').decode('utf-8')
+        text = text.encode('utf-8').decode('utf-8')
     except (UnicodeEncodeError, UnicodeDecodeError):
         return None
 
     if ignore is None:
-        ignore_chars = set()
+        ignore_list = []
     elif isinstance(ignore, str):
-        ignore_chars = set(ignore)
-    elif isinstance(ignore, list):
-        ignore_chars = set("".join(ignore))
+        ignore_list = list(ignore)
     else:
-        ignore_chars = set()
+        ignore_list = list(ignore)
 
-    def transliterate(s):
-        normalized = unicodedata.normalize('NFKD', s)
-        return "".join([c for c in normalized if not unicodedata.combining(c)])
-
-    processed_text = transliterate(text)
+    normalized = unicodedata.normalize('NFKD', text)
     
-    if lowercase:
-        processed_text = processed_text.lower()
-
-    result_chars = []
-    for char in processed_text:
-        if char in ignore_chars:
-            result_chars.append(char)
-        elif char.isalnum():
-            result_chars.append(char)
+    chars = []
+    for char in normalized:
+        if char.isalnum() or char in ignore_list or char == ' ':
+            chars.append(char)
         elif char.isspace():
-            result_chars.append(' ')
+            chars.append(' ')
         else:
-            result_chars.append(' ')
+            continue
+            
+    slug_text = "".join(chars)
 
-    temp_str = "".join(result_chars)
-    words = temp_str.split()
+    if lowercase:
+        slug_text = slug_text.lower()
+
+    words = slug_text.split()
     
     if not words:
         return None
 
-    joined_slug = separator.join(words)
-    
-    if not joined_slug:
+    processed_words = []
+    for word in words:
+        clean_word = ""
+        for char in word:
+            if char.isalnum() or char in ignore_list:
+                clean_word += char
+            elif char in ignore_list:
+                clean_word += char
+        if clean_word:
+            processed_words.append(clean_word)
+
+    if not processed_words:
         return None
 
-    if truncate is not None and isinstance(truncate, int) and truncate > 0:
-        if len(joined_slug) > truncate:
-            truncated = joined_slug[:truncate]
-            last_sep = truncated.rfind(separator)
-            last_space = truncated.rfind(' ')
+    result = separator.join(processed_words)
+
+    if truncate is not None and truncate > 0:
+        if len(result) > truncate:
+            truncated_part = result[:truncate]
+            last_sep_idx = truncated_part.rfind(separator)
             
-            cut_index = max(last_sep, last_space)
-            
-            if cut_index!= -1 and cut_index > 0:
-                joined_slug = joined_slug[:cut_index].strip(separator)
+            if last_sep_idx != -1:
+                result = truncated_part[:last_sep_idx].rstrip(separator)
             else:
-                joined_slug = truncated.strip(separator)
-                
-        if not joined_slug:
-            return None
+                result = truncated_part
 
-    final_slug = joined_slug.strip(separator)
-    
-    if not final_slug:
+    if not result:
         return None
-        
-    return final_slug
+
+    return result

@@ -4,15 +4,18 @@ import os
 import time
 from datetime import datetime
 
+
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key="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"
 )
 
-LLM_NAME = "amazon"
-MODEL_ID = "amazon/nova-lite-v1"
-TASK_NUMBER = input("Enter task number: ").strip()
-RUNS = 10
+
+LLM_NAME = "gemma"
+MODEL_ID = "google/gemma-4-26b-a4b-it"
+
+TASK_NUMBER = "1"
+RUNS = 1
 
 TEMPERATURE = 0.0
 TOP_P = 1.0
@@ -21,38 +24,44 @@ SEED = 42
 MAX_TOKENS = 3000
 SLEEP_SECONDS = 3
 
+
 UNIVERSAL_PROMPT = """
-You are an expert Python developer.
+Python Test Prompt
+- Write clear, concise, idiomatic unittests.
+- Import unittest as a library for writing tests.
+- Group related test cases together to improve readability.
+- Prefer assertEqual, assertTrue, assertFalse, and assertRaises for clarity.
+- Ensure tests are readable and serve as documentation.
+- Structure tests with clear setup, action, and verification phases (AAA pattern).
+- Write tests using the exact functions or classes provided.
+- Do not create or assume additional classes, objects, or wrappers that are not specified in the implementation.
+- Import functions and classes only from implementation_manual.
 
-Code Style:
-- Follow PEP 8 style guidelines.
-- Use snake_case for variable names, function names, and file names.
-- Use PascalCase for class names.
-- Write concise, readable code with meaningful variable and function names.
-- Do not add any text, explanation, or code fences. Return only raw Python code.
--Return plain raw Python only
-- Entire response should be executable python code only. Do not include any comments or explanations
-Code Structure:
-- Write simple, self-contained functions.
-- Do not use external libraries unless the task explicitly requires them.
-- Do not generate example usage, main blocks, or print statements unless asked.
+Testing Tools
+- Use unittest as the primary testing framework.
+- Do not use external testing libraries unless explicitly specified.
+- Ensure all tests are deterministic and do not rely on external state.
+- Do not expect modules to be defined elsewhere in the implementation unless specified.
 
+Test Coverage
+- Write tests for all functions or classes mentioned.
+- Include edge cases, validation failures, and happy paths.
 
-Error Handling:
-- Handle edge cases where appropriate using try-except.
-- Return None for invalid inputs rather than crashing silently.
+Naming and Structure
+- Use snake_case for test names and function names.
+- Use descriptive test class names when using classes.
+- Do not test private methods, internal state, or implementation details.
+- Verify observable behaviour, outputs, and expected errors.
 
-Output:
-- Return only the implementation code.
-- Do not include explanations or comments outside the code. 
+Output Rules
+- Return only valid raw Python unittest test code.
+- Do not include markdown code fences.
+- Do not include explanations outside the code.
+- Do not put any comments inside the code
 """
 
 
-
-
 TASK_PROMPT = """
-
-
 Module Name: product_cache
 Class/Function:
  Class Product_cache_get:
@@ -115,14 +124,12 @@ Cache.cleanup()
 #=> Cleaned successfully
 
 
-
-	 
-
-
 """
 
-TASK_DIR = os.path.join("results", LLM_NAME, f"task_{TASK_NUMBER}")
+
+TASK_DIR = os.path.join("generated_tests", LLM_NAME, f"task_{TASK_NUMBER}")
 METADATA_DIR = os.path.join(TASK_DIR, "metadata")
+
 
 def ensure_output_dirs():
     os.makedirs(TASK_DIR, exist_ok=True)
@@ -130,7 +137,7 @@ def ensure_output_dirs():
 
 
 def save_run(run_number, content, usage, elapsed_time):
-    run_file = os.path.join(TASK_DIR, f"run_{run_number:02d}.py")
+    run_file = os.path.join(TASK_DIR, f"run_{run_number:02d}_test.py")
     meta_file = os.path.join(METADATA_DIR, f"run_{run_number:02d}_meta.json")
 
     with open(run_file, "w", encoding="utf-8") as file:
@@ -187,8 +194,8 @@ for i in range(1, RUNS + 1):
         save_run(i, output, usage, elapsed_time)
 
         print(output)
-        print(f"\nSaved to results/{LLM_NAME}/task_{TASK_NUMBER}/run_{i:02d}.py")
-        print(f"Metadata saved to results/{LLM_NAME}/task_{TASK_NUMBER}/metadata/run_{i:02d}_meta.json")
+        print(f"\nSaved to generated_tests/{LLM_NAME}/task_{TASK_NUMBER}/run_{i:02d}_test.py")
+        print(f"Metadata saved to generated_tests/{LLM_NAME}/task_{TASK_NUMBER}/metadata/run_{i:02d}_meta.json")
 
     except Exception as error:
         print(f"ERROR IN RUN {i}: {error}")

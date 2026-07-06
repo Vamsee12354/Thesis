@@ -5,11 +5,6 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     if not isinstance(text, str):
         return None
 
-    try:
-        text = text.encode('utf-8').decode('utf-8')
-    except (UnicodeEncodeError, UnicodeDecodeError):
-        return None
-
     if ignore is None:
         ignore_chars = set()
     elif isinstance(ignore, str):
@@ -19,25 +14,29 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     else:
         ignore_chars = set()
 
-    normalized = unicodedata.normalize('NFKD', text)
+    try:
+        normalized = unicodedata.normalize('NFKD', text)
+    except Exception:
+        return None
+
+    result_chars = []
     
-    chars = []
     for char in normalized:
         if char in ignore_chars:
-            chars.append(char)
+            result_chars.append(char)
         elif char.isalnum():
-            chars.append(char)
+            result_chars.append(char)
         elif char.isspace():
-            chars.append(' ')
+            result_chars.append(' ')
         else:
             continue
-    
-    processed_text = "".join(chars)
+
+    slug = "".join(result_chars)
 
     if lowercase:
-        processed_text = processed_text.lower()
+        slug = slug.lower()
 
-    words = processed_text.split()
+    words = slug.split()
     
     if not words:
         return None
@@ -46,17 +45,17 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
         if len(slug) > truncate:
-            truncated_part = slug[:truncate]
-            last_sep_idx = truncated_part.rfind(separator)
-            
-            if last_sep_idx != -1:
-                slug = truncated_part[:last_sep_idx]
+            truncated = slug[:truncate]
+            last_sep = truncated.rfind(separator)
+            if last_sep != -1:
+                slug = truncated[:last_sep]
             else:
-                slug = truncated_part
-                
-            slug = slug.strip(separator)
+                slug = truncated
+        
+        if not slug:
+            return None
 
-    if not slug and not any(c in slug for c in ignore_chars):
+    if not slug:
         return None
 
     return slug

@@ -19,43 +19,51 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     else:
         ignore_chars = set()
 
-    def transliterate(input_str):
-        normalized = unicodedata.normalize('NFKD', input_str)
-        return "".join([c for c in normalized if not unicodedata.combining(c)])
-
-    processed_text = transliterate(text)
+    normalized = unicodedata.normalize('NFKD', text)
     
+    chars = []
+    for char in normalized:
+        if char in ignore_chars:
+            chars.append(char)
+        elif char.isalnum():
+            chars.append(char)
+        elif char.isspace():
+            chars.append(' ')
+        else:
+            continue
+    
+    processed_text = "".join(chars)
+
     if lowercase:
         processed_text = processed_text.lower()
 
-    result_chars = []
-    current_word = []
+    words = processed_text.split()
     
-    for char in processed_text:
-        if char.isalnum() or char in ignore_chars:
-            current_word.append(char)
-        else:
-            if current_word:
-                result_chars.append("".join(current_word))
-                current_word = []
-    if current_word:
-        result_chars.append("".join(current_word))
-
-    if not result_chars:
+    if not words:
         return None
 
-    slug = separator.join(result_chars)
+    slug = separator.join(words)
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
         if len(slug) > truncate:
             truncated = slug[:truncate]
             last_sep = truncated.rfind(separator)
-            if last_sep!= -1 and last_sep > 0:
+            if last_sep != -1:
                 slug = truncated[:last_sep]
             else:
                 slug = truncated
                 
-    if not any(c.isalnum() for c in slug) and not any(c in ignore_chars for c in slug):
+    if not slug and not any(c in slug for c in ignore_chars):
         return None
 
-    return slug.strip(separator)
+    final_slug = ""
+    for char in slug:
+        if char.isalnum() or char == separator or char in ignore_chars:
+            final_slug += char
+        else:
+            continue
+
+    if not final_slug.strip() and not any(c in final_slug for c in ignore_chars):
+        return None
+
+    return final_slug

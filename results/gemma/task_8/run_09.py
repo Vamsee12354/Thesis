@@ -6,7 +6,7 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
         return None
 
     try:
-        text.encode('utf-8').decode('utf-8')
+        text = text.encode('utf-8').decode('utf-8')
     except (UnicodeEncodeError, UnicodeDecodeError):
         return None
 
@@ -19,56 +19,47 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     else:
         ignore_chars = set()
 
-    def transliterate(input_str):
-        normalized = unicodedata.normalize('NFKD', input_str)
-        return "".join([c for c in normalized if not unicodedata.combining(c)])
-
-    processed_text = transliterate(text)
+    normalized = unicodedata.normalize('NFKD', text)
     
+    chars = []
+    for char in normalized:
+        if char in ignore_chars:
+            chars.append(char)
+        elif char.isalnum():
+            chars.append(char)
+        elif char.isspace():
+            chars.append(' ')
+        else:
+            continue
+    
+    processed_text = "".join(chars)
+
     if lowercase:
         processed_text = processed_text.lower()
 
-    result_chars = []
-    for char in processed_text:
-        if char in ignore_chars:
-            result_chars.append(char)
-        elif char.isalnum():
-            result_chars.append(char)
-        elif char.isspace():
-            result_chars.append(' ')
-        else:
-            result_chars.append(' ')
-
-    temp_str = "".join(result_chars)
-    words = temp_str.split()
+    words = processed_text.split()
     
     if not words:
         return None
 
-    joined_slug = separator.join(words)
-    
-    if not joined_slug:
-        return None
+    slug = separator.join(words)
 
     if truncate is not None and isinstance(truncate, int) and truncate > 0:
-        if len(joined_slug) > truncate:
-            truncated = joined_slug[:truncate]
+        if len(slug) > truncate:
+            truncated = slug[:truncate]
             last_sep = truncated.rfind(separator)
             last_space = truncated.rfind(' ')
             
-            cut_idx = max(last_sep, last_space)
+            best_split = max(last_sep, last_space)
             
-            if cut_idx!= -1 and cut_idx > 0:
-                joined_slug = joined_slug[:cut_idx].strip(separator)
+            if best_split != -1 and best_split > 0:
+                slug = slug[:best_split].strip(separator)
             else:
-                joined_slug = truncated.strip(separator)
-                
-        if not joined_slug:
-            return None
+                slug = truncated.strip(separator)
 
-    final_slug = joined_slug.strip(separator)
+    final_slug = slug.strip(separator)
     
-    if not final_slug:
+    if not final_slug and not any(c in final_slug for c in ignore_chars):
         return None
         
-    return final_slug
+    return final_slug if final_slug or any(c in text for c in ignore_chars) else None

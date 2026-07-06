@@ -1,18 +1,18 @@
 {
     "run_number": 7,
-    "timestamp": "2026-07-03T10:01:03.287163",
+    "timestamp": "2026-07-06T11:31:42.100248",
     "llm_name": "gemma",
-    "model_id": "google/gemma-4-26b-a4b-it:free",
+    "model_id": "google/gemma-4-26b-a4b-it",
     "task_number": "8",
     "temperature": 0.0,
     "top_p": 1.0,
     "top_k": 1,
     "seed": 42,
-    "max_tokens": 1000,
-    "elapsed_time_seconds": 48.1715,
+    "max_tokens": 3000,
+    "elapsed_time_seconds": 4.983,
     "usage": {
         "prompt_tokens": 844,
-        "completion_tokens": 491,
-        "total_tokens": 1335
+        "completion_tokens": 486,
+        "total_tokens": 1330
     }
 }
