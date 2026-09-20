@@ -1,0 +1,48 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:40
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_shopping_list (selected_test.TestShoppingList.test_empty_shopping_list) ... ok
+test_multiple_products_with_mixed_titles (selected_test.TestShoppingList.test_multiple_products_with_mixed_titles) ... FAIL
+test_normal_functionality_with_multiple_products (selected_test.TestShoppingList.test_normal_functionality_with_multiple_products) ... ok
+test_product_with_empty_title (selected_test.TestShoppingList.test_product_with_empty_title) ... FAIL
+test_product_with_html_in_title (selected_test.TestShoppingList.test_product_with_html_in_title) ... ok
+test_product_with_none_title (selected_test.TestShoppingList.test_product_with_none_title) ... ok
+test_product_with_special_characters_in_title (selected_test.TestShoppingList.test_product_with_special_characters_in_title) ... ok
+test_product_with_unicode_in_title (selected_test.TestShoppingList.test_product_with_unicode_in_title) ... ok
+test_single_product_in_list (selected_test.TestShoppingList.test_single_product_in_list) ... ok
+
+======================================================================
+FAIL: test_multiple_products_with_mixed_titles (selected_test.TestShoppingList.test_multiple_products_with_mixed_titles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_07__tests_mistral__implementation_manual\selected_test.py", line 69, in test_multiple_products_with_mixed_titles
+    self.assertEqual(result, expected)
+AssertionError: "<ul>[46 chars]><script>alert('xss')</script></li><li>None</li></ul>" != "<ul>[46 chars]><script>alert('xss')</script></li><li></li><li>None</li></ul>"
+- <ul><li>Normal Item</li><li>Item & Special</li><li><script>alert('xss')</script></li><li>None</li></ul>
++ <ul><li>Normal Item</li><li>Item & Special</li><li><script>alert('xss')</script></li><li></li><li>None</li></ul>
+?                                                                                          +++++++++
+
+
+======================================================================
+FAIL: test_product_with_empty_title (selected_test.TestShoppingList.test_product_with_empty_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_07__tests_mistral__implementation_manual\selected_test.py", line 51, in test_product_with_empty_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li></li></ul>'
+- <ul></ul>
++ <ul><li></li></ul>
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (failures=2)

@@ -1,0 +1,38 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:04
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+Form is valid. Details:Axxs,James,abc@gmail.com,Question,Hallo!,True
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_fields_empty (selected_test.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_and_no_regex_check (selected_test.TestValidateForm.test_email_empty_and_no_regex_check) ... ok
+test_fields_with_only_whitespace (selected_test.TestValidateForm.test_fields_with_only_whitespace) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_leading_and_trailing_whitespace_trimmed (selected_test.TestValidateForm.test_leading_and_trailing_whitespace_trimmed) ... FAIL
+test_multiple_errors_returned_in_order (selected_test.TestValidateForm.test_multiple_errors_returned_in_order) ... ok
+test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean) ... ok
+test_privacy_policy_not_confirmed (selected_test.TestValidateForm.test_privacy_policy_not_confirmed) ... ok
+test_valid_form (selected_test.TestValidateForm.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_leading_and_trailing_whitespace_trimmed (selected_test.TestValidateForm.test_leading_and_trailing_whitespace_trimmed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_06__tests_openai__implementation_manual\selected_test.py", line 164, in test_leading_and_trailing_whitespace_trimmed
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Doe  ,  john@example.com  ,  S[21 chars]True' != 'Form[14 chars]ails:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:  John  ,  Doe  ,  john@example.com  ,  Subject  ,  Message  ,True
+?                        --    -- --   -- --                -- --       -- --       --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=1)

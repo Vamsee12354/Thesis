@@ -1,0 +1,75 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:27
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_diff_language (selected_test.Test_password_valid.test_diff_language) ... ok
+test_long_len_pwd (selected_test.Test_password_valid.test_long_len_pwd) ... ok
+test_lower_upper_no_symbol (selected_test.Test_password_valid.test_lower_upper_no_symbol) ... FAIL
+test_mix_languages (selected_test.Test_password_valid.test_mix_languages) ... ok
+test_no_lowercase (selected_test.Test_password_valid.test_no_lowercase) ... ok
+test_no_password (selected_test.Test_password_valid.test_no_password) ... FAIL
+test_no_symbols (selected_test.Test_password_valid.test_no_symbols) ... FAIL
+test_no_upprcase (selected_test.Test_password_valid.test_no_upprcase) ... ok
+test_nolower_upper_symbol (selected_test.Test_password_valid.test_nolower_upper_symbol) ... ok
+test_noupper_lower_symbol (selected_test.Test_password_valid.test_noupper_lower_symbol) ... ok
+test_only_symbols (selected_test.Test_password_valid.test_only_symbols) ... FAIL
+test_short_len_pwd (selected_test.Test_password_valid.test_short_len_pwd) ... ok
+test_spaces_in_pwd (selected_test.Test_password_valid.test_spaces_in_pwd) ... ok
+test_working_pwd (selected_test.Test_password_valid.test_working_pwd) ... ok
+
+======================================================================
+FAIL: test_lower_upper_no_symbol (selected_test.Test_password_valid.test_lower_upper_no_symbol)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_04__tests_manual__implementation_openai\selected_test.py", line 19, in test_lower_upper_no_symbol
+    self.assertEqual(IsValidPassword("Abcdefghijkl1"),['Password must contain a special character or a number'])
+AssertionError: 'The password is valid' != ['Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_no_password (selected_test.Test_password_valid.test_no_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_04__tests_manual__implementation_openai\selected_test.py", line 7, in test_no_password
+    self.assertEqual(IsValidPassword(""),"Please fill the password")
+AssertionError: ['Please fill the password'] != 'Please fill the password'
+
+======================================================================
+FAIL: test_no_symbols (selected_test.Test_password_valid.test_no_symbols)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_04__tests_manual__implementation_openai\selected_test.py", line 16, in test_no_symbols
+    self.assertEqual(IsValidPassword("Abcdefghijkl1"),['Password must contain a special character or a number'])
+AssertionError: 'The password is valid' != ['Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_only_symbols (selected_test.Test_password_valid.test_only_symbols)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_04__tests_manual__implementation_openai\selected_test.py", line 43, in test_only_symbols
+    self.assertEqual(IsValidPassword("!@#$%^&*()*!@"),['Password must contain a lowercase letter','Password must contain an uppercase letter','Password must contain a special character or a number'])
+AssertionError: Lists differ: ['Pas[78 chars]tter'] != ['Pas[78 chars]tter', 'Password must contain a special character or a number']
+
+Second list contains 1 additional elements.
+First extra element 2:
+'Password must contain a special character or a number'
+
+  ['Password must contain a lowercase letter',
+-  'Password must contain an uppercase letter']
+?                                             ^
+
++  'Password must contain an uppercase letter',
+?                                             ^
+
++  'Password must contain a special character or a number']
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.002s
+
+FAILED (failures=4)

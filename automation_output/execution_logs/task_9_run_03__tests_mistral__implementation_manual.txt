@@ -1,0 +1,27 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:27:03
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup (selected_test.TestProductCacheGet.test_cleanup) ... ok
+test_cleanup_empty_cache (selected_test.TestProductCacheGet.test_cleanup_empty_cache) ... ok
+test_delete_existing_key (selected_test.TestProductCacheGet.test_delete_existing_key) ... ok
+test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key) ... ok
+test_get_nonexistent_key (selected_test.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_initialization (selected_test.TestProductCacheGet.test_initialization) ... ok
+test_multiple_sets_same_key (selected_test.TestProductCacheGet.test_multiple_sets_same_key) ... ok
+test_set_and_get_happy_path (selected_test.TestProductCacheGet.test_set_and_get_happy_path) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (selected_test.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+test_ttl_expiry (selected_test.TestProductCacheGet.test_ttl_expiry) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 1.702s
+
+OK

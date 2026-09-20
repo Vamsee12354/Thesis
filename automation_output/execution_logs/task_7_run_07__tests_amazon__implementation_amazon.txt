@@ -1,0 +1,33 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:42
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_shopping_list (selected_test.TestShoppingListView.test_empty_shopping_list) ... ok
+test_html_in_title (selected_test.TestShoppingListView.test_html_in_title) ... FAIL
+test_normal_functionality (selected_test.TestShoppingListView.test_normal_functionality) ... ok
+test_single_product (selected_test.TestShoppingListView.test_single_product) ... ok
+
+======================================================================
+FAIL: test_html_in_title (selected_test.TestShoppingListView.test_html_in_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_07__tests_amazon__implementation_amazon\selected_test.py", line 24, in test_html_in_title
+    self.assertEqual(shopping_list(products), expected_output)
+AssertionError: '<ul><li><Bold>Item</Bold></li></ul>' != '<ul><li>&lt;Bold&gt;Item&lt;/Bold&gt;</li></ul>'
+- <ul><li><Bold>Item</Bold></li></ul>
+?         ^    ^    ^     ^
++ <ul><li>&lt;Bold&gt;Item&lt;/Bold&gt;</li></ul>
+?         ^^^^    ^^^^    ^^^^     ^^^^
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=1)

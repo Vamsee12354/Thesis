@@ -1,0 +1,25 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:57
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_values_are_none_returns_none (selected_test.TestGetMin2Attributes.test_all_values_are_none_returns_none) ... ok
+test_empty_list_returns_none (selected_test.TestGetMin2Attributes.test_empty_list_returns_none) ... ok
+test_happy_path_float_values (selected_test.TestGetMin2Attributes.test_happy_path_float_values) ... ok
+test_happy_path_integer_values (selected_test.TestGetMin2Attributes.test_happy_path_integer_values) ... ok
+test_mixed_missing_and_none_values (selected_test.TestGetMin2Attributes.test_mixed_missing_and_none_values) ... ok
+test_non_existent_attribute_returns_none (selected_test.TestGetMin2Attributes.test_non_existent_attribute_returns_none) ... ok
+test_non_numeric_values_ignored (selected_test.TestGetMin2Attributes.test_non_numeric_values_ignored) ... ok
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+test_string_attribute_returns_none (selected_test.TestGetMin2Attributes.test_string_attribute_returns_none) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.000s
+
+OK

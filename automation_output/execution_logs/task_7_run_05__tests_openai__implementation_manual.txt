@@ -1,0 +1,23 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:29
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_shopping_list (selected_test.TestShoppingListFunction.test_empty_shopping_list) ... ok
+test_html_content_in_title (selected_test.TestShoppingListFunction.test_html_content_in_title) ... ok
+test_multiple_products_with_html_titles (selected_test.TestShoppingListFunction.test_multiple_products_with_html_titles) ... ok
+test_normal_functionality (selected_test.TestShoppingListFunction.test_normal_functionality) ... ok
+test_single_product (selected_test.TestShoppingListFunction.test_single_product) ... ok
+test_titles_with_special_characters (selected_test.TestShoppingListFunction.test_titles_with_special_characters) ... ok
+test_titles_with_whitespace (selected_test.TestShoppingListFunction.test_titles_with_whitespace) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

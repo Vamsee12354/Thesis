@@ -1,0 +1,56 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:57
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_shopping_list (selected_test.TestShoppingList.test_empty_shopping_list) ... ok
+test_normal_functionality_with_multiple_items (selected_test.TestShoppingList.test_normal_functionality_with_multiple_items) ... ok
+test_product_with_empty_title (selected_test.TestShoppingList.test_product_with_empty_title) ... FAIL
+test_product_with_html_content_in_title (selected_test.TestShoppingList.test_product_with_html_content_in_title) ... ok
+test_product_with_missing_title_key (selected_test.TestShoppingList.test_product_with_missing_title_key) ... FAIL
+test_product_with_non_string_title (selected_test.TestShoppingList.test_product_with_non_string_title) ... ok
+test_product_with_none_title (selected_test.TestShoppingList.test_product_with_none_title) ... FAIL
+test_product_with_special_characters_in_title (selected_test.TestShoppingList.test_product_with_special_characters_in_title) ... ok
+test_product_with_unicode_characters_in_title (selected_test.TestShoppingList.test_product_with_unicode_characters_in_title) ... ok
+test_single_item_in_list (selected_test.TestShoppingList.test_single_item_in_list) ... ok
+
+======================================================================
+FAIL: test_product_with_empty_title (selected_test.TestShoppingList.test_product_with_empty_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_10__tests_mistral__implementation_mistral\selected_test.py", line 46, in test_product_with_empty_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li></li></ul>'
+- <ul></ul>
++ <ul><li></li></ul>
+
+
+======================================================================
+FAIL: test_product_with_missing_title_key (selected_test.TestShoppingList.test_product_with_missing_title_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_10__tests_mistral__implementation_mistral\selected_test.py", line 56, in test_product_with_missing_title_key
+    with self.assertRaises(KeyError):
+AssertionError: KeyError not raised
+
+======================================================================
+FAIL: test_product_with_none_title (selected_test.TestShoppingList.test_product_with_none_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_10__tests_mistral__implementation_mistral\selected_test.py", line 52, in test_product_with_none_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li>None</li></ul>'
+- <ul></ul>
++ <ul><li>None</li></ul>
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=3)

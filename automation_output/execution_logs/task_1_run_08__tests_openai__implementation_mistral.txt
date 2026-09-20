@@ -1,0 +1,26 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:12:11
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_or_missing_brands_return_none (selected_test.TestGetUniqueBrands.test_all_invalid_or_missing_brands_return_none) ... ok
+test_brands_with_leading_and_trailing_spaces (selected_test.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces) ... ok
+test_brands_with_only_spaces_are_filtered_out (selected_test.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out) ... ok
+test_case_insensitivity_and_capitalization (selected_test.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (selected_test.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (selected_test.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... ok
+test_multiple_none_and_valid_brands (selected_test.TestGetUniqueBrands.test_multiple_none_and_valid_brands) ... ok
+test_normal_case_with_valid_brands (selected_test.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ok
+test_preserves_order_of_first_occurrence (selected_test.TestGetUniqueBrands.test_preserves_order_of_first_occurrence) ... ok
+test_single_valid_brand (selected_test.TestGetUniqueBrands.test_single_valid_brand) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

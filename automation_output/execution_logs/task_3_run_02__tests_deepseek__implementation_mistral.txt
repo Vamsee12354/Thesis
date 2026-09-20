@@ -1,0 +1,120 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:39
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_values (selected_test.TestGetMin2Attributes.test_all_none_values) ... ERROR
+test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list) ... ERROR
+test_happy_path_battery_life (selected_test.TestGetMin2Attributes.test_happy_path_battery_life) ... ERROR
+test_happy_path_price (selected_test.TestGetMin2Attributes.test_happy_path_price) ... ERROR
+test_mixed_numeric_and_none (selected_test.TestGetMin2Attributes.test_mixed_numeric_and_none) ... ERROR
+test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field) ... ERROR
+test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values) ... ERROR
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ERROR
+
+======================================================================
+ERROR: test_all_none_values (selected_test.TestGetMin2Attributes.test_all_none_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 42, in test_all_none_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 47, in test_empty_list
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_happy_path_battery_life (selected_test.TestGetMin2Attributes.test_happy_path_battery_life)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 22, in test_happy_path_battery_life
+    result = get_min_2_attributes(data, "battery_life")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_happy_path_price (selected_test.TestGetMin2Attributes.test_happy_path_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 12, in test_happy_path_price
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_mixed_numeric_and_none (selected_test.TestGetMin2Attributes.test_mixed_numeric_and_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 77, in test_mixed_numeric_and_none
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 32, in test_non_existent_field
+    result = get_min_2_attributes(data, "non_existent_field")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 57, in test_non_numeric_values
+    result = get_min_2_attributes(data, "title")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\selected_test.py", line 67, in test_rounding_to_two_decimals
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+FAILED (errors=8)

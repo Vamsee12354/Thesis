@@ -1,0 +1,38 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:15
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_validate_form_all_fields_empty (selected_test.TestValidateForm.test_validate_form_all_fields_empty) ... ok
+test_validate_form_empty_email_error_message (selected_test.TestValidateForm.test_validate_form_empty_email_error_message) ... ok
+test_validate_form_invalid_email_format (selected_test.TestValidateForm.test_validate_form_invalid_email_format) ... ok
+test_validate_form_missing_subject_and_message (selected_test.TestValidateForm.test_validate_form_missing_subject_and_message) ... ok
+test_validate_form_multiple_errors_order (selected_test.TestValidateForm.test_validate_form_multiple_errors_order) ... ok
+test_validate_form_privacy_false (selected_test.TestValidateForm.test_validate_form_privacy_false) ... ok
+test_validate_form_privacy_not_boolean (selected_test.TestValidateForm.test_validate_form_privacy_not_boolean) ... ok
+test_validate_form_success (selected_test.TestValidateForm.test_validate_form_success) ... ok
+test_validate_form_success_with_whitespace (selected_test.TestValidateForm.test_validate_form_success_with_whitespace) ... FAIL
+test_validate_form_whitespace_only_fields (selected_test.TestValidateForm.test_validate_form_whitespace_only_fields) ... ok
+
+======================================================================
+FAIL: test_validate_form_success_with_whitespace (selected_test.TestValidateForm.test_validate_form_success_with_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_09__tests_gemma__implementation_openai\selected_test.py", line 22, in test_validate_form_success_with_whitespace
+    self.assertEqual(result, "Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True")
+AssertionError: 'Form is valid. Details:  Alexa  ,  James  ,abc@gmail.com,Question,Hallo!,True' != 'Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True'
+- Form is valid. Details:  Alexa  ,  James  ,abc@gmail.com,Question,Hallo!,True
+?                        --     -- --     --
++ Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

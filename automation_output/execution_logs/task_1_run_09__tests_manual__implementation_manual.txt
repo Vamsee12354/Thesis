@@ -1,0 +1,27 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:12:17
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_capital_can_distinguish_uniqueness (selected_test.Test_unique_brands.test_capital_can_distinguish_uniqueness) ... ok
+test_if_list_unique (selected_test.Test_unique_brands.test_if_list_unique) ... ok
+test_japenese_words (selected_test.Test_unique_brands.test_japenese_words) ... ok
+test_list_is_empty (selected_test.Test_unique_brands.test_list_is_empty) ... ok
+test_multiple_characters (selected_test.Test_unique_brands.test_multiple_characters) ... ok
+test_numbers_as_strings_uniqueness (selected_test.Test_unique_brands.test_numbers_as_strings_uniqueness) ... ok
+test_same_letter_uniqueness (selected_test.Test_unique_brands.test_same_letter_uniqueness) ... ok
+test_symbols_uniqueness (selected_test.Test_unique_brands.test_symbols_uniqueness) ... ok
+test_whitespace_only_brand (selected_test.Test_unique_brands.test_whitespace_only_brand) ... ok
+test_with_nike_case_variants (selected_test.Test_unique_brands.test_with_nike_case_variants) ... ok
+test_with_none_values (selected_test.Test_unique_brands.test_with_none_values) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.000s
+
+OK

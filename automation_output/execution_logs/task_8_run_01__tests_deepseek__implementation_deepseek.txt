@@ -1,0 +1,101 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:04
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_ignored (selected_test.TestSlugifyManual.test_all_ignored) ... FAIL
+test_basic_conversion (selected_test.TestSlugifyManual.test_basic_conversion) ... ok
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ERROR
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_with_spaces (selected_test.TestSlugifyManual.test_ignore_with_spaces) ... ok
+test_ignored_characters (selected_test.TestSlugifyManual.test_ignored_characters) ... FAIL
+test_mixed_language (selected_test.TestSlugifyManual.test_mixed_language) ... FAIL
+test_preserve_case (selected_test.TestSlugifyManual.test_preserve_case) ... ok
+test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ok
+test_truncate_mid_word (selected_test.TestSlugifyManual.test_truncate_mid_word) ... ok
+test_truncate_too_small (selected_test.TestSlugifyManual.test_truncate_too_small) ... ok
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... ok
+
+======================================================================
+ERROR: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 15, in test_custom_separator
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_deepseek__implementation_deepseek\implementation_manual.py", line 49, in slugify_manual
+    slug = re.sub(rf'{re.escape(separator)}+', separator, slug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 691, in _parse
+    raise source.error("nothing to repeat",
+re.error: nothing to repeat at position 0
+
+======================================================================
+FAIL: test_all_ignored (selected_test.TestSlugifyManual.test_all_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 39, in test_all_ignored
+    self.assertEqual(slugify_manual("$$$", ignore=["$"]), "$$$")
+AssertionError: '$-$-$' != '$$$'
+- $-$-$
+?  - -
++ $$$
+
+
+======================================================================
+FAIL: test_ignored_characters (selected_test.TestSlugifyManual.test_ignored_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 27, in test_ignored_characters
+    self.assertEqual(slugify_manual("\u4f60\u597d, \u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: '\u4f60\u597d' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d
++ \u4f60\u597d-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language (selected_test.TestSlugifyManual.test_mixed_language)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 36, in test_mixed_language
+    self.assertEqual(slugify_manual("\u041f\u0440\u0438\u0432\u0435\u0442, World!"), "privet-world")
+AssertionError: 'world' != 'privet-world'
+- world
++ privet-world
+
+
+======================================================================
+FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 24, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d, \u4e16\u754c"), "ni-hao-shi-jie")
+AssertionError: None != 'ni-hao-shi-jie'
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.009s
+
+FAILED (failures=4, errors=1)

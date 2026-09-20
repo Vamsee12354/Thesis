@@ -1,0 +1,41 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:11:47
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_or_missing_brands (selected_test.TestGetUniqueBrands.test_all_invalid_or_missing_brands) ... ok
+test_brands_with_leading_and_trailing_spaces (selected_test.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces) ... ok
+test_brands_with_non_string_values_ignored (selected_test.TestGetUniqueBrands.test_brands_with_non_string_values_ignored) ... FAIL
+test_brands_with_only_spaces_are_filtered_out (selected_test.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out) ... ok
+test_case_insensitivity_and_capitalization (selected_test.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (selected_test.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (selected_test.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... ok
+test_multiple_unique_brands_with_varied_cases (selected_test.TestGetUniqueBrands.test_multiple_unique_brands_with_varied_cases) ... ok
+test_normal_case_with_valid_brands (selected_test.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ok
+test_single_valid_brand (selected_test.TestGetUniqueBrands.test_single_valid_brand) ... ok
+
+======================================================================
+FAIL: test_brands_with_non_string_values_ignored (selected_test.TestGetUniqueBrands.test_brands_with_non_string_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_03__tests_openai__implementation_gemma\selected_test.py", line 125, in test_brands_with_non_string_values_ignored
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Validbrand', '123', "['list']"] != ['Validbrand']
+
+First list contains 2 additional elements.
+First extra element 1:
+'123'
+
+- ['Validbrand', '123', "['list']"]
++ ['Validbrand']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:47:59
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_none (selected_test.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (selected_test.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (selected_test.TestGetAveragePrice.test_empty_price_list) ... ok
+test_prices_all_zero (selected_test.TestGetAveragePrice.test_prices_all_zero) ... ok
+test_prices_with_floats_and_rounding (selected_test.TestGetAveragePrice.test_prices_with_floats_and_rounding) ... ok
+test_prices_with_non_numeric_values_ignored (selected_test.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored) ... FAIL
+test_prices_with_zero_and_none (selected_test.TestGetAveragePrice.test_prices_with_zero_and_none) ... ok
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_prices_with_non_numeric_values_ignored (selected_test.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_01__tests_openai__implementation_openai\selected_test.py", line 71, in test_prices_with_non_numeric_values_ignored
+    self.assertEqual(result, 150.0)
+AssertionError: None != 150.0
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=1)

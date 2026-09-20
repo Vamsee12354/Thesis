@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:14:25
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_string_returns_one (selected_test.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_exact_wpm_boundary (selected_test.TestGetReadDuration.test_exact_wpm_boundary) ... ok
+test_just_over_wpm_boundary (selected_test.TestGetReadDuration.test_just_over_wpm_boundary) ... ok
+test_long_post_returns_correct_minutes (selected_test.TestGetReadDuration.test_long_post_returns_correct_minutes) ... ok
+test_non_latin_characters_whitespace_splitting (selected_test.TestGetReadDuration.test_non_latin_characters_whitespace_splitting) ... ok
+test_normal_paragraph_returns_one (selected_test.TestGetReadDuration.test_normal_paragraph_returns_one) ... ok
+test_short_text_returns_one (selected_test.TestGetReadDuration.test_short_text_returns_one) ... ok
+test_whitespace_only_returns_one (selected_test.TestGetReadDuration.test_whitespace_only_returns_one) ... FAIL
+
+======================================================================
+FAIL: test_whitespace_only_returns_one (selected_test.TestGetReadDuration.test_whitespace_only_returns_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_01__tests_gemma__implementation_amazon\selected_test.py", line 25, in test_whitespace_only_returns_one
+    self.assertEqual(result, 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=1)

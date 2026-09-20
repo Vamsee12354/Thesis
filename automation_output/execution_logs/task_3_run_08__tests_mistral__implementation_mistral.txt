@@ -1,0 +1,46 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:31:06
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_attribute_with_all_none_values (selected_test.TestGetMin2Attributes.test_attribute_with_all_none_values) ... ok
+test_attribute_with_mixed_none_and_valid_values (selected_test.TestGetMin2Attributes.test_attribute_with_mixed_none_and_valid_values) ... ok
+test_attribute_with_mixed_types_including_none (selected_test.TestGetMin2Attributes.test_attribute_with_mixed_types_including_none) ... FAIL
+test_attribute_with_string_values_raises_error (selected_test.TestGetMin2Attributes.test_attribute_with_string_values_raises_error) ... FAIL
+test_non_existent_attribute (selected_test.TestGetMin2Attributes.test_non_existent_attribute) ... ok
+test_rounded_output_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounded_output_to_two_decimals) ... ok
+test_valid_numeric_attribute_with_all_values (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_all_values) ... ok
+test_valid_numeric_attribute_with_empty_list (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_empty_list) ... ok
+test_valid_numeric_attribute_with_float_values (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_float_values) ... ok
+test_valid_numeric_attribute_with_integer_values (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_integer_values) ... ok
+test_valid_numeric_attribute_with_mixed_values (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_mixed_values) ... ok
+test_valid_numeric_attribute_with_negative_values (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_negative_values) ... ok
+test_valid_numeric_attribute_with_none_values (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_none_values) ... ok
+test_valid_numeric_attribute_with_single_product (selected_test.TestGetMin2Attributes.test_valid_numeric_attribute_with_single_product) ... ok
+
+======================================================================
+FAIL: test_attribute_with_mixed_types_including_none (selected_test.TestGetMin2Attributes.test_attribute_with_mixed_types_including_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_08__tests_mistral__implementation_mistral\selected_test.py", line 123, in test_attribute_with_mixed_types_including_none
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_attribute_with_string_values_raises_error (selected_test.TestGetMin2Attributes.test_attribute_with_string_values_raises_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_08__tests_mistral__implementation_mistral\selected_test.py", line 113, in test_attribute_with_string_values_raises_error
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+FAILED (failures=2)

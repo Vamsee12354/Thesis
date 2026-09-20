@@ -1,0 +1,137 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:39
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... FAIL
+test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity) ... FAIL
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_ignore_list_vs_string (selected_test.TestSlugifyManual.test_ignore_list_vs_string) ... FAIL
+test_only_punctuation_input (selected_test.TestSlugifyManual.test_only_punctuation_input) ... ok
+test_separator_as_integer (selected_test.TestSlugifyManual.test_separator_as_integer) ... ERROR
+test_small_truncate_value (selected_test.TestSlugifyManual.test_small_truncate_value) ... ok
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... FAIL
+
+======================================================================
+ERROR: test_separator_as_integer (selected_test.TestSlugifyManual.test_separator_as_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 71, in test_separator_as_integer
+    result = slugify_manual("a b", separator=45) # 45 is '-'
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\implementation_manual.py", line 63, in slugify_manual
+    slug = re.sub(r'[\s]+', separator, slug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 317, in _subx
+    template = _compile_repl(template, pattern)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 308, in _compile_repl
+    return _parser.parse_template(repl, pattern)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 1009, in parse_template
+    s = Tokenizer(source)
+        ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 235, in __init__
+    string = str(string, 'latin1')
+             ^^^^^^^^^^^^^^^^^^^^^
+TypeError: decoding to str: need a bytes-like object, int found
+
+======================================================================
+FAIL: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 9, in test_basic_slugification
+    self.assertEqual(result, "hello - world")
+AssertionError: 'hello-world' != 'hello - world'
+- hello-world
++ hello - world
+?      + +
+
+
+======================================================================
+FAIL: test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 19, in test_case_sensitivity
+    self.assertEqual(result, "StUdLy - CaPs")
+AssertionError: 'StUdLy-CaPs' != 'StUdLy - CaPs'
+- StUdLy-CaPs
++ StUdLy - CaPs
+?       + +
+
+
+======================================================================
+FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 30, in test_ignore_characters
+    self.assertEqual(result, "\u4f60 \u597d - shi - jie")
+AssertionError: '\u4f60-\u597d-\u4e16-\u754c' != '\u4f60 \u597d - shi - jie'
+- \u4f60-\u597d-\u4e16-\u754c
++ \u4f60 \u597d - shi - jie
+
+
+======================================================================
+FAIL: test_ignore_list_vs_string (selected_test.TestSlugifyManual.test_ignore_list_vs_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 61, in test_ignore_list_vs_string
+    self.assertEqual(result_str, "a!b")
+AssertionError: 'a-!-b' != 'a!b'
+- a-!-b
+?  - -
++ a!b
+
+
+======================================================================
+FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 24, in test_truncation
+    self.assertEqual(result, "call - me")
+AssertionError: 'call-me' != 'call - me'
+- call-me
++ call - me
+?     + +
+
+
+======================================================================
+FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 56, in test_unicode_transliteration
+    self.assertEqual(result, "ni - hao")
+AssertionError: '\u4f60-\u597d' != 'ni - hao'
+- \u4f60-\u597d
++ ni - hao
+
+
+======================================================================
+FAIL: test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_gemma__implementation_mistral\selected_test.py", line 43, in test_whitespace_handling
+    self.assertEqual(result, "foo - bar")
+AssertionError: 'foo-bar' != 'foo - bar'
+- foo-bar
++ foo - bar
+?    + +
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.007s
+
+FAILED (failures=7, errors=1)

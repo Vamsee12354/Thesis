@@ -1,0 +1,1 @@
+ERROR IN RUN 10: 'NoneType' object is not subscriptable

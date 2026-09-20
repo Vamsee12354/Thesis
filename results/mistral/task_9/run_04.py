@@ -1,5 +1,5 @@
 
-class ProductCacheGet:
+class Product_cache_get:
     def __init__(self, expiry_time):
         self.expiry_time = expiry_time
         self.cache = {}
@@ -11,13 +11,16 @@ class ProductCacheGet:
             return
         self.cache[key] = {
             'value': value,
-            'expiry': ttl
+            'expiry': (time.time() * 1000) + ttl
         }
 
     def get(self, key):
         if key not in self.cache:
             return None
         item = self.cache[key]
+        if time.time() * 1000 > item['expiry']:
+            del self.cache[key]
+            return None
         return item['value']
 
     def delete(self, key):
@@ -29,7 +32,7 @@ class ProductCacheGet:
     def cleanup(self):
         self.cache.clear()
         return "Cleaned successfully"
-class Product_cache_get(ProductCacheGet):
-    pass
-Product_cache_get = Product_cache_get
-del ProductCacheGet
+
+import time
+time_module = time
+time = time_module

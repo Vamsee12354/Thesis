@@ -1,0 +1,133 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:40
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_values_are_none (selected_test.TestGetMin2Attributes.test_all_values_are_none) ... ERROR
+test_battery_life_minimum (selected_test.TestGetMin2Attributes.test_battery_life_minimum) ... ERROR
+test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list) ... ERROR
+test_happy_path_float_values (selected_test.TestGetMin2Attributes.test_happy_path_float_values) ... ERROR
+test_happy_path_integer_values (selected_test.TestGetMin2Attributes.test_happy_path_integer_values) ... ERROR
+test_mixed_numeric_types (selected_test.TestGetMin2Attributes.test_mixed_numeric_types) ... ERROR
+test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field) ... ERROR
+test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values) ... ERROR
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ERROR
+
+======================================================================
+ERROR: test_all_values_are_none (selected_test.TestGetMin2Attributes.test_all_values_are_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 83, in test_all_values_are_none
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_battery_life_minimum (selected_test.TestGetMin2Attributes.test_battery_life_minimum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 52, in test_battery_life_minimum
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 95, in test_empty_list
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_happy_path_float_values (selected_test.TestGetMin2Attributes.test_happy_path_float_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 18, in test_happy_path_float_values
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_happy_path_integer_values (selected_test.TestGetMin2Attributes.test_happy_path_integer_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 35, in test_happy_path_integer_values
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_mixed_numeric_types (selected_test.TestGetMin2Attributes.test_mixed_numeric_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 144, in test_mixed_numeric_types
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 67, in test_non_existent_field
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 112, in test_non_numeric_values
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\selected_test.py", line 128, in test_rounding_to_two_decimals
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_gemma__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (errors=9)

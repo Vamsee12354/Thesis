@@ -24,3 +24,4 @@ def get_unique(brand_list):
         result.append(unique_brands_map[key])
         
     return result
+

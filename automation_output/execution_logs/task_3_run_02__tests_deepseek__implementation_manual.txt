@@ -1,0 +1,36 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:39
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_values (selected_test.TestGetMin2Attributes.test_all_none_values) ... ok
+test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list) ... ok
+test_happy_path_battery_life (selected_test.TestGetMin2Attributes.test_happy_path_battery_life) ... ok
+test_happy_path_price (selected_test.TestGetMin2Attributes.test_happy_path_price) ... ok
+test_mixed_numeric_and_none (selected_test.TestGetMin2Attributes.test_mixed_numeric_and_none) ... ok
+test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field) ... ok
+test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values) ... ERROR
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+
+======================================================================
+ERROR: test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_manual\selected_test.py", line 57, in test_non_numeric_values
+    result = get_min_2_attributes(data, "title")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_deepseek__implementation_manual\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (errors=1)

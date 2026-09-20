@@ -1,0 +1,38 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:10
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_email (selected_test.TestFormValidation.test_empty_email) ... ok
+test_empty_fields (selected_test.TestFormValidation.test_empty_fields) ... ok
+test_invalid_email_and_privacy (selected_test.TestFormValidation.test_invalid_email_and_privacy) ... ok
+test_invalid_email_format (selected_test.TestFormValidation.test_invalid_email_format) ... ok
+test_invalid_privacy (selected_test.TestFormValidation.test_invalid_privacy) ... ok
+test_invalid_privacy_type (selected_test.TestFormValidation.test_invalid_privacy_type) ... ok
+test_multiple_errors (selected_test.TestFormValidation.test_multiple_errors) ... ok
+test_valid_form (selected_test.TestFormValidation.test_valid_form) ... ok
+test_valid_form_with_whitespace (selected_test.TestFormValidation.test_valid_form_with_whitespace) ... FAIL
+test_whitespace_fields (selected_test.TestFormValidation.test_whitespace_fields) ... ok
+
+======================================================================
+FAIL: test_valid_form_with_whitespace (selected_test.TestFormValidation.test_valid_form_with_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_08__tests_deepseek__implementation_openai\selected_test.py", line 31, in test_valid_form_with_whitespace
+    self.assertEqual(result, "Form is valid. Details:John,Doe,john@example.com,Subject,Message,True")
+AssertionError: 'Form is valid. Details: John , Doe ,john@example.com, Subject , Message ,True' != 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details: John , Doe ,john@example.com, Subject , Message ,True
+?                        -    - -   -                  -       - -       -
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

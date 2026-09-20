@@ -1,0 +1,34 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:54
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_values_none_for_attribute (selected_test.TestGetMin2Attributes.test_all_values_none_for_attribute) ... ok
+test_attribute_not_present_in_any_product (selected_test.TestGetMin2Attributes.test_attribute_not_present_in_any_product) ... ok
+test_attribute_values_all_none_and_missing (selected_test.TestGetMin2Attributes.test_attribute_values_all_none_and_missing) ... ok
+test_attribute_values_are_zero (selected_test.TestGetMin2Attributes.test_attribute_values_are_zero) ... ok
+test_empty_data_list (selected_test.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_ignore_products_without_attribute (selected_test.TestGetMin2Attributes.test_ignore_products_without_attribute) ... ok
+test_integer_and_float_values (selected_test.TestGetMin2Attributes.test_integer_and_float_values) ... ok
+test_minimum_battery_life_with_valid_data (selected_test.TestGetMin2Attributes.test_minimum_battery_life_with_valid_data) ... ok
+test_minimum_price_with_valid_data (selected_test.TestGetMin2Attributes.test_minimum_price_with_valid_data) ... ok
+test_mixed_none_and_numeric_values (selected_test.TestGetMin2Attributes.test_mixed_none_and_numeric_values) ... FAIL
+
+======================================================================
+FAIL: test_mixed_none_and_numeric_values (selected_test.TestGetMin2Attributes.test_mixed_none_and_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_05__tests_openai__implementation_mistral\selected_test.py", line 102, in test_mixed_none_and_numeric_values
+    self.assertEqual(result, expected)
+AssertionError: 5.55 != 5.56
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

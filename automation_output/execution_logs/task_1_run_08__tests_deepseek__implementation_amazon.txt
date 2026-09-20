@@ -1,0 +1,103 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:12:09
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_or_empty_brands (selected_test.TestGetUnique.test_all_none_or_empty_brands) ... FAIL
+test_case_insensitive_deduplication (selected_test.TestGetUnique.test_case_insensitive_deduplication) ... FAIL
+test_empty_input (selected_test.TestGetUnique.test_empty_input) ... ok
+test_mixed_valid_and_invalid (selected_test.TestGetUnique.test_mixed_valid_and_invalid) ... FAIL
+test_normal_case_with_valid_brands (selected_test.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_preserve_order_first_occurrence (selected_test.TestGetUnique.test_preserve_order_first_occurrence) ... FAIL
+test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand) ... FAIL
+
+======================================================================
+FAIL: test_all_none_or_empty_brands (selected_test.TestGetUnique.test_all_none_or_empty_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_08__tests_deepseek__implementation_amazon\selected_test.py", line 16, in test_all_none_or_empty_brands
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_case_insensitive_deduplication (selected_test.TestGetUnique.test_case_insensitive_deduplication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_08__tests_deepseek__implementation_amazon\selected_test.py", line 28, in test_case_insensitive_deduplication
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_mixed_valid_and_invalid (selected_test.TestGetUnique.test_mixed_valid_and_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_08__tests_deepseek__implementation_amazon\selected_test.py", line 40, in test_mixed_valid_and_invalid
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Valid1', 'Valid2', ''] != ['Valid1', 'Valid2']
+
+First list contains 1 additional elements.
+First extra element 2:
+''
+
+- ['Valid1', 'Valid2', '']
+?                    ----
+
++ ['Valid1', 'Valid2']
+
+======================================================================
+FAIL: test_preserve_order_first_occurrence (selected_test.TestGetUnique.test_preserve_order_first_occurrence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_08__tests_deepseek__implementation_amazon\selected_test.py", line 55, in test_preserve_order_first_occurrence
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Branda', 'Brandb'] != ['BrandA', 'BrandB']
+
+First differing element 0:
+'Branda'
+'BrandA'
+
+- ['Branda', 'Brandb']
+?        ^         ^
+
++ ['BrandA', 'BrandB']
+?        ^         ^
+
+
+======================================================================
+FAIL: test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_08__tests_deepseek__implementation_amazon\selected_test.py", line 45, in test_single_valid_brand
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Singlebrand'] != ['SingleBrand']
+
+First differing element 0:
+'Singlebrand'
+'SingleBrand'
+
+- ['Singlebrand']
+?         ^
+
++ ['SingleBrand']
+?         ^
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=5)

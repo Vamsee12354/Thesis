@@ -1,0 +1,63 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T16:57:59
+Return code: 1
+================================================================================
+
+test_get_unique_all_invalid_values (selected_test.TestGetUnique.test_get_unique_all_invalid_values) ... FAIL
+test_get_unique_case_insensitivity_and_normalization (selected_test.TestGetUnique.test_get_unique_case_insensitivity_and_normalization) ... ok
+test_get_unique_empty_input (selected_test.TestGetUnique.test_get_unique_empty_input) ... ok
+test_get_unique_mixed_duplicates_and_blanks (selected_test.TestGetUnique.test_get_unique_mixed_duplicates_and_blanks) ... FAIL
+test_get_unique_normal_case (selected_test.TestGetUnique.test_get_unique_normal_case) ... ok
+test_get_unique_preserves_order_of_first_appearance (selected_test.TestGetUnique.test_get_unique_preserves_order_of_first_appearance) ... ok
+test_get_unique_with_whitespace_only_strings (selected_test.TestGetUnique.test_get_unique_with_whitespace_only_strings) ... FAIL
+
+======================================================================
+FAIL: test_get_unique_all_invalid_values (selected_test.TestGetUnique.test_get_unique_all_invalid_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_gemma__implementation_amazon\selected_test.py", line 37, in test_get_unique_all_invalid_values
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_get_unique_mixed_duplicates_and_blanks (selected_test.TestGetUnique.test_get_unique_mixed_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_gemma__implementation_amazon\selected_test.py", line 55, in test_get_unique_mixed_duplicates_and_blanks
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_get_unique_with_whitespace_only_strings (selected_test.TestGetUnique.test_get_unique_with_whitespace_only_strings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_gemma__implementation_amazon\selected_test.py", line 93, in test_get_unique_with_whitespace_only_strings
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['', 'Valid'] != ['Valid']
+
+First differing element 0:
+''
+'Valid'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Valid'
+
+- ['', 'Valid']
+?  ----
+
++ ['Valid']
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=3)

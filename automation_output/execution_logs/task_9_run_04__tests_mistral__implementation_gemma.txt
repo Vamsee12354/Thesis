@@ -1,0 +1,48 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:29:17
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup_entire_cache (selected_test.TestProductCacheGet.test_cleanup_entire_cache) ... ok
+test_cleanup_on_empty_cache (selected_test.TestProductCacheGet.test_cleanup_on_empty_cache) ... ok
+test_custom_ttl_expiry (selected_test.TestProductCacheGet.test_custom_ttl_expiry) ... ok
+test_delete_existing_key (selected_test.TestProductCacheGet.test_delete_existing_key) ... ok
+test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key) ... FAIL
+test_expiry_time_enforcement (selected_test.TestProductCacheGet.test_expiry_time_enforcement) ... ok
+test_get_nonexistent_key (selected_test.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_initialization_with_negative_expiry_time (selected_test.TestProductCacheGet.test_initialization_with_negative_expiry_time) ... ok
+test_initialization_with_positive_expiry_time (selected_test.TestProductCacheGet.test_initialization_with_positive_expiry_time) ... ok
+test_initialization_with_zero_expiry_time (selected_test.TestProductCacheGet.test_initialization_with_zero_expiry_time) ... ok
+test_multiple_keys_in_cache (selected_test.TestProductCacheGet.test_multiple_keys_in_cache) ... ok
+test_overwrite_existing_key (selected_test.TestProductCacheGet.test_overwrite_existing_key) ... ok
+test_set_and_get_basic_value (selected_test.TestProductCacheGet.test_set_and_get_basic_value) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_custom_ttl (selected_test.TestProductCacheGet.test_set_with_negative_custom_ttl) ... ok
+test_set_with_zero_custom_ttl (selected_test.TestProductCacheGet.test_set_with_zero_custom_ttl) ... FAIL
+
+======================================================================
+FAIL: test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_04__tests_mistral__implementation_gemma\selected_test.py", line 54, in test_delete_nonexistent_key
+    self.assertEqual(result, "deleted successfully")
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_set_with_zero_custom_ttl (selected_test.TestProductCacheGet.test_set_with_zero_custom_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_04__tests_mistral__implementation_gemma\selected_test.py", line 42, in test_set_with_zero_custom_ttl
+    self.assertIsNone(cache.get('a'))
+AssertionError: 'apple' is not None
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.403s
+
+FAILED (failures=2)

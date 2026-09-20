@@ -1,0 +1,78 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:31:37
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup_on_empty_cache (selected_test.TestProductCacheGetCleanup.test_cleanup_on_empty_cache) ... ok
+test_cleanup_removes_all_items (selected_test.TestProductCacheGetCleanup.test_cleanup_removes_all_items) ... ok
+test_delete_existing_key (selected_test.TestProductCacheGetDelete.test_delete_existing_key) ... ok
+test_delete_non_existent_key (selected_test.TestProductCacheGetDelete.test_delete_non_existent_key) ... FAIL
+test_get_before_set (selected_test.TestProductCacheGetEdgeCases.test_get_before_set) ... ok
+test_multiple_sets_and_gets (selected_test.TestProductCacheGetEdgeCases.test_multiple_sets_and_gets) ... ok
+test_ttl_with_large_value (selected_test.TestProductCacheGetEdgeCases.test_ttl_with_large_value) ... ok
+test_ttl_with_small_value (selected_test.TestProductCacheGetEdgeCases.test_ttl_with_small_value) ... ok
+test_get_existing_key (selected_test.TestProductCacheGetGet.test_get_existing_key) ... ok
+test_get_expired_key (selected_test.TestProductCacheGetGet.test_get_expired_key) ... ok
+test_get_non_existent_key (selected_test.TestProductCacheGetGet.test_get_non_existent_key) ... ok
+test_init_with_negative_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_negative_expiry_time) ... ERROR
+test_init_with_positive_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_positive_expiry_time) ... ERROR
+test_init_with_zero_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_zero_expiry_time) ... ERROR
+test_set_and_get_basic_value (selected_test.TestProductCacheGetSet.test_set_and_get_basic_value) ... ok
+test_set_overwrites_existing_value (selected_test.TestProductCacheGetSet.test_set_overwrites_existing_value) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCacheGetSet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (selected_test.TestProductCacheGetSet.test_set_with_negative_ttl) ... ok
+test_set_with_zero_ttl (selected_test.TestProductCacheGetSet.test_set_with_zero_ttl) ... FAIL
+
+======================================================================
+ERROR: test_init_with_negative_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_negative_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_05__tests_mistral__implementation_gemma\selected_test.py", line 16, in test_init_with_negative_expiry_time
+    self.assertEqual(cache.expiry_time, -1000)
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Product_cache_get' object has no attribute 'expiry_time'
+
+======================================================================
+ERROR: test_init_with_positive_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_positive_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_05__tests_mistral__implementation_gemma\selected_test.py", line 8, in test_init_with_positive_expiry_time
+    self.assertEqual(cache.expiry_time, 60000)
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Product_cache_get' object has no attribute 'expiry_time'
+
+======================================================================
+ERROR: test_init_with_zero_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_zero_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_05__tests_mistral__implementation_gemma\selected_test.py", line 12, in test_init_with_zero_expiry_time
+    self.assertEqual(cache.expiry_time, 0)
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Product_cache_get' object has no attribute 'expiry_time'
+
+======================================================================
+FAIL: test_delete_non_existent_key (selected_test.TestProductCacheGetDelete.test_delete_non_existent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_05__tests_mistral__implementation_gemma\selected_test.py", line 71, in test_delete_non_existent_key
+    self.assertEqual(result, 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_set_with_zero_ttl (selected_test.TestProductCacheGetSet.test_set_with_zero_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_05__tests_mistral__implementation_gemma\selected_test.py", line 41, in test_set_with_zero_ttl
+    self.assertIsNone(self.cache.get('zero_ttl'))
+AssertionError: 'value' is not None
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.008s
+
+FAILED (failures=2, errors=3)

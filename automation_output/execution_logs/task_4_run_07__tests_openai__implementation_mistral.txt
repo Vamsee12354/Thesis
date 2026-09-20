@@ -1,0 +1,42 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:23
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_201_words_returns_two_minutes (selected_test.TestGetReadDuration.test_201_words_returns_two_minutes) ... FAIL
+test_450_words_returns_three_minutes (selected_test.TestGetReadDuration.test_450_words_returns_three_minutes) ... FAIL
+test_empty_string_returns_minimum_one (selected_test.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exact_200_words_returns_one_minute (selected_test.TestGetReadDuration.test_exact_200_words_returns_one_minute) ... ok
+test_long_non_latin_text_with_spaces (selected_test.TestGetReadDuration.test_long_non_latin_text_with_spaces) ... ok
+test_non_latin_characters_counted_as_words (selected_test.TestGetReadDuration.test_non_latin_characters_counted_as_words) ... ok
+test_single_word_returns_one_minute (selected_test.TestGetReadDuration.test_single_word_returns_one_minute) ... ok
+test_string_with_only_whitespace_returns_minimum_one (selected_test.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one) ... ok
+test_text_with_multiple_spaces_between_words (selected_test.TestGetReadDuration.test_text_with_multiple_spaces_between_words) ... ok
+test_text_with_newlines_and_tabs (selected_test.TestGetReadDuration.test_text_with_newlines_and_tabs) ... ok
+
+======================================================================
+FAIL: test_201_words_returns_two_minutes (selected_test.TestGetReadDuration.test_201_words_returns_two_minutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_07__tests_openai__implementation_mistral\selected_test.py", line 44, in test_201_words_returns_two_minutes
+    self.assertEqual(result, 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_450_words_returns_three_minutes (selected_test.TestGetReadDuration.test_450_words_returns_three_minutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_07__tests_openai__implementation_mistral\selected_test.py", line 52, in test_450_words_returns_three_minutes
+    self.assertEqual(result, 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=2)

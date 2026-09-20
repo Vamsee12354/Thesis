@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:29:17
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup_clears_all_items (selected_test.TestProductCacheGet.test_cleanup_clears_all_items) ... ok
+test_delete_existing_key (selected_test.TestProductCacheGet.test_delete_existing_key) ... ok
+test_get_after_cleanup (selected_test.TestProductCacheGet.test_get_after_cleanup) ... ok
+test_get_non_existent_key (selected_test.TestProductCacheGet.test_get_non_existent_key) ... ok
+test_set_and_get_happy_path (selected_test.TestProductCacheGet.test_set_and_get_happy_path) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl_invalidates_immediately (selected_test.TestProductCacheGet.test_set_with_negative_ttl_invalidates_immediately) ... ok
+test_set_with_very_short_ttl (selected_test.TestProductCacheGet.test_set_with_very_short_ttl) ... FAIL
+
+======================================================================
+FAIL: test_set_with_very_short_ttl (selected_test.TestProductCacheGet.test_set_with_very_short_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_04__tests_gemma__implementation_amazon\selected_test.py", line 71, in test_set_with_very_short_ttl
+    self.assertIsNone(result)
+AssertionError: 'quick' is not None
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.012s
+
+FAILED (failures=1)

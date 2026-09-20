@@ -1,0 +1,67 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:20
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_ignored_chars (selected_test.TestSlugifyManual.test_all_ignored_chars) ... FAIL
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_complex_case (selected_test.TestSlugifyManual.test_complex_case) ... ok
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_string (selected_test.TestSlugifyManual.test_empty_string) ... ok
+test_ignored_characters (selected_test.TestSlugifyManual.test_ignored_characters) ... FAIL
+test_leading_trailing_spaces (selected_test.TestSlugifyManual.test_leading_trailing_spaces) ... ok
+test_mixed_alphanumeric (selected_test.TestSlugifyManual.test_mixed_alphanumeric) ... ok
+test_multiple_spaces (selected_test.TestSlugifyManual.test_multiple_spaces) ... ok
+test_preserve_case (selected_test.TestSlugifyManual.test_preserve_case) ... ok
+test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ok
+test_truncate_mid_word (selected_test.TestSlugifyManual.test_truncate_mid_word) ... FAIL
+test_truncate_small_value (selected_test.TestSlugifyManual.test_truncate_small_value) ... ok
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+
+======================================================================
+FAIL: test_all_ignored_chars (selected_test.TestSlugifyManual.test_all_ignored_chars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_deepseek__implementation_deepseek\selected_test.py", line 42, in test_all_ignored_chars
+    self.assertEqual(slugify_manual("abc", ignore="abc"), "abc")
+AssertionError: 'a-b-c' != 'abc'
+- a-b-c
+?  - -
++ abc
+
+
+======================================================================
+FAIL: test_ignored_characters (selected_test.TestSlugifyManual.test_ignored_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_deepseek__implementation_deepseek\selected_test.py", line 27, in test_ignored_characters
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60","\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: None != '\u4f60\u597d-shi-jie'
+
+======================================================================
+FAIL: test_truncate_mid_word (selected_test.TestSlugifyManual.test_truncate_mid_word)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_deepseek__implementation_deepseek\selected_test.py", line 45, in test_truncate_mid_word
+    self.assertEqual(slugify_manual("longword", truncate=4), "long")
+AssertionError: None != 'long'
+
+======================================================================
+FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_deepseek__implementation_deepseek\selected_test.py", line 24, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c"), "ni-hao-shi-jie")
+AssertionError: None != 'ni-hao-shi-jie'
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.007s
+
+FAILED (failures=4)

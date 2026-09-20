@@ -1,0 +1,129 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:13
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_missing_password (selected_test.TestIsValidPassword.test_missing_password) ... FAIL
+test_password_exact_max_length (selected_test.TestIsValidPassword.test_password_exact_max_length) ... ok
+test_password_exact_min_length (selected_test.TestIsValidPassword.test_password_exact_min_length) ... ok
+test_password_missing_all_requirements (selected_test.TestIsValidPassword.test_password_missing_all_requirements) ... FAIL
+test_password_missing_lowercase (selected_test.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_multiple_requirements (selected_test.TestIsValidPassword.test_password_missing_multiple_requirements) ... ok
+test_password_missing_special_or_number (selected_test.TestIsValidPassword.test_password_missing_special_or_number) ... ok
+test_password_missing_uppercase (selected_test.TestIsValidPassword.test_password_missing_uppercase) ... ok
+test_password_none (selected_test.TestIsValidPassword.test_password_none) ... ERROR
+test_password_too_long (selected_test.TestIsValidPassword.test_password_too_long) ... FAIL
+test_password_too_short (selected_test.TestIsValidPassword.test_password_too_short) ... FAIL
+test_password_with_only_special_chars (selected_test.TestIsValidPassword.test_password_with_only_special_chars) ... FAIL
+test_password_with_spaces (selected_test.TestIsValidPassword.test_password_with_spaces) ... ok
+test_valid_password_with_all_requirements (selected_test.TestIsValidPassword.test_valid_password_with_all_requirements) ... ok
+test_valid_password_with_special_chars (selected_test.TestIsValidPassword.test_valid_password_with_special_chars) ... ok
+
+======================================================================
+ERROR: test_password_none (selected_test.TestIsValidPassword.test_password_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\selected_test.py", line 11, in test_password_none
+    result = IsValidPassword(None)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\implementation_manual.py", line 3, in IsValidPassword
+    if len(password)==0:
+       ^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+
+======================================================================
+FAIL: test_missing_password (selected_test.TestIsValidPassword.test_missing_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\selected_test.py", line 8, in test_missing_password
+    self.assertEqual(result, ["Please fill the password"])
+AssertionError: 'Please fill the password' != ['Please fill the password']
+
+======================================================================
+FAIL: test_password_missing_all_requirements (selected_test.TestIsValidPassword.test_password_missing_all_requirements)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\selected_test.py", line 52, in test_password_missing_all_requirements
+    self.assertEqual(result, [
+AssertionError: Lists differ: ['Len[62 chars]ain a lowercase letter', 'Password must contai[75 chars]ber'] != ['Len[62 chars]ain an uppercase letter', 'Password must conta[75 chars]ber']
+
+First differing element 1:
+'Password must contain a lowercase letter'
+'Password must contain an uppercase letter'
+
+  ['Length must be between 12 and 72 characters',
++  'Password must contain an uppercase letter',
+   'Password must contain a lowercase letter',
+-  'Password must contain an uppercase letter',
+   'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_password_too_long (selected_test.TestIsValidPassword.test_password_too_long)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\selected_test.py", line 20, in test_password_too_long
+    self.assertEqual(result, ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_password_too_short (selected_test.TestIsValidPassword.test_password_too_short)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\selected_test.py", line 16, in test_password_too_short
+    self.assertEqual(result, ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_password_with_only_special_chars (selected_test.TestIsValidPassword.test_password_with_only_special_chars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_mistral__implementation_manual\selected_test.py", line 73, in test_password_with_only_special_chars
+    self.assertEqual(result, [
+AssertionError: Lists differ: ['Password must contain a lowercase letter'[98 chars]ber'] != ['Length must be between 12 and 72 characte[88 chars]ter']
+
+First differing element 0:
+'Password must contain a lowercase letter'
+'Length must be between 12 and 72 characters'
+
+- ['Password must contain a lowercase letter',
++ ['Length must be between 12 and 72 characters',
+   'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
++  'Password must contain a lowercase letter']
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.003s
+
+FAILED (failures=5, errors=1)

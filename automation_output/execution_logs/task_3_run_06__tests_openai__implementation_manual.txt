@@ -1,0 +1,57 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:59
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_values_none (selected_test.TestGetMin2Attributes.test_all_values_none) ... ERROR
+test_attribute_not_present_in_any_product (selected_test.TestGetMin2Attributes.test_attribute_not_present_in_any_product) ... ok
+test_attribute_values_are_not_numeric (selected_test.TestGetMin2Attributes.test_attribute_values_are_not_numeric) ... ERROR
+test_empty_data_list (selected_test.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_ignore_products_without_attribute (selected_test.TestGetMin2Attributes.test_ignore_products_without_attribute) ... ok
+test_minimum_value_present (selected_test.TestGetMin2Attributes.test_minimum_value_present) ... ok
+test_mixed_none_and_numeric_values (selected_test.TestGetMin2Attributes.test_mixed_none_and_numeric_values) ... FAIL
+test_rounding_of_minimum_value (selected_test.TestGetMin2Attributes.test_rounding_of_minimum_value) ... ok
+test_values_are_integers_and_floats (selected_test.TestGetMin2Attributes.test_values_are_integers_and_floats) ... ok
+
+======================================================================
+ERROR: test_all_values_none (selected_test.TestGetMin2Attributes.test_all_values_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_06__tests_openai__implementation_manual\selected_test.py", line 38, in test_all_values_none
+    self.assertIsNone(get_min_2_attributes(data, "title"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_06__tests_openai__implementation_manual\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+======================================================================
+ERROR: test_attribute_values_are_not_numeric (selected_test.TestGetMin2Attributes.test_attribute_values_are_not_numeric)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_06__tests_openai__implementation_manual\selected_test.py", line 88, in test_attribute_values_are_not_numeric
+    self.assertIsNone(get_min_2_attributes(data, "price"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_06__tests_openai__implementation_manual\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+======================================================================
+FAIL: test_mixed_none_and_numeric_values (selected_test.TestGetMin2Attributes.test_mixed_none_and_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_06__tests_openai__implementation_manual\selected_test.py", line 56, in test_mixed_none_and_numeric_values
+    self.assertEqual(get_min_2_attributes(data, "weight"), 5.56)
+AssertionError: 5.55 != 5.56
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=1, errors=2)

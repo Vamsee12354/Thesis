@@ -1,0 +1,146 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:36
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_values_returns_none (selected_test.TestGetMin2Attributes.test_all_none_values_returns_none) ... ERROR
+test_empty_list_returns_none (selected_test.TestGetMin2Attributes.test_empty_list_returns_none) ... ERROR
+test_happy_path_battery_life_attribute (selected_test.TestGetMin2Attributes.test_happy_path_battery_life_attribute) ... ERROR
+test_happy_path_price_attribute (selected_test.TestGetMin2Attributes.test_happy_path_price_attribute) ... ERROR
+test_large_numbers_returns_min (selected_test.TestGetMin2Attributes.test_large_numbers_returns_min) ... ERROR
+test_mixed_numeric_types_returns_min_float (selected_test.TestGetMin2Attributes.test_mixed_numeric_types_returns_min_float) ... ERROR
+test_negative_values_returns_min (selected_test.TestGetMin2Attributes.test_negative_values_returns_min) ... ERROR
+test_non_existent_field_returns_none (selected_test.TestGetMin2Attributes.test_non_existent_field_returns_none) ... ERROR
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ERROR
+test_single_valid_value_returns_that_value (selected_test.TestGetMin2Attributes.test_single_valid_value_returns_that_value) ... ERROR
+
+======================================================================
+ERROR: test_all_none_values_returns_none (selected_test.TestGetMin2Attributes.test_all_none_values_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 42, in test_all_none_values_returns_none
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_list_returns_none (selected_test.TestGetMin2Attributes.test_empty_list_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 47, in test_empty_list_returns_none
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_happy_path_battery_life_attribute (selected_test.TestGetMin2Attributes.test_happy_path_battery_life_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 23, in test_happy_path_battery_life_attribute
+    result = get_min_2_attributes(data, "battery_life")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_happy_path_price_attribute (selected_test.TestGetMin2Attributes.test_happy_path_price_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 13, in test_happy_path_price_attribute
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_large_numbers_returns_min (selected_test.TestGetMin2Attributes.test_large_numbers_returns_min)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 83, in test_large_numbers_returns_min
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_mixed_numeric_types_returns_min_float (selected_test.TestGetMin2Attributes.test_mixed_numeric_types_returns_min_float)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 56, in test_mixed_numeric_types_returns_min_float
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_negative_values_returns_min (selected_test.TestGetMin2Attributes.test_negative_values_returns_min)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 74, in test_negative_values_returns_min
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_existent_field_returns_none (selected_test.TestGetMin2Attributes.test_non_existent_field_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 33, in test_non_existent_field_returns_none
+    result = get_min_2_attributes(data, "non_existent_field")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 92, in test_rounding_to_two_decimals
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_single_valid_value_returns_that_value (selected_test.TestGetMin2Attributes.test_single_valid_value_returns_that_value)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\selected_test.py", line 65, in test_single_valid_value_returns_that_value
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_mistral\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+FAILED (errors=10)

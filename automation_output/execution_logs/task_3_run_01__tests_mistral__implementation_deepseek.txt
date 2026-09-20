@@ -1,0 +1,34 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:36
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_values_returns_none (selected_test.TestGetMin2Attributes.test_all_none_values_returns_none) ... ok
+test_empty_list_returns_none (selected_test.TestGetMin2Attributes.test_empty_list_returns_none) ... ok
+test_happy_path_battery_life_attribute (selected_test.TestGetMin2Attributes.test_happy_path_battery_life_attribute) ... ok
+test_happy_path_price_attribute (selected_test.TestGetMin2Attributes.test_happy_path_price_attribute) ... ok
+test_large_numbers_returns_min (selected_test.TestGetMin2Attributes.test_large_numbers_returns_min) ... FAIL
+test_mixed_numeric_types_returns_min_float (selected_test.TestGetMin2Attributes.test_mixed_numeric_types_returns_min_float) ... ok
+test_negative_values_returns_min (selected_test.TestGetMin2Attributes.test_negative_values_returns_min) ... ok
+test_non_existent_field_returns_none (selected_test.TestGetMin2Attributes.test_non_existent_field_returns_none) ... ok
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+test_single_valid_value_returns_that_value (selected_test.TestGetMin2Attributes.test_single_valid_value_returns_that_value) ... ok
+
+======================================================================
+FAIL: test_large_numbers_returns_min (selected_test.TestGetMin2Attributes.test_large_numbers_returns_min)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_01__tests_mistral__implementation_deepseek\selected_test.py", line 84, in test_large_numbers_returns_min
+    self.assertEqual(result, 999999.999)
+AssertionError: 1000000.0 != 999999.999
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

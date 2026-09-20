@@ -1,0 +1,30 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:37
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_string (selected_test.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (selected_test.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_long_post (selected_test.TestGetReadDuration.test_long_post) ... FAIL
+test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (selected_test.TestGetReadDuration.test_normal_paragraph) ... ok
+test_single_word (selected_test.TestGetReadDuration.test_single_word) ... ok
+
+======================================================================
+FAIL: test_long_post (selected_test.TestGetReadDuration.test_long_post)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_10__tests_amazon__implementation_mistral\selected_test.py", line 17, in test_long_post
+    self.assertEqual(get_read_duration(long_text), 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1)

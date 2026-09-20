@@ -1,0 +1,26 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:36
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_201_words_returns_two_minutes (selected_test.TestGetReadDuration.test_201_words_returns_two_minutes) ... ok
+test_450_words_returns_three_minutes (selected_test.TestGetReadDuration.test_450_words_returns_three_minutes) ... ok
+test_empty_string_returns_minimum_one (selected_test.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exactly_200_words_returns_one_minute (selected_test.TestGetReadDuration.test_exactly_200_words_returns_one_minute) ... ok
+test_large_text_1000_words (selected_test.TestGetReadDuration.test_large_text_1000_words) ... ok
+test_non_latin_characters_counted_as_words (selected_test.TestGetReadDuration.test_non_latin_characters_counted_as_words) ... ok
+test_short_text_less_than_one_minute_returns_one (selected_test.TestGetReadDuration.test_short_text_less_than_one_minute_returns_one) ... ok
+test_string_with_only_whitespace_returns_minimum_one (selected_test.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one) ... ok
+test_text_with_multiple_spaces_between_words (selected_test.TestGetReadDuration.test_text_with_multiple_spaces_between_words) ... ok
+test_text_with_newlines_and_tabs (selected_test.TestGetReadDuration.test_text_with_newlines_and_tabs) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

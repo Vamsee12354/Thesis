@@ -1,0 +1,85 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:11:41
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_brands_returns_none (selected_test.TestGetUnique.test_all_invalid_brands_returns_none) ... ERROR
+test_case_insensitivity_and_normalization (selected_test.TestGetUnique.test_case_insensitivity_and_normalization) ... ERROR
+test_empty_input_returns_none (selected_test.TestGetUnique.test_empty_input_returns_none) ... ERROR
+test_mixed_duplicates_and_blanks (selected_test.TestGetUnique.test_mixed_duplicates_and_blanks) ... ERROR
+test_normal_case_with_valid_brands (selected_test.TestGetUnique.test_normal_case_with_valid_brands) ... ERROR
+test_preserves_order_of_first_appearance (selected_test.TestGetUnique.test_preserves_order_of_first_appearance) ... ERROR
+test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand) ... FAIL
+
+======================================================================
+ERROR: test_all_invalid_brands_returns_none (selected_test.TestGetUnique.test_all_invalid_brands_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 32, in test_all_invalid_brands_returns_none
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_case_insensitivity_and_normalization (selected_test.TestGetUnique.test_case_insensitivity_and_normalization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 61, in test_case_insensitivity_and_normalization
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_empty_input_returns_none (selected_test.TestGetUnique.test_empty_input_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 22, in test_empty_input_returns_none
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() missing 1 required positional argument: 'brand_list'
+
+======================================================================
+ERROR: test_mixed_duplicates_and_blanks (selected_test.TestGetUnique.test_mixed_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 50, in test_mixed_duplicates_and_blanks
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 6 were given
+
+======================================================================
+ERROR: test_normal_case_with_valid_brands (selected_test.TestGetUnique.test_normal_case_with_valid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 12, in test_normal_case_with_valid_brands
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_preserves_order_of_first_appearance (selected_test.TestGetUnique.test_preserves_order_of_first_appearance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 77, in test_preserves_order_of_first_appearance
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 4 were given
+
+======================================================================
+FAIL: test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_02__tests_gemma__implementation_openai\selected_test.py", line 91, in test_single_valid_brand
+    self.assertEqual(result, expected)
+AssertionError: None != ['Sony']
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=1, errors=6)

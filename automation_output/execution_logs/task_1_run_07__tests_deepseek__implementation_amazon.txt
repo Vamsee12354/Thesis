@@ -1,0 +1,59 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:12:04
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_brands (selected_test.TestGetUnique.test_all_invalid_brands) ... FAIL
+test_case_insensitivity (selected_test.TestGetUnique.test_case_insensitivity) ... ok
+test_empty_list (selected_test.TestGetUnique.test_empty_list) ... ok
+test_empty_strings_and_none (selected_test.TestGetUnique.test_empty_strings_and_none) ... FAIL
+test_mixed_case_duplicates (selected_test.TestGetUnique.test_mixed_case_duplicates) ... FAIL
+test_mixed_valid_and_invalid (selected_test.TestGetUnique.test_mixed_valid_and_invalid) ... ok
+test_multiple_duplicates (selected_test.TestGetUnique.test_multiple_duplicates) ... ok
+test_no_brand_key (selected_test.TestGetUnique.test_no_brand_key) ... ok
+test_normal_case (selected_test.TestGetUnique.test_normal_case) ... ok
+test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand) ... ok
+
+======================================================================
+FAIL: test_all_invalid_brands (selected_test.TestGetUnique.test_all_invalid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_07__tests_deepseek__implementation_amazon\selected_test.py", line 16, in test_all_invalid_brands
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_empty_strings_and_none (selected_test.TestGetUnique.test_empty_strings_and_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_07__tests_deepseek__implementation_amazon\selected_test.py", line 30, in test_empty_strings_and_none
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_case_duplicates (selected_test.TestGetUnique.test_mixed_case_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_07__tests_deepseek__implementation_amazon\selected_test.py", line 21, in test_mixed_case_duplicates
+    self.assertEqual(get_unique(input_data), expected_output)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=3)

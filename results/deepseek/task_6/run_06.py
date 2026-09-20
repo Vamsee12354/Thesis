@@ -1,6 +1,5 @@
-def is_valid_password(password):
+def IsValidPassword(password):
     errors = []
-    
     if not password:
         errors.append("Please fill the password")
         return errors

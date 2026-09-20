@@ -1,0 +1,7 @@
+Execution timed out after 60 seconds.
+
+Test file:
+C:\Users\kalup\Desktop\Thesis\generated_tests\openai\task_9\run_01_test.py
+
+Implementation file:
+C:\Users\kalup\Desktop\Thesis\results\amazon\task_9\run_01.py

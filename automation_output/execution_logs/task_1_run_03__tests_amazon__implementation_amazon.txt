@@ -1,0 +1,21 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:11:48
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_brand_values_are_none_or_empty_string (selected_test.TestGetUnique.test_all_brand_values_are_none_or_empty_string) ... ok
+test_get_all_products_returns_empty_list (selected_test.TestGetUnique.test_get_all_products_returns_empty_list) ... ok
+test_mixed_with_duplicates_and_blanks (selected_test.TestGetUnique.test_mixed_with_duplicates_and_blanks) ... ok
+test_normal_case_with_valid_brands (selected_test.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_only_invalid_or_missing_brands (selected_test.TestGetUnique.test_only_invalid_or_missing_brands) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK

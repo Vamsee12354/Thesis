@@ -1,0 +1,42 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:32:44
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup (selected_test.TestProductCache.test_cleanup) ... ok
+test_delete_if_list_is_empty (selected_test.TestProductCache.test_delete_if_list_is_empty) ... FAIL
+test_first_del_then_set (selected_test.TestProductCache.test_first_del_then_set) ... ok
+test_get_items_late (selected_test.TestProductCache.test_get_items_late) ... ok
+test_get_wrong_item (selected_test.TestProductCache.test_get_wrong_item) ... ok
+test_multiple_items_delete_in_one_go (selected_test.TestProductCache.test_multiple_items_delete_in_one_go) ... ok
+test_multiple_values (selected_test.TestProductCache.test_multiple_values) ... ok
+test_non_existent (selected_test.TestProductCache.test_non_existent) ... ok
+test_same_item_dictionary (selected_test.TestProductCache.test_same_item_dictionary) ... ok
+test_set_and_get (selected_test.TestProductCache.test_set_and_get) ... ok
+test_set_and_get_with_number_as_key (selected_test.TestProductCache.test_set_and_get_with_number_as_key) ... ok
+test_set_and_get_with_other_language (selected_test.TestProductCache.test_set_and_get_with_other_language) ... ok
+test_set_expiry_zero (selected_test.TestProductCache.test_set_expiry_zero) ... ok
+test_set_get_cleanup (selected_test.TestProductCache.test_set_get_cleanup) ... ok
+test_set_get_delete (selected_test.TestProductCache.test_set_get_delete) ... ok
+test_sleep_lesser_than_expiry_time (selected_test.TestProductCache.test_sleep_lesser_than_expiry_time) ... ok
+test_sleep_more_than_expiry_time (selected_test.TestProductCache.test_sleep_more_than_expiry_time) ... ok
+test_very_large_expiry (selected_test.TestProductCache.test_very_large_expiry) ... ok
+
+======================================================================
+FAIL: test_delete_if_list_is_empty (selected_test.TestProductCache.test_delete_if_list_is_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_05__tests_manual__implementation_gemma\selected_test.py", line 72, in test_delete_if_list_is_empty
+    self.assertEqual(cache.delete('a'),'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+----------------------------------------------------------------------
+Ran 18 tests in 32.007s
+
+FAILED (failures=1)

@@ -1,0 +1,31 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:22
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_missing_prices (selected_test.TestGetAveragePrice.test_all_missing_prices) ... ok
+test_all_valid_prices (selected_test.TestGetAveragePrice.test_all_valid_prices) ... ok
+test_empty_list (selected_test.TestGetAveragePrice.test_empty_list) ... ok
+test_mixed_valid_and_missing_prices (selected_test.TestGetAveragePrice.test_mixed_valid_and_missing_prices) ... ok
+test_multiple_prices_with_decimals (selected_test.TestGetAveragePrice.test_multiple_prices_with_decimals) ... FAIL
+test_normal_case (selected_test.TestGetAveragePrice.test_normal_case) ... ok
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_multiple_prices_with_decimals (selected_test.TestGetAveragePrice.test_multiple_prices_with_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_07__tests_deepseek__implementation_gemma\selected_test.py", line 23, in test_multiple_prices_with_decimals
+    self.assertEqual(get_average_price(price_list), 20.83)
+AssertionError: 20.5 != 20.83
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=1)

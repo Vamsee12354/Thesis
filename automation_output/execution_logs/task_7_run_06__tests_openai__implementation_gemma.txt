@@ -1,0 +1,42 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:34
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_shopping_list (selected_test.TestShoppingListFunction.test_empty_shopping_list) ... ok
+test_missing_title_key_raises_key_error (selected_test.TestShoppingListFunction.test_missing_title_key_raises_key_error) ... FAIL
+test_normal_functionality (selected_test.TestShoppingListFunction.test_normal_functionality) ... ok
+test_single_item_list (selected_test.TestShoppingListFunction.test_single_item_list) ... ok
+test_title_empty_string (selected_test.TestShoppingListFunction.test_title_empty_string) ... ok
+test_title_none_value_raises_type_error (selected_test.TestShoppingListFunction.test_title_none_value_raises_type_error) ... FAIL
+test_titles_are_non_empty_and_non_none (selected_test.TestShoppingListFunction.test_titles_are_non_empty_and_non_none) ... ok
+test_titles_with_html_content (selected_test.TestShoppingListFunction.test_titles_with_html_content) ... ok
+test_titles_with_special_characters (selected_test.TestShoppingListFunction.test_titles_with_special_characters) ... ok
+test_titles_with_whitespace (selected_test.TestShoppingListFunction.test_titles_with_whitespace) ... ok
+
+======================================================================
+FAIL: test_missing_title_key_raises_key_error (selected_test.TestShoppingListFunction.test_missing_title_key_raises_key_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_06__tests_openai__implementation_gemma\selected_test.py", line 92, in test_missing_title_key_raises_key_error
+    with self.assertRaises(KeyError):
+AssertionError: KeyError not raised
+
+======================================================================
+FAIL: test_title_none_value_raises_type_error (selected_test.TestShoppingListFunction.test_title_none_value_raises_type_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_06__tests_openai__implementation_gemma\selected_test.py", line 100, in test_title_none_value_raises_type_error
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+FAILED (failures=2)

@@ -1,0 +1,17 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T16:58:01
+Return code: 0
+================================================================================
+
+test_all_invalid_brands (selected_test.TestGetUnique.test_all_invalid_brands) ... ok
+test_case_insensitivity (selected_test.TestGetUnique.test_case_insensitivity) ... ok
+test_empty_string_filtered_out (selected_test.TestGetUnique.test_empty_string_filtered_out) ... ok
+test_mixed_with_duplicates_and_blanks (selected_test.TestGetUnique.test_mixed_with_duplicates_and_blanks) ... ok
+test_none_filtered_out (selected_test.TestGetUnique.test_none_filtered_out) ... ok
+test_normal_case_with_valid_brands (selected_test.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_only_invalid_or_missing_brands (selected_test.TestGetUnique.test_only_invalid_or_missing_brands) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

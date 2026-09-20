@@ -1,0 +1,37 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:30
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_check_same_product_repeating (selected_test.Test_get_shopping_list.test_check_same_product_repeating) ... ok
+test_empty_list (selected_test.Test_get_shopping_list.test_empty_list) ... ok
+test_normal_functionality (selected_test.Test_get_shopping_list.test_normal_functionality) ... ok
+test_number_functionality (selected_test.Test_get_shopping_list.test_number_functionality) ... ok
+test_other_language_functionality (selected_test.Test_get_shopping_list.test_other_language_functionality) ... ok
+test_single_product (selected_test.Test_get_shopping_list.test_single_product) ... ok
+test_symbols_as_shopping_list (selected_test.Test_get_shopping_list.test_symbols_as_shopping_list) ... ok
+test_title_caps (selected_test.Test_get_shopping_list.test_title_caps) ... ok
+test_title_functionality (selected_test.Test_get_shopping_list.test_title_functionality) ... ok
+test_title_no_information (selected_test.Test_get_shopping_list.test_title_no_information) ... FAIL
+
+======================================================================
+FAIL: test_title_no_information (selected_test.Test_get_shopping_list.test_title_no_information)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_05__tests_manual__implementation_deepseek\selected_test.py", line 34, in test_title_no_information
+    self.assertEqual(shopping_list([{'title':'','title':'','title':''}]),'<ul></ul>')
+AssertionError: '<ul><li></li></ul>' != '<ul></ul>'
+- <ul><li></li></ul>
++ <ul></ul>
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

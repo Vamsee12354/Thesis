@@ -1,0 +1,81 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:17
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_characters_after_ignore (selected_test.TestSlugifyManual.test_all_invalid_characters_after_ignore) ... FAIL
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_preservation (selected_test.TestSlugifyManual.test_case_preservation) ... ok
+test_empty_input_returns_none (selected_test.TestSlugifyManual.test_empty_input_returns_none) ... ok
+test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string) ... FAIL
+test_ignore_characters_preserved (selected_test.TestSlugifyManual.test_ignore_characters_preserved) ... FAIL
+test_leading_trailing_and_repeated_whitespace (selected_test.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... ok
+test_non_ascii_transliteration (selected_test.TestSlugifyManual.test_non_ascii_transliteration) ... ok
+test_punctuation_only_returns_none (selected_test.TestSlugifyManual.test_punctuation_only_returns_none) ... ok
+test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string) ... ok
+test_separator_utf8_integer (selected_test.TestSlugifyManual.test_separator_utf8_integer) ... ERROR
+test_slugify_with_multiple_ignore_characters (selected_test.TestSlugifyManual.test_slugify_with_multiple_ignore_characters) ... ok
+test_truncate_long_text (selected_test.TestSlugifyManual.test_truncate_long_text) ... ok
+test_truncate_small_value_eliminates_words (selected_test.TestSlugifyManual.test_truncate_small_value_eliminates_words) ... FAIL
+
+======================================================================
+ERROR: test_separator_utf8_integer (selected_test.TestSlugifyManual.test_separator_utf8_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_deepseek\selected_test.py", line 110, in test_separator_utf8_integer
+    result = slugify_manual(text, separator=separator)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_deepseek\implementation_manual.py", line 49, in slugify_manual
+    slug = separator.join(final_slug)
+           ^^^^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'join'
+
+======================================================================
+FAIL: test_all_invalid_characters_after_ignore (selected_test.TestSlugifyManual.test_all_invalid_characters_after_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_deepseek\selected_test.py", line 121, in test_all_invalid_characters_after_ignore
+    self.assertIsNone(result)
+AssertionError: '!' is not None
+
+======================================================================
+FAIL: test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_deepseek\selected_test.py", line 84, in test_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: 'foo@barcom' != 'foo@bar-com'
+- foo@barcom
++ foo@bar-com
+?        +
+
+
+======================================================================
+FAIL: test_ignore_characters_preserved (selected_test.TestSlugifyManual.test_ignore_characters_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_deepseek\selected_test.py", line 74, in test_ignore_characters_preserved
+    self.assertEqual(result, expected)
+AssertionError: '\u4f60\u597d\u4e16\u754c' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d\u4e16\u754c
++ \u4f60\u597d-shi-jie
+
+
+======================================================================
+FAIL: test_truncate_small_value_eliminates_words (selected_test.TestSlugifyManual.test_truncate_small_value_eliminates_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_deepseek\selected_test.py", line 64, in test_truncate_small_value_eliminates_words
+    self.assertIsNone(result)
+AssertionError: 'c' is not None
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+FAILED (failures=4, errors=1)

@@ -1,0 +1,26 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:22:39
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_validate_form_all_empty_fields (selected_test.TestValidateForm.test_validate_form_all_empty_fields) ... ok
+test_validate_form_all_whitespace_fields (selected_test.TestValidateForm.test_validate_form_all_whitespace_fields) ... ok
+test_validate_form_empty_email_only (selected_test.TestValidateForm.test_validate_form_empty_email_only) ... ok
+test_validate_form_invalid_email_format (selected_test.TestValidateForm.test_validate_form_invalid_email_format) ... ok
+test_validate_form_missing_subject_and_message (selected_test.TestValidateForm.test_validate_form_missing_subject_and_message) ... ok
+test_validate_form_multiple_errors_order (selected_test.TestValidateForm.test_validate_form_multiple_errors_order) ... ok
+test_validate_form_privacy_false (selected_test.TestValidateForm.test_validate_form_privacy_false) ... ok
+test_validate_form_privacy_not_boolean (selected_test.TestValidateForm.test_validate_form_privacy_not_boolean) ... ok
+test_validate_form_success (selected_test.TestValidateForm.test_validate_form_success) ... ok
+test_validate_form_whitespace_success (selected_test.TestValidateForm.test_validate_form_whitespace_success) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

@@ -1,0 +1,71 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T16:57:58
+Return code: 1
+================================================================================
+
+test_all_identical_brands (selected_test.TestGetUniqueBrands.test_all_identical_brands) ... ERROR
+test_all_invalid_brands (selected_test.TestGetUniqueBrands.test_all_invalid_brands) ... ERROR
+test_case_insensitive_deduplication (selected_test.TestGetUniqueBrands.test_case_insensitive_deduplication) ... ERROR
+test_empty_input (selected_test.TestGetUniqueBrands.test_empty_input) ... ok
+test_mixed_valid_and_invalid (selected_test.TestGetUniqueBrands.test_mixed_valid_and_invalid) ... ERROR
+test_no_valid_brands_empty_list (selected_test.TestGetUniqueBrands.test_no_valid_brands_empty_list) ... ok
+test_normal_case_with_valid_brands (selected_test.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ERROR
+test_single_valid_brand (selected_test.TestGetUniqueBrands.test_single_valid_brand) ... FAIL
+
+======================================================================
+ERROR: test_all_identical_brands (selected_test.TestGetUniqueBrands.test_all_identical_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 53, in test_all_identical_brands
+    self.assertEqual(get_unique(*input_data), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_all_invalid_brands (selected_test.TestGetUniqueBrands.test_all_invalid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 15, in test_all_invalid_brands
+    self.assertIsNone(get_unique(*input_data))
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_case_insensitive_deduplication (selected_test.TestGetUniqueBrands.test_case_insensitive_deduplication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 27, in test_case_insensitive_deduplication
+    self.assertEqual(get_unique(*input_data), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 6 were given
+
+======================================================================
+ERROR: test_mixed_valid_and_invalid (selected_test.TestGetUniqueBrands.test_mixed_valid_and_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 40, in test_mixed_valid_and_invalid
+    self.assertEqual(get_unique(*input_data), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 7 were given
+
+======================================================================
+ERROR: test_normal_case_with_valid_brands (selected_test.TestGetUniqueBrands.test_normal_case_with_valid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 8, in test_normal_case_with_valid_brands
+    self.assertEqual(get_unique(*input_data), expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+FAIL: test_single_valid_brand (selected_test.TestGetUniqueBrands.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_01__tests_deepseek__implementation_deepseek\selected_test.py", line 48, in test_single_valid_brand
+    self.assertEqual(get_unique(*input_data), expected)
+AssertionError: None != ['SingleBrand']
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=1, errors=5)

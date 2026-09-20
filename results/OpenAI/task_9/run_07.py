@@ -1,7 +1,7 @@
 import time
 
 
-class ProductCacheGet:
+class Product_cache_get:
     def __init__(self, expiry_time):
         self.expiry_time = expiry_time
         self.cache = {}
@@ -13,8 +13,8 @@ class ProductCacheGet:
                 if key in self.cache:
                     del self.cache[key]
                 return None
-            expiry_timestamp = int(time.time() * 1000) + ttl
-            self.cache[key] = (value, expiry_timestamp)
+            expiry = int(time.time() * 1000) + ttl
+            self.cache[key] = (value, expiry)
             return value
         except Exception:
             return None
@@ -23,8 +23,8 @@ class ProductCacheGet:
         try:
             if key not in self.cache:
                 return None
-            value, expiry_timestamp = self.cache[key]
-            if int(time.time() * 1000) > expiry_timestamp:
+            value, expiry = self.cache[key]
+            if int(time.time() * 1000) > expiry:
                 del self.cache[key]
                 return None
             return value

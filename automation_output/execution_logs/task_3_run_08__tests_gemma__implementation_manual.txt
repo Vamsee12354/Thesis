@@ -1,0 +1,37 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:31:06
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_values_are_none (selected_test.TestGetMin2Attributes.test_all_values_are_none) ... ok
+test_battery_life_example (selected_test.TestGetMin2Attributes.test_battery_life_example) ... ok
+test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list) ... ok
+test_happy_path_float_values (selected_test.TestGetMin2Attributes.test_happy_path_float_values) ... ok
+test_happy_path_integer_values (selected_test.TestGetMin2Attributes.test_happy_path_integer_values) ... ok
+test_mixed_presence_of_attribute (selected_test.TestGetMin2Attributes.test_mixed_presence_of_attribute) ... ok
+test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field) ... ok
+test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values) ... ERROR
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+
+======================================================================
+ERROR: test_non_numeric_values (selected_test.TestGetMin2Attributes.test_non_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_08__tests_gemma__implementation_manual\selected_test.py", line 128, in test_non_numeric_values
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_08__tests_gemma__implementation_manual\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (errors=1)

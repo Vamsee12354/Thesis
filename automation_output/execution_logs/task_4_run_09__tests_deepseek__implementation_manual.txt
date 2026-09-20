@@ -1,0 +1,40 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:30
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_edge_case_199_words (selected_test.TestGetReadDuration.test_edge_case_199_words) ... ok
+test_edge_case_200_words (selected_test.TestGetReadDuration.test_edge_case_200_words) ... ok
+test_edge_case_201_words (selected_test.TestGetReadDuration.test_edge_case_201_words) ... ok
+test_edge_case_399_words (selected_test.TestGetReadDuration.test_edge_case_399_words) ... ok
+test_edge_case_400_words (selected_test.TestGetReadDuration.test_edge_case_400_words) ... ok
+test_edge_case_401_words (selected_test.TestGetReadDuration.test_edge_case_401_words) ... ok
+test_edge_case_one_word (selected_test.TestGetReadDuration.test_edge_case_one_word) ... ok
+test_edge_case_two_words (selected_test.TestGetReadDuration.test_edge_case_two_words) ... ok
+test_empty_string (selected_test.TestGetReadDuration.test_empty_string) ... ok
+test_exact_word_count (selected_test.TestGetReadDuration.test_exact_word_count) ... ok
+test_excessive_whitespace (selected_test.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_just_over_word_count (selected_test.TestGetReadDuration.test_just_over_word_count) ... ok
+test_large_text (selected_test.TestGetReadDuration.test_large_text) ... ok
+test_long_post (selected_test.TestGetReadDuration.test_long_post) ... ok
+test_minimum_one_minute (selected_test.TestGetReadDuration.test_minimum_one_minute) ... ok
+test_mixed_whitespace (selected_test.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_multiple_spaces (selected_test.TestGetReadDuration.test_multiple_spaces) ... ok
+test_multiple_words (selected_test.TestGetReadDuration.test_multiple_words) ... ok
+test_newlines (selected_test.TestGetReadDuration.test_newlines) ... ok
+test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (selected_test.TestGetReadDuration.test_normal_paragraph) ... ok
+test_short_text (selected_test.TestGetReadDuration.test_short_text) ... ok
+test_single_word (selected_test.TestGetReadDuration.test_single_word) ... ok
+test_tabs (selected_test.TestGetReadDuration.test_tabs) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.001s
+
+OK

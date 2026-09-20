@@ -1,0 +1,21 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:15
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_string (selected_test.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (selected_test.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_long_post (selected_test.TestGetReadDuration.test_long_post) ... ok
+test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (selected_test.TestGetReadDuration.test_normal_paragraph) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK

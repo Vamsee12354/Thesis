@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:11:59
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_brands (selected_test.TestGetUnique.test_all_invalid_brands) ... ok
+test_case_insensitivity (selected_test.TestGetUnique.test_case_insensitivity) ... ok
+test_empty_dict (selected_test.TestGetUnique.test_empty_dict) ... ok
+test_empty_list (selected_test.TestGetUnique.test_empty_list) ... ok
+test_empty_string_brand (selected_test.TestGetUnique.test_empty_string_brand) ... ok
+test_mixed_case_duplicates (selected_test.TestGetUnique.test_mixed_case_duplicates) ... ok
+test_mixed_case_multiple_duplicates (selected_test.TestGetUnique.test_mixed_case_multiple_duplicates) ... ok
+test_mixed_dicts (selected_test.TestGetUnique.test_mixed_dicts) ... ok
+test_mixed_valid_invalid (selected_test.TestGetUnique.test_mixed_valid_invalid) ... ok
+test_multiple_duplicates (selected_test.TestGetUnique.test_multiple_duplicates) ... ok
+test_no_brand_key (selected_test.TestGetUnique.test_no_brand_key) ... ok
+test_no_duplicates (selected_test.TestGetUnique.test_no_duplicates) ... ok
+test_normal_case (selected_test.TestGetUnique.test_normal_case) ... ok
+test_single_invalid_brand (selected_test.TestGetUnique.test_single_invalid_brand) ... ok
+test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand) ... ok
+test_whitespace_brand (selected_test.TestGetUnique.test_whitespace_brand) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.000s
+
+OK

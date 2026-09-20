@@ -1,0 +1,30 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:27
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_string_returns_one (selected_test.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_excessive_whitespace_returns_one (selected_test.TestGetReadDuration.test_excessive_whitespace_returns_one) ... ok
+test_fifty_words_returns_one (selected_test.TestGetReadDuration.test_fifty_words_returns_one) ... ok
+test_five_hundred_words_returns_three (selected_test.TestGetReadDuration.test_five_hundred_words_returns_three) ... ok
+test_four_hundred_fifty_words_returns_three (selected_test.TestGetReadDuration.test_four_hundred_fifty_words_returns_three) ... ok
+test_four_hundred_ninety_nine_words_returns_three (selected_test.TestGetReadDuration.test_four_hundred_ninety_nine_words_returns_three) ... ok
+test_minimum_one_minute_for_short_text (selected_test.TestGetReadDuration.test_minimum_one_minute_for_short_text) ... ok
+test_mixed_languages_with_spaces_returns_correct_duration (selected_test.TestGetReadDuration.test_mixed_languages_with_spaces_returns_correct_duration) ... ok
+test_non_latin_characters_with_spaces_returns_correct_duration (selected_test.TestGetReadDuration.test_non_latin_characters_with_spaces_returns_correct_duration) ... ok
+test_non_latin_characters_without_spaces_returns_one (selected_test.TestGetReadDuration.test_non_latin_characters_without_spaces_returns_one) ... ok
+test_single_word_returns_one (selected_test.TestGetReadDuration.test_single_word_returns_one) ... ok
+test_two_words_returns_one (selected_test.TestGetReadDuration.test_two_words_returns_one) ... ok
+test_very_long_text_returns_correct_duration (selected_test.TestGetReadDuration.test_very_long_text_returns_correct_duration) ... ok
+test_whitespace_with_words_returns_correct_duration (selected_test.TestGetReadDuration.test_whitespace_with_words_returns_correct_duration) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.002s
+
+OK

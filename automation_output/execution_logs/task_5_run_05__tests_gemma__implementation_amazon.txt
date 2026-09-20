@@ -1,0 +1,49 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:22:57
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_fields_empty (selected_test.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_does_not_trigger_regex_error (selected_test.TestValidateForm.test_email_empty_does_not_trigger_regex_error) ... ok
+test_empty_email_after_trimming (selected_test.TestValidateForm.test_empty_email_after_trimming) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_missing_first_name (selected_test.TestValidateForm.test_missing_first_name) ... ok
+test_missing_last_name (selected_test.TestValidateForm.test_missing_last_name) ... ok
+test_missing_message (selected_test.TestValidateForm.test_missing_message) ... ok
+test_missing_subject (selected_test.TestValidateForm.test_missing_subject) ... ok
+test_multiple_errors_order (selected_test.TestValidateForm.test_multiple_errors_order) ... ok
+test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean) ... FAIL
+test_privacy_not_true (selected_test.TestValidateForm.test_privacy_not_true) ... ok
+test_valid_form_submission (selected_test.TestValidateForm.test_valid_form_submission) ... ok
+test_valid_form_with_whitespace_trimming (selected_test.TestValidateForm.test_valid_form_with_whitespace_trimming) ... FAIL
+
+======================================================================
+FAIL: test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_gemma__implementation_amazon\selected_test.py", line 86, in test_privacy_not_boolean
+    self.assertEqual(result, ["Please confirm the privacy policy"])
+AssertionError: 'Form is valid. Details:John,Doe,test@test.com,Sub,Msg,True' != ['Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_valid_form_with_whitespace_trimming (selected_test.TestValidateForm.test_valid_form_with_whitespace_trimming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_gemma__implementation_amazon\selected_test.py", line 32, in test_valid_form_with_whitespace_trimming
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:  Jane  ,Doe, jane@test.com ,Hello,World,True' != 'Form is valid. Details:Jane,Doe,jane@test.com,Hello,World,True'
+- Form is valid. Details:  Jane  ,Doe, jane@test.com ,Hello,World,True
+?                        --    --     -             -
++ Form is valid. Details:Jane,Doe,jane@test.com,Hello,World,True
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.002s
+
+FAILED (failures=2)

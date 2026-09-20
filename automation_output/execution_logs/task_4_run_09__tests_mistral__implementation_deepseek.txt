@@ -1,0 +1,45 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:31
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_400_words_returns_two (selected_test.TestGetReadDuration.test_400_words_returns_two) ... ok
+test_401_words_returns_three (selected_test.TestGetReadDuration.test_401_words_returns_three) ... ok
+test_450_words_returns_three (selected_test.TestGetReadDuration.test_450_words_returns_three) ... ok
+test_empty_string_returns_one (selected_test.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_excessive_whitespace_returns_one (selected_test.TestGetReadDuration.test_excessive_whitespace_returns_one) ... ok
+test_fifty_one_words_returns_two (selected_test.TestGetReadDuration.test_fifty_one_words_returns_two) ... FAIL
+test_fifty_words_returns_one (selected_test.TestGetReadDuration.test_fifty_words_returns_one) ... ok
+test_long_text_with_newlines (selected_test.TestGetReadDuration.test_long_text_with_newlines) ... ok
+test_mixed_whitespace (selected_test.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters) ... FAIL
+test_punctuation_handling (selected_test.TestGetReadDuration.test_punctuation_handling) ... ok
+test_single_word_returns_one (selected_test.TestGetReadDuration.test_single_word_returns_one) ... ok
+test_two_words_returns_one (selected_test.TestGetReadDuration.test_two_words_returns_one) ... ok
+
+======================================================================
+FAIL: test_fifty_one_words_returns_two (selected_test.TestGetReadDuration.test_fifty_one_words_returns_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_09__tests_mistral__implementation_deepseek\selected_test.py", line 26, in test_fifty_one_words_returns_two
+    self.assertEqual(get_read_duration(text), 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_09__tests_mistral__implementation_deepseek\selected_test.py", line 42, in test_non_latin_characters
+    self.assertEqual(get_read_duration(text), 2)
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+FAILED (failures=2)

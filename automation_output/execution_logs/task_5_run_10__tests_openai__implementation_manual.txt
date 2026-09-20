@@ -1,0 +1,39 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:21
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+Form is valid. Details:Axxs,James,abc@gmail.com,Question,Hallo!,True
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_fields_valid_with_minimal_input (selected_test.TestValidateForm.test_all_fields_valid_with_minimal_input) ... ok
+test_email_empty_and_invalid_privacy (selected_test.TestValidateForm.test_email_empty_and_invalid_privacy) ... ok
+test_email_with_leading_trailing_spaces (selected_test.TestValidateForm.test_email_with_leading_trailing_spaces) ... FAIL
+test_empty_body (selected_test.TestValidateForm.test_empty_body) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_multiple_errors_all_fields_invalid (selected_test.TestValidateForm.test_multiple_errors_all_fields_invalid) ... ok
+test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean) ... ok
+test_reject_privacy_policy (selected_test.TestValidateForm.test_reject_privacy_policy) ... ok
+test_valid_form (selected_test.TestValidateForm.test_valid_form) ... ok
+test_whitespace_only_fields (selected_test.TestValidateForm.test_whitespace_only_fields) ... ok
+
+======================================================================
+FAIL: test_email_with_leading_trailing_spaces (selected_test.TestValidateForm.test_email_with_leading_trailing_spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_10__tests_openai__implementation_manual\selected_test.py", line 168, in test_email_with_leading_trailing_spaces
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True' != 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True
+?                                 --                --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

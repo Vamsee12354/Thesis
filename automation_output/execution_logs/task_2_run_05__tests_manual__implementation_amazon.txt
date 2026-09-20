@@ -1,0 +1,67 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:18
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_highvalue_numbers (selected_test.Test_get_average_price.test_highvalue_numbers) ... ok
+test_list_is_empty (selected_test.Test_get_average_price.test_list_is_empty) ... ok
+test_multiple_nulls (selected_test.Test_get_average_price.test_multiple_nulls) ... ok
+test_no_products (selected_test.Test_get_average_price.test_no_products) ... ERROR
+test_null_value (selected_test.Test_get_average_price.test_null_value) ... ok
+test_numbers_inwords (selected_test.Test_get_average_price.test_numbers_inwords) ... ERROR
+test_working_list_price (selected_test.Test_get_average_price.test_working_list_price) ... ok
+test_wrong_key (selected_test.Test_get_average_price.test_wrong_key) ... ERROR
+test_zero_value (selected_test.Test_get_average_price.test_zero_value) ... ok
+
+======================================================================
+ERROR: test_no_products (selected_test.Test_get_average_price.test_no_products)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\selected_test.py", line 34, in test_no_products
+    self.assertIsNone(get_average_price(prices))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\implementation_manual.py", line 2, in get_average_price
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\implementation_manual.py", line 2, in <listcomp>
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                                                              ~~~~~^^^^^^^^^
+KeyError: 'price'
+
+======================================================================
+ERROR: test_numbers_inwords (selected_test.Test_get_average_price.test_numbers_inwords)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\selected_test.py", line 38, in test_numbers_inwords
+    self.assertIsNone(get_average_price(prices))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\implementation_manual.py", line 5, in get_average_price
+    return round(sum(valid_prices) / len(valid_prices), 2)
+                 ^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+======================================================================
+ERROR: test_wrong_key (selected_test.Test_get_average_price.test_wrong_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\selected_test.py", line 30, in test_wrong_key
+    self.assertIsNone(get_average_price(prices))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\implementation_manual.py", line 2, in get_average_price
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_05__tests_manual__implementation_amazon\implementation_manual.py", line 2, in <listcomp>
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                                                              ~~~~~^^^^^^^^^
+KeyError: 'price'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (errors=3)

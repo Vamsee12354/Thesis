@@ -1,7 +1,7 @@
 {
     "run_number": 2,
-    "timestamp": "2026-07-04T22:49:31.559860",
-    "llm_name": "Mistral",
+    "timestamp": "2026-08-17T06:29:02.735640",
+    "llm_name": "mistral",
     "model_id": "mistralai/mistral-small-2603",
     "task_number": "6",
     "temperature": 0.0,
@@ -9,10 +9,10 @@
     "top_k": 1,
     "seed": 42,
     "max_tokens": 3000,
-    "elapsed_time_seconds": 1.4982,
+    "elapsed_time_seconds": 2.6573,
     "usage": {
-        "prompt_tokens": 725,
-        "completion_tokens": 203,
-        "total_tokens": 928
+        "prompt_tokens": 837,
+        "completion_tokens": 190,
+        "total_tokens": 1027
     }
 }

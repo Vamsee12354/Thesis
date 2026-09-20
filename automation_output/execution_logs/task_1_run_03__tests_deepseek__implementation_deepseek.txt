@@ -1,0 +1,42 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:11:45
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_duplicates (selected_test.TestGetUnique.test_all_duplicates) ... ok
+test_all_none_or_empty_brands (selected_test.TestGetUnique.test_all_none_or_empty_brands) ... ok
+test_case_insensitive_deduplication (selected_test.TestGetUnique.test_case_insensitive_deduplication) ... ok
+test_empty_input (selected_test.TestGetUnique.test_empty_input) ... ok
+test_mixed_valid_and_invalid (selected_test.TestGetUnique.test_mixed_valid_and_invalid) ... ok
+test_normal_case_with_valid_brands (selected_test.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand) ... FAIL
+
+======================================================================
+FAIL: test_single_valid_brand (selected_test.TestGetUnique.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_03__tests_deepseek__implementation_deepseek\selected_test.py", line 53, in test_single_valid_brand
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Singlebrand'] != ['SingleBrand']
+
+First differing element 0:
+'Singlebrand'
+'SingleBrand'
+
+- ['Singlebrand']
+?         ^
+
++ ['SingleBrand']
+?         ^
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (failures=1)

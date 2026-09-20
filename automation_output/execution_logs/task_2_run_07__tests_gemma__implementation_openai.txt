@@ -1,0 +1,30 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:23
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_are_none (selected_test.TestGetAveragePrice.test_all_prices_are_none) ... ok
+test_empty_list (selected_test.TestGetAveragePrice.test_empty_list) ... ok
+test_mixed_types_and_none (selected_test.TestGetAveragePrice.test_mixed_types_and_none) ... ok
+test_normal_case_with_valid_prices (selected_test.TestGetAveragePrice.test_normal_case_with_valid_prices) ... ok
+test_rounding_to_two_decimals (selected_test.TestGetAveragePrice.test_rounding_to_two_decimals) ... ok
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... FAIL
+
+======================================================================
+FAIL: test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_07__tests_gemma__implementation_openai\selected_test.py", line 26, in test_single_valid_price
+    self.assertEqual(result, expected_output)
+AssertionError: 50.55 != 50.56
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1)

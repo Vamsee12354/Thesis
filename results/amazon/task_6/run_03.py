@@ -1,4 +1,4 @@
-def is_valid_password(password):
+def IsValidPassword(password):
     if password is None or password == "":
         return ["Please fill the password"]
     if len(password) < 12 or len(password) > 72:
@@ -6,7 +6,7 @@ def is_valid_password(password):
     errors = []
     has_lowercase = any(c.islower() for c in password)
     has_uppercase = any(c.isupper() for c in password)
-    has_digit_or_special = any(c.isdigit() or c in "!@#$%^&*()_-+=<>?/\\,.:;" for c in password)
+    has_digit_or_special = any(c.isdigit() or not c.isalnum() for c in password)
     if not has_lowercase:
         errors.append("Password must contain a lowercase letter")
     if not has_uppercase:
@@ -16,3 +16,4 @@ def is_valid_password(password):
     if errors:
         return errors
     return "The password is valid"
+ 

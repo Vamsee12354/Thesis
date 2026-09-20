@@ -1,0 +1,33 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:24:21
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup (selected_test.TestProductCacheGet.test_cleanup) ... ok
+test_delete (selected_test.TestProductCacheGet.test_delete) ... ok
+test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key) ... FAIL
+test_expiry (selected_test.TestProductCacheGet.test_expiry) ... ok
+test_get_nonexistent_key (selected_test.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_initialization (selected_test.TestProductCacheGet.test_initialization) ... ok
+test_set_and_get (selected_test.TestProductCacheGet.test_set_and_get) ... ok
+test_set_with_negative_ttl (selected_test.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+test_set_with_ttl (selected_test.TestProductCacheGet.test_set_with_ttl) ... ok
+
+======================================================================
+FAIL: test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_02__tests_deepseek__implementation_deepseek\selected_test.py", line 41, in test_delete_nonexistent_key
+    self.assertEqual(result, 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.303s
+
+FAILED (failures=1)

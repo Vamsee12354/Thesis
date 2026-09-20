@@ -1,0 +1,86 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:12:00
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_get_unique_all_invalid_values (selected_test.TestGetUnique.test_get_unique_all_invalid_values) ... ERROR
+test_get_unique_case_insensitivity_and_normalization (selected_test.TestGetUnique.test_get_unique_case_insensitivity_and_normalization) ... ERROR
+test_get_unique_empty_input (selected_test.TestGetUnique.test_get_unique_empty_input) ... ERROR
+test_get_unique_maintains_order_without_sorting (selected_test.TestGetUnique.test_get_unique_maintains_order_without_sorting) ... ERROR
+test_get_unique_mixed_valid_and_invalid (selected_test.TestGetUnique.test_get_unique_mixed_valid_and_invalid) ... ERROR
+test_get_unique_normal_case (selected_test.TestGetUnique.test_get_unique_normal_case) ... ERROR
+test_get_unique_with_whitespace_normalization (selected_test.TestGetUnique.test_get_unique_with_whitespace_normalization) ... ERROR
+
+======================================================================
+ERROR: test_get_unique_all_invalid_values (selected_test.TestGetUnique.test_get_unique_all_invalid_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 34, in test_get_unique_all_invalid_values
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_get_unique_case_insensitivity_and_normalization (selected_test.TestGetUnique.test_get_unique_case_insensitivity_and_normalization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 52, in test_get_unique_case_insensitivity_and_normalization
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 6 were given
+
+======================================================================
+ERROR: test_get_unique_empty_input (selected_test.TestGetUnique.test_get_unique_empty_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 23, in test_get_unique_empty_input
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() missing 1 required positional argument: 'brand_list'
+
+======================================================================
+ERROR: test_get_unique_maintains_order_without_sorting (selected_test.TestGetUnique.test_get_unique_maintains_order_without_sorting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 74, in test_get_unique_maintains_order_without_sorting
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_get_unique_mixed_valid_and_invalid (selected_test.TestGetUnique.test_get_unique_mixed_valid_and_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 85, in test_get_unique_mixed_valid_and_invalid
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 4 were given
+
+======================================================================
+ERROR: test_get_unique_normal_case (selected_test.TestGetUnique.test_get_unique_normal_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 12, in test_get_unique_normal_case
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_get_unique_with_whitespace_normalization (selected_test.TestGetUnique.test_get_unique_with_whitespace_normalization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_06__tests_gemma__implementation_mistral\selected_test.py", line 63, in test_get_unique_with_whitespace_normalization
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+FAILED (errors=7)

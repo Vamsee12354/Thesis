@@ -1,0 +1,24 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:14:59
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_string_returns_one (selected_test.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_exact_multiple_of_wpm (selected_test.TestGetReadDuration.test_exact_multiple_of_wpm) ... ok
+test_large_whitespace_separation (selected_test.TestGetReadDuration.test_large_whitespace_separation) ... ok
+test_long_post_returns_correct_minutes (selected_test.TestGetReadDuration.test_long_post_returns_correct_minutes) ... ok
+test_non_latin_characters_whitespace_splitting (selected_test.TestGetReadDuration.test_non_latin_characters_whitespace_splitting) ... ok
+test_normal_paragraph_returns_one (selected_test.TestGetReadDuration.test_normal_paragraph_returns_one) ... ok
+test_short_text_returns_one (selected_test.TestGetReadDuration.test_short_text_returns_one) ... ok
+test_whitespace_only_returns_one (selected_test.TestGetReadDuration.test_whitespace_only_returns_one) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

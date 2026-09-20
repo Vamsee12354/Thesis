@@ -1,0 +1,119 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:15
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_missing_password (selected_test.TestIsValidPassword.test_missing_password) ... FAIL
+test_strong_password (selected_test.TestIsValidPassword.test_strong_password) ... ok
+test_weak_password_long (selected_test.TestIsValidPassword.test_weak_password_long) ... FAIL
+test_weak_password_no_lowercase (selected_test.TestIsValidPassword.test_weak_password_no_lowercase) ... FAIL
+test_weak_password_no_special_or_number (selected_test.TestIsValidPassword.test_weak_password_no_special_or_number) ... FAIL
+test_weak_password_no_special_or_number_and_no_uppercase (selected_test.TestIsValidPassword.test_weak_password_no_special_or_number_and_no_uppercase) ... FAIL
+test_weak_password_no_uppercase (selected_test.TestIsValidPassword.test_weak_password_no_uppercase) ... ok
+test_weak_password_short (selected_test.TestIsValidPassword.test_weak_password_short) ... ok
+
+======================================================================
+FAIL: test_missing_password (selected_test.TestIsValidPassword.test_missing_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_amazon__implementation_manual\selected_test.py", line 6, in test_missing_password
+    self.assertEqual(IsValidPassword(""), ["Please fill the password"])
+AssertionError: 'Please fill the password' != ['Please fill the password']
+
+======================================================================
+FAIL: test_weak_password_long (selected_test.TestIsValidPassword.test_weak_password_long)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_amazon__implementation_manual\selected_test.py", line 21, in test_weak_password_long
+    self.assertEqual(IsValidPassword("a" * 73), ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_weak_password_no_lowercase (selected_test.TestIsValidPassword.test_weak_password_no_lowercase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_amazon__implementation_manual\selected_test.py", line 24, in test_weak_password_no_lowercase
+    self.assertEqual(IsValidPassword("NOLOWERCASE1!"), ["Password must contain a lowercase letter", "Password must contain a special character or a number"])
+AssertionError: Lists differ: ['Pas[33 chars]tter'] != ['Pas[33 chars]tter', 'Password must contain a special character or a number']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Password must contain a special character or a number'
+
+- ['Password must contain a lowercase letter']
+?                                            ^
+
++ ['Password must contain a lowercase letter',
+?                                            ^
+
++  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_weak_password_no_special_or_number (selected_test.TestIsValidPassword.test_weak_password_no_special_or_number)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_amazon__implementation_manual\selected_test.py", line 15, in test_weak_password_no_special_or_number
+    self.assertEqual(IsValidPassword("NoSpecialOrNumber"), ["Password must contain a special character or a number", "Password must contain an uppercase letter"])
+AssertionError: Lists differ: ['Pas[34 chars]cter or a number'] != ['Pas[34 chars]cter or a number', 'Password must contain an uppercase letter']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Password must contain a special character or a number']
+?                                                         ^
+
++ ['Password must contain a special character or a number',
+?                                                         ^
+
++  'Password must contain an uppercase letter']
+
+======================================================================
+FAIL: test_weak_password_no_special_or_number_and_no_uppercase (selected_test.TestIsValidPassword.test_weak_password_no_special_or_number_and_no_uppercase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_02__tests_amazon__implementation_manual\selected_test.py", line 27, in test_weak_password_no_special_or_number_and_no_uppercase
+    self.assertEqual(IsValidPassword("nospecialornumber"), ["Password must contain a special character or a number", "Password must contain an uppercase letter", "Password must contain a lowercase letter"])
+AssertionError: Lists differ: ['Pas[15 chars]ain an uppercase letter', 'Password must conta[31 chars]ber'] != ['Pas[15 chars]ain a special character or a number', 'Passwor[75 chars]ter']
+
+First differing element 0:
+'Password must contain an uppercase letter'
+'Password must contain a special character or a number'
+
+Second list contains 1 additional elements.
+First extra element 2:
+'Password must contain a lowercase letter'
+
++ ['Password must contain a special character or a number',
+- ['Password must contain an uppercase letter',
+? ^
+
++  'Password must contain an uppercase letter',
+? ^
+
+-  'Password must contain a special character or a number']
++  'Password must contain a lowercase letter']
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.005s
+
+FAILED (failures=5)

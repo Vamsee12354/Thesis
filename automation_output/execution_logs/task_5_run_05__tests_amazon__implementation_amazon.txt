@@ -1,0 +1,147 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:00
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_blank_fields (selected_test.TestFormValidation.test_blank_fields) ... FAIL
+test_empty_form (selected_test.TestFormValidation.test_empty_form) ... ok
+test_invalid_email (selected_test.TestFormValidation.test_invalid_email) ... FAIL
+test_missing_email (selected_test.TestFormValidation.test_missing_email) ... ERROR
+test_missing_first_name (selected_test.TestFormValidation.test_missing_first_name) ... ERROR
+test_missing_last_name (selected_test.TestFormValidation.test_missing_last_name) ... ERROR
+test_missing_message (selected_test.TestFormValidation.test_missing_message) ... ERROR
+test_missing_privacy (selected_test.TestFormValidation.test_missing_privacy) ... ok
+test_missing_subject (selected_test.TestFormValidation.test_missing_subject) ... ERROR
+test_multiple_errors (selected_test.TestFormValidation.test_multiple_errors) ... ERROR
+test_non_boolean_privacy (selected_test.TestFormValidation.test_non_boolean_privacy) ... FAIL
+test_valid_form (selected_test.TestFormValidation.test_valid_form) ... ok
+
+======================================================================
+ERROR: test_missing_email (selected_test.TestFormValidation.test_missing_email)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 27, in test_missing_email
+    result = validate_form("John", "Doe", None, "Inquiry", "Hello", True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\implementation_manual.py", line 11, in validate_form
+    if not email.strip():
+           ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_missing_first_name (selected_test.TestFormValidation.test_missing_first_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 19, in test_missing_first_name
+    result = validate_form(None, "Doe", "john@example.com", "Inquiry", "Hello", True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\implementation_manual.py", line 7, in validate_form
+    if not first_name.strip():
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_missing_last_name (selected_test.TestFormValidation.test_missing_last_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 23, in test_missing_last_name
+    result = validate_form("John", None, "john@example.com", "Inquiry", "Hello", True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\implementation_manual.py", line 9, in validate_form
+    if not last_name.strip():
+           ^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_missing_message (selected_test.TestFormValidation.test_missing_message)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 39, in test_missing_message
+    result = validate_form("John", "Doe", "john@example.com", "Inquiry", None, True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\implementation_manual.py", line 17, in validate_form
+    if not message.strip():
+           ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_missing_subject (selected_test.TestFormValidation.test_missing_subject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 35, in test_missing_subject
+    result = validate_form("John", "Doe", "john@example.com", None, "Hello", True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\implementation_manual.py", line 15, in validate_form
+    if not subject.strip():
+           ^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+======================================================================
+ERROR: test_multiple_errors (selected_test.TestFormValidation.test_multiple_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 51, in test_multiple_errors
+    result = validate_form(None, None, "invalid-email", None, None, "True")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\implementation_manual.py", line 7, in validate_form
+    if not first_name.strip():
+           ^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'strip'
+
+======================================================================
+FAIL: test_blank_fields (selected_test.TestFormValidation.test_blank_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 44, in test_blank_fields
+    self.assertEqual(result, ['Please Type First Name', 'Please Type Last Name', 'Please Type EmailID', 'Please Type Subject', 'Please Type Message', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Ple[89 chars]t', 'Please Type Message'] != ['Ple[89 chars]t', 'Please Type Message', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 5:
+'Please confirm the privacy policy'
+
+  ['Please Type First Name',
+   'Please Type Last Name',
+   'Please Type EmailID',
+   'Please Type Subject',
+-  'Please Type Message']
+?                       ^
+
++  'Please Type Message',
+?                       ^
+
++  'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_invalid_email (selected_test.TestFormValidation.test_invalid_email)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 32, in test_invalid_email
+    self.assertEqual(result, ['Email standards not followed', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Email standards not followed'] != ['Email standards not followed', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Email standards not followed']
++ ['Email standards not followed', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_non_boolean_privacy (selected_test.TestFormValidation.test_non_boolean_privacy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_amazon\selected_test.py", line 48, in test_non_boolean_privacy
+    self.assertEqual(result, ['Please confirm the privacy policy'])
+AssertionError: 'Form is valid. Details:John,Doe,john@example.com,Inquiry,Hello,True' != ['Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+FAILED (failures=3, errors=6)

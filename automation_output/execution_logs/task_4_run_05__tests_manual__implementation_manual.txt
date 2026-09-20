@@ -1,0 +1,23 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:16
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_article (selected_test.Test_get_read_duration.test_article) ... ok
+test_individual_letters (selected_test.Test_get_read_duration.test_individual_letters) ... ok
+test_no_text (selected_test.Test_get_read_duration.test_no_text) ... ok
+test_normal_functionality (selected_test.Test_get_read_duration.test_normal_functionality) ... ok
+test_other_language (selected_test.Test_get_read_duration.test_other_language) ... ok
+test_same_letter_working (selected_test.Test_get_read_duration.test_same_letter_working) ... ok
+test_symbol_reading (selected_test.Test_get_read_duration.test_symbol_reading) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

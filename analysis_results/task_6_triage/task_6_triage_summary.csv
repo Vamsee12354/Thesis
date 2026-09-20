@@ -1,0 +1,15 @@
+provisional_error_category,provisional_fault_owner,confidence,individual_failure_count
+implementation_none_runtime_error,Implementation,High,21
+lowercase_validation_mismatch,Uncertain,Medium,5
+lowercase_validation_mismatch,Uncertain,Medium-High,54
+missing_password_handling_mismatch,Uncertain,Medium,49
+missing_password_handling_mismatch,Uncertain,Medium-High,44
+multiple_password_requirements_mismatch,Uncertain,Low,131
+password_length_validation_mismatch,Uncertain,Medium,14
+password_length_validation_mismatch,Uncertain,Medium-High,325
+special_or_number_validation_mismatch,Uncertain,Medium,15
+special_or_number_validation_mismatch,Uncertain,Medium-High,196
+test_suite_syntax_error,Test suite,High,6
+unclassified,Uncertain,Low,91
+uppercase_validation_mismatch,Uncertain,Medium,4
+uppercase_validation_mismatch,Uncertain,Medium-High,48

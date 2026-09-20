@@ -1,0 +1,42 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:45:37
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup (selected_test.TestProductCacheGet.test_cleanup) ... ok
+test_default_expiry (selected_test.TestProductCacheGet.test_default_expiry) ... ok
+test_delete (selected_test.TestProductCacheGet.test_delete) ... ok
+test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key) ... FAIL
+test_expired_item (selected_test.TestProductCacheGet.test_expired_item) ... ok
+test_get_nonexistent_key (selected_test.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_init (selected_test.TestProductCacheGet.test_init) ... FAIL
+test_set_and_get (selected_test.TestProductCacheGet.test_set_and_get) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (selected_test.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+
+======================================================================
+FAIL: test_delete_nonexistent_key (selected_test.TestProductCacheGet.test_delete_nonexistent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_06__tests_deepseek__implementation_openai\selected_test.py", line 37, in test_delete_nonexistent_key
+    self.assertEqual(result, 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_init (selected_test.TestProductCacheGet.test_init)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_06__tests_deepseek__implementation_openai\selected_test.py", line 11, in test_init
+    self.assertTrue(hasattr(cache, '_cache'))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.106s
+
+FAILED (failures=2)

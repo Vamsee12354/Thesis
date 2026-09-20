@@ -1,6 +1,5 @@
-def is_valid_password(password):
+def IsValidPassword(password):
     errors = []
-    
     if not password:
         errors.append("Please fill the password")
         return errors
@@ -19,4 +18,7 @@ def is_valid_password(password):
     if not has_digit_or_special:
         errors.append("Password must contain a special character or a number")
     
-    return "The password is valid" if not errors else errors
+    if not errors:
+        return "The password is valid"
+    else:
+        return errors

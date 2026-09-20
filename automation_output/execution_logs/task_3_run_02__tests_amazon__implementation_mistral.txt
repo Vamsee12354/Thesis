@@ -1,0 +1,81 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:42
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_values_none (selected_test.TestGetMinAttribute.test_all_values_none) ... ERROR
+test_empty_data_list (selected_test.TestGetMinAttribute.test_empty_data_list) ... ERROR
+test_non_existent_attribute (selected_test.TestGetMinAttribute.test_non_existent_attribute) ... ERROR
+test_non_numeric_attribute (selected_test.TestGetMinAttribute.test_non_numeric_attribute) ... ERROR
+test_valid_attribute_with_values (selected_test.TestGetMinAttribute.test_valid_attribute_with_values) ... ERROR
+
+======================================================================
+ERROR: test_all_values_none (selected_test.TestGetMinAttribute.test_all_values_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\selected_test.py", line 31, in test_all_values_none
+    self.assertIsNone(get_min_2_attributes(data, "price"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_data_list (selected_test.TestGetMinAttribute.test_empty_data_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\selected_test.py", line 36, in test_empty_data_list
+    self.assertIsNone(get_min_2_attributes(data, "price"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_existent_attribute (selected_test.TestGetMinAttribute.test_non_existent_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\selected_test.py", line 23, in test_non_existent_attribute
+    self.assertIsNone(get_min_2_attributes(data, "non_existent_field"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_numeric_attribute (selected_test.TestGetMinAttribute.test_non_numeric_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\selected_test.py", line 46, in test_non_numeric_attribute
+    self.assertIsNone(get_min_2_attributes(data, "title"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_attribute_with_values (selected_test.TestGetMinAttribute.test_valid_attribute_with_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\selected_test.py", line 13, in test_valid_attribute_with_values
+    self.assertEqual(get_min_2_attributes(data, "price"), 29.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_amazon__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (errors=5)

@@ -1,0 +1,76 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:16
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+Form is valid. Details:Axxs,James,abc@gmail.com,Question,Hallo!,True
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_fields_valid_with_whitespace (selected_test.TestValidateForm.test_all_fields_valid_with_whitespace) ... FAIL
+test_email_empty_after_trim (selected_test.TestValidateForm.test_email_empty_after_trim) ... ok
+test_email_with_whitespace (selected_test.TestValidateForm.test_email_with_whitespace) ... FAIL
+test_empty_fields (selected_test.TestValidateForm.test_empty_fields) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_missing_email (selected_test.TestValidateForm.test_missing_email) ... ok
+test_missing_first_name (selected_test.TestValidateForm.test_missing_first_name) ... ok
+test_missing_last_name (selected_test.TestValidateForm.test_missing_last_name) ... ok
+test_missing_message (selected_test.TestValidateForm.test_missing_message) ... ok
+test_missing_subject (selected_test.TestValidateForm.test_missing_subject) ... ok
+test_multiple_errors (selected_test.TestValidateForm.test_multiple_errors) ... FAIL
+test_normal_functionality (selected_test.TestValidateForm.test_normal_functionality) ... ok
+test_privacy_false (selected_test.TestValidateForm.test_privacy_false) ... ok
+test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean) ... ok
+test_whitespace_only_fields (selected_test.TestValidateForm.test_whitespace_only_fields) ... ok
+
+======================================================================
+FAIL: test_all_fields_valid_with_whitespace (selected_test.TestValidateForm.test_all_fields_valid_with_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_09__tests_mistral__implementation_manual\selected_test.py", line 100, in test_all_fields_valid_with_whitespace
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Doe  ,  john@example.com  ,  Q[17 chars]True' != 'Form[14 chars]ails:John,Doe,john@example.com,Query,Hello,True'
+- Form is valid. Details:  John  ,  Doe  ,  john@example.com  ,  Query  ,  Hello  ,True
+?                        --    -- --   -- --                -- --     -- --     --
++ Form is valid. Details:John,Doe,john@example.com,Query,Hello,True
+
+
+======================================================================
+FAIL: test_email_with_whitespace (selected_test.TestValidateForm.test_email_with_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_09__tests_mistral__implementation_manual\selected_test.py", line 90, in test_email_with_whitespace
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:John,Doe,  john@example.com  ,Query,Hello,True' != 'Form is valid. Details:John,Doe,john@example.com,Query,Hello,True'
+- Form is valid. Details:John,Doe,  john@example.com  ,Query,Hello,True
+?                                 --                --
++ Form is valid. Details:John,Doe,john@example.com,Query,Hello,True
+
+
+======================================================================
+FAIL: test_multiple_errors (selected_test.TestValidateForm.test_multiple_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_09__tests_mistral__implementation_manual\selected_test.py", line 85, in test_multiple_errors
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Ple[43 chars]e', 'Email standards not followed', 'Please Ty[67 chars]icy'] != ['Ple[43 chars]e', 'Please Type EmailID', 'Please Type Subjec[58 chars]icy']
+
+First differing element 2:
+'Email standards not followed'
+'Please Type EmailID'
+
+  ['Please Type First Name',
+   'Please Type Last Name',
+-  'Email standards not followed',
++  'Please Type EmailID',
+   'Please Type Subject',
+   'Please Type Message',
+   'Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+FAILED (failures=3)

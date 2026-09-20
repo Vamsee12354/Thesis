@@ -1,0 +1,26 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:19
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_missing_password (selected_test.TestIsValidPassword.test_missing_password) ... ok
+test_password_missing_lowercase (selected_test.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_special_or_digit (selected_test.TestIsValidPassword.test_password_missing_special_or_digit) ... ok
+test_password_missing_uppercase (selected_test.TestIsValidPassword.test_password_missing_uppercase) ... ok
+test_password_multiple_errors (selected_test.TestIsValidPassword.test_password_multiple_errors) ... ok
+test_password_too_long (selected_test.TestIsValidPassword.test_password_too_long) ... ok
+test_password_too_short (selected_test.TestIsValidPassword.test_password_too_short) ... ok
+test_password_with_edge_length_12 (selected_test.TestIsValidPassword.test_password_with_edge_length_12) ... ok
+test_password_with_edge_length_72 (selected_test.TestIsValidPassword.test_password_with_edge_length_72) ... ok
+test_valid_password (selected_test.TestIsValidPassword.test_valid_password) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

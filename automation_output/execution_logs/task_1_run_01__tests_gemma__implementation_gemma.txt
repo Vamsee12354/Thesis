@@ -1,0 +1,17 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T16:57:59
+Return code: 0
+================================================================================
+
+test_get_unique_all_invalid_values (selected_test.TestGetUnique.test_get_unique_all_invalid_values) ... ok
+test_get_unique_case_insensitivity_and_normalization (selected_test.TestGetUnique.test_get_unique_case_insensitivity_and_normalization) ... ok
+test_get_unique_empty_input (selected_test.TestGetUnique.test_get_unique_empty_input) ... ok
+test_get_unique_mixed_duplicates_and_blanks (selected_test.TestGetUnique.test_get_unique_mixed_duplicates_and_blanks) ... ok
+test_get_unique_normal_case (selected_test.TestGetUnique.test_get_unique_normal_case) ... ok
+test_get_unique_preserves_order_of_first_appearance (selected_test.TestGetUnique.test_get_unique_preserves_order_of_first_appearance) ... ok
+test_get_unique_with_whitespace_only_strings (selected_test.TestGetUnique.test_get_unique_with_whitespace_only_strings) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.000s
+
+OK

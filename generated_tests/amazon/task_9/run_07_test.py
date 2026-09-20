@@ -1,0 +1,39 @@
+import unittest
+from implementation_manual import Product_cache_get
+
+class TestProductCache(unittest.TestCase):
+
+    def setUp(self):
+        self.cache = Product_cache_get(expiry_time=60000)
+
+    def test_set_and_get(self):
+        self.cache.set('a', 'apple')
+        self.assertEqual(self.cache.get('a'), 'apple')
+
+    def test_get_non_existent_key(self):
+        self.assertIsNone(self.cache.get('non-existent'))
+
+    def test_set_with_custom_ttl(self):
+        self.cache.set('fruit', {'id': 'fruit', 'name': 'apple'}, ttl=60000)
+        self.assertEqual(self.cache.get('fruit'), {'id': 'fruit', 'name': 'apple'})
+
+    def test_set_with_negative_ttl(self):
+        self.cache.set('negative_ttl', 'value', ttl=-1)
+        self.assertIsNone(self.cache.get('negative_ttl'))
+
+    def test_delete_existing_key(self):
+        self.cache.set('delete_key', 'value')
+        self.cache.delete('delete_key')
+        self.assertIsNone(self.cache.get('delete_key'))
+
+    def test_delete_non_existent_key(self):
+        self.assertEqual(self.cache.delete('non-existent'), 'deleted successfully')
+
+    def test_cleanup(self):
+        self.cache.set('cleanup_key', 'value')
+        self.cache.cleanup()
+        self.assertIsNone(self.cache.get('cleanup_key'))
+        self.assertEqual(self.cache.cleanup(), 'Cleaned successfully')
+
+if __name__ == '__main__':
+    unittest.main()

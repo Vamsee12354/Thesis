@@ -1,0 +1,39 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:20
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+Form is valid. Details:Axxs,James,abc@gmail.com,Question,Hallo!,True
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_fields_empty (selected_test.TestValidateForm.test_all_fields_empty) ... ok
+test_all_fields_whitespace_only (selected_test.TestValidateForm.test_all_fields_whitespace_only) ... ok
+test_email_regex_validation (selected_test.TestValidateForm.test_email_regex_validation) ... ok
+test_empty_email_error (selected_test.TestValidateForm.test_empty_email_error) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_multiple_errors_order (selected_test.TestValidateForm.test_multiple_errors_order) ... ok
+test_privacy_policy_false (selected_test.TestValidateForm.test_privacy_policy_false) ... ok
+test_privacy_policy_non_boolean (selected_test.TestValidateForm.test_privacy_policy_non_boolean) ... ok
+test_valid_form_submission (selected_test.TestValidateForm.test_valid_form_submission) ... ok
+test_valid_form_with_whitespace_trimming (selected_test.TestValidateForm.test_valid_form_with_whitespace_trimming) ... FAIL
+
+======================================================================
+FAIL: test_valid_form_with_whitespace_trimming (selected_test.TestValidateForm.test_valid_form_with_whitespace_trimming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_10__tests_gemma__implementation_manual\selected_test.py", line 32, in test_valid_form_with_whitespace_trimming
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:  Jane  ,Doe, jane.doe@test.org ,Inquiry,Hello,True' != 'Form is valid. Details:Jane,Doe,jane.doe@test.org,Inquiry,Hello,True'
+- Form is valid. Details:  Jane  ,Doe, jane.doe@test.org ,Inquiry,Hello,True
+?                        --    --     -                 -
++ Form is valid. Details:Jane,Doe,jane.doe@test.org,Inquiry,Hello,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

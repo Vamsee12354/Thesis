@@ -1,0 +1,31 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:34
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_string (selected_test.TestGetReadDuration.test_empty_string) ... ok
+test_exact_word_count (selected_test.TestGetReadDuration.test_exact_word_count) ... ok
+test_excessive_whitespace (selected_test.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_large_text (selected_test.TestGetReadDuration.test_large_text) ... ok
+test_long_post (selected_test.TestGetReadDuration.test_long_post) ... ok
+test_minimum_return_value (selected_test.TestGetReadDuration.test_minimum_return_value) ... ok
+test_mixed_whitespace (selected_test.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_multiple_spaces_between_words (selected_test.TestGetReadDuration.test_multiple_spaces_between_words) ... ok
+test_newlines_in_text (selected_test.TestGetReadDuration.test_newlines_in_text) ... ok
+test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (selected_test.TestGetReadDuration.test_normal_paragraph) ... ok
+test_short_text (selected_test.TestGetReadDuration.test_short_text) ... ok
+test_tabs_in_text (selected_test.TestGetReadDuration.test_tabs_in_text) ... ok
+test_word_count_just_above_threshold (selected_test.TestGetReadDuration.test_word_count_just_above_threshold) ... ok
+test_word_count_just_below_threshold (selected_test.TestGetReadDuration.test_word_count_just_below_threshold) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+OK

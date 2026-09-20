@@ -9,8 +9,8 @@ client = OpenAI(
     api_key="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"
 )
 
-LLM_NAME = "gemma"
-MODEL_ID = "google/gemma-4-26b-a4b-it"
+LLM_NAME = "mistral"
+MODEL_ID = "mistralai/mistral-small-2603"
 TASK_NUMBER = input("Enter task number: ").strip()
 RUNS = 10
 
@@ -26,12 +26,13 @@ You are an expert Python developer.
 
 Code Style:
 - Follow PEP 8 style guidelines.
-- Use snake_case for variable names, function names, and file names.
-- Use PascalCase for class names.
+- Use snake_case for variable names and file names. Preserve any exact function or class name specified in the task.
 - Write concise, readable code with meaningful variable and function names.
 - Do not add any text, explanation, or code fences. Return only raw Python code.
 -Return plain raw Python only
+- Never rename a function whose exact name is specified in the task.
 - Entire response should be executable python code only. Do not include any comments or explanations
+
 Code Structure:
 - Write simple, self-contained functions.
 - Do not use external libraries unless the task explicitly requires them.
@@ -45,6 +46,11 @@ Error Handling:
 Output:
 - Return only the implementation code.
 - Do not include explanations or comments outside the code. 
+- Return raw executable Python source code only.
+- Do not wrap the code in Markdown fences such as ```python or ```.
+- Do not begin or end the response with ```, '''python, ''', or any other delimiter.
+- The first character and final character of the response must be valid Python code.
+
 """
 
 
@@ -52,50 +58,53 @@ Output:
 
 TASK_PROMPT = """
 
-
-Module Name: Slug
-Function_Name: slugify_manual()
+Module Name: Passsword Validator
+Function_Name: IsValidPassword()
 Purpose
-•	Converts any given string into a URL - friendly slug by transliterating Unicode characters into their alphanumeric equivalents . 
-•	Removes or replaces punctuation and whitespace , with customizable options for separator , casing , truncation , and ignored characters .
-•	Ensures SEO - friendly and standardized slugs for diverse and potentially non - ASCII inputs .
+•	Validates the strength and presence of a user ’s password in an Ecto changeset .
+•	Ensures the password meets length and complexity requirements before account creation or update .
+•	Intended to enforce secure password rules within user – facing forms or APIs
 Inputs
-•	Parameters :
-o	text: Takes in a string which needs to be slugified
-o	separator= ( binary or UTF -8 integer ): character (s) used to replace spaces between words . Default: ‘ – ‘
-o	lowercase ( string ) : whether to convert the result to lowercase . Default : true
-o	ignore: ( string or list of strings ): characters to preserve in the slug and skip during cleanup. Defaullt: None
-o	truncate: ( positive integer ) : maximum length of the slug , truncating without breaking words .
+•	Password as a parameter which takes in unique password given by the user as an input.
 Outputs
-o	Type: String
-o	Returns
-o	A slugified string containing only alphanumerics and the configured separator .
-o	Returns None if no valid slug can be generated (e.g .input contains only invalid characters ).
+o	Success:
+o	 Return “The password is valid”
+o	Failure:
+o	Should return one or more of the following error messages in a list:
+	Please fill the password
+	Length must be between 12 and 72 characters
+	Password must contain a lowercase letter
+	Password must contain an uppercase letter
+	Password must contain a special character or a number
 Constraints
-o	Slug must include only alphanumeric characters and the configured separator . 
-o	Characters listed in : ignore remain unchanged in the output .
-o	Punctuation is removed unless explicitly preserved via :ignore .
-o	Input must be valid UTF -8
-
-Known Edge Cases
-•	Empty input or punctuation - only input => returns None
-•	Very small : truncate values (e .g., 1 or 2) may eliminate all words if none fit . 
-•	Leading / trailing and repeated whitespace => cleaned up .
-Example : " foo bar " => " foo - bar ".
-•	Mixed - language input => transliterated where possible ( e.g.,
-"\ u4f60 \ u597d " => "ni - hao " unless ignored ) .
-•	Very small : truncate values (e .g., 1 or 2) may eliminate all
-words if none fit
+`IsValidPassword` is case-sensitive and must remain exactly as written.
+Do NOT use `is_valid_password`.
+The function name is strictly as mentioned. Do not alter it.
+o	password is required and must not be None or missing .
+o	password must be a string between 12 and 72 characters long
+o	password must include at least :
+o	one lowercase character ([a -z ])
+o	one uppercase character ([A -Z ])
+o	one digit or punctuation character ([!? @#$ %^&* _ 0 -9])
+o	The function does not modify the password value , only validates it . 
+o	Error messages are collected as a list and multiple error messages are appended into that list.
+Known Edge cases
+o	If : password is missing , It should append “Please fill the password” in errors list
+o	If : password is shorter than 12 or longer than 72 characters , it should append message “ Length must be between 12 and 72 characters” in errors list
+o	If : password lacks one of the required character types , appropriate message is appended into the errors list:
+o	Password must contain a lowercase letter
+o	Password must contain an uppercase letter
+o	Password must contain a special character or a number
 
 Example Calls & Expected Outputs
-slugify_manual(" Hello , World !")
-# => " hello - world " slugify_manual(" Madam , I ’m Adam ", separator : "")
-# => " madamimadam "
-slugify_manual(" StUdLy CaPs ", lowercase : false ) # => " StUdLy - CaPs "
-slugify_manual (" Call me maybe ", truncate : 10)
-=> " call - me "
-slugify_manual("\ u4f60 \ u597d \ uff0c \ u4e16 \ u754c ", ignore : ["\ u4f60 ","\ u597d "])
-# => "\ u4f60 \ u597d - shi - jie "
+1. Missing Password  IsValidPassword("")
+# => [“Please fill the password”]
+2. Weak password
+# => ['Length must be between 12 and 72 characters', 'Password must contain an uppercase letter', 'Password must contain a special character or a number']
+3. Strong Password
+# => “The password is valid”
+
+
 
 
 	 

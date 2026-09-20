@@ -1,0 +1,93 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:13
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_form (selected_test.TestFormValidation.test_empty_form) ... ok
+test_invalid_email (selected_test.TestFormValidation.test_invalid_email) ... ok
+test_missing_email (selected_test.TestFormValidation.test_missing_email) ... ok
+test_missing_first_name (selected_test.TestFormValidation.test_missing_first_name) ... FAIL
+test_missing_last_name (selected_test.TestFormValidation.test_missing_last_name) ... FAIL
+test_missing_message (selected_test.TestFormValidation.test_missing_message) ... ok
+test_missing_privacy (selected_test.TestFormValidation.test_missing_privacy) ... ok
+test_missing_subject (selected_test.TestFormValidation.test_missing_subject) ... ok
+test_multiple_errors (selected_test.TestFormValidation.test_multiple_errors) ... FAIL
+test_valid_form (selected_test.TestFormValidation.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_missing_first_name (selected_test.TestFormValidation.test_missing_first_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_08__tests_amazon__implementation_amazon\selected_test.py", line 36, in test_missing_first_name
+    self.assertEqual(result, ['Please Type First Name', 'Please Type Subject', 'Please Type Message', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Ple[15 chars]Name'] != ['Ple[15 chars]Name', 'Please Type Subject', 'Please Type Mes[38 chars]icy']
+
+Second list contains 3 additional elements.
+First extra element 1:
+'Please Type Subject'
+
+- ['Please Type First Name']
+?                          ^
+
++ ['Please Type First Name',
+?                          ^
+
++  'Please Type Subject',
++  'Please Type Message',
++  'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_last_name (selected_test.TestFormValidation.test_missing_last_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_08__tests_amazon__implementation_amazon\selected_test.py", line 40, in test_missing_last_name
+    self.assertEqual(result, ['Please Type Last Name', 'Please Type Subject', 'Please Type Message', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Ple[14 chars]Name'] != ['Ple[14 chars]Name', 'Please Type Subject', 'Please Type Mes[38 chars]icy']
+
+Second list contains 3 additional elements.
+First extra element 1:
+'Please Type Subject'
+
+- ['Please Type Last Name']
+?                         ^
+
++ ['Please Type Last Name',
+?                         ^
+
++  'Please Type Subject',
++  'Please Type Message',
++  'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_multiple_errors (selected_test.TestFormValidation.test_multiple_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_08__tests_amazon__implementation_amazon\selected_test.py", line 44, in test_multiple_errors
+    self.assertEqual(result, ['Please Type First Name', 'Please Type Last Name', 'Email standards not followed', 'Please Type Subject', 'Please Type Message', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Ple[98 chars]t', 'Please confirm the privacy policy'] != ['Ple[98 chars]t', 'Please Type Message', 'Please confirm the privacy policy']
+
+First differing element 4:
+'Please confirm the privacy policy'
+'Please Type Message'
+
+Second list contains 1 additional elements.
+First extra element 5:
+'Please confirm the privacy policy'
+
+  ['Please Type First Name',
+   'Please Type Last Name',
+   'Email standards not followed',
+   'Please Type Subject',
++  'Please Type Message',
+   'Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+FAILED (failures=3)

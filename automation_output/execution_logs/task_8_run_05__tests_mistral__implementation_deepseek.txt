@@ -1,0 +1,99 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:40
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ERROR
+test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases) ... FAIL
+test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator) ... FAIL
+test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling) ... ok
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup) ... ok
+
+======================================================================
+ERROR: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\selected_test.py", line 13, in test_custom_separator
+    self.assertEqual(slugify_manual("Hello World", separator=""), "helloworld")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\implementation_manual.py", line 24, in slugify_manual
+    slug = re.sub(f'[{re.escape(separator)}]+', separator, slug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 572, in _parse
+    raise source.error("unterminated character set",
+re.error: unterminated character set at position 0
+
+======================================================================
+FAIL: test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\selected_test.py", line 53, in test_edge_cases
+    self.assertEqual(slugify_manual("a", truncate=1), "a")
+AssertionError: None != 'a'
+
+======================================================================
+FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\selected_test.py", line 28, in test_ignore_characters
+    self.assertEqual(
+AssertionError: None != '\u4f60\u597d-\u4e16\u754c'
+
+======================================================================
+FAIL: test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\selected_test.py", line 66, in test_preserve_ignore_with_separator
+    self.assertEqual(
+AssertionError: 'test@123' != 'test_@_123'
+- test@123
++ test_@_123
+?     + +
+
+
+======================================================================
+FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\selected_test.py", line 24, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=1), "")
+AssertionError: None != ''
+
+======================================================================
+FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_mistral__implementation_deepseek\selected_test.py", line 42, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d\u4e16\u754c"), "ni-hao-shi-jie")
+AssertionError: None != 'ni-hao-shi-jie'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.006s
+
+FAILED (failures=5, errors=1)

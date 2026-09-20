@@ -1,0 +1,94 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:16
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... FAIL
+test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
+test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases) ... ok
+test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator) ... FAIL
+test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling) ... FAIL
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup) ... ok
+
+======================================================================
+FAIL: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_mistral__implementation_mistral\selected_test.py", line 9, in test_basic_slugification
+    self.assertEqual(slugify_manual("Madam, I'm Adam"), "madam-im-adam")
+AssertionError: 'madam-i-m-adam' != 'madam-im-adam'
+- madam-i-m-adam
+?        -
++ madam-im-adam
+
+
+======================================================================
+FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_mistral__implementation_mistral\selected_test.py", line 32, in test_ignore_characters
+    self.assertEqual(
+AssertionError: 'hello-world-!' != 'hello-world!'
+- hello-world-!
+?            -
++ hello-world!
+
+
+======================================================================
+FAIL: test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_mistral__implementation_mistral\selected_test.py", line 70, in test_preserve_ignore_with_separator
+    self.assertEqual(
+AssertionError: 'helloworld' != 'HelloWorld'
+- helloworld
+? ^    ^
++ HelloWorld
+? ^    ^
+
+
+======================================================================
+FAIL: test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_mistral__implementation_mistral\selected_test.py", line 63, in test_punctuation_handling
+    self.assertEqual(slugify_manual("Email: test@example.com"), "email-testexamplecom")
+AssertionError: 'email-test-example-com' != 'email-testexamplecom'
+- email-test-example-com
+?           -       -
++ email-testexamplecom
+
+
+======================================================================
+FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_mistral__implementation_mistral\selected_test.py", line 24, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=1), "")
+AssertionError: None != ''
+
+======================================================================
+FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_mistral__implementation_mistral\selected_test.py", line 42, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d\u4e16\u754c"), "ni-hao-shi-jie")
+AssertionError: '\u4f60\u597d\u4e16\u754c' != 'ni-hao-shi-jie'
+- \u4f60\u597d\u4e16\u754c
++ ni-hao-shi-jie
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+FAILED (failures=6)

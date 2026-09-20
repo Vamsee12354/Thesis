@@ -1,0 +1,75 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-12T17:12:16
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_invalid_brands_none_or_empty (selected_test.TestGetUniqueBrands.test_all_invalid_brands_none_or_empty) ... FAIL
+test_brands_with_non_string_values_ignored (selected_test.TestGetUniqueBrands.test_brands_with_non_string_values_ignored) ... ok
+test_brands_with_only_spaces_are_filtered_out (selected_test.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out) ... FAIL
+test_case_insensitivity_and_capitalization (selected_test.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (selected_test.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (selected_test.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... FAIL
+test_multiple_brands_with_mixed_cases_and_spaces (selected_test.TestGetUniqueBrands.test_multiple_brands_with_mixed_cases_and_spaces) ... FAIL
+test_normal_case_with_valid_brands (selected_test.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ok
+test_order_preserved_in_output (selected_test.TestGetUniqueBrands.test_order_preserved_in_output) ... ok
+
+======================================================================
+FAIL: test_all_invalid_brands_none_or_empty (selected_test.TestGetUniqueBrands.test_all_invalid_brands_none_or_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_09__tests_openai__implementation_amazon\selected_test.py", line 29, in test_all_invalid_brands_none_or_empty
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_brands_with_only_spaces_are_filtered_out (selected_test.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_09__tests_openai__implementation_amazon\selected_test.py", line 85, in test_brands_with_only_spaces_are_filtered_out
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_duplicates_and_blanks (selected_test.TestGetUniqueBrands.test_mixed_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_09__tests_openai__implementation_amazon\selected_test.py", line 45, in test_mixed_duplicates_and_blanks
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_multiple_brands_with_mixed_cases_and_spaces (selected_test.TestGetUniqueBrands.test_multiple_brands_with_mixed_cases_and_spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_1_run_09__tests_openai__implementation_amazon\selected_test.py", line 77, in test_multiple_brands_with_mixed_cases_and_spaces
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Nike', 'Adidas', 'Puma', ''] != ['Nike', 'Adidas', 'Puma']
+
+First list contains 1 additional elements.
+First extra element 3:
+''
+
+- ['Nike', 'Adidas', 'Puma', '']
+?                          ----
+
++ ['Nike', 'Adidas', 'Puma']
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (failures=4)

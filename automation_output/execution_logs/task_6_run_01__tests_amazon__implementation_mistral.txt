@@ -1,0 +1,117 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:09
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_missing_password (selected_test.TestPasswordValidator.test_missing_password) ... ok
+test_multiple_errors (selected_test.TestPasswordValidator.test_multiple_errors) ... ok
+test_no_lowercase_letter (selected_test.TestPasswordValidator.test_no_lowercase_letter) ... FAIL
+test_no_special_character_or_number (selected_test.TestPasswordValidator.test_no_special_character_or_number) ... FAIL
+test_no_uppercase_letter (selected_test.TestPasswordValidator.test_no_uppercase_letter) ... FAIL
+test_password_too_long (selected_test.TestPasswordValidator.test_password_too_long) ... FAIL
+test_password_too_short (selected_test.TestPasswordValidator.test_password_too_short) ... ok
+test_valid_password (selected_test.TestPasswordValidator.test_valid_password) ... ok
+
+======================================================================
+FAIL: test_no_lowercase_letter (selected_test.TestPasswordValidator.test_no_lowercase_letter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_01__tests_amazon__implementation_mistral\selected_test.py", line 15, in test_no_lowercase_letter
+    self.assertEqual(IsValidPassword("A1!"), ["Password must contain a lowercase letter"])
+AssertionError: Lists differ: ['Length must be between 12 and 72 characte[43 chars]ter'] != ['Password must contain a lowercase letter']
+
+First differing element 0:
+'Length must be between 12 and 72 characters'
+'Password must contain a lowercase letter'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Password must contain a lowercase letter'
+
+- ['Length must be between 12 and 72 characters',
+-  'Password must contain a lowercase letter']
+? ^
+
++ ['Password must contain a lowercase letter']
+? ^
+
+
+======================================================================
+FAIL: test_no_special_character_or_number (selected_test.TestPasswordValidator.test_no_special_character_or_number)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_01__tests_amazon__implementation_mistral\selected_test.py", line 21, in test_no_special_character_or_number
+    self.assertEqual(IsValidPassword("abcdefABC"), ["Password must contain a special character or a number"])
+AssertionError: Lists differ: ['Length must be between 12 and 72 characte[56 chars]ber'] != ['Password must contain a special character or a number']
+
+First differing element 0:
+'Length must be between 12 and 72 characters'
+'Password must contain a special character or a number'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Password must contain a special character or a number'
+
+- ['Length must be between 12 and 72 characters',
+-  'Password must contain a special character or a number']
+? ^
+
++ ['Password must contain a special character or a number']
+? ^
+
+
+======================================================================
+FAIL: test_no_uppercase_letter (selected_test.TestPasswordValidator.test_no_uppercase_letter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_01__tests_amazon__implementation_mistral\selected_test.py", line 18, in test_no_uppercase_letter
+    self.assertEqual(IsValidPassword("a1!"), ["Password must contain an uppercase letter"])
+AssertionError: Lists differ: ['Length must be between 12 and 72 characte[44 chars]ter'] != ['Password must contain an uppercase letter']
+
+First differing element 0:
+'Length must be between 12 and 72 characters'
+'Password must contain an uppercase letter'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+-  'Password must contain an uppercase letter']
+? ^
+
++ ['Password must contain an uppercase letter']
+? ^
+
+
+======================================================================
+FAIL: test_password_too_long (selected_test.TestPasswordValidator.test_password_too_long)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_01__tests_amazon__implementation_mistral\selected_test.py", line 12, in test_password_too_long
+    self.assertEqual(IsValidPassword("a" * 73), ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.003s
+
+FAILED (failures=4)

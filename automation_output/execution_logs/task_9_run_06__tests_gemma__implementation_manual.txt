@@ -1,0 +1,24 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:45:41
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup_clears_all_items (selected_test.TestProductCacheGet.test_cleanup_clears_all_items) ... ok
+test_delete_existing_key (selected_test.TestProductCacheGet.test_delete_existing_key) ... ok
+test_get_non_existent_key (selected_test.TestProductCacheGet.test_get_non_existent_key) ... ok
+test_init_initialization (selected_test.TestProductCacheGet.test_init_initialization) ... ok
+test_set_and_get_happy_path (selected_test.TestProductCacheGet.test_set_and_get_happy_path) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl_invalidates_immediately (selected_test.TestProductCacheGet.test_set_with_negative_ttl_invalidates_immediately) ... ok
+test_set_with_very_short_ttl (selected_test.TestProductCacheGet.test_set_with_very_short_ttl) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+OK

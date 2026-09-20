@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-19T23:55:47
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_empty_shopping_list (selected_test.TestShoppingListView.test_empty_shopping_list) ... ok
+test_html_content_in_titles (selected_test.TestShoppingListView.test_html_content_in_titles) ... FAIL
+test_normal_functionality (selected_test.TestShoppingListView.test_normal_functionality) ... ok
+
+======================================================================
+FAIL: test_html_content_in_titles (selected_test.TestShoppingListView.test_html_content_in_titles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_7_run_08__tests_amazon__implementation_amazon\selected_test.py", line 19, in test_html_content_in_titles
+    self.assertEqual(shopping_list(products), expected_output)
+AssertionError: '<ul><li><strong>Bold Item</strong></li><li>Item w[18 chars]/ul>' != '<ul><li>&lt;strong&gt;Bold Item&lt;/strong&gt;</l[34 chars]/ul>'
+- <ul><li><strong>Bold Item</strong></li><li>Item with & symbol</li></ul>
+?         ^      ^         ^       ^
++ <ul><li>&lt;strong&gt;Bold Item&lt;/strong&gt;</li><li>Item with &amp; symbol</li></ul>
+?         ^^^^      ^^^^         ^^^^       ^^^^                    ++++
+
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=1)

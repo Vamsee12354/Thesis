@@ -1,0 +1,91 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:15
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... FAIL
+test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity) ... FAIL
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... FAIL
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string) ... FAIL
+test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_only_punctuation_input (selected_test.TestSlugifyManual.test_only_punctuation_input) ... ok
+test_small_truncate_value (selected_test.TestSlugifyManual.test_small_truncate_value) ... ok
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... FAIL
+
+======================================================================
+FAIL: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 12, in test_basic_slugification
+    self.assertEqual(result, " hello - world ")
+AssertionError: None != ' hello - world '
+
+======================================================================
+FAIL: test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 22, in test_case_sensitivity
+    self.assertEqual(result, " StUdLy - CaPs ")
+AssertionError: None != ' StUdLy - CaPs '
+
+======================================================================
+FAIL: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 17, in test_custom_separator
+    self.assertEqual(result, "madamimadam")
+AssertionError: None != 'madamimadam'
+
+======================================================================
+FAIL: test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 69, in test_ignore_as_string
+    self.assertEqual(result, "hello! - world")
+AssertionError: None != 'hello! - world'
+
+======================================================================
+FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 38, in test_ignore_characters
+    self.assertEqual(result, "\u4f60 \u597d - shi - jie ")
+AssertionError: None != '\u4f60 \u597d - shi - jie '
+
+======================================================================
+FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 28, in test_truncation
+    self.assertEqual(result, " call - me ")
+AssertionError: None != ' call - me '
+
+======================================================================
+FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 64, in test_unicode_transliteration
+    self.assertEqual(result, "ni - hao")
+AssertionError: None != 'ni - hao'
+
+======================================================================
+FAIL: test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_gemma__implementation_amazon\selected_test.py", line 58, in test_whitespace_handling
+    self.assertEqual(result, " foo - bar ")
+AssertionError: None != ' foo - bar '
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.004s
+
+FAILED (failures=8)

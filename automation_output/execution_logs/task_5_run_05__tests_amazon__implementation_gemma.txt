@@ -1,0 +1,118 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:22:59
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_blank_fields (selected_test.TestFormValidation.test_blank_fields) ... ok
+test_empty_form (selected_test.TestFormValidation.test_empty_form) ... ok
+test_invalid_email (selected_test.TestFormValidation.test_invalid_email) ... FAIL
+test_missing_email (selected_test.TestFormValidation.test_missing_email) ... FAIL
+test_missing_first_name (selected_test.TestFormValidation.test_missing_first_name) ... FAIL
+test_missing_last_name (selected_test.TestFormValidation.test_missing_last_name) ... FAIL
+test_missing_message (selected_test.TestFormValidation.test_missing_message) ... FAIL
+test_missing_privacy (selected_test.TestFormValidation.test_missing_privacy) ... ok
+test_missing_subject (selected_test.TestFormValidation.test_missing_subject) ... FAIL
+test_multiple_errors (selected_test.TestFormValidation.test_multiple_errors) ... ok
+test_non_boolean_privacy (selected_test.TestFormValidation.test_non_boolean_privacy) ... ok
+test_valid_form (selected_test.TestFormValidation.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_invalid_email (selected_test.TestFormValidation.test_invalid_email)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_gemma\selected_test.py", line 32, in test_invalid_email
+    self.assertEqual(result, ['Email standards not followed', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Email standards not followed'] != ['Email standards not followed', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Email standards not followed']
++ ['Email standards not followed', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_email (selected_test.TestFormValidation.test_missing_email)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_gemma\selected_test.py", line 28, in test_missing_email
+    self.assertEqual(result, ['Please Type EmailID', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Please Type EmailID'] != ['Please Type EmailID', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Please Type EmailID']
++ ['Please Type EmailID', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_first_name (selected_test.TestFormValidation.test_missing_first_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_gemma\selected_test.py", line 20, in test_missing_first_name
+    self.assertEqual(result, ['Please Type First Name', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Please Type First Name'] != ['Please Type First Name', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Please Type First Name']
++ ['Please Type First Name', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_last_name (selected_test.TestFormValidation.test_missing_last_name)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_gemma\selected_test.py", line 24, in test_missing_last_name
+    self.assertEqual(result, ['Please Type Last Name', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Please Type Last Name'] != ['Please Type Last Name', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Please Type Last Name']
++ ['Please Type Last Name', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_message (selected_test.TestFormValidation.test_missing_message)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_gemma\selected_test.py", line 40, in test_missing_message
+    self.assertEqual(result, ['Please Type Message', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Please Type Message'] != ['Please Type Message', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Please Type Message']
++ ['Please Type Message', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_subject (selected_test.TestFormValidation.test_missing_subject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_05__tests_amazon__implementation_gemma\selected_test.py", line 36, in test_missing_subject
+    self.assertEqual(result, ['Please Type Subject', 'Please confirm the privacy policy'])
+AssertionError: Lists differ: ['Please Type Subject'] != ['Please Type Subject', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Please Type Subject']
++ ['Please Type Subject', 'Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+FAILED (failures=6)

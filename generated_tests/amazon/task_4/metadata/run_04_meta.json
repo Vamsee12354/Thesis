@@ -1,0 +1,23 @@
+{
+    "run_number": 4,
+    "timestamp_utc": "2026-07-10T21:08:10.578796",
+    "llm_name": "amazon",
+    "model_id": "amazon/nova-lite-v1",
+    "task_number": "4",
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 1,
+    "seed": 42,
+    "max_tokens": 6000,
+    "sleep_seconds": 3,
+    "session_handling": "fresh request per run",
+    "status": "success",
+    "error_message": null,
+    "elapsed_time_seconds": 1.176,
+    "output_file": "run_04_test.py",
+    "usage": {
+        "prompt_tokens": 734,
+        "completion_tokens": 330,
+        "total_tokens": 1064
+    }
+}

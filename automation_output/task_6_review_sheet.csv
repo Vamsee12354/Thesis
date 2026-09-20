@@ -1,0 +1,431 @@
+Run,Test LLM,Implementation LLM,Passed tests,Total Tests,Complete?,Notes
+1,Deepseek,Deepseek,9,12,No,To investigate
+1,Deepseek,Gemma,9,12,No,To investigate
+1,Deepseek,Mistral,9,12,No,To investigate
+1,Deepseek,OpenAI,9,12,No,To investigate
+1,Deepseek,Amazon,9,12,No,To investigate
+1,Deepseek,Manual,7,12,No,To investigate
+,,,,,,
+1,Gemma,Deepseek,0,0,No,To investigate
+1,Gemma,Gemma,0,0,No,To investigate
+1,Gemma,Mistral,0,0,No,To investigate
+1,Gemma,OpenAI,0,0,No,To investigate
+1,Gemma,Amazon,0,0,No,To investigate
+1,Gemma,Manual,0,0,No,To investigate
+,,,,,,
+1,Mistral,Deepseek,12,14,No,To investigate
+1,Mistral,Gemma,12,14,No,To investigate
+1,Mistral,Mistral,12,14,No,To investigate
+1,Mistral,OpenAI,12,14,No,To investigate
+1,Mistral,Amazon,13,14,No,To investigate
+1,Mistral,Manual,9,14,No,To investigate
+,,,,,,
+1,OpenAI,Deepseek,9,10,No,To investigate
+1,OpenAI,Gemma,9,10,No,To investigate
+1,OpenAI,Mistral,9,10,No,To investigate
+1,OpenAI,OpenAI,9,10,No,To investigate
+1,OpenAI,Amazon,8,10,No,To investigate
+1,OpenAI,Manual,8,10,No,To investigate
+,,,,,,
+1,Amazon,Deepseek,4,8,No,To investigate
+1,Amazon,Gemma,4,8,No,To investigate
+1,Amazon,Mistral,4,8,No,To investigate
+1,Amazon,OpenAI,4,8,No,To investigate
+1,Amazon,Amazon,3,8,No,To investigate
+1,Amazon,Manual,3,8,No,To investigate
+,,,,,,
+1,Manual,Deepseek,10,14,No,To investigate
+1,Manual,Gemma,10,14,No,To investigate
+1,Manual,Mistral,10,14,No,To investigate
+1,Manual,OpenAI,10,14,No,To investigate
+1,Manual,Amazon,10,14,No,To investigate
+1,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+2,Deepseek,Deepseek,8,8,Yes,
+2,Deepseek,Gemma,8,8,Yes,
+2,Deepseek,Mistral,8,8,Yes,
+2,Deepseek,OpenAI,8,8,Yes,
+2,Deepseek,Amazon,7,8,No,To investigate
+2,Deepseek,Manual,7,8,No,To investigate
+,,,,,,
+2,Gemma,Deepseek,10,11,No,To investigate
+2,Gemma,Gemma,10,11,No,To investigate
+2,Gemma,Mistral,10,11,No,To investigate
+2,Gemma,OpenAI,10,11,No,To investigate
+2,Gemma,Amazon,9,11,No,To investigate
+2,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+2,Mistral,Deepseek,11,15,No,To investigate
+2,Mistral,Gemma,11,15,No,To investigate
+2,Mistral,Mistral,11,15,No,To investigate
+2,Mistral,OpenAI,11,15,No,To investigate
+2,Mistral,Amazon,12,15,No,To investigate
+2,Mistral,Manual,9,15,No,To investigate
+,,,,,,
+2,OpenAI,Deepseek,8,9,No,To investigate
+2,OpenAI,Gemma,8,9,No,To investigate
+2,OpenAI,Mistral,8,9,No,To investigate
+2,OpenAI,OpenAI,8,9,No,To investigate
+2,OpenAI,Amazon,7,9,No,To investigate
+2,OpenAI,Manual,7,9,No,To investigate
+,,,,,,
+2,Amazon,Deepseek,4,8,No,To investigate
+2,Amazon,Gemma,4,8,No,To investigate
+2,Amazon,Mistral,4,8,No,To investigate
+2,Amazon,OpenAI,4,8,No,To investigate
+2,Amazon,Amazon,4,8,No,To investigate
+2,Amazon,Manual,3,8,No,To investigate
+,,,,,,
+2,Manual,Deepseek,10,14,No,To investigate
+2,Manual,Gemma,10,14,No,To investigate
+2,Manual,Mistral,10,14,No,To investigate
+2,Manual,OpenAI,10,14,No,To investigate
+2,Manual,Amazon,10,14,No,To investigate
+2,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+3,Deepseek,Deepseek,9,12,No,To investigate
+3,Deepseek,Gemma,9,12,No,To investigate
+3,Deepseek,Mistral,9,12,No,To investigate
+3,Deepseek,OpenAI,9,12,No,To investigate
+3,Deepseek,Amazon,10,12,No,To investigate
+3,Deepseek,Manual,6,12,No,To investigate
+,,,,,,
+3,Gemma,Deepseek,10,11,No,To investigate
+3,Gemma,Gemma,10,11,No,To investigate
+3,Gemma,Mistral,10,11,No,To investigate
+3,Gemma,OpenAI,10,11,No,To investigate
+3,Gemma,Amazon,9,11,No,To investigate
+3,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+3,Mistral,Deepseek,10,13,No,To investigate
+3,Mistral,Gemma,10,13,No,To investigate
+3,Mistral,Mistral,10,13,No,To investigate
+3,Mistral,OpenAI,10,13,No,To investigate
+3,Mistral,Amazon,12,13,No,To investigate
+3,Mistral,Manual,8,13,No,To investigate
+,,,,,,
+3,OpenAI,Deepseek,10,10,Yes,
+3,OpenAI,Gemma,10,10,Yes,
+3,OpenAI,Mistral,10,10,Yes,
+3,OpenAI,OpenAI,10,10,Yes,
+3,OpenAI,Amazon,9,10,No,To investigate
+3,OpenAI,Manual,7,10,No,To investigate
+,,,,,,
+3,Amazon,Deepseek,4,8,No,To investigate
+3,Amazon,Gemma,4,8,No,To investigate
+3,Amazon,Mistral,4,8,No,To investigate
+3,Amazon,OpenAI,4,8,No,To investigate
+3,Amazon,Amazon,4,8,No,To investigate
+3,Amazon,Manual,3,8,No,To investigate
+,,,,,,
+3,Manual,Deepseek,10,14,No,To investigate
+3,Manual,Gemma,10,14,No,To investigate
+3,Manual,Mistral,10,14,No,To investigate
+3,Manual,OpenAI,10,14,No,To investigate
+3,Manual,Amazon,10,14,No,To investigate
+3,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+4,Deepseek,Deepseek,9,12,No,To investigate
+4,Deepseek,Gemma,1,12,No,To investigate
+4,Deepseek,Mistral,9,12,No,To investigate
+4,Deepseek,OpenAI,9,12,No,To investigate
+4,Deepseek,Amazon,0,1,No,To investigate
+4,Deepseek,Manual,9,12,No,To investigate
+,,,,,,
+4,Gemma,Deepseek,10,11,No,To investigate
+4,Gemma,Gemma,2,11,No,To investigate
+4,Gemma,Mistral,10,11,No,To investigate
+4,Gemma,OpenAI,10,11,No,To investigate
+4,Gemma,Amazon,0,1,No,To investigate
+4,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+4,Mistral,Deepseek,10,13,No,To investigate
+4,Mistral,Gemma,2,13,No,To investigate
+4,Mistral,Mistral,10,13,No,To investigate
+4,Mistral,OpenAI,10,13,No,To investigate
+4,Mistral,Amazon,0,1,No,To investigate
+4,Mistral,Manual,8,13,No,To investigate
+,,,,,,
+4,OpenAI,Deepseek,9,10,No,To investigate
+4,OpenAI,Gemma,1,10,No,To investigate
+4,OpenAI,Mistral,9,10,No,To investigate
+4,OpenAI,OpenAI,9,10,No,To investigate
+4,OpenAI,Amazon,0,1,No,To investigate
+4,OpenAI,Manual,8,10,No,To investigate
+,,,,,,
+4,Amazon,Deepseek,4,8,No,To investigate
+4,Amazon,Gemma,1,8,No,To investigate
+4,Amazon,Mistral,4,8,No,To investigate
+4,Amazon,OpenAI,4,8,No,To investigate
+4,Amazon,Amazon,0,1,No,To investigate
+4,Amazon,Manual,3,8,No,To investigate
+,,,,,,
+4,Manual,Deepseek,10,14,No,To investigate
+4,Manual,Gemma,0,14,No,To investigate
+4,Manual,Mistral,10,14,No,To investigate
+4,Manual,OpenAI,10,14,No,To investigate
+4,Manual,Amazon,0,1,No,To investigate
+4,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+5,Deepseek,Deepseek,9,11,No,To investigate
+5,Deepseek,Gemma,9,11,No,To investigate
+5,Deepseek,Mistral,9,11,No,To investigate
+5,Deepseek,OpenAI,9,11,No,To investigate
+5,Deepseek,Amazon,0,1,No,To investigate
+5,Deepseek,Manual,8,11,No,To investigate
+,,,,,,
+5,Gemma,Deepseek,10,11,No,To investigate
+5,Gemma,Gemma,10,11,No,To investigate
+5,Gemma,Mistral,10,11,No,To investigate
+5,Gemma,OpenAI,10,11,No,To investigate
+5,Gemma,Amazon,0,1,No,To investigate
+5,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+5,Mistral,Deepseek,11,14,No,To investigate
+5,Mistral,Gemma,11,14,No,To investigate
+5,Mistral,Mistral,11,14,No,To investigate
+5,Mistral,OpenAI,11,14,No,To investigate
+5,Mistral,Amazon,0,1,No,To investigate
+5,Mistral,Manual,9,14,No,To investigate
+,,,,,,
+5,OpenAI,Deepseek,9,10,No,To investigate
+5,OpenAI,Gemma,9,10,No,To investigate
+5,OpenAI,Mistral,9,10,No,To investigate
+5,OpenAI,OpenAI,9,10,No,To investigate
+5,OpenAI,Amazon,0,1,No,To investigate
+5,OpenAI,Manual,8,10,No,To investigate
+,,,,,,
+5,Amazon,Deepseek,3,8,No,To investigate
+5,Amazon,Gemma,3,8,No,To investigate
+5,Amazon,Mistral,3,8,No,To investigate
+5,Amazon,OpenAI,3,8,No,To investigate
+5,Amazon,Amazon,0,1,No,To investigate
+5,Amazon,Manual,2,8,No,To investigate
+,,,,,,
+5,Manual,Deepseek,10,14,No,To investigate
+5,Manual,Gemma,10,14,No,To investigate
+5,Manual,Mistral,10,14,No,To investigate
+5,Manual,OpenAI,10,14,No,To investigate
+5,Manual,Amazon,0,1,No,To investigate
+5,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+6,Deepseek,Deepseek,9,12,No,To investigate
+6,Deepseek,Gemma,9,12,No,To investigate
+6,Deepseek,Mistral,9,12,No,To investigate
+6,Deepseek,OpenAI,9,12,No,To investigate
+6,Deepseek,Amazon,0,1,No,To investigate
+6,Deepseek,Manual,5,12,No,To investigate
+,,,,,,
+6,Gemma,Deepseek,10,11,No,To investigate
+6,Gemma,Gemma,10,11,No,To investigate
+6,Gemma,Mistral,10,11,No,To investigate
+6,Gemma,OpenAI,10,11,No,To investigate
+6,Gemma,Amazon,0,1,No,To investigate
+6,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+6,Mistral,Deepseek,10,13,No,To investigate
+6,Mistral,Gemma,10,13,No,To investigate
+6,Mistral,Mistral,10,13,No,To investigate
+6,Mistral,OpenAI,10,13,No,To investigate
+6,Mistral,Amazon,0,1,No,To investigate
+6,Mistral,Manual,8,13,No,To investigate
+,,,,,,
+6,OpenAI,Deepseek,9,10,No,To investigate
+6,OpenAI,Gemma,9,10,No,To investigate
+6,OpenAI,Mistral,9,10,No,To investigate
+6,OpenAI,OpenAI,9,10,No,To investigate
+6,OpenAI,Amazon,0,1,No,To investigate
+6,OpenAI,Manual,8,10,No,To investigate
+,,,,,,
+6,Amazon,Deepseek,3,11,No,To investigate
+6,Amazon,Gemma,3,11,No,To investigate
+6,Amazon,Mistral,3,11,No,To investigate
+6,Amazon,OpenAI,3,11,No,To investigate
+6,Amazon,Amazon,0,1,No,To investigate
+6,Amazon,Manual,1,11,No,To investigate
+,,,,,,
+6,Manual,Deepseek,10,14,No,To investigate
+6,Manual,Gemma,10,14,No,To investigate
+6,Manual,Mistral,10,14,No,To investigate
+6,Manual,OpenAI,10,14,No,To investigate
+6,Manual,Amazon,0,1,No,To investigate
+6,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+7,Deepseek,Deepseek,10,24,No,To investigate
+7,Deepseek,Gemma,10,24,No,To investigate
+7,Deepseek,Mistral,10,24,No,To investigate
+7,Deepseek,OpenAI,10,24,No,To investigate
+7,Deepseek,Amazon,0,1,No,To investigate
+7,Deepseek,Manual,6,24,No,To investigate
+,,,,,,
+7,Gemma,Deepseek,10,11,No,To investigate
+7,Gemma,Gemma,10,11,No,To investigate
+7,Gemma,Mistral,10,11,No,To investigate
+7,Gemma,OpenAI,10,11,No,To investigate
+7,Gemma,Amazon,0,1,No,To investigate
+7,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+7,Mistral,Deepseek,11,14,No,To investigate
+7,Mistral,Gemma,11,14,No,To investigate
+7,Mistral,Mistral,11,14,No,To investigate
+7,Mistral,OpenAI,11,14,No,To investigate
+7,Mistral,Amazon,0,1,No,To investigate
+7,Mistral,Manual,9,14,No,To investigate
+,,,,,,
+7,OpenAI,Deepseek,9,10,No,To investigate
+7,OpenAI,Gemma,9,10,No,To investigate
+7,OpenAI,Mistral,9,10,No,To investigate
+7,OpenAI,OpenAI,9,10,No,To investigate
+7,OpenAI,Amazon,0,1,No,To investigate
+7,OpenAI,Manual,8,10,No,To investigate
+,,,,,,
+7,Amazon,Deepseek,7,13,No,To investigate
+7,Amazon,Gemma,7,13,No,To investigate
+7,Amazon,Mistral,7,13,No,To investigate
+7,Amazon,OpenAI,7,13,No,To investigate
+7,Amazon,Amazon,0,1,No,To investigate
+7,Amazon,Manual,6,13,No,To investigate
+,,,,,,
+7,Manual,Deepseek,10,14,No,To investigate
+7,Manual,Gemma,10,14,No,To investigate
+7,Manual,Mistral,10,14,No,To investigate
+7,Manual,OpenAI,10,14,No,To investigate
+7,Manual,Amazon,0,1,No,To investigate
+7,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+8,Deepseek,Deepseek,10,11,No,To investigate
+8,Deepseek,Gemma,10,11,No,To investigate
+8,Deepseek,Mistral,10,11,No,To investigate
+8,Deepseek,OpenAI,10,11,No,To investigate
+8,Deepseek,Amazon,0,1,No,To investigate
+8,Deepseek,Manual,9,11,No,To investigate
+,,,,,,
+8,Gemma,Deepseek,10,11,No,To investigate
+8,Gemma,Gemma,10,11,No,To investigate
+8,Gemma,Mistral,10,11,No,To investigate
+8,Gemma,OpenAI,10,11,No,To investigate
+8,Gemma,Amazon,0,1,No,To investigate
+8,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+8,Mistral,Deepseek,11,14,No,To investigate
+8,Mistral,Gemma,11,14,No,To investigate
+8,Mistral,Mistral,11,14,No,To investigate
+8,Mistral,OpenAI,11,14,No,To investigate
+8,Mistral,Amazon,0,1,No,To investigate
+8,Mistral,Manual,9,14,No,To investigate
+,,,,,,
+8,OpenAI,Deepseek,9,10,No,To investigate
+8,OpenAI,Gemma,9,10,No,To investigate
+8,OpenAI,Mistral,9,10,No,To investigate
+8,OpenAI,OpenAI,9,10,No,To investigate
+8,OpenAI,Amazon,0,1,No,To investigate
+8,OpenAI,Manual,8,10,No,To investigate
+,,,,,,
+8,Amazon,Deepseek,4,9,No,To investigate
+8,Amazon,Gemma,4,9,No,To investigate
+8,Amazon,Mistral,4,9,No,To investigate
+8,Amazon,OpenAI,4,9,No,To investigate
+8,Amazon,Amazon,0,1,No,To investigate
+8,Amazon,Manual,3,9,No,To investigate
+,,,,,,
+8,Manual,Deepseek,10,14,No,To investigate
+8,Manual,Gemma,10,14,No,To investigate
+8,Manual,Mistral,10,14,No,To investigate
+8,Manual,OpenAI,10,14,No,To investigate
+8,Manual,Amazon,0,1,No,To investigate
+8,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+9,Deepseek,Deepseek,10,12,No,To investigate
+9,Deepseek,Gemma,10,12,No,To investigate
+9,Deepseek,Mistral,10,12,No,To investigate
+9,Deepseek,OpenAI,10,12,No,To investigate
+9,Deepseek,Amazon,0,1,No,To investigate
+9,Deepseek,Manual,7,12,No,To investigate
+,,,,,,
+9,Gemma,Deepseek,10,11,No,To investigate
+9,Gemma,Gemma,10,11,No,To investigate
+9,Gemma,Mistral,10,11,No,To investigate
+9,Gemma,OpenAI,10,11,No,To investigate
+9,Gemma,Amazon,0,1,No,To investigate
+9,Gemma,Manual,8,11,No,To investigate
+,,,,,,
+9,Mistral,Deepseek,11,15,No,To investigate
+9,Mistral,Gemma,11,15,No,To investigate
+9,Mistral,Mistral,11,15,No,To investigate
+9,Mistral,OpenAI,11,15,No,To investigate
+9,Mistral,Amazon,0,1,No,To investigate
+9,Mistral,Manual,9,15,No,To investigate
+,,,,,,
+9,OpenAI,Deepseek,11,11,Yes,
+9,OpenAI,Gemma,11,11,Yes,
+9,OpenAI,Mistral,11,11,Yes,
+9,OpenAI,OpenAI,11,11,Yes,
+9,OpenAI,Amazon,0,1,No,To investigate
+9,OpenAI,Manual,8,11,No,To investigate
+,,,,,,
+9,Amazon,Deepseek,6,8,No,To investigate
+9,Amazon,Gemma,6,8,No,To investigate
+9,Amazon,Mistral,6,8,No,To investigate
+9,Amazon,OpenAI,6,8,No,To investigate
+9,Amazon,Amazon,0,1,No,To investigate
+9,Amazon,Manual,5,8,No,To investigate
+,,,,,,
+9,Manual,Deepseek,10,14,No,To investigate
+9,Manual,Gemma,10,14,No,To investigate
+9,Manual,Mistral,10,14,No,To investigate
+9,Manual,OpenAI,10,14,No,To investigate
+9,Manual,Amazon,0,1,No,To investigate
+9,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,
+10,Deepseek,Deepseek,10,10,Yes,
+10,Deepseek,Gemma,10,10,Yes,
+10,Deepseek,Mistral,10,10,Yes,
+10,Deepseek,OpenAI,10,10,Yes,
+10,Deepseek,Amazon,10,10,Yes,
+10,Deepseek,Manual,9,10,No,To investigate
+,,,,,,
+10,Gemma,Deepseek,11,11,Yes,
+10,Gemma,Gemma,11,11,Yes,
+10,Gemma,Mistral,11,11,Yes,
+10,Gemma,OpenAI,11,11,Yes,
+10,Gemma,Amazon,11,11,Yes,
+10,Gemma,Manual,9,11,No,To investigate
+,,,,,,
+10,Mistral,Deepseek,11,14,No,To investigate
+10,Mistral,Gemma,11,14,No,To investigate
+10,Mistral,Mistral,11,14,No,To investigate
+10,Mistral,OpenAI,11,14,No,To investigate
+10,Mistral,Amazon,11,14,No,To investigate
+10,Mistral,Manual,9,14,No,To investigate
+,,,,,,
+10,OpenAI,Deepseek,9,10,No,To investigate
+10,OpenAI,Gemma,9,10,No,To investigate
+10,OpenAI,Mistral,9,10,No,To investigate
+10,OpenAI,OpenAI,9,10,No,To investigate
+10,OpenAI,Amazon,9,10,No,To investigate
+10,OpenAI,Manual,7,10,No,To investigate
+,,,,,,
+10,Amazon,Deepseek,5,8,No,To investigate
+10,Amazon,Gemma,5,8,No,To investigate
+10,Amazon,Mistral,5,8,No,To investigate
+10,Amazon,OpenAI,5,8,No,To investigate
+10,Amazon,Amazon,5,8,No,To investigate
+10,Amazon,Manual,4,8,No,To investigate
+,,,,,,
+10,Manual,Deepseek,10,14,No,To investigate
+10,Manual,Gemma,10,14,No,To investigate
+10,Manual,Mistral,10,14,No,To investigate
+10,Manual,OpenAI,10,14,No,To investigate
+10,Manual,Amazon,10,14,No,To investigate
+10,Manual,Manual,14,14,Yes,
+,,,,,,
+,,,,,,

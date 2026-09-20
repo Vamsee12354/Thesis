@@ -1,0 +1,24 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:31:09
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_values (selected_test.TestGetMin2Attributes.test_all_none_values) ... ok
+test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list) ... ok
+test_mixed_numeric_and_non_numeric (selected_test.TestGetMin2Attributes.test_mixed_numeric_and_non_numeric) ... ok
+test_non_existent_field (selected_test.TestGetMin2Attributes.test_non_existent_field) ... ok
+test_non_numeric_attribute (selected_test.TestGetMin2Attributes.test_non_numeric_attribute) ... ok
+test_rounded_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounded_to_two_decimals) ... ok
+test_valid_battery_life (selected_test.TestGetMin2Attributes.test_valid_battery_life) ... ok
+test_valid_price (selected_test.TestGetMin2Attributes.test_valid_price) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

@@ -1,0 +1,66 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:45:42
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup_on_empty_cache (selected_test.TestProductCacheGetCleanup.test_cleanup_on_empty_cache) ... ok
+test_cleanup_removes_all_items (selected_test.TestProductCacheGetCleanup.test_cleanup_removes_all_items) ... ok
+test_delete_existing_key (selected_test.TestProductCacheGetDelete.test_delete_existing_key) ... ok
+test_delete_non_existent_key (selected_test.TestProductCacheGetDelete.test_delete_non_existent_key) ... FAIL
+test_get_before_set (selected_test.TestProductCacheGetEdgeCases.test_get_before_set) ... ok
+test_multiple_sets_with_different_ttls (selected_test.TestProductCacheGetEdgeCases.test_multiple_sets_with_different_ttls) ... ok
+test_set_and_get_with_none_value (selected_test.TestProductCacheGetEdgeCases.test_set_and_get_with_none_value) ... ok
+test_get_existing_key (selected_test.TestProductCacheGetGet.test_get_existing_key) ... ok
+test_get_existing_key_with_ttl (selected_test.TestProductCacheGetGet.test_get_existing_key_with_ttl) ... ok
+test_get_non_existent_key (selected_test.TestProductCacheGetGet.test_get_non_existent_key) ... ok
+test_init_with_negative_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_negative_expiry_time) ... ok
+test_init_with_positive_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_positive_expiry_time) ... ok
+test_init_with_zero_expiry_time (selected_test.TestProductCacheGetInitialization.test_init_with_zero_expiry_time) ... ok
+test_set_overwrites_existing_value (selected_test.TestProductCacheGetSet.test_set_overwrites_existing_value) ... ok
+test_set_with_negative_ttl (selected_test.TestProductCacheGetSet.test_set_with_negative_ttl) ... ok
+test_set_with_positive_ttl (selected_test.TestProductCacheGetSet.test_set_with_positive_ttl) ... FAIL
+test_set_with_zero_ttl (selected_test.TestProductCacheGetSet.test_set_with_zero_ttl) ... FAIL
+test_set_without_ttl (selected_test.TestProductCacheGetSet.test_set_without_ttl) ... FAIL
+
+======================================================================
+FAIL: test_delete_non_existent_key (selected_test.TestProductCacheGetDelete.test_delete_non_existent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_06__tests_mistral__implementation_openai\selected_test.py", line 75, in test_delete_non_existent_key
+    self.assertEqual(result, 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_set_with_positive_ttl (selected_test.TestProductCacheGetSet.test_set_with_positive_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_06__tests_mistral__implementation_openai\selected_test.py", line 29, in test_set_with_positive_ttl
+    self.assertIsNone(result)
+AssertionError: {'id': 'fruit', 'name': 'apple'} is not None
+
+======================================================================
+FAIL: test_set_with_zero_ttl (selected_test.TestProductCacheGetSet.test_set_with_zero_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_06__tests_mistral__implementation_openai\selected_test.py", line 34, in test_set_with_zero_ttl
+    self.assertIsNone(result)
+AssertionError: 'value' is not None
+
+======================================================================
+FAIL: test_set_without_ttl (selected_test.TestProductCacheGetSet.test_set_without_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_06__tests_mistral__implementation_openai\selected_test.py", line 24, in test_set_without_ttl
+    self.assertIsNone(result)
+AssertionError: 'apple' is not None
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.112s
+
+FAILED (failures=4)

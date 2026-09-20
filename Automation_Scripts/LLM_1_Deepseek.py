@@ -1,112 +1,167 @@
-from openai import OpenAI
-import json
-import time
+from __future__ import annotations
 
-client = OpenAI(
-    base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+import csv
+import re
+from pathlib import Path
+
+# --- edit these if needed ---
+FAILED_CSV = Path(r"C:\Users\kalup\Desktop\Thesis\automation_output\task_5_failed_tests.csv")
+OUTPUT_CSV = Path(r"C:\Users\kalup\Desktop\Thesis\automation_output\task_5_failed_tests_with_errors.csv")
+# ----------------------------
+
+FAIL_HEADER_RE = re.compile(
+    r"^(?:FAIL|ERROR):\s*(.+?)(?:\s+\(.*\))?$"
 )
-
-LLM_NAME = "deepseek/deepseek-chat"
-RUNS = 10
-
-UNIVERSAL_PROMPT = """
-You are an expert Python developer.
-
-Code Style:
-- Follow PEP 8 style guidelines.
-- Use snake_case for variable names, function names, and file names.
-- Use PascalCase for class names.
-- Write concise, readable code with meaningful variable and function names.
-- Do not add any text, explanation, or code fences. Return only raw Python code.
--Return plain raw Python only
-- Entire response should be executable python code only. Do not include any comments or explanations
-Code Structure:
-- Write simple, self-contained functions.
-- Do not use external libraries unless the task explicitly requires them.
-- Do not generate example usage, main blocks, or print statements unless asked.
-
-Error Handling:
-- Handle edge cases where appropriate using try-except.
-- Return None for invalid inputs rather than crashing silently.
-
-Output:
-- Return only the implementation code.
-- Do not include explanations or comments outside the code. 
-"""
-
-TASK_PROMPT = """
+TRACE_END_RE = re.compile(
+    r"^(?:AssertionError|TypeError|ValueError|AttributeError|KeyError|"
+    r"IndexError|NameError|SyntaxError|ImportError|ModuleNotFoundError|"
+    r"RuntimeError|Exception|Error)(?::\s*.*)?$"
+)
+SUMMARY_RE = re.compile(r"^(?:FAILED|ERROR|OK|Ran \d+ test)")
 
 
- Module Name: Unique_Brands
-Function_Name: get_unique
-Purpose
-•	Returns a unique , filtered list of all valid brand names from the
-available product dataset  in list format.
-•	Eliminates duplicates and removes any None or empty string values
-•	Addresses the need to extract meaningful brand information from
-raw product data for display or filtering purposes . 
-Inputs
-•	Arguments :
-o	brand_list as a parameter taking multiples names of brands
-Outputs
-o	Return Type:
-o	List of Strings list[‘string’ ]
-o	Structure :
-o	 A deduplicated list of non-empty, non-None/non-Null strings from the 'brand' field.
-o	Returns None if no valid brand values exist.
-Constraints
-o	Assumes each product dictionary contains a brand key
-o	Brand values must be strings ; None and empty strings are filtered out
-o	The function should ensure case - insensitivity in brand names and normalize them to a capitalized format (e.g ., " Brandname " instead of " brandname ", " BRANDNAME " , etc .)
-o	No external libraries may be used for deduplication or filtering
-o	Do not use sets for deduplication.
-o	Use only dictionaries and/or lists.
-o	Do not sort the final output list.
-Known Edge cases
-o	If all brand values are None or "" , the result is None
-o	If get_all_products /0 returns [] , the result is also None
-
-o	If the same brand appears in lower and upper case , it is treated as the same brand ( case - insensitive ) 
-
-Example Calls & Expected Outputs
-1. Normal case with valid brands
- get_unique({‘brand’:’Brandname1’},{‘brand’:’Brandname2’},{‘brand’:’Brandname3’})
-[‘Brandname1’,’Brandname2’,’Brandname3’]
- 
-2. Only invalid or missing brands
-	      get_unique([]) 
-                   #=> None
-	      3. Mixed with duplicates and blanks:
-get_unique([{'brand':'Brandname'}, {'brand':'BrAnDNAme'}, {'brand':'BRANDNAME'}, {'brand':'brandname'},{'brand':None}, {'brand': ' '}])
-# => ['Brandname']      
+def short_test_name(full_name: str) -> str:
+    """
+    'test_x (selected_test.Class.test_x)' -> 'test_x'
+    'Test module setup/import' -> same
+    """
+    full_name = (full_name or "").strip()
+    if " (" in full_name:
+        return full_name.split(" (", 1)[0].strip()
+    return full_name
 
 
+def extract_error_block(log_text: str, test_name: str) -> str:
+    lines = log_text.splitlines()
+    target = short_test_name(test_name)
+
+    # Suite-level import/setup crash
+    if target.lower() in {
+        "test module setup/import",
+        "module setup/import",
+        "setup/import",
+    }:
+        for i, line in enumerate(lines):
+            if "SyntaxError" in line or "ImportError" in line or "ModuleNotFoundError" in line:
+                start = max(0, i - 8)
+                end = min(len(lines), i + 3)
+                return "\n".join(lines[start:end]).strip()
+        # fallback: last non-empty chunk
+        tail = [ln for ln in lines[-40:] if ln.strip()]
+        return "\n".join(tail[-15:]).strip() if tail else "NO_ERROR_FOUND"
+
+    # Find FAIL:/ERROR: header matching this test
+    start_idx = None
+    for i, line in enumerate(lines):
+        m = FAIL_HEADER_RE.match(line.strip())
+        if not m:
+            continue
+        header_name = short_test_name(m.group(1))
+        if header_name == target or target in line or header_name in target:
+            start_idx = i
+            break
+
+    # Fallback: first line containing the test function name
+    if start_idx is None:
+        for i, line in enumerate(lines):
+            if target in line and ("FAIL" in line or "ERROR" in line or "AssertionError" in line):
+                start_idx = i
+                break
+
+    if start_idx is None:
+        return "NO_ERROR_FOUND"
+
+    # Collect until next FAIL/ERROR header or unittest summary
+    block: list[str] = []
+    for j in range(start_idx, min(len(lines), start_idx + 80)):
+        ln = lines[j]
+        if j > start_idx and FAIL_HEADER_RE.match(ln.strip()):
+            break
+        if j > start_idx and SUMMARY_RE.match(ln.strip()):
+            break
+        block.append(ln)
+
+    # Prefer the final exception line + a bit of context
+    exc_idx = None
+    for k in range(len(block) - 1, -1, -1):
+        if TRACE_END_RE.match(block[k].strip()) or block[k].strip().startswith(
+            ("AssertionError", "TypeError", "SyntaxError", "AttributeError", "ValueError")
+        ):
+            exc_idx = k
+            break
+
+    if exc_idx is not None:
+        start = max(0, exc_idx - 6)
+        return "\n".join(block[start : exc_idx + 1]).strip()
+
+    # otherwise return trimmed block
+    cleaned = [ln for ln in block if ln.strip()]
+    return "\n".join(cleaned[:20]).strip() if cleaned else "NO_ERROR_FOUND"
 
 
+def main() -> None:
+    if not FAILED_CSV.exists():
+        raise SystemExit(f"Input not found: {FAILED_CSV}")
+
+    with FAILED_CSV.open("r", encoding="utf-8-sig", newline="") as f:
+        reader = csv.DictReader(f)
+        fieldnames = list(reader.fieldnames or [])
+        rows = list(reader)
+
+    if "error_message" not in fieldnames:
+        # put error text near the notes columns
+        insert_at = len(fieldnames)
+        for key in ("manual_notes", "error_category", "failure_cause", "log_file"):
+            if key in fieldnames:
+                insert_at = fieldnames.index(key) + (0 if key == "log_file" else 1)
+                if key == "log_file":
+                    insert_at = fieldnames.index(key) + 1
+                break
+        fieldnames.insert(min(insert_at, len(fieldnames)), "error_message")
+
+    cache: dict[str, str] = {}
+    missing_logs = 0
+    found = 0
+
+    for row in rows:
+        log_path = (row.get("log_file") or "").strip()
+        test_name = (row.get("test_name") or "").strip()
+
+        if not log_path:
+            row["error_message"] = "NO_LOG_PATH"
+            continue
+
+        p = Path(log_path)
+        if not p.exists():
+            row["error_message"] = f"LOG_NOT_FOUND: {log_path}"
+            missing_logs += 1
+            continue
+
+        if log_path not in cache:
+            try:
+                cache[log_path] = p.read_text(encoding="utf-8", errors="replace")
+            except Exception as e:
+                cache[log_path] = ""
+                row["error_message"] = f"LOG_READ_ERROR: {e}"
+                continue
+
+        msg = extract_error_block(cache[log_path], test_name)
+        row["error_message"] = msg
+        if msg not in {"NO_ERROR_FOUND", ""} and not msg.startswith("LOG_"):
+            found += 1
+
+    OUTPUT_CSV.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_CSV.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print("Done.")
+    print(f"Rows:         {len(rows)}")
+    print(f"Errors found: {found}")
+    print(f"Missing logs: {missing_logs}")
+    print(f"Output:       {OUTPUT_CSV}")
 
 
-"""
-
-for i in range(1, RUNS + 1):
-    input(f"Press Enter to generate run {i}/{RUNS}...")  # ADD THIS
-
-    print(f"\n{'=' * 20} RUN {i} {'=' * 20}\n")
-
-    try:
-        response = client.chat.completions.create(
-            model=LLM_NAME,
-            messages=[
-                {"role": "system", "content": UNIVERSAL_PROMPT},
-                {"role": "user", "content": TASK_PROMPT}
-            ]
-        )
-
-        output = response.choices[0].message.content
-        print(output)
-
-    except Exception as e:
-        print(f"ERROR IN RUN {i}: {e}")
-
-    print(f"\n{'=' * 50}\n")
-    time.sleep(3)  
+if __name__ == "__main__":
+    main()

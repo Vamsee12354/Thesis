@@ -1,0 +1,35 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:42
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_diferent_langauge (selected_test.Test_get_min.test_diferent_langauge) ... ok
+test_empty_list (selected_test.Test_get_min.test_empty_list) ... ok
+test_equal_values (selected_test.Test_get_min.test_equal_values) ... C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_deepseek\selected_test.py:40: DeprecationWarning: Please use assertEqual instead.
+  self.assertEquals(get_min_2_attributes(data,"battery_life"),49.99)
+ok
+test_get_min_2_attributes (selected_test.Test_get_min.test_get_min_2_attributes) ... ok
+test_get_wrongname_attribute (selected_test.Test_get_min.test_get_wrongname_attribute) ... ok
+test_multiple_lines_different_keys (selected_test.Test_get_min.test_multiple_lines_different_keys) ... ok
+test_multiple_lines_different_keys_same_meaning (selected_test.Test_get_min.test_multiple_lines_different_keys_same_meaning) ... FAIL
+test_nulls_all_over (selected_test.Test_get_min.test_nulls_all_over) ... ok
+test_with_one_value_in_dict (selected_test.Test_get_min.test_with_one_value_in_dict) ... ok
+
+======================================================================
+FAIL: test_multiple_lines_different_keys_same_meaning (selected_test.Test_get_min.test_multiple_lines_different_keys_same_meaning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_deepseek\selected_test.py", line 73, in test_multiple_lines_different_keys_same_meaning
+    self.assertEqual(get_min_2_attributes(data,'battery'),9.99)
+AssertionError: 19.99 != 9.99
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=1)

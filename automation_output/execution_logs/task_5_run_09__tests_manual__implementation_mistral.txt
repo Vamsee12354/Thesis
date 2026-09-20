@@ -1,0 +1,43 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:18
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_email_autheticity1 (selected_test.Test_get_min.test_email_autheticity1) ... FAIL
+test_email_autheticity2 (selected_test.Test_get_min.test_email_autheticity2) ... ok
+test_email_autheticity3 (selected_test.Test_get_min.test_email_autheticity3) ... ok
+test_email_functionality (selected_test.Test_get_min.test_email_functionality) ... ok
+test_email_replacing_symbol_with_literalmeaning (selected_test.Test_get_min.test_email_replacing_symbol_with_literalmeaning) ... ok
+test_longname (selected_test.Test_get_min.test_longname) ... ok
+test_message (selected_test.Test_get_min.test_message) ... ok
+test_name_with_diff_language (selected_test.Test_get_min.test_name_with_diff_language) ... ok
+test_no_firstname_but_other_details (selected_test.Test_get_min.test_no_firstname_but_other_details) ... ok
+test_no_information (selected_test.Test_get_min.test_no_information) ... ok
+test_normalfunctionalityof_name (selected_test.Test_get_min.test_normalfunctionalityof_name) ... ok
+test_null_values (selected_test.Test_get_min.test_null_values) ... ok
+test_one_lettername (selected_test.Test_get_min.test_one_lettername) ... ok
+test_privacy_Null (selected_test.Test_get_min.test_privacy_Null) ... ok
+test_privacy_reject (selected_test.Test_get_min.test_privacy_reject) ... ok
+test_same_name_written (selected_test.Test_get_min.test_same_name_written) ... ok
+test_subject (selected_test.Test_get_min.test_subject) ... ok
+test_try_different_extensions_email (selected_test.Test_get_min.test_try_different_extensions_email) ... ok
+test_try_different_extensions_email2 (selected_test.Test_get_min.test_try_different_extensions_email2) ... ok
+
+======================================================================
+FAIL: test_email_autheticity1 (selected_test.Test_get_min.test_email_autheticity1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_09__tests_manual__implementation_mistral\selected_test.py", line 44, in test_email_autheticity1
+    self.assertEqual(validate_form("Alex","James","abc abc def @gmail.net","Question","Hallo!",True), ["Email standards not followed"])
+AssertionError: 'Form is valid. Details:Alex,James,abc abc def @gmail.net,Question,Hallo!,True' != ['Email standards not followed']
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.001s
+
+FAILED (failures=1)

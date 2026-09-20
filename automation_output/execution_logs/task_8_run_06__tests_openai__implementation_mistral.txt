@@ -1,0 +1,107 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-20T23:52:50
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_slugify_custom_separator_utf8 (selected_test.TestSlugifyManual.test_slugify_custom_separator_utf8) ... ok
+test_slugify_empty_input (selected_test.TestSlugifyManual.test_slugify_empty_input) ... ok
+test_slugify_ignore_as_string (selected_test.TestSlugifyManual.test_slugify_ignore_as_string) ... FAIL
+test_slugify_ignore_preserves_characters (selected_test.TestSlugifyManual.test_slugify_ignore_preserves_characters) ... FAIL
+test_slugify_leading_trailing_repeated_whitespace (selected_test.TestSlugifyManual.test_slugify_leading_trailing_repeated_whitespace) ... ok
+test_slugify_mixed_language_transliteration (selected_test.TestSlugifyManual.test_slugify_mixed_language_transliteration) ... FAIL
+test_slugify_punctuation_only (selected_test.TestSlugifyManual.test_slugify_punctuation_only) ... ok
+test_slugify_truncate_does_not_break_words (selected_test.TestSlugifyManual.test_slugify_truncate_does_not_break_words) ... FAIL
+test_slugify_truncate_too_small (selected_test.TestSlugifyManual.test_slugify_truncate_too_small) ... FAIL
+test_slugify_with_empty_separator (selected_test.TestSlugifyManual.test_slugify_with_empty_separator) ... ok
+test_slugify_with_ignore_unicode (selected_test.TestSlugifyManual.test_slugify_with_ignore_unicode) ... FAIL
+test_slugify_with_no_lowercase (selected_test.TestSlugifyManual.test_slugify_with_no_lowercase) ... ok
+test_slugify_with_truncate (selected_test.TestSlugifyManual.test_slugify_with_truncate) ... FAIL
+
+======================================================================
+FAIL: test_slugify_ignore_as_string (selected_test.TestSlugifyManual.test_slugify_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 124, in test_slugify_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: 'a-!-b-c-d' != 'a!b-c-d'
+- a-!-b-c-d
+?  - -
++ a!b-c-d
+
+
+======================================================================
+FAIL: test_slugify_ignore_preserves_characters (selected_test.TestSlugifyManual.test_slugify_ignore_preserves_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 104, in test_slugify_ignore_preserves_characters
+    self.assertEqual(result, expected)
+AssertionError: 'a-!-b-@-c-#-d' != 'a!b@c-d'
+- a-!-b-@-c-#-d
++ a!b@c-d
+
+
+======================================================================
+FAIL: test_slugify_mixed_language_transliteration (selected_test.TestSlugifyManual.test_slugify_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 94, in test_slugify_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: '\u4f60\u597d' != 'ni-hao'
+- \u4f60\u597d
++ ni-hao
+
+
+======================================================================
+FAIL: test_slugify_truncate_does_not_break_words (selected_test.TestSlugifyManual.test_slugify_truncate_does_not_break_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 134, in test_slugify_truncate_does_not_break_words
+    self.assertEqual(result, expected)
+AssertionError: 'hello-amazin' != 'hello-amazing'
+- hello-amazin
++ hello-amazing
+?             +
+
+
+======================================================================
+FAIL: test_slugify_truncate_too_small (selected_test.TestSlugifyManual.test_slugify_truncate_too_small)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 75, in test_slugify_truncate_too_small
+    self.assertIsNone(result_1)
+AssertionError: 'h' is not None
+
+======================================================================
+FAIL: test_slugify_with_ignore_unicode (selected_test.TestSlugifyManual.test_slugify_with_ignore_unicode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 50, in test_slugify_with_ignore_unicode
+    self.assertEqual(result, expected)
+AssertionError: '\u4f60-\u597d-\u4e16\u754c' != '\u4f60\u597d-shi-jie'
+- \u4f60-\u597d-\u4e16\u754c
++ \u4f60\u597d-shi-jie
+
+
+======================================================================
+FAIL: test_slugify_with_truncate (selected_test.TestSlugifyManual.test_slugify_with_truncate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_openai__implementation_mistral\selected_test.py", line 40, in test_slugify_with_truncate
+    self.assertEqual(result, expected)
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
++ call-me
+
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+FAILED (failures=7)

@@ -1,0 +1,26 @@
+import unittest
+from implementation_manual import get_read_duration
+
+class TestGetReadDuration(unittest.TestCase):
+
+    def test_normal_paragraph(self):
+        self.assertEqual(get_read_duration("This is a simple blog post with about fifty words total..."), 1)
+
+    def test_long_post(self):
+        long_text = " ".join(["word"] * 450)
+        self.assertEqual(get_read_duration(long_text), 3)
+
+    def test_empty_body(self):
+        self.assertEqual(get_read_duration(""), 1)
+
+    def test_excessive_whitespace(self):
+        self.assertEqual(get_read_duration(" "), 1)
+
+    def test_non_latin_characters(self):
+        self.assertEqual(get_read_duration("你好世界"), 1)
+
+    def test_minimum_return_value(self):
+        self.assertEqual(get_read_duration("a"), 1)
+
+if __name__ == '__main__':
+    unittest.main()

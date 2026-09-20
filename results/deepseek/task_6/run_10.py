@@ -1,6 +1,5 @@
-def is_valid_password(password):
+def IsValidPassword(password):
     errors = []
-    
     if not password:
         errors.append("Please fill the password")
         return errors
@@ -10,7 +9,7 @@ def is_valid_password(password):
     
     has_lower = any(c.islower() for c in password)
     has_upper = any(c.isupper() for c in password)
-    has_digit_or_special = any(c.isdigit() or not c.isalnum() for c in password)
+    has_digit_or_special = any(not c.isalpha() for c in password)
     
     if not has_lower:
         errors.append("Password must contain a lowercase letter")

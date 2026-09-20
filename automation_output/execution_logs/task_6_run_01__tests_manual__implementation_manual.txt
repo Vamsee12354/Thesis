@@ -1,0 +1,30 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:10
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_diff_language (selected_test.Test_password_valid.test_diff_language) ... ok
+test_long_len_pwd (selected_test.Test_password_valid.test_long_len_pwd) ... ok
+test_lower_upper_no_symbol (selected_test.Test_password_valid.test_lower_upper_no_symbol) ... ok
+test_mix_languages (selected_test.Test_password_valid.test_mix_languages) ... ok
+test_no_lowercase (selected_test.Test_password_valid.test_no_lowercase) ... ok
+test_no_password (selected_test.Test_password_valid.test_no_password) ... ok
+test_no_symbols (selected_test.Test_password_valid.test_no_symbols) ... ok
+test_no_upprcase (selected_test.Test_password_valid.test_no_upprcase) ... ok
+test_nolower_upper_symbol (selected_test.Test_password_valid.test_nolower_upper_symbol) ... ok
+test_noupper_lower_symbol (selected_test.Test_password_valid.test_noupper_lower_symbol) ... ok
+test_only_symbols (selected_test.Test_password_valid.test_only_symbols) ... ok
+test_short_len_pwd (selected_test.Test_password_valid.test_short_len_pwd) ... ok
+test_spaces_in_pwd (selected_test.Test_password_valid.test_spaces_in_pwd) ... ok
+test_working_pwd (selected_test.Test_password_valid.test_working_pwd) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+OK

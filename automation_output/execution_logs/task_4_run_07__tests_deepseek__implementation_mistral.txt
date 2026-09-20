@@ -1,0 +1,49 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T11:15:21
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_201_words (selected_test.TestGetReadDuration.test_201_words) ... FAIL
+test_450_words (selected_test.TestGetReadDuration.test_450_words) ... FAIL
+test_empty_string (selected_test.TestGetReadDuration.test_empty_string) ... ok
+test_exactly_200_words (selected_test.TestGetReadDuration.test_exactly_200_words) ... ok
+test_long_text_with_various_whitespace (selected_test.TestGetReadDuration.test_long_text_with_various_whitespace) ... FAIL
+test_mixed_whitespace (selected_test.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_non_latin_characters (selected_test.TestGetReadDuration.test_non_latin_characters) ... ok
+test_single_word (selected_test.TestGetReadDuration.test_single_word) ... ok
+test_whitespace_only (selected_test.TestGetReadDuration.test_whitespace_only) ... ok
+
+======================================================================
+FAIL: test_201_words (selected_test.TestGetReadDuration.test_201_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_07__tests_deepseek__implementation_mistral\selected_test.py", line 20, in test_201_words
+    self.assertEqual(get_read_duration(text.strip()), 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_450_words (selected_test.TestGetReadDuration.test_450_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_07__tests_deepseek__implementation_mistral\selected_test.py", line 24, in test_450_words
+    self.assertEqual(get_read_duration(text.strip()), 3)
+AssertionError: 2 != 3
+
+======================================================================
+FAIL: test_long_text_with_various_whitespace (selected_test.TestGetReadDuration.test_long_text_with_various_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_4_run_07__tests_deepseek__implementation_mistral\selected_test.py", line 36, in test_long_text_with_various_whitespace
+    self.assertEqual(get_read_duration(text), 2)
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (failures=3)

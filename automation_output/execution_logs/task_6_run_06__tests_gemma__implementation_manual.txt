@@ -1,0 +1,55 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:35
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_boundary_length_12_is_valid (selected_test.TestIsValidPassword.test_boundary_length_12_is_valid) ... ok
+test_boundary_length_72_is_valid (selected_test.TestIsValidPassword.test_boundary_length_72_is_valid) ... FAIL
+test_missing_lowercase_returns_error (selected_test.TestIsValidPassword.test_missing_lowercase_returns_error) ... ok
+test_missing_password_returns_error (selected_test.TestIsValidPassword.test_missing_password_returns_error) ... FAIL
+test_missing_special_or_number_returns_error (selected_test.TestIsValidPassword.test_missing_special_or_number_returns_error) ... ok
+test_missing_uppercase_returns_error (selected_test.TestIsValidPassword.test_missing_uppercase_returns_error) ... ok
+test_multiple_validation_failures (selected_test.TestIsValidPassword.test_multiple_validation_failures) ... ok
+test_none_password_returns_error (selected_test.TestIsValidPassword.test_none_password_returns_error) ... ERROR
+test_password_too_long_returns_error (selected_test.TestIsValidPassword.test_password_too_long_returns_error) ... ok
+test_password_too_short_returns_error (selected_test.TestIsValidPassword.test_password_too_short_returns_error) ... ok
+test_valid_password_returns_success_message (selected_test.TestIsValidPassword.test_valid_password_returns_success_message) ... ok
+
+======================================================================
+ERROR: test_none_password_returns_error (selected_test.TestIsValidPassword.test_none_password_returns_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_06__tests_gemma__implementation_manual\selected_test.py", line 34, in test_none_password_returns_error
+    result = IsValidPassword(password)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_06__tests_gemma__implementation_manual\implementation_manual.py", line 3, in IsValidPassword
+    if len(password)==0:
+       ^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+
+======================================================================
+FAIL: test_boundary_length_72_is_valid (selected_test.TestIsValidPassword.test_boundary_length_72_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_06__tests_gemma__implementation_manual\selected_test.py", line 133, in test_boundary_length_72_is_valid
+    self.assertEqual(result, expected)
+AssertionError: ['Length must be between 12 and 72 characters'] != 'The password is valid'
+
+======================================================================
+FAIL: test_missing_password_returns_error (selected_test.TestIsValidPassword.test_missing_password_returns_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_06__tests_gemma__implementation_manual\selected_test.py", line 26, in test_missing_password_returns_error
+    self.assertEqual(result, expected)
+AssertionError: 'Please fill the password' != ['Please fill the password']
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+FAILED (failures=2, errors=1)

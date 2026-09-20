@@ -1,0 +1,34 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:20
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_none (selected_test.TestGetAveragePrice.test_all_prices_none) ... ok
+test_all_prices_zero (selected_test.TestGetAveragePrice.test_all_prices_zero) ... ok
+test_empty_price_list (selected_test.TestGetAveragePrice.test_empty_price_list) ... ok
+test_float_prices (selected_test.TestGetAveragePrice.test_float_prices) ... ok
+test_large_numbers (selected_test.TestGetAveragePrice.test_large_numbers) ... ok
+test_mixed_prices_with_none (selected_test.TestGetAveragePrice.test_mixed_prices_with_none) ... ok
+test_negative_prices (selected_test.TestGetAveragePrice.test_negative_prices) ... ok
+test_normal_case_with_valid_prices (selected_test.TestGetAveragePrice.test_normal_case_with_valid_prices) ... ok
+test_rounding_to_two_decimals (selected_test.TestGetAveragePrice.test_rounding_to_two_decimals) ... FAIL
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_rounding_to_two_decimals (selected_test.TestGetAveragePrice.test_rounding_to_two_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_06__tests_mistral__implementation_manual\selected_test.py", line 54, in test_rounding_to_two_decimals
+    self.assertEqual(result, 20.45)
+AssertionError: 20.46 != 20.45
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=1)

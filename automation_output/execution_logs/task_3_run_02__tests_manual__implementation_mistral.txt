@@ -1,0 +1,133 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:30:43
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_diferent_langauge (selected_test.Test_get_min.test_diferent_langauge) ... ERROR
+test_empty_list (selected_test.Test_get_min.test_empty_list) ... ERROR
+test_equal_values (selected_test.Test_get_min.test_equal_values) ... ERROR
+test_get_min_2_attributes (selected_test.Test_get_min.test_get_min_2_attributes) ... ERROR
+test_get_wrongname_attribute (selected_test.Test_get_min.test_get_wrongname_attribute) ... ERROR
+test_multiple_lines_different_keys (selected_test.Test_get_min.test_multiple_lines_different_keys) ... ERROR
+test_multiple_lines_different_keys_same_meaning (selected_test.Test_get_min.test_multiple_lines_different_keys_same_meaning) ... ERROR
+test_nulls_all_over (selected_test.Test_get_min.test_nulls_all_over) ... ERROR
+test_with_one_value_in_dict (selected_test.Test_get_min.test_with_one_value_in_dict) ... ERROR
+
+======================================================================
+ERROR: test_diferent_langauge (selected_test.Test_get_min.test_diferent_langauge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 63, in test_diferent_langauge
+    self.assertEqual(get_min_2_attributes(data,"\u0c30\u0c47\u0c1f\u0c3f\u0c02\u0c17\u0c4d"),2.0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_list (selected_test.Test_get_min.test_empty_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 44, in test_empty_list
+    self.assertEqual(get_min_2_attributes(data,"price"),None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_equal_values (selected_test.Test_get_min.test_equal_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 40, in test_equal_values
+    self.assertEquals(get_min_2_attributes(data,"battery_life"),49.99)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_get_min_2_attributes (selected_test.Test_get_min.test_get_min_2_attributes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 13, in test_get_min_2_attributes
+    self.assertEquals(get_min_2_attributes(data,"price"),29.99)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_get_wrongname_attribute (selected_test.Test_get_min.test_get_wrongname_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 31, in test_get_wrongname_attribute
+    self.assertFalse(get_min_2_attributes(data,"cost"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_multiple_lines_different_keys (selected_test.Test_get_min.test_multiple_lines_different_keys)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 83, in test_multiple_lines_different_keys
+    self.assertEqual(get_min_2_attributes(data,'battery'),2.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_multiple_lines_different_keys_same_meaning (selected_test.Test_get_min.test_multiple_lines_different_keys_same_meaning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 73, in test_multiple_lines_different_keys_same_meaning
+    self.assertEqual(get_min_2_attributes(data,'battery'),9.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_nulls_all_over (selected_test.Test_get_min.test_nulls_all_over)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 22, in test_nulls_all_over
+    self.assertFalse(get_min_2_attributes(data,"price"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_with_one_value_in_dict (selected_test.Test_get_min.test_with_one_value_in_dict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\selected_test.py", line 54, in test_with_one_value_in_dict
+    self.assertEqual(get_min_2_attributes(data,"price"),29.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_02__tests_manual__implementation_mistral\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+FAILED (errors=9)

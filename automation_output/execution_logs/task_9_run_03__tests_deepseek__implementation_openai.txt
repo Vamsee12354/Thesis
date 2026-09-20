@@ -1,0 +1,30 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:26:51
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+selected_test (unittest.loader._FailedTest.selected_test) ... ERROR
+
+======================================================================
+ERROR: selected_test (unittest.loader._FailedTest.selected_test)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: selected_test
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_03__tests_deepseek__implementation_openai\selected_test.py", line 2, in <module>
+    from implementation_manual import Product_cache_get
+ImportError: cannot import name 'Product_cache_get' from 'implementation_manual' (C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_03__tests_deepseek__implementation_openai\implementation_manual.py)
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,41 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-26T11:31:02
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_none_values (selected_test.TestGetMin2Attributes.test_all_none_values) ... ok
+test_empty_list (selected_test.TestGetMin2Attributes.test_empty_list) ... ok
+test_happy_path_battery_life (selected_test.TestGetMin2Attributes.test_happy_path_battery_life) ... ok
+test_happy_path_price (selected_test.TestGetMin2Attributes.test_happy_path_price) ... ok
+test_large_numbers (selected_test.TestGetMin2Attributes.test_large_numbers) ... ok
+test_mixed_numeric_types (selected_test.TestGetMin2Attributes.test_mixed_numeric_types) ... ok
+test_mixed_valid_and_invalid_entries (selected_test.TestGetMin2Attributes.test_mixed_valid_and_invalid_entries) ... ok
+test_negative_values (selected_test.TestGetMin2Attributes.test_negative_values) ... ok
+test_nonexistent_field (selected_test.TestGetMin2Attributes.test_nonexistent_field) ... ok
+test_rounding_to_two_decimals (selected_test.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+test_single_valid_value (selected_test.TestGetMin2Attributes.test_single_valid_value) ... ok
+test_string_values_should_be_ignored (selected_test.TestGetMin2Attributes.test_string_values_should_be_ignored) ... ERROR
+test_zero_value (selected_test.TestGetMin2Attributes.test_zero_value) ... ok
+
+======================================================================
+ERROR: test_string_values_should_be_ignored (selected_test.TestGetMin2Attributes.test_string_values_should_be_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_07__tests_mistral__implementation_manual\selected_test.py", line 101, in test_string_values_should_be_ignored
+    result = get_min_2_attributes(data, "name")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_3_run_07__tests_mistral__implementation_manual\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.001s
+
+FAILED (errors=1)

@@ -1,0 +1,37 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:29
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_none (selected_test.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (selected_test.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (selected_test.TestGetAveragePrice.test_empty_price_list) ... ok
+test_mixed_none_and_valid_prices (selected_test.TestGetAveragePrice.test_mixed_none_and_valid_prices) ... ok
+test_prices_with_float_values (selected_test.TestGetAveragePrice.test_prices_with_float_values) ... ok
+test_prices_with_negative_values (selected_test.TestGetAveragePrice.test_prices_with_negative_values) ... ok
+test_prices_with_non_numeric_values_ignored (selected_test.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored) ... ERROR
+test_prices_with_zero_values (selected_test.TestGetAveragePrice.test_prices_with_zero_values) ... ok
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+ERROR: test_prices_with_non_numeric_values_ignored (selected_test.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_08__tests_openai__implementation_amazon\selected_test.py", line 74, in test_prices_with_non_numeric_values_ignored
+    result = get_average_price(price_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_08__tests_openai__implementation_amazon\implementation_manual.py", line 5, in get_average_price
+    average_price = round(sum(valid_prices) / len(valid_prices), 2)
+                          ^^^^^^^^^^^^^^^^^
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+FAILED (errors=1)

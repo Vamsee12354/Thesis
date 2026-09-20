@@ -1,0 +1,26 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:22:54
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_fields_valid_with_edge_email (selected_test.TestValidateForm.test_all_fields_valid_with_edge_email) ... ok
+test_email_empty_and_invalid_privacy (selected_test.TestValidateForm.test_email_empty_and_invalid_privacy) ... ok
+test_email_with_spaces_trimmed (selected_test.TestValidateForm.test_email_with_spaces_trimmed) ... ok
+test_empty_body (selected_test.TestValidateForm.test_empty_body) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_multiple_errors_all_fields_invalid (selected_test.TestValidateForm.test_multiple_errors_all_fields_invalid) ... ok
+test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean) ... ok
+test_reject_privacy_policy (selected_test.TestValidateForm.test_reject_privacy_policy) ... ok
+test_valid_form (selected_test.TestValidateForm.test_valid_form) ... ok
+test_whitespace_only_fields (selected_test.TestValidateForm.test_whitespace_only_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK

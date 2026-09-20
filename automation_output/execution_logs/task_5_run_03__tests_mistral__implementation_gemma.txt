@@ -1,0 +1,52 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:22:49
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_email_with_whitespace (selected_test.TestValidateForm.test_email_with_whitespace) ... ok
+test_empty_fields (selected_test.TestValidateForm.test_empty_fields) ... ok
+test_invalid_email_format (selected_test.TestValidateForm.test_invalid_email_format) ... ok
+test_missing_email (selected_test.TestValidateForm.test_missing_email) ... ok
+test_missing_first_name (selected_test.TestValidateForm.test_missing_first_name) ... ok
+test_missing_last_name (selected_test.TestValidateForm.test_missing_last_name) ... ok
+test_missing_message (selected_test.TestValidateForm.test_missing_message) ... ok
+test_missing_privacy (selected_test.TestValidateForm.test_missing_privacy) ... ok
+test_missing_subject (selected_test.TestValidateForm.test_missing_subject) ... ok
+test_multiple_errors (selected_test.TestValidateForm.test_multiple_errors) ... FAIL
+test_privacy_none (selected_test.TestValidateForm.test_privacy_none) ... ok
+test_privacy_not_boolean (selected_test.TestValidateForm.test_privacy_not_boolean) ... ok
+test_valid_form (selected_test.TestValidateForm.test_valid_form) ... ok
+test_whitespace_only_fields (selected_test.TestValidateForm.test_whitespace_only_fields) ... ok
+
+======================================================================
+FAIL: test_multiple_errors (selected_test.TestValidateForm.test_multiple_errors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_03__tests_mistral__implementation_gemma\selected_test.py", line 78, in test_multiple_errors
+    self.assertEqual(result, expected_errors)
+AssertionError: Lists differ: ['Ple[18 chars]e', 'Email standards not followed', 'Please Ty[44 chars]icy'] != ['Ple[18 chars]e', 'Please Type EmailID', 'Email standards no[67 chars]icy']
+
+First differing element 1:
+'Email standards not followed'
+'Please Type EmailID'
+
+Second list contains 1 additional elements.
+First extra element 4:
+'Please confirm the privacy policy'
+
+  ['Please Type First Name',
++  'Please Type EmailID',
+   'Email standards not followed',
+   'Please Type Subject',
+   'Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,72 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-30T15:23:09
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+Form is valid. Details:Axxs,James,abc@gmail.com,Question,Hallo!,True
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_blank_email (selected_test.TestFormValidation.test_blank_email) ... FAIL
+test_empty_form (selected_test.TestFormValidation.test_empty_form) ... ok
+test_invalid_email (selected_test.TestFormValidation.test_invalid_email) ... FAIL
+test_missing_fields (selected_test.TestFormValidation.test_missing_fields) ... FAIL
+test_missing_privacy (selected_test.TestFormValidation.test_missing_privacy) ... ok
+test_only_whitespace_fields (selected_test.TestFormValidation.test_only_whitespace_fields) ... ok
+test_valid_form (selected_test.TestFormValidation.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_blank_email (selected_test.TestFormValidation.test_blank_email)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_07__tests_amazon__implementation_manual\selected_test.py", line 24, in test_blank_email
+    self.assertEqual(result, ["Please Type EmailID", "Please confirm the privacy policy"])
+AssertionError: Lists differ: ['Please Type EmailID'] != ['Please Type EmailID', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Please Type EmailID']
++ ['Please Type EmailID', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_invalid_email (selected_test.TestFormValidation.test_invalid_email)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_07__tests_amazon__implementation_manual\selected_test.py", line 20, in test_invalid_email
+    self.assertEqual(result, ["Email standards not followed", "Please confirm the privacy policy"])
+AssertionError: Lists differ: ['Email standards not followed'] != ['Email standards not followed', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 1:
+'Please confirm the privacy policy'
+
+- ['Email standards not followed']
++ ['Email standards not followed', 'Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_missing_fields (selected_test.TestFormValidation.test_missing_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_5_run_07__tests_amazon__implementation_manual\selected_test.py", line 28, in test_missing_fields
+    self.assertEqual(result, ["Please Type Last Name", "Please Type Subject", "Please Type Message", "Please confirm the privacy policy"])
+AssertionError: Lists differ: ['Ple[37 chars]ject'] != ['Ple[37 chars]ject', 'Please Type Message', 'Please confirm [15 chars]icy']
+
+Second list contains 2 additional elements.
+First extra element 2:
+'Please Type Message'
+
+- ['Please Type Last Name', 'Please Type Subject']
++ ['Please Type Last Name',
++  'Please Type Subject',
++  'Please Type Message',
++  'Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+FAILED (failures=3)

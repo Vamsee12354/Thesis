@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-24T00:22:11
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_cleanup (selected_test.TestProductCache.test_cleanup) ... ok
+test_delete_existing_key (selected_test.TestProductCache.test_delete_existing_key) ... ok
+test_delete_non_existent_key (selected_test.TestProductCache.test_delete_non_existent_key) ... FAIL
+test_get_non_existent_key (selected_test.TestProductCache.test_get_non_existent_key) ... ok
+test_initialization (selected_test.TestProductCache.test_initialization) ... ok
+test_set_and_get (selected_test.TestProductCache.test_set_and_get) ... ok
+test_set_with_custom_ttl (selected_test.TestProductCache.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (selected_test.TestProductCache.test_set_with_negative_ttl) ... ok
+
+======================================================================
+FAIL: test_delete_non_existent_key (selected_test.TestProductCache.test_delete_non_existent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_9_run_01__tests_amazon__implementation_gemma\selected_test.py", line 33, in test_delete_non_existent_key
+    self.assertEqual(self.cache.delete('non-existent'), 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=1)

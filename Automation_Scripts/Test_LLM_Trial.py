@@ -9,14 +9,10 @@ client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key="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"
 )
-
-
 LLM_NAME = "gemma"
 MODEL_ID = "google/gemma-4-26b-a4b-it"
-
 TASK_NUMBER = "1"
 RUNS = 1
-
 TEMPERATURE = 0.0
 TOP_P = 1.0
 TOP_K = 1

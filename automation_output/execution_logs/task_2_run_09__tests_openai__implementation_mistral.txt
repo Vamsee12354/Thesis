@@ -1,0 +1,24 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:33
+Return code: 0
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_none (selected_test.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (selected_test.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (selected_test.TestGetAveragePrice.test_empty_price_list) ... ok
+test_mixed_none_and_valid_prices (selected_test.TestGetAveragePrice.test_mixed_none_and_valid_prices) ... ok
+test_prices_with_float_values (selected_test.TestGetAveragePrice.test_prices_with_float_values) ... ok
+test_prices_with_negative_values (selected_test.TestGetAveragePrice.test_prices_with_negative_values) ... ok
+test_prices_with_zero_values (selected_test.TestGetAveragePrice.test_prices_with_zero_values) ... ok
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.000s
+
+OK

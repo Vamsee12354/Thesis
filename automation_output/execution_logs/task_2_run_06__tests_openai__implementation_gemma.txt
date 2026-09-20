@@ -1,0 +1,32 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:48:20
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_none (selected_test.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (selected_test.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (selected_test.TestGetAveragePrice.test_empty_price_list) ... ok
+test_prices_with_all_none_and_empty_dicts (selected_test.TestGetAveragePrice.test_prices_with_all_none_and_empty_dicts) ... ok
+test_prices_with_float_values (selected_test.TestGetAveragePrice.test_prices_with_float_values) ... ok
+test_prices_with_non_numeric_price (selected_test.TestGetAveragePrice.test_prices_with_non_numeric_price) ... FAIL
+test_prices_with_zero_and_valid (selected_test.TestGetAveragePrice.test_prices_with_zero_and_valid) ... ok
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_prices_with_non_numeric_price (selected_test.TestGetAveragePrice.test_prices_with_non_numeric_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_06__tests_openai__implementation_gemma\selected_test.py", line 66, in test_prices_with_non_numeric_price
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=1)

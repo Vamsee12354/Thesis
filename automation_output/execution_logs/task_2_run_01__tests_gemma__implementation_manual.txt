@@ -1,0 +1,34 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-07-17T13:47:58
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_all_prices_are_none (selected_test.TestGetAveragePrice.test_all_prices_are_none) ... ok
+test_average_calculation_with_rounding (selected_test.TestGetAveragePrice.test_average_calculation_with_rounding) ... ok
+test_average_calculation_with_valid_prices (selected_test.TestGetAveragePrice.test_average_calculation_with_valid_prices) ... ok
+test_empty_list (selected_test.TestGetAveragePrice.test_empty_list) ... ok
+test_list_with_empty_dictionary_values (selected_test.TestGetAveragePrice.test_list_with_empty_dictionary_values) ... ERROR
+test_single_valid_price (selected_test.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+ERROR: test_list_with_empty_dictionary_values (selected_test.TestGetAveragePrice.test_list_with_empty_dictionary_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_01__tests_gemma__implementation_manual\selected_test.py", line 77, in test_list_with_empty_dictionary_values
+    result = get_average_price(price_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_2_run_01__tests_gemma__implementation_manual\implementation_manual.py", line 6, in get_average_price
+    if i['price'] is not None:
+       ~^^^^^^^^^
+KeyError: 'price'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (errors=1)

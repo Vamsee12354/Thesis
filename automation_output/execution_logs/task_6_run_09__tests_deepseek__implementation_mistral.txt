@@ -1,0 +1,57 @@
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-08-18T10:39:49
+Return code: 1
+================================================================================
+
+STANDARD OUTPUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR
+--------------------------------------------------------------------------------
+test_missing_password (selected_test.TestPasswordValidator.test_missing_password) ... ok
+test_multiple_errors (selected_test.TestPasswordValidator.test_multiple_errors) ... ok
+test_password_missing_lowercase (selected_test.TestPasswordValidator.test_password_missing_lowercase) ... ok
+test_password_missing_special_or_number (selected_test.TestPasswordValidator.test_password_missing_special_or_number) ... ok
+test_password_missing_uppercase (selected_test.TestPasswordValidator.test_password_missing_uppercase) ... ok
+test_password_too_long (selected_test.TestPasswordValidator.test_password_too_long) ... FAIL
+test_password_too_short (selected_test.TestPasswordValidator.test_password_too_short) ... ok
+test_valid_password (selected_test.TestPasswordValidator.test_valid_password) ... ok
+test_valid_password_with_max_length (selected_test.TestPasswordValidator.test_valid_password_with_max_length) ... FAIL
+test_valid_password_with_min_length (selected_test.TestPasswordValidator.test_valid_password_with_min_length) ... ok
+test_valid_password_with_numbers (selected_test.TestPasswordValidator.test_valid_password_with_numbers) ... ok
+test_valid_password_with_special_chars (selected_test.TestPasswordValidator.test_valid_password_with_special_chars) ... ok
+
+======================================================================
+FAIL: test_password_too_long (selected_test.TestPasswordValidator.test_password_too_long)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_09__tests_deepseek__implementation_mistral\selected_test.py", line 13, in test_password_too_long
+    self.assertEqual(IsValidPassword(long_password), ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_valid_password_with_max_length (selected_test.TestPasswordValidator.test_valid_password_with_max_length)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_6_run_09__tests_deepseek__implementation_mistral\selected_test.py", line 46, in test_valid_password_with_max_length
+    self.assertEqual(IsValidPassword(password), "The password is valid")
+AssertionError: ['Length must be between 12 and 72 characters'] != 'The password is valid'
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.002s
+
+FAILED (failures=2)
