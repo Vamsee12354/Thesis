@@ -1,0 +1,25 @@
+Execution timed out after 60 seconds.
+
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+
+Test file:
+C:\Users\kalup\Desktop\Thesis\generated_tests\amazon\task_8\run_07_test.py
+
+Implementation file:
+C:\Users\kalup\Desktop\Thesis\results\deepseek\task_8\run_07.py
+
+STANDARD OUTPUT BEFORE TIMEOUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR BEFORE TIMEOUT
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_leading_trailing_whitespace (selected_test.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_lowercase_false (selected_test.TestSlugifyManual.test_lowercase_false) ... ok
+test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_punctuation_only_input (selected_test.TestSlugifyManual.test_punctuation_only_input) ... ok
+test_repeated_whitespace (selected_test.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string) ... 

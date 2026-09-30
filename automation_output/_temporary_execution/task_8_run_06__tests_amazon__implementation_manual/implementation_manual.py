@@ -1,5 +1,4 @@
 
-import unicodedata
 def slugify_manual(text,separator='-',lowercase=True,ignore=None,truncate=None):
     if text is None or text=="":
         return None
@@ -8,9 +7,6 @@ def slugify_manual(text,separator='-',lowercase=True,ignore=None,truncate=None):
         return None
     if not ignore :
         ignore=[]
-
-    decomposed=unicodedata.normalize('NFKD',text)
-    text="".join(ch for ch in decomposed if not unicodedata.combining(ch))
 
     new_text=""
     if lowercase:
@@ -36,4 +32,4 @@ def slugify_manual(text,separator='-',lowercase=True,ignore=None,truncate=None):
         return None
     return new_text
 
-print(slugify_manual("café Bjorn!"))
+ 

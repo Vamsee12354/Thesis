@@ -1,0 +1,19 @@
+Execution timed out after 60 seconds.
+
+Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+
+Test file:
+C:\Users\kalup\Desktop\Thesis\generated_tests\mistral\task_8\run_07_test.py
+
+Implementation file:
+C:\Users\kalup\Desktop\Thesis\results\deepseek\task_8\run_07.py
+
+STANDARD OUTPUT BEFORE TIMEOUT
+--------------------------------------------------------------------------------
+
+
+STANDARD ERROR BEFORE TIMEOUT
+--------------------------------------------------------------------------------
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... 

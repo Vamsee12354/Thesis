@@ -1,24 +1,70 @@
-def IsValidPassword(password):
-    errors = []
-    if not password:
-        errors.append("Please fill the password")
-        return errors
-    
-    if len(password) < 12 or len(password) > 72:
-        errors.append("Length must be between 12 and 72 characters")
-    
-    has_lower = any(c.islower() for c in password)
-    has_upper = any(c.isupper() for c in password)
-    has_digit_or_special = any(not c.isalpha() for c in password)
-    
-    if not has_lower:
-        errors.append("Password must contain a lowercase letter")
-    if not has_upper:
-        errors.append("Password must contain an uppercase letter")
-    if not has_digit_or_special:
-        errors.append("Password must contain a special character or a number")
-    
-    return "The password is valid" if not errors else errors
+import re
+import unicodedata
 
-pwd = "LowerUpper"
-print(IsValidPassword(pwd))
+def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str) or not text.strip():
+        return None
+    
+    if ignore is None:
+        ignore = []
+    elif isinstance(ignore, str):
+        ignore = [ignore]
+    
+    normalized = unicodedata.normalize('NFKD', text)
+    allowed_chars = set()
+    
+    for c in normalized:
+        if ord(c) < 128 and c.isalnum() or c in ignore:
+            allowed_chars.add(c)
+    
+    cleaned = []
+    word = []
+    
+    for c in normalized:
+        if c in allowed_chars:
+            if c.isalnum():
+                word.append(c.lower() if lowercase else c)
+            else:
+                if word:
+                    cleaned.append(''.join(word))
+                    word = []
+                cleaned.append(c)
+        else:
+            if word:
+                cleaned.append(''.join(word))
+                word = []
+    
+    if word:
+        cleaned.append(''.join(word))
+    
+    slug_parts = []
+    for item in cleaned:
+        if item not in ignore:
+            if item.isalnum():
+                slug_parts.append(item)
+        else:
+            slug_parts.append(item)
+    
+    slug = separator.join(slug_parts)
+    slug = re.sub(rf'{re.escape(separator)}+', separator, slug)
+    slug = slug.strip(separator)
+    
+    if truncate is not None and truncate > 0:
+        parts = slug.split(separator)
+        truncated = []
+        length = 0
+        
+        for part in parts:
+            if length + len(part) + (1 if truncated else 0) <= truncate:
+                truncated.append(part)
+                length += len(part) + (1 if truncated else 0)
+            else:
+                break
+        
+        slug = separator.join(truncated)
+        slug = slug[:truncate].rstrip(separator)
+    
+    if not slug:
+        return None
+    
+    return slug

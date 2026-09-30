@@ -4,13 +4,13 @@ import subprocess
 import sys
 
 
-TASK_NUMBER = "6"
+TASK_NUMBER = "8"
 # manual, gemma, deepseek, mistral, openai, amazon
-TEST_LLM = "deepseek"
+TEST_LLM = "gemma"
 # manual, gemma, deepseek, mistral, openai, amazon
 IMPLEMENTATION_LLM = "deepseek"
 TEST_RUN = 1
-IMPLEMENTATION_RUN =1
+IMPLEMENTATION_RUN = 1
 
 
 MANUAL_TASK_FOLDERS = {
@@ -22,32 +22,31 @@ MANUAL_TASK_FOLDERS = {
     "6": "task6_validate_password",
     "7": "task7_product_list_live_v",
     "8": "task8_slugify",
-    "9": "task9_product_cache_get"
+    "9": "task9_product_cache_get",
 }
+
 base_dir = r"c:\Users\kalup\Desktop\Thesis"
 
 work_directory = os.path.join(
     base_dir,
     "_execution_temp",
-    "single_check"
+    "single_check",
 )
 
 manual_task_folder = MANUAL_TASK_FOLDERS[TASK_NUMBER]
 
 
 if TEST_LLM.lower() == "manual":
-
     test_file_name = "tests.py"
 
     source_test_file = os.path.join(
         base_dir,
         "src",
         manual_task_folder,
-        test_file_name
+        test_file_name,
     )
 
     test_run_display = "Manual baseline"
-
 else:
     test_file_name = f"run_{TEST_RUN:02d}_test.py"
 
@@ -56,26 +55,23 @@ else:
         "generated_tests",
         TEST_LLM,
         f"task_{TASK_NUMBER}",
-        test_file_name
+        test_file_name,
     )
 
     test_run_display = f"{TEST_RUN:02d}"
 
 
-
 if IMPLEMENTATION_LLM.lower() == "manual":
-
     implementation_file_name = "implementation_manual.py"
 
     source_implementation_file = os.path.join(
         base_dir,
         "src",
         manual_task_folder,
-        implementation_file_name
+        implementation_file_name,
     )
 
     implementation_run_display = "Manual baseline"
-
 else:
     implementation_file_name = f"run_{IMPLEMENTATION_RUN:02d}.py"
 
@@ -84,11 +80,10 @@ else:
         "results",
         IMPLEMENTATION_LLM,
         f"task_{TASK_NUMBER}",
-        implementation_file_name
+        implementation_file_name,
     )
 
     implementation_run_display = f"{IMPLEMENTATION_RUN:02d}"
-
 
 
 if not os.path.exists(source_test_file):
@@ -105,22 +100,22 @@ else:
 
     temporary_implementation_file = os.path.join(
         work_directory,
-        "implementation_manual.py"
+        "implementation_manual.py",
     )
 
     temporary_test_file = os.path.join(
         work_directory,
-        "selected_test.py"
+        "selected_test.py",
     )
 
     shutil.copy2(
         source_implementation_file,
-        temporary_implementation_file
+        temporary_implementation_file,
     )
 
     shutil.copy2(
         source_test_file,
-        temporary_test_file
+        temporary_test_file,
     )
 
     print("\n" + "=" * 75)
@@ -151,12 +146,13 @@ else:
             "-m",
             "unittest",
             "-v",
-            "selected_test"
+            "selected_test",
         ],
         cwd=work_directory,
         capture_output=True,
         text=True,
-        encoding="utf-8"
+        encoding="utf-8",
+        errors="replace",
     )
 
     terminal_output = result.stdout + result.stderr
@@ -169,13 +165,11 @@ else:
     for line in result.stderr.splitlines():
         line = line.strip()
 
-        if " ... ok" in line:
+        if line.endswith(" ... ok"):
             passed_count += 1
-
-        elif " ... FAIL" in line:
+        elif line.endswith(" ... FAIL"):
             failed_count += 1
-
-        elif " ... ERROR" in line:
+        elif line.endswith(" ... ERROR"):
             error_count += 1
 
     total_count = passed_count + failed_count + error_count

@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-08-20T23:52:52
+Timestamp: 2026-09-28T12:11:54
 Return code: 1
 ================================================================================
 
@@ -9,4 +9,68 @@ STANDARD OUTPUT
 
 STANDARD ERROR
 --------------------------------------------------------------------------------
-None
+test_all_capitals (selected_test.Test_slugify_text.test_all_capitals) ... ok
+test_already_slugified (selected_test.Test_slugify_text.test_already_slugified) ... ok
+test_different_language (selected_test.Test_slugify_text.test_different_language) ... FAIL
+test_functionality (selected_test.Test_slugify_text.test_functionality) ... ok
+test_ignore (selected_test.Test_slugify_text.test_ignore) ... FAIL
+test_letters_spaces (selected_test.Test_slugify_text.test_letters_spaces) ... ok
+test_multiple_batches_text (selected_test.Test_slugify_text.test_multiple_batches_text) ... ok
+test_no_text (selected_test.Test_slugify_text.test_no_text) ... ok
+test_repeated_spaces_between_words (selected_test.Test_slugify_text.test_repeated_spaces_between_words) ... ok
+test_sentence_with_no_space (selected_test.Test_slugify_text.test_sentence_with_no_space) ... ok
+test_sentence_with_punctuations (selected_test.Test_slugify_text.test_sentence_with_punctuations) ... ok
+test_separator (selected_test.Test_slugify_text.test_separator) ... FAIL
+test_single_word (selected_test.Test_slugify_text.test_single_word) ... ok
+test_spaces_single_word (selected_test.Test_slugify_text.test_spaces_single_word) ... ok
+test_symbols_inbetween_text (selected_test.Test_slugify_text.test_symbols_inbetween_text) ... ok
+test_truncate (selected_test.Test_slugify_text.test_truncate) ... FAIL
+
+======================================================================
+FAIL: test_different_language (selected_test.Test_slugify_text.test_different_language)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_deepseek\selected_test.py", line 35, in test_different_language
+    self.assertEqual(slugify_manual('Für die WMCE wählen Radiosprecher von Weltmusikprogrammen aus 24 Europäischen Ländern jeden Monat ihre persönliche Top 10 der aktuellen Albumveröffentlichungen.'),'fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-')
+AssertionError: 'fur-[94 chars]ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen' != 'fur-[94 chars]ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-'
+- fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen
++ fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-
+?                                                                                                                                                                +
+
+
+======================================================================
+FAIL: test_ignore (selected_test.Test_slugify_text.test_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_deepseek\selected_test.py", line 47, in test_ignore
+    self.assertEqual(slugify_manual("hello%world", lowercase=True, ignore="%", truncate=None),"hello%world")
+AssertionError: 'hello-%-world' != 'hello%world'
+- hello-%-world
+?      - -
++ hello%world
+
+
+======================================================================
+FAIL: test_separator (selected_test.Test_slugify_text.test_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_deepseek\selected_test.py", line 50, in test_separator
+    self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=None),"hello%+world")
+AssertionError: 'hello+%+world' != 'hello%+world'
+- hello+%+world
+?      -
++ hello%+world
+
+
+======================================================================
+FAIL: test_truncate (selected_test.Test_slugify_text.test_truncate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_deepseek\selected_test.py", line 53, in test_truncate
+    self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"hello%")
+AssertionError: None != 'hello%'
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+FAILED (failures=4)

@@ -433,8 +433,8 @@ Purpose
 Inputs
 •	Parameters :
 o	text: Takes in a string which needs to be slugified
-o	separator= ( binary or UTF -8 integer ): character (s) used to replace spaces between words . Default: ‘ – ‘
-o	lowercase ( string ) : whether to convert the result to lowercase . Default : true
+o	separator ( binary or UTF -8 integer ): character (s) used to replace spaces between words . Default: "-"
+o	lowercase ( bool ) : whether to convert the result to lowercase . Default : True
 o	ignore: ( string or list of strings ): characters to preserve in the slug and skip during cleanup. Defaullt: None
 o	truncate: ( positive integer ) : maximum length of the slug , truncating without breaking words .
 Outputs
@@ -452,21 +452,21 @@ Known Edge Cases
 •	Empty input or punctuation - only input => returns None
 •	Very small : truncate values (e .g., 1 or 2) may eliminate all words if none fit . 
 •	Leading / trailing and repeated whitespace => cleaned up .
-Example : " foo bar " => " foo - bar ".
+Example : "foo bar" => "foo-bar".
 •	Mixed - language input => transliterated where possible ( e.g.,
-"\ u4f60 \ u597d " => "ni - hao " unless ignored ) .
+"\u4f60\u597d" => "ni-hao" unless ignored ) .
 •	Very small : truncate values (e .g., 1 or 2) may eliminate all
 words if none fit
 
 Example Calls & Expected Outputs
 slugify_manual(" Hello , World !")
-# => " hello - world " slugify_manual(" Madam , I ’m Adam ", separator : "")
-# => " madamimadam "
-slugify_manual(" StUdLy CaPs ", lowercase : false ) # => " StUdLy - CaPs "
-slugify_manual (" Call me maybe ", truncate : 10)
-=> " call - me "
-slugify_manual("\ u4f60 \ u597d \ uff0c \ u4e16 \ u754c ", ignore : ["\ u4f60 ","\ u597d "])
-# => "\ u4f60 \ u597d - shi - jie "
+# => "hello-world" slugify_manual("Madam , I ’m Adam ", separator : "")
+# => "madamimadam"
+slugify_manual("StUdLy CaPs ", lowercase : false ) # => "StUdLy-CaPs"
+slugify_manual ("Call me maybe ", truncate : 10)
+=> "call-me"
+slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c ", ignore : ["\u4f60","\u597d"])
+# => "\u4f60\u597d-shi-jie"
 	
 Follow the rules set with the system prompt.
 The response should only contain valid Python unittest test code, without any additional text or explanations.
