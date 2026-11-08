@@ -1,44 +1,4 @@
-#!/usr/bin/env python3
-"""Run the Thesis coverage matrix with saved evidence and automatic resume.
-
-Requires Python 3.10+ and: python -m pip install "coverage>=7.6,<8" openpyxl
-
-Place this file in your Thesis folder, then run:
-    python thesis_coverage.py
-
-Or specify the folder:
-    python thesis_coverage.py --base-dir "C:\\Users\\kalup\\Desktop\\Thesis"
-
-Examples:
-    python thesis_coverage.py --tasks 1 --runs 1
-    python thesis_coverage.py --workers 4 --timeout 120
-    python thesis_coverage.py --retry-errors
-    python thesis_coverage.py --fresh
-
-Default matrix: 9 tasks x 10 corresponding runs x 6 implementations x 6 suites.
-Manual source files are reused in all ten run slots, as in the original design.
-Only implementation_manual.py is measured. Candidate files are not edited.
-Each pair runs in a fresh Python process. Test counts are collected by unittest
-callbacks, not parsed from printed output. A completed suite containing failing
-tests is eligible for the averages. Import/load/fixture failures, empty suites,
-timeouts and unavailable coverage are excluded from the averages; any collected
-partial coverage is still retained in the detailed results and evidence.
-
-Output: Thesis/coverage_results/coverage_matrix.xlsx, measurements.csv,
-         measurements.jsonl, run_info.json and per-combination evidence.
-Running the same command resumes unchanged combinations. --fresh re-executes
-them while keeping previous attempt folders. --retry-errors retries incomplete
-or invalid measurements. Both source content and settings are fingerprinted.
-
-Line coverage includes module imports/definitions, following coverage.py's
-normal statement coverage rules. It is not a correctness or defect count.
-Measurement stops when the suite finishes, before interpreter shutdown. A
-worker exits after saving its results so lingering background Timer threads
-cannot hold an otherwise completed test suite open indefinitely.
-"""
-
 from __future__ import annotations
-
 import argparse
 import collections
 import concurrent.futures
