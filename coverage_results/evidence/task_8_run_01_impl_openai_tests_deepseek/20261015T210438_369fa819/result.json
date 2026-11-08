@@ -1,0 +1,159 @@
+{
+  "key": "task_8_run_01_impl_openai_tests_deepseek",
+  "task": 8,
+  "task_name": "task8_slugify",
+  "complexity": "Medium",
+  "run": 1,
+  "impl_llm": "openai",
+  "test_llm": "deepseek",
+  "fingerprint": "054d699d2c79c1fce683443e26279407942733d1e7793bf4c16ed674b9c59b48",
+  "tests_run": 21,
+  "tests_passed": 18,
+  "tests_failed": 3,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 71.11111111111111,
+  "lines_covered": 32,
+  "lines_total": 45,
+  "lines_missing": 13,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_8_run_01_impl_openai_tests_deepseek\\20261015T210438_369fa819",
+  "started_utc": "2026-10-15T21:04:38+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 21,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestSlugifyManual.test_basic_slug",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_custom_separator",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_custom_separator_multiple_chars",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_empty_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_all_characters",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_characters",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_characters_not_in_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_characters_with_separator",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_list_of_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_leading_trailing_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_mixed_language",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_no_valid_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_preserve_case",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_punctuation_only",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_repeated_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_exact_length",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_longer_than_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_too_small",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_without_breaking_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_unicode_characters",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7,
+    15,
+    20,
+    21,
+    24,
+    25,
+    26,
+    27,
+    49,
+    50,
+    51,
+    53,
+    56
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.0088,
+  "finished_utc": "2026-10-15T21:04:39+00:00",
+  "return_code": 0
+}

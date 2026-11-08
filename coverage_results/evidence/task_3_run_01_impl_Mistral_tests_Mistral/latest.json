@@ -1,0 +1,101 @@
+{
+  "key": "task_3_run_01_impl_Mistral_tests_Mistral",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "Mistral",
+  "test_llm": "Mistral",
+  "fingerprint": "6e16099974369fb560381423899cd08e4fa7e2e017eb57fcc5a530a48df0a926",
+  "tests_run": 10,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 10,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 33.333333333333336,
+  "lines_covered": 5,
+  "lines_total": 15,
+  "lines_missing": 10,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_01_impl_Mistral_tests_Mistral\\20261015T194542_8428c1b6",
+  "started_utc": "2026-10-15T19:45:43+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_none_values_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_empty_list_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_happy_path_battery_life_attribute",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_happy_path_price_attribute",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_large_numbers_returns_min",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_mixed_numeric_types_returns_min_float",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_negative_values_returns_min",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_non_existent_field_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_rounding_to_two_decimals",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_single_valid_value_returns_that_value",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.1266,
+  "finished_utc": "2026-10-15T19:45:43+00:00",
+  "return_code": 0
+}

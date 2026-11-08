@@ -1,0 +1,23 @@
+test_missing_password (test_module.TestIsValidPassword.test_missing_password) ... ok
+test_password_at_maximum_length (test_module.TestIsValidPassword.test_password_at_maximum_length) ... ok
+test_password_at_minimum_length (test_module.TestIsValidPassword.test_password_at_minimum_length) ... ok
+test_password_missing_lowercase (test_module.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_special_or_digit (test_module.TestIsValidPassword.test_password_missing_special_or_digit) ... ok
+test_password_missing_uppercase (test_module.TestIsValidPassword.test_password_missing_uppercase) ... ok
+test_password_multiple_errors (test_module.TestIsValidPassword.test_password_multiple_errors) ... ok
+test_password_too_long (test_module.TestIsValidPassword.test_password_too_long) ... ok
+test_password_too_short (test_module.TestIsValidPassword.test_password_too_short) ... FAIL
+test_valid_password (test_module.TestIsValidPassword.test_valid_password) ... ok
+
+======================================================================
+FAIL: test_password_too_short (test_module.TestIsValidPassword.test_password_too_short)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_08_impl_deepseek_tests_openai\20261015T195049_676cf002\test_module.py", line 30, in test_password_too_short
+    self.assertIn("Password must contain a special character or a number", result)
+AssertionError: 'Password must contain a special character or a number' not found in ['Length must be between 12 and 72 characters']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.038s
+
+FAILED (failures=1)

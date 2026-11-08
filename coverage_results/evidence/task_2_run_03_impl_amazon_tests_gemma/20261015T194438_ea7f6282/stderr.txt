@@ -1,0 +1,12 @@
+test_all_products_missing_price (test_module.TestGetAveragePrice.test_all_products_missing_price) ... ok
+test_empty_list (test_module.TestGetAveragePrice.test_empty_list) ... ok
+test_mixed_floats_and_integers (test_module.TestGetAveragePrice.test_mixed_floats_and_integers) ... ok
+test_normal_case_with_valid_prices (test_module.TestGetAveragePrice.test_normal_case_with_valid_prices) ... ok
+test_rounding_to_two_decimals (test_module.TestGetAveragePrice.test_rounding_to_two_decimals) ... ok
+test_single_product_with_price (test_module.TestGetAveragePrice.test_single_product_with_price) ... ok
+test_single_product_without_price (test_module.TestGetAveragePrice.test_single_product_without_price) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.025s
+
+OK

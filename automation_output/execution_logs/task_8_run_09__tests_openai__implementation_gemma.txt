@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:17:10
+Timestamp: 2026-09-30T16:50:24
 Return code: 1
 ================================================================================
 
@@ -12,52 +12,81 @@ STANDARD ERROR
 test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
 test_custom_separator_utf8_integer (selected_test.TestSlugifyManual.test_custom_separator_utf8_integer) ... ERROR
 test_empty_input_returns_none (selected_test.TestSlugifyManual.test_empty_input_returns_none) ... ok
-test_ignore_as_string_preserves_characters (selected_test.TestSlugifyManual.test_ignore_as_string_preserves_characters) ... ok
+test_ignore_as_string_preserves_characters (selected_test.TestSlugifyManual.test_ignore_as_string_preserves_characters) ... FAIL
 test_ignore_characters_preserved (selected_test.TestSlugifyManual.test_ignore_characters_preserved) ... FAIL
-test_ignore_list_and_lowercase_false (selected_test.TestSlugifyManual.test_ignore_list_and_lowercase_false) ... ok
-test_input_with_only_ignored_characters (selected_test.TestSlugifyManual.test_input_with_only_ignored_characters) ... ok
+test_ignore_with_punctuation (selected_test.TestSlugifyManual.test_ignore_with_punctuation) ... ok
 test_leading_trailing_and_repeated_whitespace (selected_test.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... ok
 test_lowercase_false_preserves_case (selected_test.TestSlugifyManual.test_lowercase_false_preserves_case) ... ok
-test_non_ascii_transliteration (selected_test.TestSlugifyManual.test_non_ascii_transliteration) ... ok
-test_punctuation_only_returns_none (selected_test.TestSlugifyManual.test_punctuation_only_returns_none) ... ok
+test_mixed_language_transliteration (selected_test.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_no_valid_slug_due_to_ignore_and_truncate (selected_test.TestSlugifyManual.test_no_valid_slug_due_to_ignore_and_truncate) ... FAIL
+test_punctuation_only_input_returns_none (selected_test.TestSlugifyManual.test_punctuation_only_input_returns_none) ... ok
 test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string) ... ok
-test_truncate_does_not_break_words (selected_test.TestSlugifyManual.test_truncate_does_not_break_words) ... ok
-test_truncate_exact_word_length (selected_test.TestSlugifyManual.test_truncate_exact_word_length) ... ok
-test_truncate_too_small_eliminates_all_words (selected_test.TestSlugifyManual.test_truncate_too_small_eliminates_all_words) ... FAIL
-test_truncate_with_separator_length (selected_test.TestSlugifyManual.test_truncate_with_separator_length) ... ok
+test_truncate_shortens_without_breaking_words (selected_test.TestSlugifyManual.test_truncate_shortens_without_breaking_words) ... ok
+test_truncate_too_small_returns_none (selected_test.TestSlugifyManual.test_truncate_too_small_returns_none) ... FAIL
 
 ======================================================================
 ERROR: test_custom_separator_utf8_integer (selected_test.TestSlugifyManual.test_custom_separator_utf8_integer)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 110, in test_custom_separator_utf8_integer
-    result = slugify_manual(text, separator=separator)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\implementation_manual.py", line 45, in slugify_manual
-    slug = separator.join(words)
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 89, in test_custom_separator_utf8_integer
+    result = slugify_manual(text, separator=95)  # ASCII for underscore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\implementation_manual.py", line 127, in slugify_manual
+    slug = separator.join(cleaned_words)
            ^^^^^^^^^^^^^^
 AttributeError: 'int' object has no attribute 'join'
+
+======================================================================
+FAIL: test_ignore_as_string_preserves_characters (selected_test.TestSlugifyManual.test_ignore_as_string_preserves_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 82, in test_ignore_as_string_preserves_characters
+    self.assertEqual(result, expected)
+AssertionError: 'nihao-shijie' != '\u4f60\u597d-shi-jie'
+- nihao-shijie
++ \u4f60\u597d-shi-jie
+
 
 ======================================================================
 FAIL: test_ignore_characters_preserved (selected_test.TestSlugifyManual.test_ignore_characters_preserved)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 74, in test_ignore_characters_preserved
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 73, in test_ignore_characters_preserved
     self.assertEqual(result, expected)
-AssertionError: '\u4f60\u597d\u4e16\u754c' != '\u4f60\u597d-shi-jie'
-- \u4f60\u597d\u4e16\u754c
+AssertionError: 'nihao-shijie' != '\u4f60\u597d-shi-jie'
+- nihao-shijie
 + \u4f60\u597d-shi-jie
 
 
 ======================================================================
-FAIL: test_truncate_too_small_eliminates_all_words (selected_test.TestSlugifyManual.test_truncate_too_small_eliminates_all_words)
+FAIL: test_mixed_language_transliteration (selected_test.TestSlugifyManual.test_mixed_language_transliteration)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 64, in test_truncate_too_small_eliminates_all_words
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 109, in test_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: 'nihaoshijie' != 'ni-hao-shi-jie'
+- nihaoshijie
++ ni-hao-shi-jie
+?   +   +   +
+
+
+======================================================================
+FAIL: test_no_valid_slug_due_to_ignore_and_truncate (selected_test.TestSlugifyManual.test_no_valid_slug_due_to_ignore_and_truncate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 126, in test_no_valid_slug_due_to_ignore_and_truncate
+    self.assertIsNone(result)
+AssertionError: 'he' is not None
+
+======================================================================
+FAIL: test_truncate_too_small_returns_none (selected_test.TestSlugifyManual.test_truncate_too_small_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_openai__implementation_gemma\selected_test.py", line 64, in test_truncate_too_small_returns_none
     self.assertIsNone(result)
 AssertionError: 'c' is not None
 
 ----------------------------------------------------------------------
-Ran 16 tests in 0.002s
+Ran 14 tests in 0.002s
 
-FAILED (failures=2, errors=1)
+FAILED (failures=5, errors=1)

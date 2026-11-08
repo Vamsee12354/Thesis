@@ -1,0 +1,34 @@
+test_all_invalid_or_missing_brands (test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands) ... FAIL
+test_brands_with_leading_and_trailing_spaces (test_module.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces) ... ok
+test_brands_with_non_string_values_ignored (test_module.TestGetUniqueBrands.test_brands_with_non_string_values_ignored) ... ERROR
+test_brands_with_only_spaces_are_filtered_out (test_module.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out) ... FAIL
+test_case_insensitivity_and_capitalization (test_module.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (test_module.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... FAIL
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 222, in case_child
+    test_result = runner.run(suite)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py", line 217, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 648, in run
+    result.stopTest(self)
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 195, in stopTest
+    atomic_json(folder / "progress.json", {**self.counts(), "complete": False})
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 96, in atomic_json
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_1_run_03_impl_amazon_tests_openai\\20261015T194326_e66e3141\\progress.json.tmp' -> 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_1_run_03_impl_amazon_tests_openai\\20261015T194326_e66e3141\\progress.json'
+

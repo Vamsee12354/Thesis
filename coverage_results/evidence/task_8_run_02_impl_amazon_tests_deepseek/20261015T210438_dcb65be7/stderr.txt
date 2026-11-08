@@ -1,0 +1,144 @@
+test_basic_conversion (test_module.TestSlugifyManual.test_basic_conversion) ... ERROR
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_edge_case_truncation (test_module.TestSlugifyManual.test_edge_case_truncation) ... FAIL
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ERROR
+test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter) ... ERROR
+test_lowercase_parameter (test_module.TestSlugifyManual.test_lowercase_parameter) ... ERROR
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... ERROR
+test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal) ... ERROR
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... ERROR
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ERROR
+
+======================================================================
+ERROR: test_basic_conversion (test_module.TestSlugifyManual.test_basic_conversion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 7, in test_basic_conversion
+    self.assertEqual(slugify_manual("Hello World"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 15, in test_custom_separator
+    self.assertEqual(slugify_manual("Hello World", separator="_"), "hello_world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_empty_input (test_module.TestSlugifyManual.test_empty_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 31, in test_empty_input
+    self.assertIsNone(slugify_manual(""))
+                      ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 27, in test_ignore_parameter
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你","好"]), "你好-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_lowercase_parameter (test_module.TestSlugifyManual.test_lowercase_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 19, in test_lowercase_parameter
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 48, in test_mixed_language_input
+    self.assertEqual(slugify_manual("Hello 你好"), "hello-ni-hao")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 11, in test_punctuation_removal
+    self.assertEqual(slugify_manual("Hello, World!"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 40, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("Café"), "cafe")
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 36, in test_whitespace_handling
+    self.assertEqual(slugify_manual("  leading  trailing  "), "leading-trailing")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+FAIL: test_edge_case_truncation (test_module.TestSlugifyManual.test_edge_case_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 45, in test_edge_case_truncation
+    self.assertIsNone(slugify_manual("a b c", truncate=0))
+AssertionError: 'a-b-c' is not None
+
+======================================================================
+FAIL: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_deepseek\20261015T210438_dcb65be7\test_module.py", line 23, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
++ call-me
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.026s
+
+FAILED (failures=2, errors=9)

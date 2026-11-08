@@ -1,0 +1,8 @@
+{
+  "task": 6,
+  "run": 1,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\deepseek\\task_6\\run_01.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\Mistral\\task_6\\run_01_test.py",
+  "fingerprint": "5d6df9151df638c8e5dd6bbb29192443f97670023fce6948ffd1708e18baf7a8",
+  "timeout": 120
+}

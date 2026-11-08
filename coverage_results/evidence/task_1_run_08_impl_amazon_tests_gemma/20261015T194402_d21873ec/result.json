@@ -1,0 +1,87 @@
+{
+  "key": "task_1_run_08_impl_amazon_tests_gemma",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 8,
+  "impl_llm": "amazon",
+  "test_llm": "gemma",
+  "fingerprint": "73ed9b07bd68f2afa33682b40440a1b0fca58a8405285f26c9483a2ca3604791",
+  "tests_run": 7,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 7,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 8.333333333333334,
+  "lines_covered": 1,
+  "lines_total": 12,
+  "lines_missing": 11,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_08_impl_amazon_tests_gemma\\20261015T194402_d21873ec",
+  "started_utc": "2026-10-15T19:44:03+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_all_invalid_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_case_insensitivity_and_normalization",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_empty_input",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_maintains_order_without_sorting",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_mixed_valid_and_invalid",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_normal_case",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_with_whitespace_normalization",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    14
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.6634,
+  "finished_utc": "2026-10-15T19:44:03+00:00",
+  "return_code": 0
+}

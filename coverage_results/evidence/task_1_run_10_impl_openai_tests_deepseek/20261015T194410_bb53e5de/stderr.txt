@@ -1,0 +1,33 @@
+test_case_insensitive_deduplication (test_module.TestGetUnique.test_case_insensitive_deduplication) ... ok
+test_empty_list (test_module.TestGetUnique.test_empty_list) ... ok
+test_empty_strings (test_module.TestGetUnique.test_empty_strings) ... ok
+test_mixed_invalid (test_module.TestGetUnique.test_mixed_invalid) ... ok
+test_mixed_valid_invalid (test_module.TestGetUnique.test_mixed_valid_invalid) ... ok
+test_none_values (test_module.TestGetUnique.test_none_values) ... ok
+test_normal_case (test_module.TestGetUnique.test_normal_case) ... ok
+test_preserve_order (test_module.TestGetUnique.test_preserve_order) ... ok
+test_single_valid (test_module.TestGetUnique.test_single_valid) ... FAIL
+
+======================================================================
+FAIL: test_single_valid (test_module.TestGetUnique.test_single_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_deepseek\20261015T194410_bb53e5de\test_module.py", line 38, in test_single_valid
+    self.assertEqual(get_unique(input_list), expected)
+AssertionError: Lists differ: ['Singlebrand'] != ['SingleBrand']
+
+First differing element 0:
+'Singlebrand'
+'SingleBrand'
+
+- ['Singlebrand']
+?         ^
+
++ ['SingleBrand']
+?         ^
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.027s
+
+FAILED (failures=1)

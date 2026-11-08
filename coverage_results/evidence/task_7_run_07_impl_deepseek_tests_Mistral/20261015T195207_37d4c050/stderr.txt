@@ -1,0 +1,48 @@
+test_empty_shopping_list (test_module.TestShoppingList.test_empty_shopping_list) ... ok
+test_multiple_products_with_mixed_titles (test_module.TestShoppingList.test_multiple_products_with_mixed_titles) ... FAIL
+test_normal_functionality_with_multiple_products (test_module.TestShoppingList.test_normal_functionality_with_multiple_products) ... ok
+test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title) ... FAIL
+test_product_with_html_in_title (test_module.TestShoppingList.test_product_with_html_in_title) ... ok
+test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title) ... FAIL
+test_product_with_special_characters_in_title (test_module.TestShoppingList.test_product_with_special_characters_in_title) ... ok
+test_product_with_unicode_in_title (test_module.TestShoppingList.test_product_with_unicode_in_title) ... ok
+test_single_product_in_list (test_module.TestShoppingList.test_single_product_in_list) ... ok
+
+======================================================================
+FAIL: test_multiple_products_with_mixed_titles (test_module.TestShoppingList.test_multiple_products_with_mixed_titles)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_07_impl_deepseek_tests_Mistral\20261015T195207_37d4c050\test_module.py", line 69, in test_multiple_products_with_mixed_titles
+    self.assertEqual(result, expected)
+AssertionError: "<ul>[46 chars]><script>alert('xss')</script></li></ul>" != "<ul>[46 chars]><script>alert('xss')</script></li><li></li><li>None</li></ul>"
+- <ul><li>Normal Item</li><li>Item & Special</li><li><script>alert('xss')</script></li></ul>
++ <ul><li>Normal Item</li><li>Item & Special</li><li><script>alert('xss')</script></li><li></li><li>None</li></ul>
+?                                                                                       ++++++++++++++++++++++
+
+
+======================================================================
+FAIL: test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_07_impl_deepseek_tests_Mistral\20261015T195207_37d4c050\test_module.py", line 51, in test_product_with_empty_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li></li></ul>'
+- <ul></ul>
++ <ul><li></li></ul>
+
+
+======================================================================
+FAIL: test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_07_impl_deepseek_tests_Mistral\20261015T195207_37d4c050\test_module.py", line 57, in test_product_with_none_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li>None</li></ul>'
+- <ul></ul>
++ <ul><li>None</li></ul>
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.052s
+
+FAILED (failures=3)

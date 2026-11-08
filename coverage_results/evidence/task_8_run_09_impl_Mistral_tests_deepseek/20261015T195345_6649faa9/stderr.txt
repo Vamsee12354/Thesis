@@ -1,0 +1,62 @@
+test_basic_conversion (test_module.TestSlugifyManual.test_basic_conversion) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_custom_separator_multichar (test_module.TestSlugifyManual.test_custom_separator_multichar) ... FAIL
+test_empty_after_processing (test_module.TestSlugifyManual.test_empty_after_processing) ... ok
+test_empty_string (test_module.TestSlugifyManual.test_empty_string) ... ok
+test_ignored_characters (test_module.TestSlugifyManual.test_ignored_characters) ... FAIL
+test_leading_trailing_spaces (test_module.TestSlugifyManual.test_leading_trailing_spaces) ... ok
+test_mixed_alphanumeric (test_module.TestSlugifyManual.test_mixed_alphanumeric) ... ok
+test_mixed_case (test_module.TestSlugifyManual.test_mixed_case) ... ok
+test_mixed_chars_with_ignore (test_module.TestSlugifyManual.test_mixed_chars_with_ignore) ... ok
+test_multiple_spaces (test_module.TestSlugifyManual.test_multiple_spaces) ... ok
+test_no_spaces (test_module.TestSlugifyManual.test_no_spaces) ... ok
+test_numeric_input (test_module.TestSlugifyManual.test_numeric_input) ... ok
+test_preserve_ignored_chars (test_module.TestSlugifyManual.test_preserve_ignored_chars) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_separator_only (test_module.TestSlugifyManual.test_separator_only) ... ok
+test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small) ... FAIL
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+
+======================================================================
+FAIL: test_custom_separator_multichar (test_module.TestSlugifyManual.test_custom_separator_multichar)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_deepseek\20261015T195345_6649faa9\test_module.py", line 60, in test_custom_separator_multichar
+    self.assertEqual(slugify_manual("foo bar", separator="++"), "foo++bar")
+AssertionError: None != 'foo++bar'
+
+======================================================================
+FAIL: test_ignored_characters (test_module.TestSlugifyManual.test_ignored_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_deepseek\20261015T195345_6649faa9\test_module.py", line 27, in test_ignored_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你","好"]), "你好-shi-jie")
+AssertionError: '你好世界' != '你好-shi-jie'
+- 你好世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_deepseek\20261015T195345_6649faa9\test_module.py", line 45, in test_truncate_too_small
+    self.assertIsNone(slugify_manual("foo bar", truncate=1))
+AssertionError: 'f' is not None
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_deepseek\20261015T195345_6649faa9\test_module.py", line 24, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好，世界"), "ni-hao-shi-jie")
+AssertionError: '你好世界' != 'ni-hao-shi-jie'
+- 你好世界
++ ni-hao-shi-jie
+
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.052s
+
+FAILED (failures=4)

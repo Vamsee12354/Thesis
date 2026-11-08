@@ -1,0 +1,11 @@
+test_empty_shopping_list (test_module.TestShoppingListFunction.test_empty_shopping_list) ... ok
+test_html_content_in_title (test_module.TestShoppingListFunction.test_html_content_in_title) ... ok
+test_multiple_products_with_html_titles (test_module.TestShoppingListFunction.test_multiple_products_with_html_titles) ... ok
+test_normal_functionality (test_module.TestShoppingListFunction.test_normal_functionality) ... ok
+test_single_product (test_module.TestShoppingListFunction.test_single_product) ... ok
+test_titles_are_non_empty_and_non_none (test_module.TestShoppingListFunction.test_titles_are_non_empty_and_non_none) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.023s
+
+OK

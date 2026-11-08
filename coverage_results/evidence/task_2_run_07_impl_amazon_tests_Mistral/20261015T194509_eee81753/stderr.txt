@@ -1,0 +1,37 @@
+test_all_prices_none (test_module.TestGetAveragePrice.test_all_prices_none) ... ok
+test_all_prices_zero (test_module.TestGetAveragePrice.test_all_prices_zero) ... ok
+test_empty_price_list (test_module.TestGetAveragePrice.test_empty_price_list) ... ok
+test_float_prices (test_module.TestGetAveragePrice.test_float_prices) ... ok
+test_large_numbers (test_module.TestGetAveragePrice.test_large_numbers) ... ok
+test_mixed_prices_with_none (test_module.TestGetAveragePrice.test_mixed_prices_with_none) ... ok
+test_negative_prices (test_module.TestGetAveragePrice.test_negative_prices) ... ok
+test_normal_case_with_valid_prices (test_module.TestGetAveragePrice.test_normal_case_with_valid_prices) ... ok
+test_rounding_to_two_decimals (test_module.TestGetAveragePrice.test_rounding_to_two_decimals) ... FAIL
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 222, in case_child
+    test_result = runner.run(suite)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py", line 217, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 648, in run
+    result.stopTest(self)
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 195, in stopTest
+    atomic_json(folder / "progress.json", {**self.counts(), "complete": False})
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 96, in atomic_json
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_2_run_07_impl_amazon_tests_Mistral\\20261015T194509_eee81753\\progress.json.tmp' -> 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_2_run_07_impl_amazon_tests_Mistral\\20261015T194509_eee81753\\progress.json'
+

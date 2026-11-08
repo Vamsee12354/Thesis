@@ -1,0 +1,79 @@
+{
+  "tests_run": 10,
+  "tests_passed": 9,
+  "tests_failed": 1,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "counts_complete": true,
+  "coverage_pct": 100.0,
+  "lines_covered": 8,
+  "lines_total": 8,
+  "lines_missing": 0,
+  "eligible": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "started_utc": "2026-10-15T19:47:06+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetReadDuration.test_201_words_returns_two_minutes",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_450_words_returns_three_minutes",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_empty_string_returns_minimum_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_exactly_200_words_returns_one_minute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_large_text_multiple_minutes",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters_counted_as_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_short_text_less_than_one_minute_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_text_with_multiple_spaces_between_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_text_with_newlines_and_tabs",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.3291,
+  "finished_utc": "2026-10-15T19:47:07+00:00"
+}

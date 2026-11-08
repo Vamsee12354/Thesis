@@ -1,0 +1,8 @@
+{
+  "task": 8,
+  "run": 4,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\deepseek\\task_8\\run_04.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\openai\\task_8\\run_04_test.py",
+  "fingerprint": "68d336e28e6f34f84ce68dea8171ec6c6455b6aec528596b0138375d3f0a720f",
+  "timeout": 120
+}

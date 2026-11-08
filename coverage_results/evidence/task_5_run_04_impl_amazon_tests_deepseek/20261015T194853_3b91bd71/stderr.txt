@@ -1,0 +1,62 @@
+test_empty_fields (test_module.TestFormValidation.test_empty_fields) ... ok
+test_invalid_email_format (test_module.TestFormValidation.test_invalid_email_format) ... ok
+test_invalid_email_with_whitespace (test_module.TestFormValidation.test_invalid_email_with_whitespace) ... ok
+test_invalid_privacy (test_module.TestFormValidation.test_invalid_privacy) ... ok
+test_missing_first_name (test_module.TestFormValidation.test_missing_first_name) ... ok
+test_missing_last_name (test_module.TestFormValidation.test_missing_last_name) ... ok
+test_missing_message (test_module.TestFormValidation.test_missing_message) ... ok
+test_missing_subject (test_module.TestFormValidation.test_missing_subject) ... ok
+test_multiple_errors (test_module.TestFormValidation.test_multiple_errors) ... ok
+test_non_boolean_privacy (test_module.TestFormValidation.test_non_boolean_privacy) ... FAIL
+test_valid_email_with_whitespace (test_module.TestFormValidation.test_valid_email_with_whitespace) ... FAIL
+test_valid_form (test_module.TestFormValidation.test_valid_form) ... ok
+test_whitespace_fields (test_module.TestFormValidation.test_whitespace_fields) ... FAIL
+
+======================================================================
+FAIL: test_non_boolean_privacy (test_module.TestFormValidation.test_non_boolean_privacy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_04_impl_amazon_tests_deepseek\20261015T194853_3b91bd71\test_module.py", line 66, in test_non_boolean_privacy
+    self.assertEqual(result, ["Please confirm the privacy policy"])
+AssertionError: 'Form is valid. Details:John,Doe,test@example.com,Subject,Message,True' != ['Please confirm the privacy policy']
+
+======================================================================
+FAIL: test_valid_email_with_whitespace (test_module.TestFormValidation.test_valid_email_with_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_04_impl_amazon_tests_deepseek\20261015T194853_3b91bd71\test_module.py", line 70, in test_valid_email_with_whitespace
+    self.assertEqual(result, "Form is valid. Details:John,Doe,test@example.com,Subject,Message,True")
+AssertionError: 'Form is valid. Details:John,Doe, test@example.com ,Subject,Message,True' != 'Form is valid. Details:John,Doe,test@example.com,Subject,Message,True'
+- Form is valid. Details:John,Doe, test@example.com ,Subject,Message,True
+?                                 -                -
++ Form is valid. Details:John,Doe,test@example.com,Subject,Message,True
+
+
+======================================================================
+FAIL: test_whitespace_fields (test_module.TestFormValidation.test_whitespace_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_04_impl_amazon_tests_deepseek\20261015T194853_3b91bd71\test_module.py", line 26, in test_whitespace_fields
+    self.assertEqual(result, [
+AssertionError: Lists differ: ['Ple[89 chars]t', 'Please Type Message'] != ['Ple[89 chars]t', 'Please Type Message', 'Please confirm the privacy policy']
+
+Second list contains 1 additional elements.
+First extra element 5:
+'Please confirm the privacy policy'
+
+  ['Please Type First Name',
+   'Please Type Last Name',
+   'Please Type EmailID',
+   'Please Type Subject',
+-  'Please Type Message']
+?                       ^
+
++  'Please Type Message',
+?                       ^
+
++  'Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.044s
+
+FAILED (failures=3)

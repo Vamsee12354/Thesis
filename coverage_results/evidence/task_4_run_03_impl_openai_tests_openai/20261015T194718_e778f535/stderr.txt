@@ -1,0 +1,14 @@
+test_201_words_returns_two (test_module.TestGetReadDuration.test_201_words_returns_two) ... ok
+test_450_words_returns_three (test_module.TestGetReadDuration.test_450_words_returns_three) ... ok
+test_empty_string_returns_minimum_one (test_module.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exactly_200_words_returns_one (test_module.TestGetReadDuration.test_exactly_200_words_returns_one) ... ok
+test_non_latin_characters_counted_as_words (test_module.TestGetReadDuration.test_non_latin_characters_counted_as_words) ... ok
+test_short_text_less_than_200_words_returns_one (test_module.TestGetReadDuration.test_short_text_less_than_200_words_returns_one) ... ok
+test_string_with_only_whitespace_returns_minimum_one (test_module.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one) ... ok
+test_text_with_multiple_spaces_between_words (test_module.TestGetReadDuration.test_text_with_multiple_spaces_between_words) ... ok
+test_text_with_newlines_and_tabs (test_module.TestGetReadDuration.test_text_with_newlines_and_tabs) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.027s
+
+OK

@@ -1,0 +1,56 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations) ... FAIL
+test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter) ... FAIL
+test_invalid_inputs_and_edge_cases (test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases) ... ok
+test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option) ... ok
+test_separator_customization (test_module.TestSlugifyManual.test_separator_customization) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ok
+
+======================================================================
+FAIL: test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_gemma_tests_gemma\20261015T195344_2f195021\test_module.py", line 61, in test_complex_combinations
+    self.assertEqual(slugify_manual("A! B? C", separator="_", lowercase=False, ignore="!"), "A!-B-C")
+AssertionError: 'A!_B_C' != 'A!-B-C'
+- A!_B_C
++ A!-B-C
+
+
+======================================================================
+FAIL: test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_gemma_tests_gemma\20261015T195344_2f195021\test_module.py", line 26, in test_ignore_parameter
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: 'nihao-shijie' != '你好-shi-jie'
+- nihao-shijie
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_gemma_tests_gemma\20261015T195344_2f195021\test_module.py", line 36, in test_truncation
+    self.assertEqual(slugify_manual("a b c", truncate=1), None)
+AssertionError: 'a' != None
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_gemma_tests_gemma\20261015T195344_2f195021\test_module.py", line 47, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+AssertionError: 'nihao' != 'ni-hao'
+- nihao
++ ni-hao
+?   +
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.038s
+
+FAILED (failures=4)

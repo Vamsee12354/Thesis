@@ -1,0 +1,101 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (test_module.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_empty_and_punctuation_only (test_module.TestSlugifyManual.test_empty_and_punctuation_only) ... ok
+test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_string_input (test_module.TestSlugifyManual.test_non_string_input) ... FAIL
+test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars) ... FAIL
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+ERROR: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 17, in test_custom_separator
+    self.assertEqual(slugify_manual("Hello World", separator=""), "helloworld")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\implementation_manual.py", line 29, in slugify_manual
+    cleaned_text = re.sub(f'[{re.escape(separator)}]+', separator, cleaned_text)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 572, in _parse
+    raise source.error("unterminated character set",
+re.error: unterminated character set at position 0
+
+======================================================================
+FAIL: test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 32, in test_ignore_functionality
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 38, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shijie")
+AssertionError: None != 'konnichiha-shijie'
+
+======================================================================
+FAIL: test_non_string_input (test_module.TestSlugifyManual.test_non_string_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 49, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 58, in test_preserve_ignore_chars
+    self.assertEqual(slugify_manual("C++ is fun", ignore=["+", " "]), "c++is+fun")
+AssertionError: 'c++ is fun' != 'c++is+fun'
+- c++ is fun
+?    -  ^
++ c++is+fun
+?      ^
+
+
+======================================================================
+FAIL: test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 29, in test_truncate_functionality
+    self.assertEqual(slugify_manual("Hello world", truncate=1), "")
+AssertionError: None != ''
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_deepseek_tests_Mistral\20261015T195350_a5664083\test_module.py", line 53, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("Hello world test", truncate=8, ignore=["test"]), "hello-world")
+AssertionError: 'hello' != 'hello-world'
+- hello
++ hello-world
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.045s
+
+FAILED (failures=6, errors=1)

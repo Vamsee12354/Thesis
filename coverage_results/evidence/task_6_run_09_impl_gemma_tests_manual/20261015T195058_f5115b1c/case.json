@@ -1,0 +1,8 @@
+{
+  "task": 6,
+  "run": 9,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\gemma\\task_6\\run_09.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task6_validate_password\\tests.py",
+  "fingerprint": "6aac27c696380421869bb59b9fbf0a26a109d1379053deab80eefe2b95dcefb5",
+  "timeout": 120
+}

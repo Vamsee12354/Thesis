@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 206, in case_child
+    compile(filename.read_bytes(), str(filename), "exec")
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_09_impl_gemma_tests_manual\20261015T194931_3f97b384\implementation_manual.py", line 1
+    ERROR IN RUN 9: 'NoneType' object is not subscriptable
+IndentationError: unexpected indent
+

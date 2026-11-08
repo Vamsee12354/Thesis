@@ -1,0 +1,132 @@
+{
+  "key": "task_9_run_05_impl_deepseek_tests_manual",
+  "task": 9,
+  "task_name": "task9_product_cache_get",
+  "complexity": "High",
+  "run": 5,
+  "impl_llm": "deepseek",
+  "test_llm": "manual",
+  "fingerprint": "b64deb2e83d2d94f76ada0ad13b7a36aaa859f079a53965b3d8b1f7eb8960a62",
+  "tests_run": 18,
+  "tests_passed": 16,
+  "tests_failed": 2,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 96.42857142857143,
+  "lines_covered": 27,
+  "lines_total": 28,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_9_run_05_impl_deepseek_tests_manual\\20261015T195858_e91c2cad",
+  "started_utc": "2026-10-15T19:58:59+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 18,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestProductCache.test_cleanup",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_delete_if_list_is_empty",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_first_del_then_set",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_get_items_late",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_get_wrong_item",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_multiple_items_delete_in_one_go",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_multiple_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_non_existent",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_same_item_dictionary",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_set_and_get",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_set_and_get_with_number_as_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_set_and_get_with_other_language",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_set_expiry_zero",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_set_get_cleanup",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_set_get_delete",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_sleep_lesser_than_expiry_time",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_sleep_more_than_expiry_time",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCache.test_very_large_expiry",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    10
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 32.6303,
+  "finished_utc": "2026-10-15T19:59:31+00:00",
+  "return_code": 0
+}

@@ -1,0 +1,64 @@
+{
+  "key": "task_7_run_02_impl_gemma_tests_deepseek",
+  "task": 7,
+  "task_name": "task7_product_list_live_v",
+  "complexity": "High",
+  "run": 2,
+  "impl_llm": "gemma",
+  "test_llm": "deepseek",
+  "fingerprint": "96d1b0e6a84f34314995303892bb1f0a64c2c0a6f1a6e819d1103f02ef8f7a39",
+  "tests_run": 4,
+  "tests_passed": 4,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 76.92307692307692,
+  "lines_covered": 10,
+  "lines_total": 13,
+  "lines_missing": 3,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_7_run_02_impl_gemma_tests_deepseek\\20261015T195123_503c7267",
+  "started_utc": "2026-10-15T19:51:24+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 4,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingList.test_empty_shopping_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_html_in_titles",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_single_item_list",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    13,
+    14
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.7504,
+  "finished_utc": "2026-10-15T19:51:24+00:00",
+  "return_code": 0
+}

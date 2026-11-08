@@ -1,0 +1,13 @@
+test_empty_string_returns_one (test_module.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_exact_wpm_boundary (test_module.TestGetReadDuration.test_exact_wpm_boundary) ... ok
+test_just_over_wpm_boundary (test_module.TestGetReadDuration.test_just_over_wpm_boundary) ... ok
+test_long_post_returns_correct_minutes (test_module.TestGetReadDuration.test_long_post_returns_correct_minutes) ... ok
+test_non_latin_characters_whitespace_splitting (test_module.TestGetReadDuration.test_non_latin_characters_whitespace_splitting) ... ok
+test_normal_paragraph_returns_one (test_module.TestGetReadDuration.test_normal_paragraph_returns_one) ... ok
+test_short_text_returns_one (test_module.TestGetReadDuration.test_short_text_returns_one) ... ok
+test_whitespace_only_returns_one (test_module.TestGetReadDuration.test_whitespace_only_returns_one) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.020s
+
+OK

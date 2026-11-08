@@ -4,65 +4,58 @@ from implementation_manual import slugify_manual
 class TestSlugifyManual(unittest.TestCase):
 
     def test_basic_slugification(self):
-        # Happy path: standard string with punctuation and spaces
-        result = slugify_manual(" Hello , World !")
-        self.assertEqual(result, "hello - world")
+        # Happy path: standard string
+        self.assertEqual(slugify_manual("Hello World"), "hello-world")
+        # Happy path: punctuation removal
+        self.assertEqual(slugify_manual("Hello, World!"), "hello-world")
+        # Happy path: multiple spaces and leading/trailing whitespace
+        self.assertEqual(slugify_manual("  foo   bar  "), "foo-bar")
 
-    def test_custom_separator(self):
-        # Happy path: custom separator (empty string)
-        result = slugify_manual(" Madam , I'm Adam ", separator="")
-        self.assertEqual(result, "madamimadam")
+    def test_separator_customization(self):
+        # Custom separator (empty string)
+        self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+        # Custom separator (underscore)
+        self.assertEqual(slugify_manual("Hello World", separator="_"), "hello_world")
 
-    def test_case_preservation(self):
-        # Happy path: disable lowercase
-        result = slugify_manual(" StUdLy CaPs ", lowercase=False)
-        self.assertEqual(result, "StUdLy - CaPs")
+    def test_casing_options(self):
+        # Default lowercase
+        self.assertEqual(slugify_manual("StUdLy CaPs"), "studly-caps")
+        # Disable lowercase
+        self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
 
     def test_truncation(self):
-        # Happy path: truncate without breaking words
-        result = slugify_manual(" Call me maybe ", truncate=10)
-        self.assertEqual(result, "call - me")
+        # Truncate without breaking words
+        self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+        # Truncate very small value
+        self.assertEqual(slugify_manual("Hello World", truncate=1), None)
+        # Truncate exactly at word boundary
+        self.assertEqual(slugify_manual("Hello World", truncate=5), "hello")
 
-    def test_ignore_characters(self):
-        # Happy path: preserve specific characters/strings
-        # Note: The spec example shows unicode characters being ignored
-        result = slugify_manual("\u4f60 \u597d \uff0c \u4e16 \u754c", ignore=["\u4f60", "\u597d"])
-        self.assertEqual(result, "\u4f60\u597d - shi - jie")
-
-    def test_empty_input(self):
-        # Edge case: empty string
-        self.assertIsNone(slugify_manual(""))
-
-    def test_only_punctuation_input(self):
-        # Edge case: input contains only invalid characters
-        self.assertIsNone(slugify_manual("!!! @@@ ###"))
-
-    def test_whitespace_handling(self):
-        # Edge case: leading, trailing, and repeated whitespace
-        result = slugify_manual("   foo    bar   ")
-        self.assertEqual(result, "foo - bar")
-
-    def test_small_truncate_value(self):
-        # Edge case: very small truncate value that might eliminate words
-        # If truncate is 1 and word is "a", it might work, but if it's too small for any word:
-        result = slugify_manual("Hello World", truncate=1)
-        # Based on spec "may eliminate all words if none fit", we check if it returns None or empty
-        # Given the spec says "Returns None if no valid slug can be generated"
-        self.assertIsNone(result)
+    def test_ignore_parameter(self):
+        # Ignore specific characters (list)
+        self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+        # Ignore specific characters (string)
+        self.assertEqual(slugify_manual("Hello! World?", ignore="!?"), "hello-world")
 
     def test_unicode_transliteration(self):
-        # Happy path: mixed language input transliteration
-        # "\u4f60 \u597d" is "你好" (Ni Hao)
-        result = slugify_manual("\u4f60 \u597d")
-        self.assertEqual(result, "ni - hao")
+        # Transliteration of non-ASCII characters
+        # Note: Exact transliteration depends on implementation, assuming standard pinyin/romanization
+        self.assertEqual(slugify_manual("你好"), "ni-hao")
 
-    def test_ignore_list_vs_string(self):
-        # Test both string and list for the ignore parameter
-        result_str = slugify_manual("a!b", ignore="!")
-        self.assertEqual(result_str, "a!b")
-        
-        result_list = slugify_manual("a!b", ignore=["!"])
-        self.assertEqual(result_list, "a!b")
+    def test_edge_cases_and_invalid_inputs(self):
+        # Empty input
+        self.assertIsNone(slugify_manual(""))
+        # Input with only punctuation/whitespace
+        self.assertIsNone(slugify_manual("!!! ???   "))
+        # Input that becomes empty after processing
+        self.assertIsNone(slugify_manual("!!!", ignore="!")) # If '!' is ignored but no alphanumerics exist
+
+    def test_complex_combinations(self):
+        # Combination of all parameters
+        # "Hello, World!" -> "hello-world" -> truncate 8 -> "hello"
+        self.assertEqual(slugify_manual("Hello, World!", separator="_", lowercase=True, truncate=8), "hello")
+        # "Madam, I'm Adam" -> "madamimadam" (separator "")
+        self.assertEqual(slugify_manual("Madam, I'm Adam", separator="", lowercase=False), "MadamImAdam")
 
 if __name__ == '__main__':
     unittest.main()

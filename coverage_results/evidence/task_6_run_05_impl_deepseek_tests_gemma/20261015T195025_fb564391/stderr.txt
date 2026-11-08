@@ -1,0 +1,24 @@
+test_boundary_length_12_is_valid (test_module.TestIsValidPassword.test_boundary_length_12_is_valid) ... ok
+test_boundary_length_72_is_valid (test_module.TestIsValidPassword.test_boundary_length_72_is_valid) ... FAIL
+test_missing_lowercase_returns_lowercase_error (test_module.TestIsValidPassword.test_missing_lowercase_returns_lowercase_error) ... ok
+test_missing_password_returns_fill_error (test_module.TestIsValidPassword.test_missing_password_returns_fill_error) ... ok
+test_missing_special_or_number_returns_special_error (test_module.TestIsValidPassword.test_missing_special_or_number_returns_special_error) ... ok
+test_missing_uppercase_returns_uppercase_error (test_module.TestIsValidPassword.test_missing_uppercase_returns_uppercase_error) ... ok
+test_multiple_validation_failures (test_module.TestIsValidPassword.test_multiple_validation_failures) ... ok
+test_none_password_returns_fill_error (test_module.TestIsValidPassword.test_none_password_returns_fill_error) ... ok
+test_password_too_long_returns_length_error (test_module.TestIsValidPassword.test_password_too_long_returns_length_error) ... ok
+test_password_too_short_returns_length_error (test_module.TestIsValidPassword.test_password_too_short_returns_length_error) ... ok
+test_valid_password_returns_success_message (test_module.TestIsValidPassword.test_valid_password_returns_success_message) ... ok
+
+======================================================================
+FAIL: test_boundary_length_72_is_valid (test_module.TestIsValidPassword.test_boundary_length_72_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_05_impl_deepseek_tests_gemma\20261015T195025_fb564391\test_module.py", line 133, in test_boundary_length_72_is_valid
+    self.assertEqual(result, expected)
+AssertionError: ['Length must be between 12 and 72 characters'] != 'The password is valid'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.038s
+
+FAILED (failures=1)

@@ -1,6 +1,6 @@
 {
     "run_number": 2,
-    "timestamp": "2026-07-06T11:30:11.409687",
+    "timestamp": "2026-09-30T13:53:24.404744",
     "llm_name": "gemma",
     "model_id": "google/gemma-4-26b-a4b-it",
     "task_number": "8",
@@ -9,10 +9,10 @@
     "top_k": 1,
     "seed": 42,
     "max_tokens": 3000,
-    "elapsed_time_seconds": 28.564,
+    "elapsed_time_seconds": 9.2222,
     "usage": {
-        "prompt_tokens": 845,
-        "completion_tokens": 451,
-        "total_tokens": 1296
+        "prompt_tokens": 867,
+        "completion_tokens": 1180,
+        "total_tokens": 2047
     }
 }

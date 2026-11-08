@@ -1,0 +1,98 @@
+{
+  "key": "task_9_run_05_impl_openai_tests_deepseek",
+  "task": 9,
+  "task_name": "task9_product_cache_get",
+  "complexity": "High",
+  "run": 5,
+  "impl_llm": "openai",
+  "test_llm": "deepseek",
+  "fingerprint": "36ae3efc6fe88e68656f0f5937c37011db16d4ff9df0b925ccdba3e0e5762162",
+  "tests_run": 9,
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 73.33333333333333,
+  "lines_covered": 33,
+  "lines_total": 45,
+  "lines_missing": 12,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_9_run_05_impl_openai_tests_deepseek\\20261015T195855_4c4d3421",
+  "started_utc": "2026-10-15T19:58:55+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestProductCacheGet.test_cleanup",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_delete",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_delete_nonexistent_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_expiry",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_get_nonexistent_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_initialization",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_set_and_get",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_set_with_negative_ttl",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGet.test_set_with_ttl",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    9,
+    10,
+    11,
+    18,
+    23,
+    24,
+    35,
+    36,
+    43,
+    44,
+    50,
+    51
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.8078,
+  "finished_utc": "2026-10-15T19:58:57+00:00",
+  "return_code": 0
+}

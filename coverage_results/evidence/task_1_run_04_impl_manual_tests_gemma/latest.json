@@ -1,0 +1,86 @@
+{
+  "key": "task_1_run_04_impl_manual_tests_gemma",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 4,
+  "impl_llm": "manual",
+  "test_llm": "gemma",
+  "fingerprint": "fbfc0fe68e263591d673a9171bd94137200fb738a80932631c9f17c4f33dd6ab",
+  "tests_run": 7,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 7,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 9.090909090909092,
+  "lines_covered": 1,
+  "lines_total": 11,
+  "lines_missing": 10,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_04_impl_manual_tests_gemma\\20261015T194328_98f0df59",
+  "started_utc": "2026-10-15T19:43:28+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_all_invalid_brands_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_case_insensitivity_and_normalization",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_empty_input_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_mixed_duplicates_and_blanks",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_normal_case_with_valid_brands",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_preserves_order_of_first_appearance",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_whitespace_handling",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8175,
+  "finished_utc": "2026-10-15T19:43:28+00:00",
+  "return_code": 0
+}

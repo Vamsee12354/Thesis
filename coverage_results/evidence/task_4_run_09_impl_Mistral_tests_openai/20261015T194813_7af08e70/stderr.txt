@@ -1,0 +1,30 @@
+test_empty_string_returns_minimum_one (test_module.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exactly_200_words_returns_one (test_module.TestGetReadDuration.test_exactly_200_words_returns_one) ... ok
+test_just_over_200_words_returns_two (test_module.TestGetReadDuration.test_just_over_200_words_returns_two) ... FAIL
+test_long_text_multiple_minutes (test_module.TestGetReadDuration.test_long_text_multiple_minutes) ... FAIL
+test_short_text_less_than_200_words_returns_one (test_module.TestGetReadDuration.test_short_text_less_than_200_words_returns_one) ... ok
+test_string_with_only_whitespace_returns_minimum_one (test_module.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one) ... ok
+test_text_with_excessive_whitespace_between_words (test_module.TestGetReadDuration.test_text_with_excessive_whitespace_between_words) ... ok
+test_text_with_mixed_latin_and_non_latin_characters (test_module.TestGetReadDuration.test_text_with_mixed_latin_and_non_latin_characters) ... ok
+test_text_with_non_latin_characters (test_module.TestGetReadDuration.test_text_with_non_latin_characters) ... ok
+
+======================================================================
+FAIL: test_just_over_200_words_returns_two (test_module.TestGetReadDuration.test_just_over_200_words_returns_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_09_impl_Mistral_tests_openai\20261015T194813_7af08e70\test_module.py", line 44, in test_just_over_200_words_returns_two
+    self.assertEqual(result, 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_long_text_multiple_minutes (test_module.TestGetReadDuration.test_long_text_multiple_minutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_09_impl_Mistral_tests_openai\20261015T194813_7af08e70\test_module.py", line 52, in test_long_text_multiple_minutes
+    self.assertEqual(result, 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.029s
+
+FAILED (failures=2)

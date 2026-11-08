@@ -1,0 +1,8 @@
+{
+  "task": 8,
+  "run": 5,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\openai\\task_8\\run_05.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task8_slugify\\tests.py",
+  "fingerprint": "7f252aa6ff27ba2ea9b12976dd594cb1aa9cc9d986b7a4cc92690e1b24fee379",
+  "timeout": 120
+}

@@ -1,0 +1,8 @@
+{
+  "task": 5,
+  "run": 2,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task5_validate_contact_form\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\amazon\\task_5\\run_02_test.py",
+  "fingerprint": "64d396087a4b78cc146659c7c54156177872c9bdb61121e70dcaac9257f266f1",
+  "timeout": 120
+}

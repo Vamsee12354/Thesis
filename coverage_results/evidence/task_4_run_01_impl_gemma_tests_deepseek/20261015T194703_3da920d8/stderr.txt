@@ -1,0 +1,14 @@
+test_201_words (test_module.TestGetReadDuration.test_201_words) ... ok
+test_399_words (test_module.TestGetReadDuration.test_399_words) ... ok
+test_450_words (test_module.TestGetReadDuration.test_450_words) ... ok
+test_empty_string (test_module.TestGetReadDuration.test_empty_string) ... ok
+test_exactly_200_words (test_module.TestGetReadDuration.test_exactly_200_words) ... ok
+test_mixed_whitespace (test_module.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... ok
+test_single_word (test_module.TestGetReadDuration.test_single_word) ... ok
+test_whitespace_only (test_module.TestGetReadDuration.test_whitespace_only) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.042s
+
+OK

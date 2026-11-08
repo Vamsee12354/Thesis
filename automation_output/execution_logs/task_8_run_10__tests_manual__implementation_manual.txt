@@ -1,10 +1,11 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:17:18
+Timestamp: 2026-09-30T16:50:30
 Return code: 1
 ================================================================================
 
 STANDARD OUTPUT
 --------------------------------------------------------------------------------
+writing-slugify-code-helloworld
 
 
 STANDARD ERROR

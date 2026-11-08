@@ -1,0 +1,10 @@
+test_all_values_none (test_module.TestGetMinAttribute.test_all_values_none) ... ok
+test_attribute_not_numeric (test_module.TestGetMinAttribute.test_attribute_not_numeric) ... ok
+test_empty_data_list (test_module.TestGetMinAttribute.test_empty_data_list) ... ok
+test_non_existent_attribute (test_module.TestGetMinAttribute.test_non_existent_attribute) ... ok
+test_valid_attribute_with_values (test_module.TestGetMinAttribute.test_valid_attribute_with_values) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.017s
+
+OK

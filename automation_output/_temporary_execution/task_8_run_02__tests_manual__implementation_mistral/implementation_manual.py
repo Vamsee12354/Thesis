@@ -1,84 +1,66 @@
-from unicodedata import normalize, category
-import re
-
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    if not isinstance(text, str):
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str) or not text:
         return None
 
-    if not text:
-        return None
+    if ignore is not None:
+        if isinstance(ignore, str):
+            ignore = [ignore]
+        ignore_set = set(ignore)
+    else:
+        ignore_set = set()
 
-    if ignore is None:
-        ignore = []
-    elif isinstance(ignore, str):
-        ignore = [ignore]
-
-    try:
-        normalized_text = normalize('NFKD', text)
-    except Exception:
-        return None
-
-    slug_parts = []
-    current_part = []
-    in_word = False
-
-    for char in normalized_text:
-        if char in ignore:
-            if current_part:
-                slug_parts.append(''.join(current_part))
-                current_part = []
-            slug_parts.append(char)
-            in_word = False
-            continue
-
-        if category(char).startswith('L') or category(char).startswith('N'):
-            current_part.append(char)
-            in_word = True
+    normalized = []
+    for char in text:
+        if char in ignore_set:
+            normalized.append(char)
         else:
-            if in_word:
-                slug_parts.append(''.join(current_part))
-                current_part = []
-                in_word = False
+            try:
+                normalized_char = char.encode('ascii', 'ignore').decode('ascii')
+                if normalized_char:
+                    normalized.append(normalized_char)
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                continue
 
-    if current_part:
-        slug_parts.append(''.join(current_part))
-
-    if not slug_parts:
+    if not normalized:
         return None
 
-    processed_parts = []
-    for part in slug_parts:
-        if part in ignore:
-            processed_parts.append(part)
+    cleaned = []
+    for char in normalized:
+        if char.isalnum() or char in ignore_set:
+            cleaned.append(char)
         else:
-            cleaned_part = re.sub(r'[^\w\s-]', '', part)
-            cleaned_part = re.sub(r'[\s]+', ' ', cleaned_part)
-            if cleaned_part:
-                processed_parts.append(cleaned_part)
+            cleaned.append(' ')
 
-    if not processed_parts:
-        return None
-
-    slug = ' '.join(processed_parts)
-    slug = re.sub(r'[\s]+', separator, slug)
+    slug = ''.join(cleaned)
+    slug = ' '.join(slug.split())
 
     if lowercase:
         slug = slug.lower()
+
+    if separator:
+        slug = slug.replace(' ', separator)
+    else:
+        slug = slug.replace(' ', '')
 
     if truncate is not None:
         if not isinstance(truncate, int) or truncate <= 0:
             return None
         words = slug.split(separator)
-        truncated_words = []
+        result = []
         current_length = 0
         for word in words:
-            if current_length + len(word) <= truncate:
-                truncated_words.append(word)
-                current_length += len(word) + len(separator)
+            if not word:
+                continue
+            if current_length + len(word) + (1 if result else 0) <= truncate:
+                if result:
+                    result.append(separator)
+                result.append(word)
+                current_length += len(word) + (1 if result else 0)
             else:
                 break
-        slug = separator.join(truncated_words)
-        if not slug:
-            return None
+        slug = ''.join(result)
+
+    if not slug:
+        return None
 
     return slug

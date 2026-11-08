@@ -1,0 +1,35 @@
+test_missing_password (test_module.TestIsValidPassword.test_missing_password) ... ok
+test_password_exact_max_length (test_module.TestIsValidPassword.test_password_exact_max_length) ... ok
+test_password_exact_min_length (test_module.TestIsValidPassword.test_password_exact_min_length) ... ok
+test_password_missing_all_requirements (test_module.TestIsValidPassword.test_password_missing_all_requirements) ... FAIL
+test_password_missing_lowercase (test_module.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_multiple_requirements (test_module.TestIsValidPassword.test_password_missing_multiple_requirements) ... ok
+test_password_missing_special_or_number (test_module.TestIsValidPassword.test_password_missing_special_or_number) ... ok
+test_password_missing_uppercase (test_module.TestIsValidPassword.test_password_missing_uppercase) ... ok
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 222, in case_child
+    test_result = runner.run(suite)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py", line 217, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 648, in run
+    result.stopTest(self)
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 195, in stopTest
+    atomic_json(folder / "progress.json", {**self.counts(), "complete": False})
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 96, in atomic_json
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_6_run_09_impl_openai_tests_Mistral\\20261015T195056_971aac9a\\progress.json.tmp' -> 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_6_run_09_impl_openai_tests_Mistral\\20261015T195056_971aac9a\\progress.json'
+

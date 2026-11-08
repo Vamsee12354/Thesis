@@ -1,0 +1,83 @@
+{
+  "key": "task_4_run_03_impl_openai_tests_deepseek",
+  "task": 4,
+  "task_name": "task4_get_reading_duration",
+  "complexity": "Medium",
+  "run": 3,
+  "impl_llm": "openai",
+  "test_llm": "deepseek",
+  "fingerprint": "b413c312043fa2af229df705fd5f18773b0b8f12b8c30354b76447e165623bfa",
+  "tests_run": 8,
+  "tests_passed": 8,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 75.0,
+  "lines_covered": 6,
+  "lines_total": 8,
+  "lines_missing": 2,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_4_run_03_impl_openai_tests_deepseek\\20261015T194718_df56034c",
+  "started_utc": "2026-10-15T19:47:19+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 8,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetReadDuration.test_201_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_450_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_empty_string",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_exactly_200_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_mixed_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_short_text",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_whitespace_only",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7,
+    8
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9294,
+  "finished_utc": "2026-10-15T19:47:19+00:00",
+  "return_code": 0
+}

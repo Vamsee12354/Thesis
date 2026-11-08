@@ -1,0 +1,151 @@
+{
+  "key": "task_8_run_01_impl_amazon_tests_deepseek",
+  "task": 8,
+  "task_name": "task8_slugify",
+  "complexity": "Medium",
+  "run": 1,
+  "impl_llm": "amazon",
+  "test_llm": "deepseek",
+  "fingerprint": "c22ffcfa5250642ec6c98ccdf9caefee2e66eff3a94988adefa8b980b4f5dac3",
+  "tests_run": 21,
+  "tests_passed": 3,
+  "tests_failed": 2,
+  "tests_errored": 16,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 78.26086956521739,
+  "lines_covered": 18,
+  "lines_total": 23,
+  "lines_missing": 5,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_8_run_01_impl_amazon_tests_deepseek\\20261015T195242_39213c5d",
+  "started_utc": "2026-10-15T19:52:43+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 21,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestSlugifyManual.test_basic_slug",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_custom_separator",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_custom_separator_multiple_chars",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_empty_input",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_all_characters",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_characters",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_characters_not_in_input",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_characters_with_separator",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_list_of_characters",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_leading_trailing_whitespace",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_mixed_language",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_no_valid_characters",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_preserve_case",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_punctuation_only",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_repeated_whitespace",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_exact_length",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_longer_than_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_too_small",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_without_breaking_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_unicode_characters",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    6,
+    9,
+    15,
+    24,
+    32
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8782,
+  "finished_utc": "2026-10-15T19:52:43+00:00",
+  "return_code": 0
+}

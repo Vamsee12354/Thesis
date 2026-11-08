@@ -1,0 +1,8 @@
+{
+  "task": 3,
+  "run": 6,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\gemma\\task_3\\run_06.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task3_get_min_attribute\\tests.py",
+  "fingerprint": "7d411517e8d7d0764785d1cccaaef088c8a405db49cb2ef02a18338927209933",
+  "timeout": 120
+}

@@ -1,0 +1,98 @@
+{
+  "key": "task_8_run_09_impl_openai_tests_gemma",
+  "task": 8,
+  "task_name": "task8_slugify",
+  "complexity": "Medium",
+  "run": 9,
+  "impl_llm": "openai",
+  "test_llm": "gemma",
+  "fingerprint": "65c7eb4b3eb431b3f95d0b813019107630e98e173e1feea32a532d6a1b11fb6b",
+  "tests_run": 9,
+  "tests_passed": 5,
+  "tests_failed": 4,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 78.57142857142857,
+  "lines_covered": 44,
+  "lines_total": 56,
+  "lines_missing": 12,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_8_run_09_impl_openai_tests_gemma\\20261015T195341_184d848d",
+  "started_utc": "2026-10-15T19:53:42+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestSlugifyManual.test_basic_slugification",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_complex_combinations",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_parameter",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_lowercase_option",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_separator_customization",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncation",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_unicode_transliteration",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_whitespace_handling",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7,
+    15,
+    20,
+    21,
+    24,
+    25,
+    26,
+    27,
+    41,
+    55,
+    60,
+    66
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8406,
+  "finished_utc": "2026-10-15T19:53:42+00:00",
+  "return_code": 0
+}

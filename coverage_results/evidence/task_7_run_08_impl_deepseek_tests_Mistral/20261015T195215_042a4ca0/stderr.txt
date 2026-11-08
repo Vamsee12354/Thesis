@@ -1,0 +1,23 @@
+test_empty_shopping_list (test_module.TestShoppingList.test_empty_shopping_list) ... ok
+test_normal_functionality_with_multiple_items (test_module.TestShoppingList.test_normal_functionality_with_multiple_items) ... ok
+test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title) ... ok
+test_product_with_html_content_in_title (test_module.TestShoppingList.test_product_with_html_content_in_title) ... ok
+test_product_with_missing_title_key (test_module.TestShoppingList.test_product_with_missing_title_key) ... FAIL
+test_product_with_non_string_title (test_module.TestShoppingList.test_product_with_non_string_title) ... ok
+test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title) ... ok
+test_product_with_special_characters_in_title (test_module.TestShoppingList.test_product_with_special_characters_in_title) ... ok
+test_product_with_unicode_characters_in_title (test_module.TestShoppingList.test_product_with_unicode_characters_in_title) ... ok
+test_single_item_in_list (test_module.TestShoppingList.test_single_item_in_list) ... ok
+
+======================================================================
+FAIL: test_product_with_missing_title_key (test_module.TestShoppingList.test_product_with_missing_title_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_08_impl_deepseek_tests_Mistral\20261015T195215_042a4ca0\test_module.py", line 56, in test_product_with_missing_title_key
+    with self.assertRaises(KeyError):
+AssertionError: KeyError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.031s
+
+FAILED (failures=1)

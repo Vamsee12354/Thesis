@@ -1,0 +1,8 @@
+{
+  "task": 2,
+  "run": 9,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\amazon\\task_2\\run_09.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task2_get_average_price\\tests.py",
+  "fingerprint": "4ca54b81f86385b0cc8388ae000a96169d09b4fc0b886c73da9dbff177fba20f",
+  "timeout": 120
+}

@@ -3,12 +3,49 @@ from implementation_manual import slugify_manual
 
 class TestSlugifyManual(unittest.TestCase):
 
-    def test_basic_slugification(self):
+    def test_basic_slugification_lowercase_default_separator(self):
         # Arrange
         text = " Hello , World !"
         expected = "hello-world"
         # Act
         result = slugify_manual(text)
+        # Assert
+        self.assertEqual(result, expected)
+
+    def test_slugify_with_empty_separator(self):
+        # Arrange
+        text = "Madam , I ’m Adam "
+        expected = "madamimadam"
+        # Act
+        result = slugify_manual(text, separator="")
+        # Assert
+        self.assertEqual(result, expected)
+
+    def test_slugify_preserve_case(self):
+        # Arrange
+        text = "StUdLy CaPs "
+        expected = "StUdLy-CaPs"
+        # Act
+        result = slugify_manual(text, lowercase=False)
+        # Assert
+        self.assertEqual(result, expected)
+
+    def test_slugify_with_truncate(self):
+        # Arrange
+        text = "Call me maybe "
+        expected = "call-me"
+        # Act
+        result = slugify_manual(text, truncate=10)
+        # Assert
+        self.assertEqual(result, expected)
+
+    def test_slugify_with_ignore_characters(self):
+        # Arrange
+        text = "你好，世界 "
+        expected = "你好-shi-jie"
+        ignore = ["你", "好"]
+        # Act
+        result = slugify_manual(text, ignore=ignore)
         # Assert
         self.assertEqual(result, expected)
 
@@ -20,7 +57,7 @@ class TestSlugifyManual(unittest.TestCase):
         # Assert
         self.assertIsNone(result)
 
-    def test_punctuation_only_returns_none(self):
+    def test_punctuation_only_input_returns_none(self):
         # Arrange
         text = "!@#$%^&*()"
         # Act
@@ -28,34 +65,7 @@ class TestSlugifyManual(unittest.TestCase):
         # Assert
         self.assertIsNone(result)
 
-    def test_separator_empty_string(self):
-        # Arrange
-        text = " Madam , I ’m Adam "
-        expected = "madamimadam"
-        # Act
-        result = slugify_manual(text, separator="")
-        # Assert
-        self.assertEqual(result, expected)
-
-    def test_case_preservation(self):
-        # Arrange
-        text = " StUdLy CaPs "
-        expected = "StUdLy-CaPs"
-        # Act
-        result = slugify_manual(text, lowercase=False)
-        # Assert
-        self.assertEqual(result, expected)
-
-    def test_truncate_long_text(self):
-        # Arrange
-        text = " Call me maybe "
-        expected = "call-me"
-        # Act
-        result = slugify_manual(text, truncate=10)
-        # Assert
-        self.assertEqual(result, expected)
-
-    def test_truncate_small_value_eliminates_all_words(self):
+    def test_truncate_too_small_to_fit_any_word_returns_none(self):
         # Arrange
         text = "hello world"
         # Act
@@ -63,23 +73,12 @@ class TestSlugifyManual(unittest.TestCase):
         # Assert
         self.assertIsNone(result)
 
-    def test_ignore_characters_preserved(self):
+    def test_truncate_exact_word_fit(self):
         # Arrange
-        text = "\u4f60\u597d\uff0c\u4e16\u754c"
-        ignore = ["\u4f60", "\u597d"]
-        expected = "\u4f60\u597d-shi-jie"
+        text = "hello world"
+        expected = "hello"
         # Act
-        result = slugify_manual(text, ignore=ignore)
-        # Assert
-        self.assertEqual(result, expected)
-
-    def test_ignore_characters_as_string(self):
-        # Arrange
-        text = "foo@bar.com"
-        ignore = "@"
-        expected = "foo@bar-com"
-        # Act
-        result = slugify_manual(text, ignore=ignore)
+        result = slugify_manual(text, truncate=5)
         # Assert
         self.assertEqual(result, expected)
 
@@ -92,16 +91,26 @@ class TestSlugifyManual(unittest.TestCase):
         # Assert
         self.assertEqual(result, expected)
 
-    def test_non_ascii_transliteration(self):
+    def test_mixed_language_transliteration(self):
         # Arrange
-        text = "café"
-        expected = "cafe"
+        text = "你好世界"
+        expected = "ni-hao-shi-jie"
         # Act
         result = slugify_manual(text)
         # Assert
         self.assertEqual(result, expected)
 
-    def test_separator_utf8_integer(self):
+    def test_ignore_preserves_characters(self):
+        # Arrange
+        text = "a!b@c#d$"
+        ignore = ["!", "@", "#"]
+        expected = "a!b@c-d"
+        # Act
+        result = slugify_manual(text, ignore=ignore)
+        # Assert
+        self.assertEqual(result, expected)
+
+    def test_separator_as_utf8_integer(self):
         # Arrange
         text = "foo bar"
         separator = ord("_")
@@ -111,22 +120,23 @@ class TestSlugifyManual(unittest.TestCase):
         # Assert
         self.assertEqual(result, expected)
 
-    def test_all_invalid_characters_with_ignore(self):
+    def test_lowercase_false_with_ignore(self):
         # Arrange
-        text = "!@#$"
-        ignore = ["!"]
-        expected = "!"
+        text = "Hello 世界"
+        ignore = ["世"]
+        expected = "Hello-世-jie"
         # Act
-        result = slugify_manual(text, ignore=ignore)
+        result = slugify_manual(text, lowercase=False, ignore=ignore)
         # Assert
         self.assertEqual(result, expected)
 
-    def test_mixed_language_input(self):
+    def test_ignore_as_string(self):
         # Arrange
-        text = "Hello 你好"
-        expected = "hello-ni-hao"
+        text = "a!b@c#d$"
+        ignore = "!"
+        expected = "a!b-c-d"
         # Act
-        result = slugify_manual(text)
+        result = slugify_manual(text, ignore=ignore)
         # Assert
         self.assertEqual(result, expected)
 

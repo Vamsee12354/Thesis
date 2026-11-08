@@ -1,0 +1,49 @@
+{
+  "tests_run": 4,
+  "tests_passed": 4,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "counts_complete": true,
+  "coverage_pct": 100.0,
+  "lines_covered": 8,
+  "lines_total": 8,
+  "lines_missing": 0,
+  "eligible": true,
+  "status": "completed",
+  "error_detail": "",
+  "started_utc": "2026-10-15T19:51:58+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 4,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingList.test_shopping_list_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_shopping_list_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_shopping_list_single_item",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_shopping_list_with_html_in_title",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.3402,
+  "finished_utc": "2026-10-15T19:51:58+00:00"
+}

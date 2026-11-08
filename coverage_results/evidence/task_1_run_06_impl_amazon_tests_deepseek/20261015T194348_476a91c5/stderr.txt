@@ -1,0 +1,54 @@
+test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands) ... FAIL
+test_case_insensitivity (test_module.TestGetUnique.test_case_insensitivity) ... ok
+test_empty_dict (test_module.TestGetUnique.test_empty_dict) ... ok
+test_empty_list (test_module.TestGetUnique.test_empty_list) ... ok
+test_empty_string_brand (test_module.TestGetUnique.test_empty_string_brand) ... ok
+test_mixed_case_duplicates (test_module.TestGetUnique.test_mixed_case_duplicates) ... FAIL
+test_mixed_case_multiple_duplicates (test_module.TestGetUnique.test_mixed_case_multiple_duplicates) ... ok
+test_mixed_dicts (test_module.TestGetUnique.test_mixed_dicts) ... ok
+test_mixed_valid_invalid (test_module.TestGetUnique.test_mixed_valid_invalid) ... ok
+test_multiple_duplicates (test_module.TestGetUnique.test_multiple_duplicates) ... ok
+test_no_brand_key (test_module.TestGetUnique.test_no_brand_key) ... ok
+test_no_duplicates (test_module.TestGetUnique.test_no_duplicates) ... ok
+test_normal_case (test_module.TestGetUnique.test_normal_case) ... ok
+test_single_invalid_brand (test_module.TestGetUnique.test_single_invalid_brand) ... ok
+test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand) ... ok
+test_whitespace_brand (test_module.TestGetUnique.test_whitespace_brand) ... FAIL
+
+======================================================================
+FAIL: test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_06_impl_amazon_tests_deepseek\20261015T194348_476a91c5\test_module.py", line 16, in test_all_invalid_brands
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_case_duplicates (test_module.TestGetUnique.test_mixed_case_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_06_impl_amazon_tests_deepseek\20261015T194348_476a91c5\test_module.py", line 21, in test_mixed_case_duplicates
+    self.assertEqual(get_unique(input_data), expected_output)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_whitespace_brand (test_module.TestGetUnique.test_whitespace_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_06_impl_amazon_tests_deepseek\20261015T194348_476a91c5\test_module.py", line 53, in test_whitespace_brand
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.045s
+
+FAILED (failures=3)

@@ -1,0 +1,8 @@
+{
+  "task": 3,
+  "run": 4,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task3_get_min_attribute\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\deepseek\\task_3\\run_04_test.py",
+  "fingerprint": "10a9a7e067b1f23031af15fc7927e05e20b5e96cd36d5a3e9cc4cfaac9976490",
+  "timeout": 120
+}

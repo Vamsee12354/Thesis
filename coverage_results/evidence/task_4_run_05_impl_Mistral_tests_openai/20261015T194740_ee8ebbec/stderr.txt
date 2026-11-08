@@ -1,0 +1,30 @@
+test_201_words_returns_two (test_module.TestGetReadDuration.test_201_words_returns_two) ... FAIL
+test_450_words_returns_three (test_module.TestGetReadDuration.test_450_words_returns_three) ... FAIL
+test_empty_string_returns_minimum_one (test_module.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exactly_200_words_returns_one (test_module.TestGetReadDuration.test_exactly_200_words_returns_one) ... ok
+test_non_latin_characters_counted_as_words (test_module.TestGetReadDuration.test_non_latin_characters_counted_as_words) ... ok
+test_short_text_less_than_200_words_returns_one (test_module.TestGetReadDuration.test_short_text_less_than_200_words_returns_one) ... ok
+test_string_with_only_whitespace_returns_minimum_one (test_module.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one) ... ok
+test_text_with_multiple_spaces_between_words (test_module.TestGetReadDuration.test_text_with_multiple_spaces_between_words) ... ok
+test_text_with_newlines_and_tabs (test_module.TestGetReadDuration.test_text_with_newlines_and_tabs) ... ok
+
+======================================================================
+FAIL: test_201_words_returns_two (test_module.TestGetReadDuration.test_201_words_returns_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_05_impl_Mistral_tests_openai\20261015T194740_ee8ebbec\test_module.py", line 44, in test_201_words_returns_two
+    self.assertEqual(result, 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_450_words_returns_three (test_module.TestGetReadDuration.test_450_words_returns_three)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_05_impl_Mistral_tests_openai\20261015T194740_ee8ebbec\test_module.py", line 52, in test_450_words_returns_three
+    self.assertEqual(result, 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.026s
+
+FAILED (failures=2)

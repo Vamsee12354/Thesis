@@ -1,0 +1,76 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_custom_separator_with_ignore (test_module.TestSlugifyManual.test_custom_separator_with_ignore) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_as_list (test_module.TestSlugifyManual.test_ignore_as_list) ... ok
+test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string) ... ok
+test_ignore_option (test_module.TestSlugifyManual.test_ignore_option) ... FAIL
+test_ignore_with_punctuation (test_module.TestSlugifyManual.test_ignore_with_punctuation) ... ok
+test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_utf8_input (test_module.TestSlugifyManual.test_non_utf8_input) ... FAIL
+test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases) ... FAIL
+test_truncate_option (test_module.TestSlugifyManual.test_truncate_option) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... ok
+test_whitespace_cleanup (test_module.TestSlugifyManual.test_whitespace_cleanup) ... ok
+
+======================================================================
+FAIL: test_ignore_option (test_module.TestSlugifyManual.test_ignore_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_gemma_tests_Mistral\20261015T195312_a7caa470\test_module.py", line 36, in test_ignore_option
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好' != '你好-shi-jie'
+- 你好
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_gemma_tests_Mistral\20261015T195312_a7caa470\test_module.py", line 50, in test_mixed_language_input
+    self.assertEqual(slugify_manual("你好世界"), "ni-hao-shi-jie")
+AssertionError: 'nihaoshijie' != 'ni-hao-shi-jie'
+- nihaoshijie
++ ni-hao-shi-jie
+?   +   +   +
+
+
+======================================================================
+FAIL: test_non_utf8_input (test_module.TestSlugifyManual.test_non_utf8_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_gemma_tests_Mistral\20261015T195312_a7caa470\test_module.py", line 64, in test_non_utf8_input
+    with self.assertRaises(UnicodeError):
+AssertionError: UnicodeError not raised
+
+======================================================================
+FAIL: test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_gemma_tests_Mistral\20261015T195312_a7caa470\test_module.py", line 72, in test_truncate_edge_cases
+    self.assertEqual(slugify_manual("a b c", truncate=1), "")
+AssertionError: 'a' != ''
+- a
++ 
+
+
+======================================================================
+FAIL: test_truncate_option (test_module.TestSlugifyManual.test_truncate_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_gemma_tests_Mistral\20261015T195312_a7caa470\test_module.py", line 32, in test_truncate_option
+    self.assertEqual(slugify_manual("Call me maybe", truncate=3), "ca")
+AssertionError: 'cal' != 'ca'
+- cal
+?   -
++ ca
+
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.065s
+
+FAILED (failures=5)

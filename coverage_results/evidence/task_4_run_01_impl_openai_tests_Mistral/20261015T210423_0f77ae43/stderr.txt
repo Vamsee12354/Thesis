@@ -1,0 +1,27 @@
+test_200_words (test_module.TestGetReadDuration.test_200_words) ... ok
+test_201_words (test_module.TestGetReadDuration.test_201_words) ... ok
+test_400_words (test_module.TestGetReadDuration.test_400_words) ... ok
+test_450_words (test_module.TestGetReadDuration.test_450_words) ... ok
+test_50_words (test_module.TestGetReadDuration.test_50_words) ... ok
+test_empty_string (test_module.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (test_module.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_large_input (test_module.TestGetReadDuration.test_large_input) ... ok
+test_minimum_return_value (test_module.TestGetReadDuration.test_minimum_return_value) ... ok
+test_mixed_whitespace (test_module.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_multiple_paragraphs (test_module.TestGetReadDuration.test_multiple_paragraphs) ... FAIL
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... ok
+test_single_word (test_module.TestGetReadDuration.test_single_word) ... ok
+test_two_words (test_module.TestGetReadDuration.test_two_words) ... ok
+
+======================================================================
+FAIL: test_multiple_paragraphs (test_module.TestGetReadDuration.test_multiple_paragraphs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_01_impl_openai_tests_Mistral\20261015T210423_0f77ae43\test_module.py", line 58, in test_multiple_paragraphs
+    self.assertEqual(result, 2)
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.062s
+
+FAILED (failures=1)

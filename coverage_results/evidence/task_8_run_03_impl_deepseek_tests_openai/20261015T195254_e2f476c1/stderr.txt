@@ -1,0 +1,70 @@
+test_all_ignored_characters_only (test_module.TestSlugifyManual.test_all_ignored_characters_only) ... ok
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_preservation (test_module.TestSlugifyManual.test_case_preservation) ... ok
+test_custom_separator_utf8_integer (test_module.TestSlugifyManual.test_custom_separator_utf8_integer) ... ERROR
+test_empty_input_returns_none (test_module.TestSlugifyManual.test_empty_input_returns_none) ... ok
+test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string) ... FAIL
+test_ignore_characters_preserved (test_module.TestSlugifyManual.test_ignore_characters_preserved) ... FAIL
+test_ignore_with_separator_and_lowercase_false (test_module.TestSlugifyManual.test_ignore_with_separator_and_lowercase_false) ... ok
+test_leading_trailing_and_repeated_whitespace (test_module.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... ok
+test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_punctuation_only_returns_none (test_module.TestSlugifyManual.test_punctuation_only_returns_none) ... ok
+test_separator_empty_string (test_module.TestSlugifyManual.test_separator_empty_string) ... ok
+test_truncate_does_not_break_words (test_module.TestSlugifyManual.test_truncate_does_not_break_words) ... ok
+test_truncate_too_small_returns_none (test_module.TestSlugifyManual.test_truncate_too_small_returns_none) ... ok
+
+======================================================================
+ERROR: test_custom_separator_utf8_integer (test_module.TestSlugifyManual.test_custom_separator_utf8_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_openai\20261015T195254_e2f476c1\test_module.py", line 89, in test_custom_separator_utf8_integer
+    result = slugify_manual(text, separator=95)  # ASCII code for underscore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_openai\20261015T195254_e2f476c1\implementation_manual.py", line 28, in slugify_manual
+    slug = re.sub(r'\s+', separator, cleaned_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 317, in _subx
+    template = _compile_repl(template, pattern)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 308, in _compile_repl
+    return _parser.parse_template(repl, pattern)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 1009, in parse_template
+    s = Tokenizer(source)
+        ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 235, in __init__
+    string = str(string, 'latin1')
+             ^^^^^^^^^^^^^^^^^^^^^
+TypeError: decoding to str: need a bytes-like object, int found
+
+======================================================================
+FAIL: test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_openai\20261015T195254_e2f476c1\test_module.py", line 82, in test_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_ignore_characters_preserved (test_module.TestSlugifyManual.test_ignore_characters_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_openai\20261015T195254_e2f476c1\test_module.py", line 73, in test_ignore_characters_preserved
+    self.assertEqual(result, expected)
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_openai\20261015T195254_e2f476c1\test_module.py", line 109, in test_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: None != 'ni-hao-shi-jie'
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.092s
+
+FAILED (failures=3, errors=1)

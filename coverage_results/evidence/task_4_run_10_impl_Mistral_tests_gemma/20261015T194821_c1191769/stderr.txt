@@ -1,0 +1,29 @@
+test_boundary_just_above_threshold (test_module.TestGetReadDuration.test_boundary_just_above_threshold) ... FAIL
+test_empty_string_returns_one (test_module.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_exact_multiple_of_reading_speed (test_module.TestGetReadDuration.test_exact_multiple_of_reading_speed) ... ok
+test_long_post_returns_correct_minutes (test_module.TestGetReadDuration.test_long_post_returns_correct_minutes) ... FAIL
+test_non_latin_characters_whitespace_splitting (test_module.TestGetReadDuration.test_non_latin_characters_whitespace_splitting) ... ok
+test_normal_paragraph_returns_one (test_module.TestGetReadDuration.test_normal_paragraph_returns_one) ... ok
+test_short_text_returns_one (test_module.TestGetReadDuration.test_short_text_returns_one) ... ok
+test_whitespace_only_returns_one (test_module.TestGetReadDuration.test_whitespace_only_returns_one) ... ok
+
+======================================================================
+FAIL: test_boundary_just_above_threshold (test_module.TestGetReadDuration.test_boundary_just_above_threshold)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_10_impl_Mistral_tests_gemma\20261015T194821_c1191769\test_module.py", line 79, in test_boundary_just_above_threshold
+    self.assertEqual(result, 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_long_post_returns_correct_minutes (test_module.TestGetReadDuration.test_long_post_returns_correct_minutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_10_impl_Mistral_tests_gemma\20261015T194821_c1191769\test_module.py", line 57, in test_long_post_returns_correct_minutes
+    self.assertEqual(result, 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.029s
+
+FAILED (failures=2)

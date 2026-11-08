@@ -1,0 +1,15 @@
+test_all_prices_none_returns_none (test_module.TestGetAveragePrice.test_all_prices_none_returns_none) ... ok
+test_empty_list_returns_none (test_module.TestGetAveragePrice.test_empty_list_returns_none) ... ok
+test_float_prices (test_module.TestGetAveragePrice.test_float_prices) ... ok
+test_large_prices (test_module.TestGetAveragePrice.test_large_prices) ... ok
+test_mixed_valid_and_none_prices (test_module.TestGetAveragePrice.test_mixed_valid_and_none_prices) ... ok
+test_negative_prices (test_module.TestGetAveragePrice.test_negative_prices) ... ok
+test_normal_case_with_valid_prices (test_module.TestGetAveragePrice.test_normal_case_with_valid_prices) ... ok
+test_prices_with_zero_value (test_module.TestGetAveragePrice.test_prices_with_zero_value) ... ok
+test_rounding_to_two_decimals (test_module.TestGetAveragePrice.test_rounding_to_two_decimals) ... ok
+test_single_valid_price_returns_that_price (test_module.TestGetAveragePrice.test_single_valid_price_returns_that_price) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.046s
+
+OK

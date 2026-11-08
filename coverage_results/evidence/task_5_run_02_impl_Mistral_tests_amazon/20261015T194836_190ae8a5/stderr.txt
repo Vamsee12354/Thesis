@@ -1,0 +1,13 @@
+test_empty_form (test_module.TestFormValidation.test_empty_form) ... ok
+test_invalid_email (test_module.TestFormValidation.test_invalid_email) ... ok
+test_missing_email (test_module.TestFormValidation.test_missing_email) ... ok
+test_missing_message (test_module.TestFormValidation.test_missing_message) ... ok
+test_missing_privacy (test_module.TestFormValidation.test_missing_privacy) ... ok
+test_missing_subject (test_module.TestFormValidation.test_missing_subject) ... ok
+test_multiple_errors (test_module.TestFormValidation.test_multiple_errors) ... ok
+test_valid_form (test_module.TestFormValidation.test_valid_form) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.018s
+
+OK

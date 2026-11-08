@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:32
+Timestamp: 2026-09-30T16:49:56
 Return code: 1
 ================================================================================
 
@@ -10,100 +10,98 @@ STANDARD OUTPUT
 STANDARD ERROR
 --------------------------------------------------------------------------------
 test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... FAIL
-test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity) ... FAIL
-test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
-test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
-test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
-test_ignore_list_vs_string (selected_test.TestSlugifyManual.test_ignore_list_vs_string) ... FAIL
-test_only_punctuation_input (selected_test.TestSlugifyManual.test_only_punctuation_input) ... ok
-test_small_truncate_value (selected_test.TestSlugifyManual.test_small_truncate_value) ... ok
+test_casing_customization (selected_test.TestSlugifyManual.test_casing_customization) ... FAIL
+test_complex_combinations (selected_test.TestSlugifyManual.test_complex_combinations) ... FAIL
+test_edge_cases_and_invalid_inputs (selected_test.TestSlugifyManual.test_edge_cases_and_invalid_inputs) ... FAIL
+test_ignore_parameter (selected_test.TestSlugifyManual.test_ignore_parameter) ... FAIL
+test_separator_customization (selected_test.TestSlugifyManual.test_separator_customization) ... FAIL
 test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
 test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
-test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... FAIL
 
 ======================================================================
 FAIL: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 12, in test_basic_slugification
-    self.assertEqual(result, "hello - world")
-AssertionError: 'hello-world' != 'hello - world'
-- hello-world
-+ hello - world
-?      + +
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 8, in test_basic_slugification
+    self.assertEqual(slugify_manual("Hello World"), "hello-world")
+AssertionError: 'helloworld' != 'hello-world'
+- helloworld
++ hello-world
+?      +
 
 
 ======================================================================
-FAIL: test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity)
+FAIL: test_casing_customization (selected_test.TestSlugifyManual.test_casing_customization)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 22, in test_case_sensitivity
-    self.assertEqual(result, "StUdLy - CaPs")
-AssertionError: 'StUdLy-CaPs' != 'StUdLy - CaPs'
-- StUdLy-CaPs
-+ StUdLy - CaPs
-?       + +
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 22, in test_casing_customization
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+AssertionError: 'StUdLyCaPs' != 'StUdLy-CaPs'
+- StUdLyCaPs
++ StUdLy-CaPs
+?       +
 
 
 ======================================================================
-FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+FAIL: test_complex_combinations (selected_test.TestSlugifyManual.test_complex_combinations)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 36, in test_ignore_characters
-    self.assertEqual(result, "\u4f60 \u597d - shi - jie")
-AssertionError: '\u4f60-\u597d-\u4e16-\u754c' != '\u4f60 \u597d - shi - jie'
-- \u4f60-\u597d-\u4e16-\u754c
-+ \u4f60 \u597d - shi - jie
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 58, in test_complex_combinations
+    self.assertEqual(slugify_manual("User@Name", separator="-", ignore="@"), "user@name")
+AssertionError: 'user-name' != 'user@name'
+- user-name
+?     ^
++ user@name
+?     ^
 
 
 ======================================================================
-FAIL: test_ignore_list_vs_string (selected_test.TestSlugifyManual.test_ignore_list_vs_string)
+FAIL: test_edge_cases_and_invalid_inputs (selected_test.TestSlugifyManual.test_edge_cases_and_invalid_inputs)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 67, in test_ignore_list_vs_string
-    self.assertEqual(res_str, "a!b")
-AssertionError: 'a-!-b' != 'a!b'
-- a-!-b
-?  - -
-+ a!b
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 50, in test_edge_cases_and_invalid_inputs
+    self.assertIsNone(slugify_manual("!!! ???   "))
+AssertionError: '------' is not None
 
+======================================================================
+FAIL: test_ignore_parameter (selected_test.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 28, in test_ignore_parameter
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: '\u4f60\u597d-\u4e16\u754c' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d-\u4e16\u754c
++ \u4f60\u597d-shi-jie
+
+
+======================================================================
+FAIL: test_separator_customization (selected_test.TestSlugifyManual.test_separator_customization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 16, in test_separator_customization
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+AssertionError: None != 'madamimadam'
 
 ======================================================================
 FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 28, in test_truncation
-    self.assertEqual(result, "call - me")
-AssertionError: 'call-me' != 'call - me'
-- call-me
-+ call - me
-?     + +
-
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 34, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+AssertionError: None != 'call-me'
 
 ======================================================================
 FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 61, in test_unicode_transliteration
-    self.assertEqual(result, "ni - hao")
-AssertionError: '\u4f60\u597d' != 'ni - hao'
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 44, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d"), "ni-hao")
+AssertionError: '\u4f60\u597d' != 'ni-hao'
 - \u4f60\u597d
-+ ni - hao
-
-
-======================================================================
-FAIL: test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_gemma__implementation_mistral\selected_test.py", line 49, in test_whitespace_handling
-    self.assertEqual(result, "foo - bar")
-AssertionError: 'foo-bar' != 'foo - bar'
-- foo-bar
-+ foo - bar
-?    + +
++ ni-hao
 
 
 ----------------------------------------------------------------------
-Ran 11 tests in 0.003s
+Ran 8 tests in 0.002s
 
-FAILED (failures=7)
+FAILED (failures=8)

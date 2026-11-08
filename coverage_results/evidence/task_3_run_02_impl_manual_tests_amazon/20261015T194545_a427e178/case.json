@@ -1,0 +1,8 @@
+{
+  "task": 3,
+  "run": 2,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task3_get_min_attribute\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\amazon\\task_3\\run_02_test.py",
+  "fingerprint": "7b8c4802ef65572cd6d00ba4a9a5f2e73e7a6567d407cc4600ba4ac2a8acdbcc",
+  "timeout": 120
+}

@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:54
+Timestamp: 2026-09-30T16:50:12
 Return code: 1
 ================================================================================
 
@@ -56,10 +56,11 @@ FAIL: test_different_language (selected_test.Test_slugify_text.test_different_la
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_openai\selected_test.py", line 35, in test_different_language
     self.assertEqual(slugify_manual('Für die WMCE wählen Radiosprecher von Weltmusikprogrammen aus 24 Europäischen Ländern jeden Monat ihre persönliche Top 10 der aktuellen Albumveröffentlichungen.'),'fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-')
-AssertionError: 'furdiewmcewahlenradiosprechervonweltmusikpro[92 chars]ngen' != 'fur-die-wmce-wahlen-radiosprecher-von-weltmu[112 chars]gen-'
-- furdiewmcewahlenradiosprechervonweltmusikprogrammenaus24europaischenlandernjedenmonatihrepersonlichetop10deraktuellenalbumveroffentlichungen
+AssertionError: 'f-rdiewmcew-hlenradiosprechervonweltmusikp[94 chars]ngen' != 'fur-die-wmce-wahlen-radiosprecher-von-welt[114 chars]gen-'
+- f-rdiewmcew-hlenradiosprechervonweltmusikprogrammenaus24europ-ischenl-ndernjedenmonatihrepers-nlichetop10deraktuellenalbumver-ffentlichungen
+?   -        ^                                                 ^       ^                       ^                               ^
 + fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-
-?    +   +    +      +             +   +                   +   +  +            +       +     +     +    +           +   +  +   +         +                       +
+?  ++    +    + ^    +             +   +                   +   +  +     ^      + ^     +     +     +    +    ^      +   +  +   +         +        ^              +
 
 
 ======================================================================

@@ -1,0 +1,115 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (test_module.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... FAIL
+test_edge_case_truncate (test_module.TestSlugifyManual.test_edge_case_truncate) ... FAIL
+test_empty_and_punctuation_only (test_module.TestSlugifyManual.test_empty_and_punctuation_only) ... ok
+test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_with_separator (test_module.TestSlugifyManual.test_ignore_with_separator) ... FAIL
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_string_input (test_module.TestSlugifyManual.test_non_string_input) ... FAIL
+test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars) ... FAIL
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+FAIL: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 18, in test_custom_separator
+    self.assertEqual(slugify_manual("Hello World", separator=""), "helloworld")
+AssertionError: None != 'helloworld'
+
+======================================================================
+FAIL: test_edge_case_truncate (test_module.TestSlugifyManual.test_edge_case_truncate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 64, in test_edge_case_truncate
+    self.assertEqual(slugify_manual("a b c", truncate=1), "")
+AssertionError: 'a' != ''
+- a
++ 
+
+
+======================================================================
+FAIL: test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 33, in test_ignore_functionality
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好世界' != '你好-shi-jie'
+- 你好世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_ignore_with_separator (test_module.TestSlugifyManual.test_ignore_with_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 68, in test_ignore_with_separator
+    self.assertEqual(slugify_manual("Hello, World!", separator="_", ignore=["!"]), "hello,_world_!")
+AssertionError: 'hello_world!' != 'hello,_world_!'
+- hello_world!
++ hello,_world_!
+?      +      +
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 39, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shi-jie")
+AssertionError: 'こんにちは世界' != 'konnichiha-shi-jie'
+- こんにちは世界
++ konnichiha-shi-jie
+
+
+======================================================================
+FAIL: test_non_string_input (test_module.TestSlugifyManual.test_non_string_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 48, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 59, in test_preserve_ignore_chars
+    self.assertEqual(slugify_manual("C++ is fun", ignore=["+", " "]), "c++-is-fun")
+AssertionError: 'c++ is fun' != 'c++-is-fun'
+- c++ is fun
+?    ^  ^
++ c++-is-fun
+?    ^  ^
+
+
+======================================================================
+FAIL: test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 29, in test_truncate_functionality
+    self.assertEqual(slugify_manual("Call me maybe", truncate=3), "call")
+AssertionError: 'cal' != 'call'
+- cal
++ call
+?    +
+
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_Mistral_tests_Mistral\20261015T195345_3f33654b\test_module.py", line 54, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("Hello world test", truncate=8, ignore=["test"]), "hello-test")
+AssertionError: 'hello' != 'hello-test'
+- hello
++ hello-test
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.069s
+
+FAILED (failures=9)

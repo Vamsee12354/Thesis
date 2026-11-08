@@ -1,0 +1,48 @@
+test_all_empty_strings (test_module.TestGetUnique.test_all_empty_strings) ... ok
+test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands) ... FAIL
+test_all_none (test_module.TestGetUnique.test_all_none) ... ok
+test_all_spaces (test_module.TestGetUnique.test_all_spaces) ... FAIL
+test_case_insensitivity (test_module.TestGetUnique.test_case_insensitivity) ... ok
+test_empty_list (test_module.TestGetUnique.test_empty_list) ... ok
+test_mixed_case_duplicates (test_module.TestGetUnique.test_mixed_case_duplicates) ... FAIL
+test_mixed_valid_invalid (test_module.TestGetUnique.test_mixed_valid_invalid) ... ok
+test_no_duplicates (test_module.TestGetUnique.test_no_duplicates) ... ok
+test_normal_case (test_module.TestGetUnique.test_normal_case) ... ok
+
+======================================================================
+FAIL: test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_05_impl_amazon_tests_deepseek\20261015T194341_a71ca993\test_module.py", line 12, in test_all_invalid_brands
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_all_spaces (test_module.TestGetUnique.test_all_spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_05_impl_amazon_tests_deepseek\20261015T194341_a71ca993\test_module.py", line 48, in test_all_spaces
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_case_duplicates (test_module.TestGetUnique.test_mixed_case_duplicates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_05_impl_amazon_tests_deepseek\20261015T194341_a71ca993\test_module.py", line 21, in test_mixed_case_duplicates
+    self.assertEqual(get_unique(input_data), expected_output)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.041s
+
+FAILED (failures=3)

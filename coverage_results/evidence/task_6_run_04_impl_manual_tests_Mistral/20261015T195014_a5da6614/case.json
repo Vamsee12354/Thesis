@@ -1,0 +1,8 @@
+{
+  "task": 6,
+  "run": 4,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task6_validate_password\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\Mistral\\task_6\\run_04_test.py",
+  "fingerprint": "10780a5aa88b9f82f0847e999c10fc128d7b5240ff7af7ea8b4574773b44e796",
+  "timeout": 120
+}

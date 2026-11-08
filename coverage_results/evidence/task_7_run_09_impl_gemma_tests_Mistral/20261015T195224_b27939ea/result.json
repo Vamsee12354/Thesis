@@ -1,0 +1,94 @@
+{
+  "key": "task_7_run_09_impl_gemma_tests_Mistral",
+  "task": 7,
+  "task_name": "task7_product_list_live_v",
+  "complexity": "High",
+  "run": 9,
+  "impl_llm": "gemma",
+  "test_llm": "Mistral",
+  "fingerprint": "39dda8a46633672df7fdd1204584effd328fd5f672cc67a7ba987853226b5c0e",
+  "tests_run": 10,
+  "tests_passed": 7,
+  "tests_failed": 3,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 76.92307692307692,
+  "lines_covered": 10,
+  "lines_total": 13,
+  "lines_missing": 3,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_7_run_09_impl_gemma_tests_Mistral\\20261015T195224_b27939ea",
+  "started_utc": "2026-10-15T19:52:25+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingList.test_empty_shopping_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_normal_functionality_with_multiple_items",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_empty_title",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_html_content_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_missing_title_key",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_non_string_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_none_title",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_special_characters_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_unicode_characters_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_single_item_in_list",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    13,
+    14
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8143,
+  "finished_utc": "2026-10-15T19:52:25+00:00",
+  "return_code": 0
+}

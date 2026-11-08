@@ -1,0 +1,35 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ERROR
+test_casing_options (test_module.TestSlugifyManual.test_casing_options) ... ERROR
+test_complex_combination (test_module.TestSlugifyManual.test_complex_combination) ... FAIL
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... ERROR
+test_invalid_inputs_return_none (test_module.TestSlugifyManual.test_invalid_inputs_return_none) ... ERROR
+test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal) ... ERROR
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 222, in case_child
+    test_result = runner.run(suite)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py", line 217, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 648, in run
+    result.stopTest(self)
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 195, in stopTest
+    atomic_json(folder / "progress.json", {**self.counts(), "complete": False})
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 96, in atomic_json
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_8_run_02_impl_amazon_tests_gemma\\20261015T195250_0716b96c\\progress.json.tmp' -> 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_8_run_02_impl_amazon_tests_gemma\\20261015T195250_0716b96c\\progress.json'
+

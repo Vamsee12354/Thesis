@@ -1,0 +1,31 @@
+test_empty_string_returns_minimum_one (test_module.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exactly_200_words_returns_one (test_module.TestGetReadDuration.test_exactly_200_words_returns_one) ... ok
+test_just_over_200_words_returns_two (test_module.TestGetReadDuration.test_just_over_200_words_returns_two) ... ok
+test_long_text_multiple_minutes (test_module.TestGetReadDuration.test_long_text_multiple_minutes) ... ok
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 222, in case_child
+    test_result = runner.run(suite)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py", line 217, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 648, in run
+    result.stopTest(self)
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 195, in stopTest
+    atomic_json(folder / "progress.json", {**self.counts(), "complete": False})
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 96, in atomic_json
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_4_run_09_impl_manual_tests_openai\\20261015T194808_f30199e4\\progress.json.tmp' -> 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_4_run_09_impl_manual_tests_openai\\20261015T194808_f30199e4\\progress.json'
+

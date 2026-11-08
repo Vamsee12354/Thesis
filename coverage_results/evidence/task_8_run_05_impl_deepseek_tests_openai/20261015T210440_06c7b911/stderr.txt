@@ -1,0 +1,113 @@
+test_basic_slugification_lowercase_default_separator (test_module.TestSlugifyManual.test_basic_slugification_lowercase_default_separator) ... ok
+test_empty_input_returns_none (test_module.TestSlugifyManual.test_empty_input_returns_none) ... ok
+test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string) ... FAIL
+test_ignore_preserves_characters (test_module.TestSlugifyManual.test_ignore_preserves_characters) ... FAIL
+test_leading_trailing_and_repeated_whitespace (test_module.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... ok
+test_lowercase_false_with_ignore (test_module.TestSlugifyManual.test_lowercase_false_with_ignore) ... FAIL
+test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_punctuation_only_input_returns_none (test_module.TestSlugifyManual.test_punctuation_only_input_returns_none) ... ok
+test_separator_as_utf8_integer (test_module.TestSlugifyManual.test_separator_as_utf8_integer) ... ERROR
+test_slugify_preserve_case (test_module.TestSlugifyManual.test_slugify_preserve_case) ... ok
+test_slugify_with_empty_separator (test_module.TestSlugifyManual.test_slugify_with_empty_separator) ... ERROR
+test_slugify_with_ignore_characters (test_module.TestSlugifyManual.test_slugify_with_ignore_characters) ... FAIL
+test_slugify_with_truncate (test_module.TestSlugifyManual.test_slugify_with_truncate) ... ok
+test_truncate_exact_word_fit (test_module.TestSlugifyManual.test_truncate_exact_word_fit) ... ok
+test_truncate_too_small_to_fit_any_word_returns_none (test_module.TestSlugifyManual.test_truncate_too_small_to_fit_any_word_returns_none) ... ok
+
+======================================================================
+ERROR: test_separator_as_utf8_integer (test_module.TestSlugifyManual.test_separator_as_utf8_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 119, in test_separator_as_utf8_integer
+    result = slugify_manual(text, separator=separator)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\implementation_manual.py", line 28, in slugify_manual
+    cleaned_text = ''.join(cleaned_text)
+                   ^^^^^^^^^^^^^^^^^^^^^
+TypeError: sequence item 3: expected str instance, int found
+
+======================================================================
+ERROR: test_slugify_with_empty_separator (test_module.TestSlugifyManual.test_slugify_with_empty_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 20, in test_slugify_with_empty_separator
+    result = slugify_manual(text, separator="")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\implementation_manual.py", line 29, in slugify_manual
+    cleaned_text = re.sub(f'[{re.escape(separator)}]+', separator, cleaned_text)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 572, in _parse
+    raise source.error("unterminated character set",
+re.error: unterminated character set at position 0
+
+======================================================================
+FAIL: test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 141, in test_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: 'a!bcd' != 'a!b-c-d'
+- a!bcd
++ a!b-c-d
+?    + +
+
+
+======================================================================
+FAIL: test_ignore_preserves_characters (test_module.TestSlugifyManual.test_ignore_preserves_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 111, in test_ignore_preserves_characters
+    self.assertEqual(result, expected)
+AssertionError: 'a!b@c#d' != 'a!b@c-d'
+- a!b@c#d
+?      ^
++ a!b@c-d
+?      ^
+
+
+======================================================================
+FAIL: test_lowercase_false_with_ignore (test_module.TestSlugifyManual.test_lowercase_false_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 131, in test_lowercase_false_with_ignore
+    self.assertEqual(result, expected)
+AssertionError: 'Hello' != 'Hello-世-jie'
+- Hello
++ Hello-世-jie
+
+
+======================================================================
+FAIL: test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 101, in test_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: None != 'ni-hao-shi-jie'
+
+======================================================================
+FAIL: test_slugify_with_ignore_characters (test_module.TestSlugifyManual.test_slugify_with_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_openai\20261015T210440_06c7b911\test_module.py", line 50, in test_slugify_with_ignore_characters
+    self.assertEqual(result, expected)
+AssertionError: None != '你好-shi-jie'
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.038s
+
+FAILED (failures=5, errors=2)

@@ -1,0 +1,22 @@
+test_all_values_none (test_module.TestGetMinAttribute.test_all_values_none) ... ok
+test_empty_data_list (test_module.TestGetMinAttribute.test_empty_data_list) ... ok
+test_non_existent_attribute (test_module.TestGetMinAttribute.test_non_existent_attribute) ... ok
+test_non_numeric_attribute (test_module.TestGetMinAttribute.test_non_numeric_attribute) ... ERROR
+test_valid_attribute_with_values (test_module.TestGetMinAttribute.test_valid_attribute_with_values) ... ok
+
+======================================================================
+ERROR: test_non_numeric_attribute (test_module.TestGetMinAttribute.test_non_numeric_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_09_impl_manual_tests_amazon\20261015T194644_45d088eb\test_module.py", line 45, in test_non_numeric_attribute
+    self.assertIsNone(get_min_2_attributes(data, "title"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_09_impl_manual_tests_amazon\20261015T194644_45d088eb\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.028s
+
+FAILED (errors=1)

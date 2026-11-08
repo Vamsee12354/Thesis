@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:17:06
+Timestamp: 2026-09-30T16:50:21
 Return code: 1
 ================================================================================
 
@@ -10,7 +10,7 @@ STANDARD OUTPUT
 STANDARD ERROR
 --------------------------------------------------------------------------------
 test_all_capitals (selected_test.Test_slugify_text.test_all_capitals) ... ok
-test_already_slugified (selected_test.Test_slugify_text.test_already_slugified) ... FAIL
+test_already_slugified (selected_test.Test_slugify_text.test_already_slugified) ... ok
 test_different_language (selected_test.Test_slugify_text.test_different_language) ... FAIL
 test_functionality (selected_test.Test_slugify_text.test_functionality) ... ok
 test_ignore (selected_test.Test_slugify_text.test_ignore) ... ok
@@ -25,18 +25,6 @@ test_single_word (selected_test.Test_slugify_text.test_single_word) ... ok
 test_spaces_single_word (selected_test.Test_slugify_text.test_spaces_single_word) ... ok
 test_symbols_inbetween_text (selected_test.Test_slugify_text.test_symbols_inbetween_text) ... ok
 test_truncate (selected_test.Test_slugify_text.test_truncate) ... FAIL
-
-======================================================================
-FAIL: test_already_slugified (selected_test.Test_slugify_text.test_already_slugified)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_08__tests_manual__implementation_gemma\selected_test.py", line 38, in test_already_slugified
-    self.assertEqual(slugify_manual('writing-slugify-code-helloworld'),'writing-slugify-code-helloworld')
-AssertionError: 'writingslugifycodehelloworld' != 'writing-slugify-code-helloworld'
-- writingslugifycodehelloworld
-+ writing-slugify-code-helloworld
-?        +       +    +
-
 
 ======================================================================
 FAIL: test_different_language (selected_test.Test_slugify_text.test_different_language)
@@ -56,12 +44,9 @@ FAIL: test_truncate (selected_test.Test_slugify_text.test_truncate)
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_08__tests_manual__implementation_gemma\selected_test.py", line 53, in test_truncate
     self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"hello%")
-AssertionError: 'he' != 'hello%'
-- he
-+ hello%
-
+AssertionError: None != 'hello%'
 
 ----------------------------------------------------------------------
 Ran 16 tests in 0.002s
 
-FAILED (failures=3)
+FAILED (failures=2)

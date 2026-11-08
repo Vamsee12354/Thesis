@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 206, in case_child
+    compile(filename.read_bytes(), str(filename), "exec")
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_amazon\20261015T195244_ad9016c0\test_module.py", line 11
+    def test_punctuation_only_input(self.):
+                                        ^
+SyntaxError: invalid syntax
+

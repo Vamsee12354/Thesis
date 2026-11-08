@@ -1,0 +1,10 @@
+test_empty_string (test_module.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (test_module.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_long_post (test_module.TestGetReadDuration.test_long_post) ... ok
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (test_module.TestGetReadDuration.test_normal_paragraph) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.017s
+
+OK

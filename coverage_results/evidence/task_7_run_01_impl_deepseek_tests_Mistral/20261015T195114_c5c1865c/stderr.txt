@@ -1,0 +1,40 @@
+test_empty_list (test_module.TestShoppingList.test_empty_list) ... ok
+test_multiple_products_with_html_in_title (test_module.TestShoppingList.test_multiple_products_with_html_in_title) ... ok
+test_normal_functionality (test_module.TestShoppingList.test_normal_functionality) ... ok
+test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title) ... FAIL
+test_product_with_html_in_title (test_module.TestShoppingList.test_product_with_html_in_title) ... ok
+test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title) ... FAIL
+test_product_without_title_key (test_module.TestShoppingList.test_product_without_title_key) ... FAIL
+test_single_product (test_module.TestShoppingList.test_single_product) ... ok
+
+======================================================================
+FAIL: test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_01_impl_deepseek_tests_Mistral\20261015T195114_c5c1865c\test_module.py", line 49, in test_product_with_empty_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li></li></ul>'
+- <ul></ul>
++ <ul><li></li></ul>
+
+
+======================================================================
+FAIL: test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_01_impl_deepseek_tests_Mistral\20261015T195114_c5c1865c\test_module.py", line 42, in test_product_with_none_title
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_product_without_title_key (test_module.TestShoppingList.test_product_without_title_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_01_impl_deepseek_tests_Mistral\20261015T195114_c5c1865c\test_module.py", line 37, in test_product_without_title_key
+    with self.assertRaises(KeyError):
+AssertionError: KeyError not raised
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.036s
+
+FAILED (failures=3)

@@ -1,0 +1,8 @@
+{
+  "task": 8,
+  "run": 2,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task8_slugify\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\Mistral\\task_8\\run_02_test.py",
+  "fingerprint": "f57c71e40bc5e4809a0285064fe1fca7ee3df4bffac761e82a0ef7447ff34e2b",
+  "timeout": 120
+}

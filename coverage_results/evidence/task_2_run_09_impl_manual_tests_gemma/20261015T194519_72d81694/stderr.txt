@@ -1,0 +1,11 @@
+test_average_price_all_none (test_module.TestGetAveragePrice.test_average_price_all_none) ... ok
+test_average_price_empty_list (test_module.TestGetAveragePrice.test_average_price_empty_list) ... ok
+test_average_price_mixed_types_and_none (test_module.TestGetAveragePrice.test_average_price_mixed_types_and_none) ... ok
+test_average_price_normal_case (test_module.TestGetAveragePrice.test_average_price_normal_case) ... ok
+test_average_price_single_valid_product (test_module.TestGetAveragePrice.test_average_price_single_valid_product) ... ok
+test_average_price_with_rounding (test_module.TestGetAveragePrice.test_average_price_with_rounding) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.026s
+
+OK

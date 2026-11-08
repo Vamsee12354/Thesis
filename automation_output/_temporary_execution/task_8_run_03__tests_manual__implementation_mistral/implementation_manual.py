@@ -1,11 +1,5 @@
-from unicodedata import normalize, category
-import re
-
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    if not isinstance(text, str):
-        return None
-
-    if not text:
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str) or not text:
         return None
 
     if ignore is None:
@@ -13,72 +7,91 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     elif isinstance(ignore, str):
         ignore = [ignore]
 
-    try:
-        normalized_text = normalize('NFKD', text)
-    except Exception:
+    if not isinstance(separator, str) or len(separator) != 1:
         return None
+
+    if not isinstance(lowercase, bool):
+        return None
+
+    if truncate is not None and (not isinstance(truncate, int) or truncate <= 0):
+        return None
+
+    translit_map = {
+        '，': ',', '。': '.', '！': '!', '？': '?', '、': ',', '；': ';',
+        '：': ':', '（': '(', '）': ')', '【': '[', '】': ']', '「': '[',
+        '」': ']', '『': '[', '』': ']', '《': '<', '》': '>', '…': '...',
+        '—': '-', '～': '~', '‘': "'", '’': "'", '“': '"', '”': '"',
+        '　': ' ', ' ': ' ', '¡': 'i', '¿': '?', '¢': 'c', '£': 'l',
+        '¥': 'y', '€': 'e', '©': 'c', '®': 'r', '°': 'o', '±': '+',
+        'µ': 'u', '§': 's', '÷': '/', '×': 'x', '¶': 'p', '†': 't',
+        '‡': 't', '•': '-', '…': '...', '′': "'", '″': '"', '‾': '-',
+        '‒': '-', '–': '-', '—': '-', '‘': "'", '’': "'", '“': '"',
+        '”': '"', '„': '"', '«': '"', '»': '"', '‹': '"', '›': '"',
+        '‚': "'", '„': '"', '“': '"', '”': '"', '‘': "'", '’': "'",
+        '′': "'", '″': '"', '‵': "'", '‶': '"', 'ʻ': "'", 'ʼ': "'",
+        'ʽ': "'", 'ʾ': "'", 'ʿ': "'", 'ˀ': "'", 'ˁ': "'", '˂': '<',
+        '˃': '>', '˄': '^', '˅': 'v', 'ˆ': '^', 'ˇ': 'v', 'ˈ': "'",
+        'ˉ': '-', 'ˊ': "'", 'ˋ': '`', 'ˌ': ',', 'ˍ': '_', 'ˎ': "'",
+        'ˏ': "'", 'ː': ':', 'ˑ': ':', '˒': "'", '˓': "'", '˔': "'",
+        '˕': "'", '˖': '+', '˗': '-', '˘': 'u', '˙': '.', '˚': 'o',
+        '˛': 'a', '˜': '~', '˝': '"', '˞': "'", '˟': 'x', 'ˠ': 'g',
+        'ˡ': 'l', 'ˢ': 's', 'ˣ': 'x', 'ˤ': "'", '˩': 'v', '˪': 'v',
+        '˫': 'v', 'ˬ': 'v', '˭': '|', 'ˮ': 'r', '˯': 'v', '˰': 'v',
+        '˱': '(', '˲': ')', '˳': 'o', '˴': "'", '˵': "'", '˶': '"',
+        '˷': 'v', '˸': ':', '˹': "'", '˺': "'", '˻': '[', '˼': ']',
+        '˽': '|', '˾': ']', '˿': '|'
+    }
+
+    normalized_text = []
+    for char in text:
+        if char in ignore:
+            normalized_text.append(char)
+        else:
+            normalized_text.append(translit_map.get(char, char))
+
+    normalized_text = ''.join(normalized_text)
 
     slug_parts = []
     current_part = []
-    in_word = False
-
     for char in normalized_text:
-        if char in ignore:
+        if char.isalnum():
+            current_part.append(char)
+        else:
             if current_part:
                 slug_parts.append(''.join(current_part))
                 current_part = []
-            slug_parts.append(char)
-            in_word = False
-            continue
-
-        if category(char).startswith('L') or category(char).startswith('N'):
-            current_part.append(char)
-            in_word = True
-        else:
-            if in_word:
-                slug_parts.append(''.join(current_part))
-                current_part = []
-                in_word = False
+            if char.isspace():
+                continue
+            if char != separator:
+                slug_parts.append(separator)
 
     if current_part:
         slug_parts.append(''.join(current_part))
 
-    if not slug_parts:
+    slug = ''.join(slug_parts)
+
+    if not slug:
         return None
-
-    processed_parts = []
-    for part in slug_parts:
-        if part in ignore:
-            processed_parts.append(part)
-        else:
-            cleaned_part = re.sub(r'[^\w\s-]', '', part)
-            cleaned_part = re.sub(r'[\s]+', ' ', cleaned_part)
-            if cleaned_part:
-                processed_parts.append(cleaned_part)
-
-    if not processed_parts:
-        return None
-
-    slug = ' '.join(processed_parts)
-    slug = re.sub(r'[\s]+', separator, slug)
 
     if lowercase:
         slug = slug.lower()
 
     if truncate is not None:
-        if not isinstance(truncate, int) or truncate <= 0:
-            return None
-        words = slug.split(separator)
-        truncated_words = []
-        current_length = 0
-        for word in words:
-            if current_length + len(word) <= truncate:
-                truncated_words.append(word)
-                current_length += len(word) + len(separator)
-            else:
-                break
-        slug = separator.join(truncated_words)
-        if not slug:
-            return None
+        if separator:
+            parts = slug.split(separator)
+            truncated_parts = []
+            total_length = 0
+            for part in parts:
+                if total_length + len(part) + (1 if truncated_parts else 0) <= truncate:
+                    truncated_parts.append(part)
+                    total_length += len(part) + (1 if truncated_parts else 0)
+                else:
+                    break
+            slug = separator.join(truncated_parts)
+        else:
+            slug = slug[:truncate]
+
+    if not slug:
+        return None
 
     return slug

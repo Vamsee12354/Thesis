@@ -1,0 +1,38 @@
+test_all_non_numeric_values_returns_none (test_module.TestGetMin2Attributes.test_all_non_numeric_values_returns_none) ... ERROR
+test_all_values_are_none_returns_none (test_module.TestGetMin2Attributes.test_all_values_are_none_returns_none) ... ok
+test_empty_list_returns_none (test_module.TestGetMin2Attributes.test_empty_list_returns_none) ... ok
+test_happy_path_float_values (test_module.TestGetMin2Attributes.test_happy_path_float_values) ... ok
+test_happy_path_integer_values (test_module.TestGetMin2Attributes.test_happy_path_integer_values) ... ok
+test_mixed_missing_and_none_values (test_module.TestGetMin2Attributes.test_mixed_missing_and_none_values) ... ok
+test_non_existent_attribute_returns_none (test_module.TestGetMin2Attributes.test_non_existent_attribute_returns_none) ... ok
+test_non_numeric_values_ignored (test_module.TestGetMin2Attributes.test_non_numeric_values_ignored) ... ERROR
+test_rounding_to_two_decimals (test_module.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+
+======================================================================
+ERROR: test_all_non_numeric_values_returns_none (test_module.TestGetMin2Attributes.test_all_non_numeric_values_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_05_impl_manual_tests_gemma\20261015T194610_5b667d5d\test_module.py", line 141, in test_all_non_numeric_values_returns_none
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_05_impl_manual_tests_gemma\20261015T194610_5b667d5d\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+======================================================================
+ERROR: test_non_numeric_values_ignored (test_module.TestGetMin2Attributes.test_non_numeric_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_05_impl_manual_tests_gemma\20261015T194610_5b667d5d\test_module.py", line 126, in test_non_numeric_values_ignored
+    result = get_min_2_attributes(data, search_key)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_05_impl_manual_tests_gemma\20261015T194610_5b667d5d\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.040s
+
+FAILED (errors=2)

@@ -1,0 +1,10 @@
+test_all_missing_prices (test_module.TestGetAveragePrice.test_all_missing_prices) ... ok
+test_empty_price_list (test_module.TestGetAveragePrice.test_empty_price_list) ... ok
+test_no_valid_prices (test_module.TestGetAveragePrice.test_no_valid_prices) ... ok
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+test_valid_prices (test_module.TestGetAveragePrice.test_valid_prices) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.010s
+
+OK

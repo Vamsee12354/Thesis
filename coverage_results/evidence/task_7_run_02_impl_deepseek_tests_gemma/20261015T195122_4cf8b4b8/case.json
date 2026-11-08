@@ -1,0 +1,8 @@
+{
+  "task": 7,
+  "run": 2,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\deepseek\\task_7\\run_02.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\gemma\\task_7\\run_02_test.py",
+  "fingerprint": "a3351d0b9d57e2a51d050815860ff42356f0a7100af1b1c4b34354a32e3f4900",
+  "timeout": 120
+}

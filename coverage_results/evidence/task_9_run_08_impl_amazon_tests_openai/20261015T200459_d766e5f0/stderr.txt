@@ -1,0 +1,39 @@
+test_cleanup_clears_all_cache (test_module.TestProductCacheGet.test_cleanup_clears_all_cache) ... ok
+test_delete_existing_key (test_module.TestProductCacheGet.test_delete_existing_key) ... ok
+test_delete_non_existent_key (test_module.TestProductCacheGet.test_delete_non_existent_key) ... FAIL
+test_expiry_of_cache_item (test_module.TestProductCacheGet.test_expiry_of_cache_item) ... FAIL
+test_get_non_existent_key_returns_none (test_module.TestProductCacheGet.test_get_non_existent_key_returns_none) ... ok
+test_initialization (test_module.TestProductCacheGet.test_initialization) ... ok
+test_set_and_get_value (test_module.TestProductCacheGet.test_set_and_get_value) ... ok
+test_set_with_custom_ttl_and_get (test_module.TestProductCacheGet.test_set_with_custom_ttl_and_get) ... ok
+test_set_with_negative_ttl_invalidates_immediately (test_module.TestProductCacheGet.test_set_with_negative_ttl_invalidates_immediately) ... ok
+test_set_without_ttl_uses_default_expiry (test_module.TestProductCacheGet.test_set_without_ttl_uses_default_expiry) ... FAIL
+
+======================================================================
+FAIL: test_delete_non_existent_key (test_module.TestProductCacheGet.test_delete_non_existent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_08_impl_amazon_tests_openai\20261015T200459_d766e5f0\test_module.py", line 68, in test_delete_non_existent_key
+    self.assertEqual(result, "deleted successfully")
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_expiry_of_cache_item (test_module.TestProductCacheGet.test_expiry_of_cache_item)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_08_impl_amazon_tests_openai\20261015T200459_d766e5f0\test_module.py", line 93, in test_expiry_of_cache_item
+    self.assertIsNone(result)
+AssertionError: 'data' is not None
+
+======================================================================
+FAIL: test_set_without_ttl_uses_default_expiry (test_module.TestProductCacheGet.test_set_without_ttl_uses_default_expiry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_08_impl_amazon_tests_openai\20261015T200459_d766e5f0\test_module.py", line 104, in test_set_without_ttl_uses_default_expiry
+    self.assertIsNone(result)
+AssertionError: 'value' is not None
+
+----------------------------------------------------------------------
+Ran 10 tests in 60.185s
+
+FAILED (failures=3)

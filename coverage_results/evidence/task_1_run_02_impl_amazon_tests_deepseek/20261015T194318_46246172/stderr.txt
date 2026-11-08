@@ -1,0 +1,74 @@
+test_all_duplicates (test_module.TestGetUnique.test_all_duplicates) ... ok
+test_all_none_or_empty (test_module.TestGetUnique.test_all_none_or_empty) ... FAIL
+test_case_insensitive_deduplication (test_module.TestGetUnique.test_case_insensitive_deduplication) ... FAIL
+test_empty_input (test_module.TestGetUnique.test_empty_input) ... ok
+test_mixed_valid_invalid (test_module.TestGetUnique.test_mixed_valid_invalid) ... FAIL
+test_normal_case (test_module.TestGetUnique.test_normal_case) ... ok
+test_preserve_order (test_module.TestGetUnique.test_preserve_order) ... ok
+test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand) ... FAIL
+
+======================================================================
+FAIL: test_all_none_or_empty (test_module.TestGetUnique.test_all_none_or_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_02_impl_amazon_tests_deepseek\20261015T194318_46246172\test_module.py", line 15, in test_all_none_or_empty
+    self.assertIsNone(get_unique(input_data))
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_case_insensitive_deduplication (test_module.TestGetUnique.test_case_insensitive_deduplication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_02_impl_amazon_tests_deepseek\20261015T194318_46246172\test_module.py", line 27, in test_case_insensitive_deduplication
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_mixed_valid_invalid (test_module.TestGetUnique.test_mixed_valid_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_02_impl_amazon_tests_deepseek\20261015T194318_46246172\test_module.py", line 39, in test_mixed_valid_invalid
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Valid1', 'Valid2', ''] != ['Valid1', 'Valid2']
+
+First list contains 1 additional elements.
+First extra element 2:
+''
+
+- ['Valid1', 'Valid2', '']
+?                    ----
+
++ ['Valid1', 'Valid2']
+
+======================================================================
+FAIL: test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_02_impl_amazon_tests_deepseek\20261015T194318_46246172\test_module.py", line 44, in test_single_valid_brand
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Singlebrand'] != ['SingleBrand']
+
+First differing element 0:
+'Singlebrand'
+'SingleBrand'
+
+- ['Singlebrand']
+?         ^
+
++ ['SingleBrand']
+?         ^
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.031s
+
+FAILED (failures=4)

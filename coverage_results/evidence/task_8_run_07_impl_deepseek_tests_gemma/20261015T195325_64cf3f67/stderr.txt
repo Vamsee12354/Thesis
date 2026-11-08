@@ -1,0 +1,64 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_casing_customization (test_module.TestSlugifyManual.test_casing_customization) ... ok
+test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations) ... ok
+test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter) ... FAIL
+test_invalid_inputs_and_edge_cases (test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases) ... ok
+test_separator_customization (test_module.TestSlugifyManual.test_separator_customization) ... ERROR
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+
+======================================================================
+ERROR: test_separator_customization (test_module.TestSlugifyManual.test_separator_customization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_deepseek_tests_gemma\20261015T195325_64cf3f67\test_module.py", line 16, in test_separator_customization
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_deepseek_tests_gemma\20261015T195325_64cf3f67\implementation_manual.py", line 38, in slugify_manual
+    slug = re.sub(re.escape(separator) + '+', separator, slug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 691, in _parse
+    raise source.error("nothing to repeat",
+re.error: nothing to repeat at position 0
+
+======================================================================
+FAIL: test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_deepseek_tests_gemma\20261015T195325_64cf3f67\test_module.py", line 28, in test_ignore_parameter
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好世界' != '你好-shi-jie'
+- 你好世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_deepseek_tests_gemma\20261015T195325_64cf3f67\test_module.py", line 44, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+AssertionError: '你好' != 'ni-hao'
+- 你好
++ ni-hao
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.055s
+
+FAILED (failures=2, errors=1)

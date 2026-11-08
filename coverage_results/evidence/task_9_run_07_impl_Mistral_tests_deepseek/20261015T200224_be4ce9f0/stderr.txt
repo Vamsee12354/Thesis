@@ -1,0 +1,21 @@
+test_cleanup (test_module.TestProductCacheGet.test_cleanup) ... ok
+test_delete (test_module.TestProductCacheGet.test_delete) ... ok
+test_expiry (test_module.TestProductCacheGet.test_expiry) ... FAIL
+test_get_non_existent_key (test_module.TestProductCacheGet.test_get_non_existent_key) ... ok
+test_initialization (test_module.TestProductCacheGet.test_initialization) ... ok
+test_set_and_get (test_module.TestProductCacheGet.test_set_and_get) ... ok
+test_set_with_custom_ttl (test_module.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (test_module.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+
+======================================================================
+FAIL: test_expiry (test_module.TestProductCacheGet.test_expiry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_07_impl_Mistral_tests_deepseek\20261015T200224_be4ce9f0\test_module.py", line 43, in test_expiry
+    self.assertIsNone(self.cache.get('a'))
+AssertionError: 'apple' is not None
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.024s
+
+FAILED (failures=1)

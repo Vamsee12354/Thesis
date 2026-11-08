@@ -1,0 +1,8 @@
+{
+  "task": 3,
+  "run": 4,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\Mistral\\task_3\\run_04.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task3_get_min_attribute\\tests.py",
+  "fingerprint": "8f14132fb677657f210006241e31f8ab46b47555c74d0ab7e2e13cb4bd3735b3",
+  "timeout": 120
+}

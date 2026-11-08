@@ -1,0 +1,75 @@
+{
+  "key": "task_1_run_08_impl_manual_tests_deepseek",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 8,
+  "impl_llm": "manual",
+  "test_llm": "deepseek",
+  "fingerprint": "b2cbde2206495a72d00fa12e3e55c6e9c76054d80de47418d34b66e5655fc405",
+  "tests_run": 7,
+  "tests_passed": 5,
+  "tests_failed": 2,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 11,
+  "lines_total": 11,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_08_impl_manual_tests_deepseek\\20261015T194357_f14c6a5d",
+  "started_utc": "2026-10-15T19:43:57+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_all_none_or_empty_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_case_insensitive_deduplication",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_empty_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_mixed_valid_and_invalid",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_normal_case_with_valid_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_preserve_order_first_occurrence",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_single_valid_brand",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.7286,
+  "finished_utc": "2026-10-15T19:43:57+00:00",
+  "return_code": 0
+}

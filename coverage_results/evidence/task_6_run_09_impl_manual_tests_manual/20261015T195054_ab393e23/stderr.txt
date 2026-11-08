@@ -1,0 +1,19 @@
+test_diff_language (test_module.Test_password_valid.test_diff_language) ... ok
+test_long_len_pwd (test_module.Test_password_valid.test_long_len_pwd) ... ok
+test_lower_upper_no_symbol (test_module.Test_password_valid.test_lower_upper_no_symbol) ... ok
+test_mix_languages (test_module.Test_password_valid.test_mix_languages) ... ok
+test_no_lowercase (test_module.Test_password_valid.test_no_lowercase) ... ok
+test_no_password (test_module.Test_password_valid.test_no_password) ... ok
+test_no_symbols (test_module.Test_password_valid.test_no_symbols) ... ok
+test_no_upprcase (test_module.Test_password_valid.test_no_upprcase) ... ok
+test_nolower_upper_symbol (test_module.Test_password_valid.test_nolower_upper_symbol) ... ok
+test_noupper_lower_symbol (test_module.Test_password_valid.test_noupper_lower_symbol) ... ok
+test_only_symbols (test_module.Test_password_valid.test_only_symbols) ... ok
+test_short_len_pwd (test_module.Test_password_valid.test_short_len_pwd) ... ok
+test_spaces_in_pwd (test_module.Test_password_valid.test_spaces_in_pwd) ... ok
+test_working_pwd (test_module.Test_password_valid.test_working_pwd) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.044s
+
+OK

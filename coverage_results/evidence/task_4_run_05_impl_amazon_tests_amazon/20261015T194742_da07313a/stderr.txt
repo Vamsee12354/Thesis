@@ -1,0 +1,18 @@
+test_empty_string (test_module.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (test_module.TestGetReadDuration.test_excessive_whitespace) ... FAIL
+test_long_post (test_module.TestGetReadDuration.test_long_post) ... ok
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (test_module.TestGetReadDuration.test_normal_paragraph) ... ok
+
+======================================================================
+FAIL: test_excessive_whitespace (test_module.TestGetReadDuration.test_excessive_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_05_impl_amazon_tests_amazon\20261015T194742_da07313a\test_module.py", line 10, in test_excessive_whitespace
+    self.assertEqual(get_read_duration(" "), 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.024s
+
+FAILED (failures=1)

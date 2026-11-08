@@ -1,0 +1,27 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_all_fields_whitespace_only (test_module.TestValidateForm.test_all_fields_whitespace_only) ... ok
+test_email_regex_edge_cases (test_module.TestValidateForm.test_email_regex_edge_cases) ... ok
+test_empty_email_error_message (test_module.TestValidateForm.test_empty_email_error_message) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... ok
+test_multiple_errors_order (test_module.TestValidateForm.test_multiple_errors_order) ... ok
+test_privacy_policy_false (test_module.TestValidateForm.test_privacy_policy_false) ... ok
+test_privacy_policy_not_boolean (test_module.TestValidateForm.test_privacy_policy_not_boolean) ... ok
+test_valid_form_submission (test_module.TestValidateForm.test_valid_form_submission) ... ok
+test_valid_form_with_whitespace_trimming (test_module.TestValidateForm.test_valid_form_with_whitespace_trimming) ... FAIL
+
+======================================================================
+FAIL: test_valid_form_with_whitespace_trimming (test_module.TestValidateForm.test_valid_form_with_whitespace_trimming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_02_impl_openai_tests_gemma\20261015T194832_8882aae9\test_module.py", line 32, in test_valid_form_with_whitespace_trimming
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Marston  ,john@example.com,  F[18 chars]True' != 'Form[14 chars]ails:John,Marston,john@example.com,Frage,Hallo!,True'
+- Form is valid. Details:  John  ,  Marston  ,john@example.com,  Frage  ,  Hallo!  ,True
+?                        --    -- --       --                  --     -- --      --
++ Form is valid. Details:John,Marston,john@example.com,Frage,Hallo!,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.026s
+
+FAILED (failures=1)

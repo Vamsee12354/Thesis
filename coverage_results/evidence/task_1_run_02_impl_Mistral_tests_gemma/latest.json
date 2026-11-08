@@ -1,0 +1,83 @@
+{
+  "key": "task_1_run_02_impl_Mistral_tests_gemma",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 2,
+  "impl_llm": "Mistral",
+  "test_llm": "gemma",
+  "fingerprint": "9528d8950882594626d7bf664d61bcec0fc6a50f36d4b4bc4a7b696893b493c6",
+  "tests_run": 7,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 7,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 46.15384615384615,
+  "lines_covered": 6,
+  "lines_total": 13,
+  "lines_missing": 7,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_02_impl_Mistral_tests_gemma\\20261015T194317_f00842f8",
+  "started_utc": "2026-10-15T19:43:17+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_all_invalid_brands_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_case_insensitivity_and_normalization",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_empty_input_returns_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_mixed_duplicates_and_blanks",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_normal_case_with_valid_brands",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_preserves_order_of_first_appearance",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_single_valid_brand",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    5,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.7833,
+  "finished_utc": "2026-10-15T19:43:18+00:00",
+  "return_code": 0
+}

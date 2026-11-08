@@ -1,0 +1,42 @@
+test_email_autheticity1 (test_module.Test_get_min.test_email_autheticity1) ... ok
+test_email_autheticity2 (test_module.Test_get_min.test_email_autheticity2) ... ok
+test_email_autheticity3 (test_module.Test_get_min.test_email_autheticity3) ... ok
+test_email_functionality (test_module.Test_get_min.test_email_functionality) ... ok
+test_email_replacing_symbol_with_literalmeaning (test_module.Test_get_min.test_email_replacing_symbol_with_literalmeaning) ... ok
+test_longname (test_module.Test_get_min.test_longname) ... ok
+test_message (test_module.Test_get_min.test_message) ... ok
+test_name_with_diff_language (test_module.Test_get_min.test_name_with_diff_language) ... ok
+test_no_firstname_but_other_details (test_module.Test_get_min.test_no_firstname_but_other_details) ... ok
+test_no_information (test_module.Test_get_min.test_no_information) ... ok
+test_normalfunctionalityof_name (test_module.Test_get_min.test_normalfunctionalityof_name) ... ok
+test_null_values (test_module.Test_get_min.test_null_values) ... ok
+test_one_lettername (test_module.Test_get_min.test_one_lettername) ... ok
+test_privacy_Null (test_module.Test_get_min.test_privacy_Null) ... ok
+test_privacy_reject (test_module.Test_get_min.test_privacy_reject) ... ok
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 222, in case_child
+    test_result = runner.run(suite)
+                  ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\runner.py", line 217, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 84, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\suite.py", line 122, in run
+    test(result)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 678, in __call__
+    return self.run(*args, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\case.py", line 648, in run
+    result.stopTest(self)
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 195, in stopTest
+    atomic_json(folder / "progress.json", {**self.counts(), "complete": False})
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 96, in atomic_json
+    os.replace(tmp, path)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_5_run_04_impl_manual_tests_manual\\20261015T194846_df40c855\\progress.json.tmp' -> 'C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_5_run_04_impl_manual_tests_manual\\20261015T194846_df40c855\\progress.json'
+

@@ -1,0 +1,48 @@
+test_all_invalid_or_missing_brands_return_none (test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands_return_none) ... FAIL
+test_brands_with_leading_and_trailing_spaces (test_module.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces) ... ok
+test_brands_with_only_spaces_are_filtered_out (test_module.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out) ... FAIL
+test_case_insensitivity_and_capitalization (test_module.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (test_module.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... FAIL
+test_multiple_none_and_valid_brands (test_module.TestGetUniqueBrands.test_multiple_none_and_valid_brands) ... ok
+test_normal_case_with_valid_brands (test_module.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ok
+test_preserves_order_of_first_occurrence (test_module.TestGetUniqueBrands.test_preserves_order_of_first_occurrence) ... ok
+test_single_valid_brand (test_module.TestGetUniqueBrands.test_single_valid_brand) ... ok
+
+======================================================================
+FAIL: test_all_invalid_or_missing_brands_return_none (test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands_return_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_08_impl_amazon_tests_openai\20261015T194402_3a91b2ea\test_module.py", line 29, in test_all_invalid_or_missing_brands_return_none
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_brands_with_only_spaces_are_filtered_out (test_module.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_08_impl_amazon_tests_openai\20261015T194402_3a91b2ea\test_module.py", line 102, in test_brands_with_only_spaces_are_filtered_out
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_duplicates_and_blanks (test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_08_impl_amazon_tests_openai\20261015T194402_3a91b2ea\test_module.py", line 45, in test_mixed_duplicates_and_blanks
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.029s
+
+FAILED (failures=3)

@@ -1,62 +1,73 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:12:56
+Timestamp: 2026-09-30T16:50:13
 Return code: 1
 ================================================================================
 
 STANDARD OUTPUT
 --------------------------------------------------------------------------------
+writing-slugify-code-helloworld
 
 
 STANDARD ERROR
 --------------------------------------------------------------------------------
-test_all_ignored_chars (selected_test.TestSlugifyManual.test_all_ignored_chars) ... ok
-test_basic_conversion (selected_test.TestSlugifyManual.test_basic_conversion) ... ok
+test_basic_slug (selected_test.TestSlugifyManual.test_basic_slug) ... ok
 test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
 test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
-test_ignored_characters (selected_test.TestSlugifyManual.test_ignored_characters) ... FAIL
-test_leading_trailing_spaces (selected_test.TestSlugifyManual.test_leading_trailing_spaces) ... ok
-test_mixed_alphanumeric (selected_test.TestSlugifyManual.test_mixed_alphanumeric) ... ok
-test_multiple_ignored_chars (selected_test.TestSlugifyManual.test_multiple_ignored_chars) ... ok
-test_multiple_spaces (selected_test.TestSlugifyManual.test_multiple_spaces) ... ok
-test_preserve_case (selected_test.TestSlugifyManual.test_preserve_case) ... ok
+test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_ignore_characters_not_in_input (selected_test.TestSlugifyManual.test_ignore_characters_not_in_input) ... ok
+test_ignore_characters_preserve_case (selected_test.TestSlugifyManual.test_ignore_characters_preserve_case) ... ok
+test_leading_trailing_whitespace (selected_test.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_lowercase_false (selected_test.TestSlugifyManual.test_lowercase_false) ... ok
+test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input) ... FAIL
 test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ok
-test_separator_in_ignore (selected_test.TestSlugifyManual.test_separator_in_ignore) ... ok
-test_truncate_too_small (selected_test.TestSlugifyManual.test_truncate_too_small) ... FAIL
-test_truncation (selected_test.TestSlugifyManual.test_truncation) ... ok
-test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
-test_utf8_separator (selected_test.TestSlugifyManual.test_utf8_separator) ... ok
+test_repeated_whitespace (selected_test.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate (selected_test.TestSlugifyManual.test_truncate) ... ok
+test_truncate_eliminates_all_words (selected_test.TestSlugifyManual.test_truncate_eliminates_all_words) ... FAIL
+test_truncate_small_value (selected_test.TestSlugifyManual.test_truncate_small_value) ... ok
+test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
 
 ======================================================================
-FAIL: test_ignored_characters (selected_test.TestSlugifyManual.test_ignored_characters)
+FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 27, in test_ignored_characters
-    self.assertEqual(slugify_manual("\u4f60\u597d, \u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
 AssertionError: '\u4f60\u597d-\u4e16\u754c' != '\u4f60\u597d-shi-jie'
 - \u4f60\u597d-\u4e16\u754c
 + \u4f60\u597d-shi-jie
 
 
 ======================================================================
-FAIL: test_truncate_too_small (selected_test.TestSlugifyManual.test_truncate_too_small)
+FAIL: test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 36, in test_truncate_too_small
-    self.assertIsNone(slugify_manual("abc", truncate=1))
-AssertionError: 'abc' is not None
-
-======================================================================
-FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 24, in test_unicode_transliteration
-    self.assertEqual(slugify_manual("\u4f60\u597d, \u4e16\u754c"), "ni-hao-shi-jie")
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 33, in test_mixed_language_input
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c"), "ni-hao-shi-jie")
 AssertionError: '\u4f60\u597d-\u4e16\u754c' != 'ni-hao-shi-jie'
 - \u4f60\u597d-\u4e16\u754c
 + ni-hao-shi-jie
 
 
+======================================================================
+FAIL: test_truncate_eliminates_all_words (selected_test.TestSlugifyManual.test_truncate_eliminates_all_words)
 ----------------------------------------------------------------------
-Ran 16 tests in 0.002s
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 39, in test_truncate_eliminates_all_words
+    self.assertIsNone(slugify_manual("foo bar", truncate=0))
+AssertionError: 'foo-bar' is not None
 
-FAILED (failures=3)
+======================================================================
+FAIL: test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_deepseek__implementation_manual\selected_test.py", line 48, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"], truncate=5), "\u4f60\u597d-shi")
+AssertionError: '\u4f60\u597d' != '\u4f60\u597d-shi'
+- \u4f60\u597d
++ \u4f60\u597d-shi
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.001s
+
+FAILED (failures=4)

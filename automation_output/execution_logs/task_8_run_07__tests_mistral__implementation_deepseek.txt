@@ -1,19 +1,136 @@
-Execution timed out after 60 seconds.
-
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
+Timestamp: 2026-09-30T16:50:14
+Return code: 1
+================================================================================
 
-Test file:
-C:\Users\kalup\Desktop\Thesis\generated_tests\mistral\task_8\run_07_test.py
-
-Implementation file:
-C:\Users\kalup\Desktop\Thesis\results\deepseek\task_8\run_07.py
-
-STANDARD OUTPUT BEFORE TIMEOUT
+STANDARD OUTPUT
 --------------------------------------------------------------------------------
 
 
-STANDARD ERROR BEFORE TIMEOUT
+STANDARD ERROR
 --------------------------------------------------------------------------------
 test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
 test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
-test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... 
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ERROR
+test_default_parameters (selected_test.TestSlugifyManual.test_default_parameters) ... ok
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_with_list_input (selected_test.TestSlugifyManual.test_ignore_with_list_input) ... FAIL
+test_ignore_with_transliteration (selected_test.TestSlugifyManual.test_ignore_with_transliteration) ... FAIL
+test_invalid_truncate_values (selected_test.TestSlugifyManual.test_invalid_truncate_values) ... FAIL
+test_mixed_language_transliteration (selected_test.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_non_alphanumeric_preservation (selected_test.TestSlugifyManual.test_non_alphanumeric_preservation) ... FAIL
+test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (selected_test.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_edge_cases (selected_test.TestSlugifyManual.test_truncate_edge_cases) ... ok
+test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality) ... FAIL
+
+======================================================================
+ERROR: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 22, in test_custom_separator
+    self.assertEqual(slugify_manual("foo bar", separator=""), "foobar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\implementation_manual.py", line 38, in slugify_manual
+    slug = re.sub(re.escape(separator) + '+', separator, slug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 691, in _parse
+    raise source.error("nothing to repeat",
+re.error: nothing to repeat at position 0
+
+======================================================================
+FAIL: test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 43, in test_ignore_functionality
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: '\u4f60\u597d\u4e16\u754c' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d\u4e16\u754c
++ \u4f60\u597d-shi-jie
+
+
+======================================================================
+FAIL: test_ignore_with_list_input (selected_test.TestSlugifyManual.test_ignore_with_list_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 49, in test_ignore_with_list_input
+    self.assertEqual(slugify_manual("a!b@c#d", ignore=["!", "@"]), "a!b@c-d")
+AssertionError: 'a!b@cd' != 'a!b@c-d'
+- a!b@cd
++ a!b@c-d
+?      +
+
+
+======================================================================
+FAIL: test_ignore_with_transliteration (selected_test.TestSlugifyManual.test_ignore_with_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 58, in test_ignore_with_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4e16"]), "ni-hao-\u4e16")
+AssertionError: '\u4f60\u597d\u4e16\u754c' != 'ni-hao-\u4e16'
+- \u4f60\u597d\u4e16\u754c
++ ni-hao-\u4e16
+
+
+======================================================================
+FAIL: test_invalid_truncate_values (selected_test.TestSlugifyManual.test_invalid_truncate_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 75, in test_invalid_truncate_values
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_mixed_language_transliteration (selected_test.TestSlugifyManual.test_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 53, in test_mixed_language_transliteration
+    self.assertEqual(slugify_manual("\u3053\u3093\u306b\u3061\u306f\u4e16\u754c"), "konnichiha-shijie")
+AssertionError: '\u3053\u3093\u306b\u3061\u306f\u4e16\u754c' != 'konnichiha-shijie'
+- \u3053\u3093\u306b\u3061\u306f\u4e16\u754c
++ konnichiha-shijie
+
+
+======================================================================
+FAIL: test_non_alphanumeric_preservation (selected_test.TestSlugifyManual.test_non_alphanumeric_preservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 67, in test_non_alphanumeric_preservation
+    self.assertEqual(slugify_manual("a$b%c^d", ignore=["$", "%"]), "a$b%c-d")
+AssertionError: 'a$b%cd' != 'a$b%c-d'
+- a$b%cd
++ a$b%c-d
+?      +
+
+
+======================================================================
+FAIL: test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_07__tests_mistral__implementation_deepseek\selected_test.py", line 34, in test_truncate_functionality
+    self.assertEqual(slugify_manual("a b c d e", truncate=3), "a-b")
+AssertionError: 'a' != 'a-b'
+- a
++ a-b
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.004s
+
+FAILED (failures=7, errors=1)

@@ -1,0 +1,152 @@
+{
+  "key": "task_9_run_10_impl_gemma_tests_Mistral",
+  "task": 9,
+  "task_name": "task9_product_cache_get",
+  "complexity": "High",
+  "run": 10,
+  "impl_llm": "gemma",
+  "test_llm": "Mistral",
+  "fingerprint": "ea69ca496f71fdb395356fa4dcffce724e9b04e30c720b4f3edf0196f9a27bd8",
+  "tests_run": 20,
+  "tests_passed": 14,
+  "tests_failed": 3,
+  "tests_errored": 3,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 76.08695652173913,
+  "lines_covered": 35,
+  "lines_total": 46,
+  "lines_missing": 11,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_9_run_10_impl_gemma_tests_Mistral\\20261015T200853_d9333350",
+  "started_utc": "2026-10-15T20:08:54+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 20,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestProductCacheGetCleanup.test_cleanup_on_empty_cache",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetCleanup.test_cleanup_removes_all_items",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetDelete.test_delete_existing_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetDelete.test_delete_non_existent_key",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_get_with_none_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_multiple_operations",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_set_with_none_key",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_set_with_none_value",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetGet.test_get_existing_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetGet.test_get_expired_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetGet.test_get_non_existent_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetInitialization.test_init_with_negative_expiry_time",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetInitialization.test_init_with_positive_expiry_time",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetInitialization.test_init_with_zero_expiry_time",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_overwrites_existing_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_custom_ttl",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_dict_value",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_negative_ttl",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_string_value",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_zero_ttl",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    8,
+    9,
+    10,
+    27,
+    28,
+    43,
+    44,
+    52,
+    53,
+    59,
+    60
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.0332,
+  "finished_utc": "2026-10-15T20:08:54+00:00",
+  "return_code": 0
+}

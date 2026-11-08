@@ -1,0 +1,26 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_and_no_regex_check (test_module.TestValidateForm.test_email_empty_and_no_regex_check) ... ok
+test_fields_with_only_whitespace (test_module.TestValidateForm.test_fields_with_only_whitespace) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... ok
+test_leading_and_trailing_whitespace_trimmed (test_module.TestValidateForm.test_leading_and_trailing_whitespace_trimmed) ... FAIL
+test_multiple_errors_returned_in_order (test_module.TestValidateForm.test_multiple_errors_returned_in_order) ... ok
+test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean) ... ok
+test_privacy_policy_not_confirmed (test_module.TestValidateForm.test_privacy_policy_not_confirmed) ... ok
+test_valid_form (test_module.TestValidateForm.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_leading_and_trailing_whitespace_trimmed (test_module.TestValidateForm.test_leading_and_trailing_whitespace_trimmed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_06_impl_deepseek_tests_openai\20261015T194905_c8a17a5c\test_module.py", line 164, in test_leading_and_trailing_whitespace_trimmed
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Doe  ,john@example.com,  Subje[17 chars]True' != 'Form[14 chars]ails:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:  John  ,  Doe  ,john@example.com,  Subject  ,  Message  ,True
+?                        --    -- --   --                  --       -- --       --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.039s
+
+FAILED (failures=1)

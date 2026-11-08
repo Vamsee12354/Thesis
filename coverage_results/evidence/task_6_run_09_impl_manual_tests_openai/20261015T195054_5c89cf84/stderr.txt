@@ -1,0 +1,40 @@
+test_missing_password (test_module.TestIsValidPassword.test_missing_password) ... FAIL
+test_password_exact_max_length (test_module.TestIsValidPassword.test_password_exact_max_length) ... ok
+test_password_exact_min_length (test_module.TestIsValidPassword.test_password_exact_min_length) ... FAIL
+test_password_missing_lowercase (test_module.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_special_or_number (test_module.TestIsValidPassword.test_password_missing_special_or_number) ... ok
+test_password_missing_uppercase (test_module.TestIsValidPassword.test_password_missing_uppercase) ... ok
+test_password_multiple_errors (test_module.TestIsValidPassword.test_password_multiple_errors) ... ok
+test_password_too_long (test_module.TestIsValidPassword.test_password_too_long) ... ok
+test_password_too_short (test_module.TestIsValidPassword.test_password_too_short) ... ok
+test_password_with_only_required_characters (test_module.TestIsValidPassword.test_password_with_only_required_characters) ... FAIL
+test_valid_password (test_module.TestIsValidPassword.test_valid_password) ... ok
+
+======================================================================
+FAIL: test_missing_password (test_module.TestIsValidPassword.test_missing_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_09_impl_manual_tests_openai\20261015T195054_5c89cf84\test_module.py", line 12, in test_missing_password
+    self.assertEqual(result, ["Please fill the password"])
+AssertionError: 'Please fill the password' != ['Please fill the password']
+
+======================================================================
+FAIL: test_password_exact_min_length (test_module.TestIsValidPassword.test_password_exact_min_length)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_09_impl_manual_tests_openai\20261015T195054_5c89cf84\test_module.py", line 78, in test_password_exact_min_length
+    self.assertEqual(result, "The password is valid")
+AssertionError: ['Password must contain a special character or a number'] != 'The password is valid'
+
+======================================================================
+FAIL: test_password_with_only_required_characters (test_module.TestIsValidPassword.test_password_with_only_required_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_09_impl_manual_tests_openai\20261015T195054_5c89cf84\test_module.py", line 94, in test_password_with_only_required_characters
+    self.assertEqual(result, "The password is valid")
+AssertionError: ['Password must contain a special character or a number'] != 'The password is valid'
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.034s
+
+FAILED (failures=3)

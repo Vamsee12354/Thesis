@@ -1,0 +1,21 @@
+test_empty_string_returns_one (test_module.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_exact_wpm_boundary (test_module.TestGetReadDuration.test_exact_wpm_boundary) ... ok
+test_just_over_wpm_boundary (test_module.TestGetReadDuration.test_just_over_wpm_boundary) ... ok
+test_long_post_returns_correct_minutes (test_module.TestGetReadDuration.test_long_post_returns_correct_minutes) ... ok
+test_non_latin_characters_whitespace_splitting (test_module.TestGetReadDuration.test_non_latin_characters_whitespace_splitting) ... ok
+test_normal_paragraph_returns_one (test_module.TestGetReadDuration.test_normal_paragraph_returns_one) ... ok
+test_short_text_returns_one (test_module.TestGetReadDuration.test_short_text_returns_one) ... ok
+test_whitespace_only_returns_one (test_module.TestGetReadDuration.test_whitespace_only_returns_one) ... FAIL
+
+======================================================================
+FAIL: test_whitespace_only_returns_one (test_module.TestGetReadDuration.test_whitespace_only_returns_one)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_08_impl_amazon_tests_gemma\20261015T194807_b2408a42\test_module.py", line 25, in test_whitespace_only_returns_one
+    self.assertEqual(result, 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.029s
+
+FAILED (failures=1)

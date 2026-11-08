@@ -1,0 +1,48 @@
+test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands) ... FAIL
+test_all_same_brand_case_variations (test_module.TestGetUnique.test_all_same_brand_case_variations) ... ok
+test_case_insensitive_duplicates (test_module.TestGetUnique.test_case_insensitive_duplicates) ... ok
+test_empty_list (test_module.TestGetUnique.test_empty_list) ... ok
+test_mixed_valid_and_invalid_brands (test_module.TestGetUnique.test_mixed_valid_and_invalid_brands) ... ok
+test_mixed_with_duplicates_and_blanks (test_module.TestGetUnique.test_mixed_with_duplicates_and_blanks) ... FAIL
+test_normal_case_with_valid_brands (test_module.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_single_invalid_brand (test_module.TestGetUnique.test_single_invalid_brand) ... ok
+test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand) ... ok
+test_whitespace_only_brand (test_module.TestGetUnique.test_whitespace_only_brand) ... FAIL
+
+======================================================================
+FAIL: test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_07_impl_amazon_tests_Mistral\20261015T194356_21dff321\test_module.py", line 19, in test_all_invalid_brands
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_with_duplicates_and_blanks (test_module.TestGetUnique.test_mixed_with_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_07_impl_amazon_tests_Mistral\20261015T194356_21dff321\test_module.py", line 31, in test_mixed_with_duplicates_and_blanks
+    self.assertEqual(result, ['Brandname'])
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_whitespace_only_brand (test_module.TestGetUnique.test_whitespace_only_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_07_impl_amazon_tests_Mistral\20261015T194356_21dff321\test_module.py", line 56, in test_whitespace_only_brand
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.030s
+
+FAILED (failures=3)

@@ -3,71 +3,65 @@ import unicodedata
 
 
 def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    try:
-        if not isinstance(text, str):
-            return None
-        if ignore is None:
-            ignore = []
-        elif isinstance(ignore, str):
-            ignore = [ignore]
+    if not isinstance(text, str):
+        return None
+    if ignore is None:
+        ignore_set = set()
+    elif isinstance(ignore, str):
         ignore_set = set(ignore)
+    elif isinstance(ignore, list):
+        ignore_set = set(''.join(ignore))
+    else:
+        return None
 
-        def transliterate(char):
-            if char in ignore_set:
-                return char
-            name = unicodedata.name(char, None)
-            if name is None:
-                return ''
-            decomp = unicodedata.normalize('NFKD', char)
-            ascii_chars = ''.join(c for c in decomp if unicodedata.category(c).startswith('L') or c.isdigit())
-            return ascii_chars
-
-        text = ''.join(transliterate(c) for c in text)
-        if not text:
-            return None
-
-        sep = separator if isinstance(separator, str) else chr(separator)
-        sep_escaped = re.escape(sep)
-
-        pattern_ignore = '|'.join(re.escape(i) for i in ignore_set) if ignore_set else None
-
-        def preserve_ignore(m):
-            return m.group(0).replace(' ', '\0')
-
-        if ignore_set:
-            text = re.sub('|'.join(re.escape(i) for i in ignore_set), preserve_ignore, text)
-
-        text = text.lower() if lowercase else text
-
-        text = re.sub(r'\s+', sep, text)
-        text = re.sub(r'[^a-z0-9' + sep_escaped + ''.join(re.escape(i) for i in ignore_set) + ']+', '', text)
-        text = re.sub(sep_escaped + '{2,}', sep, text)
-        text = text.strip(sep)
-
-        if ignore_set:
-            text = text.replace('\0', ' ')
-
-        if truncate is not None and isinstance(truncate, int) and truncate > 0:
-            if len(text) <= truncate:
-                return text if text else None
-            parts = text.split(sep)
-            truncated_parts = []
-            length = 0
-            for part in parts:
-                part_len = len(part)
-                if truncated_parts:
-                    if length + 1 + part_len > truncate:
-                        break
-                    length += 1 + part_len
-                else:
-                    if part_len > truncate:
-                        break
-                    length += part_len
-                truncated_parts.append(part)
-            text = sep.join(truncated_parts)
-            if not text:
-                return None
-
-        return text if text else None
+    try:
+        text = unicodedata.normalize('NFKD', text)
+        text = text.encode('ascii', 'ignore').decode('ascii')
     except Exception:
         return None
+
+    def preserve_ignore_chars(match):
+        ch = match.group(0)
+        if ch in ignore_set:
+            return ch
+        return ''
+
+    text = ''.join(ch if ch in ignore_set or ch.isalnum() or ch.isspace() else ' ' for ch in text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    if not text:
+        return None
+
+    words = []
+    for word in text.split():
+        filtered_word = ''.join(ch if ch in ignore_set or ch.isalnum() else '' for ch in word)
+        if filtered_word:
+            words.append(filtered_word)
+
+    if not words:
+        return None
+
+    if truncate is not None and isinstance(truncate, int) and truncate > 0:
+        truncated_words = []
+        length = 0
+        sep_len = len(separator)
+        for w in words:
+            w_len = len(w)
+            if truncated_words:
+                if length + sep_len + w_len > truncate:
+                    break
+                length += sep_len + w_len
+            else:
+                if w_len > truncate:
+                    break
+                length += w_len
+            truncated_words.append(w)
+        words = truncated_words
+        if not words:
+            return None
+
+    slug = separator.join(words)
+    if lowercase:
+        slug = slug.lower()
+    if not slug:
+        return None
+    return slug

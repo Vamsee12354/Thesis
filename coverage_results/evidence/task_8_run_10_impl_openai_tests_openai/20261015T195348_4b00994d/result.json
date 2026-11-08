@@ -1,0 +1,124 @@
+{
+  "key": "task_8_run_10_impl_openai_tests_openai",
+  "task": 8,
+  "task_name": "task8_slugify",
+  "complexity": "Medium",
+  "run": 10,
+  "impl_llm": "openai",
+  "test_llm": "openai",
+  "fingerprint": "85dec918899ef1b7df358fcd44fb7ab119304f942e82a4fd67597b44ecc7b995",
+  "tests_run": 16,
+  "tests_passed": 12,
+  "tests_failed": 4,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 94.54545454545455,
+  "lines_covered": 52,
+  "lines_total": 55,
+  "lines_missing": 3,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_8_run_10_impl_openai_tests_openai\\20261015T195348_4b00994d",
+  "started_utc": "2026-10-15T19:53:49+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 16,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestSlugifyManual.test_basic_slugification_default",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_all_ignored_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_custom_separator_utf8",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_empty_string",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_ignore_as_string",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_ignore_preserves_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_leading_trailing_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_non_ascii_transliteration",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_only_punctuation",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_repeated_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_separator_as_utf8_integer",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_truncate_too_small",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_with_empty_separator",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_with_ignore_characters",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_with_no_lowercase",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_slugify_with_truncate",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7,
+    34,
+    38
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8676,
+  "finished_utc": "2026-10-15T19:53:49+00:00",
+  "return_code": 0
+}

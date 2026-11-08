@@ -1,0 +1,8 @@
+{
+  "task": 8,
+  "run": 1,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task8_slugify\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\gemma\\task_8\\run_01_test.py",
+  "fingerprint": "8e3dbff1b0e02b9c85d6bd7bf60b6a9770e9b471bda8235abb48a2e64a2481f2",
+  "timeout": 120
+}

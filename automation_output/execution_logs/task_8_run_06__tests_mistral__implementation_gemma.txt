@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:51
+Timestamp: 2026-09-30T16:50:10
 Return code: 1
 ================================================================================
 
@@ -9,64 +9,30 @@ STANDARD OUTPUT
 
 STANDARD ERROR
 --------------------------------------------------------------------------------
-test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
-test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
-test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
-test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases) ... ok
-test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
-test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator) ... FAIL
-test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling) ... ok
-test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
-test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
-test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup) ... ok
-
-======================================================================
-FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
-----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_mistral__implementation_gemma\selected_test.py", line 28, in test_ignore_characters
-    self.assertEqual(
-AssertionError: '\u4f60\u597d\u4e16\u754c' != '\u4f60\u597d-\u4e16\u754c'
-- \u4f60\u597d\u4e16\u754c
-+ \u4f60\u597d-\u4e16\u754c
-?   +
-
-
-======================================================================
-FAIL: test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_mistral__implementation_gemma\selected_test.py", line 66, in test_preserve_ignore_with_separator
-    self.assertEqual(
-AssertionError: 'test@123' != 'test_@_123'
-- test@123
-+ test_@_123
-?     + +
-
-
-======================================================================
-FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_mistral__implementation_gemma\selected_test.py", line 24, in test_truncation
-    self.assertEqual(slugify_manual("Call me maybe", truncate=1), "")
-AssertionError: 'c' != ''
-- c
-+ 
-
-
-======================================================================
-FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_mistral__implementation_gemma\selected_test.py", line 42, in test_unicode_transliteration
-    self.assertEqual(slugify_manual("\u4f60\u597d\u4e16\u754c"), "ni-hao-shi-jie")
-AssertionError: '\u4f60\u597d\u4e16\u754c' != 'ni-hao-shi-jie'
-- \u4f60\u597d\u4e16\u754c
-+ ni-hao-shi-jie
-
-
-----------------------------------------------------------------------
-Ran 10 tests in 0.003s
-
-FAILED (failures=4)
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\__main__.py", line 18, in <module>
+    main(module=None)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\main.py", line 101, in __init__
+    self.parseArgs(argv)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\main.py", line 150, in parseArgs
+    self.createTests()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\main.py", line 161, in createTests
+    self.test = self.testLoader.loadTestsFromNames(self.testNames,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 232, in loadTestsFromNames
+    suites = [self.loadTestsFromName(name, module) for name in names]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 232, in <listcomp>
+    suites = [self.loadTestsFromName(name, module) for name in names]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 162, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_mistral__implementation_gemma\selected_test.py", line 1, in <module>
+    from implementation_manual import slugify_manual
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_mistral__implementation_gemma\implementation_manual.py", line 302
+    # If the
+            ^
+IndentationError: expected an indented block after 'if' statement on line 301

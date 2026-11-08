@@ -1,0 +1,16 @@
+test_missing_password (test_module.TestIsValidPassword.test_missing_password) ... ok
+test_password_exact_max_length (test_module.TestIsValidPassword.test_password_exact_max_length) ... ok
+test_password_exact_min_length (test_module.TestIsValidPassword.test_password_exact_min_length) ... ok
+test_password_missing_lowercase (test_module.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_special_or_number (test_module.TestIsValidPassword.test_password_missing_special_or_number) ... ok
+test_password_missing_uppercase (test_module.TestIsValidPassword.test_password_missing_uppercase) ... ok
+test_password_multiple_errors (test_module.TestIsValidPassword.test_password_multiple_errors) ... ok
+test_password_too_long (test_module.TestIsValidPassword.test_password_too_long) ... ok
+test_password_too_short (test_module.TestIsValidPassword.test_password_too_short) ... ok
+test_password_with_only_required_characters (test_module.TestIsValidPassword.test_password_with_only_required_characters) ... ok
+test_valid_password (test_module.TestIsValidPassword.test_valid_password) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.031s
+
+OK

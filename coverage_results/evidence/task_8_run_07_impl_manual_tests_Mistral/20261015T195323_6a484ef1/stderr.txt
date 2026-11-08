@@ -1,0 +1,93 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (test_module.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_default_parameters (test_module.TestSlugifyManual.test_default_parameters) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_with_list_input (test_module.TestSlugifyManual.test_ignore_with_list_input) ... FAIL
+test_ignore_with_transliteration (test_module.TestSlugifyManual.test_ignore_with_transliteration) ... FAIL
+test_invalid_truncate_values (test_module.TestSlugifyManual.test_invalid_truncate_values) ... FAIL
+test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_non_alphanumeric_preservation (test_module.TestSlugifyManual.test_non_alphanumeric_preservation) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases) ... FAIL
+test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality) ... FAIL
+
+======================================================================
+FAIL: test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 43, in test_ignore_functionality
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_ignore_with_list_input (test_module.TestSlugifyManual.test_ignore_with_list_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 50, in test_ignore_with_list_input
+    self.assertEqual(slugify_manual("x*y+z", ignore=["*", "+"]), "x*y-z")
+AssertionError: 'x*y+z' != 'x*y-z'
+- x*y+z
+?    ^
++ x*y-z
+?    ^
+
+
+======================================================================
+FAIL: test_ignore_with_transliteration (test_module.TestSlugifyManual.test_ignore_with_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 58, in test_ignore_with_transliteration
+    self.assertEqual(slugify_manual("你好，世界", ignore=["世"]), "ni-hao-世")
+AssertionError: '你好-世界' != 'ni-hao-世'
+- 你好-世界
++ ni-hao-世
+
+
+======================================================================
+FAIL: test_invalid_truncate_values (test_module.TestSlugifyManual.test_invalid_truncate_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 75, in test_invalid_truncate_values
+    with self.assertRaises(ValueError):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 53, in test_mixed_language_transliteration
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shijie")
+AssertionError: 'こんにちは世界' != 'konnichiha-shijie'
+- こんにちは世界
++ konnichiha-shijie
+
+
+======================================================================
+FAIL: test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 37, in test_truncate_edge_cases
+    self.assertIsNone(slugify_manual("Hello", truncate=1))
+AssertionError: 'hello' is not None
+
+======================================================================
+FAIL: test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_Mistral\20261015T195323_6a484ef1\test_module.py", line 34, in test_truncate_functionality
+    self.assertEqual(slugify_manual("a b c d e", truncate=3), "a-b")
+AssertionError: 'a' != 'a-b'
+- a
++ a-b
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.045s
+
+FAILED (failures=7)

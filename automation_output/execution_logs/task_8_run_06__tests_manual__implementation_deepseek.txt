@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:54
+Timestamp: 2026-09-30T16:50:12
 Return code: 1
 ================================================================================
 
@@ -44,10 +44,10 @@ FAIL: test_ignore (selected_test.Test_slugify_text.test_ignore)
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_deepseek\selected_test.py", line 47, in test_ignore
     self.assertEqual(slugify_manual("hello%world", lowercase=True, ignore="%", truncate=None),"hello%world")
-AssertionError: 'hello-%-world' != 'hello%world'
-- hello-%-world
-?      - -
+AssertionError: 'helloworld' != 'hello%world'
+- helloworld
 + hello%world
+?      +
 
 
 ======================================================================
@@ -56,10 +56,10 @@ FAIL: test_separator (selected_test.Test_slugify_text.test_separator)
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_06__tests_manual__implementation_deepseek\selected_test.py", line 50, in test_separator
     self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=None),"hello%+world")
-AssertionError: 'hello+%+world' != 'hello%+world'
-- hello+%+world
-?      -
+AssertionError: 'hello+world' != 'hello%+world'
+- hello+world
 + hello%+world
+?      +
 
 
 ======================================================================

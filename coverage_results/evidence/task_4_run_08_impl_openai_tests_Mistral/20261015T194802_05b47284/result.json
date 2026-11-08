@@ -1,0 +1,113 @@
+{
+  "key": "task_4_run_08_impl_openai_tests_Mistral",
+  "task": 4,
+  "task_name": "task4_get_reading_duration",
+  "complexity": "Medium",
+  "run": 8,
+  "impl_llm": "openai",
+  "test_llm": "Mistral",
+  "fingerprint": "a661bb900f4e5103b48244009b5f5d4dad2f3bff647f707b3c209f5447a9af1a",
+  "tests_run": 14,
+  "tests_passed": 14,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 75.0,
+  "lines_covered": 6,
+  "lines_total": 8,
+  "lines_missing": 2,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_4_run_08_impl_openai_tests_Mistral\\20261015T194802_05b47284",
+  "started_utc": "2026-10-15T19:48:03+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 14,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetReadDuration.test_empty_string_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_excessive_whitespace_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_fifty_words_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_five_hundred_words_returns_three",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_four_hundred_fifty_words_returns_three",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_four_hundred_ninety_nine_words_returns_three",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_minimum_one_minute_for_short_text",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_mixed_languages_with_spaces_returns_correct_duration",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters_with_spaces_returns_correct_duration",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters_without_spaces_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_single_word_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_two_words_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_very_long_text_returns_correct_duration",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_whitespace_with_words_returns_correct_duration",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7,
+    8
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8737,
+  "finished_utc": "2026-10-15T19:48:03+00:00",
+  "return_code": 0
+}

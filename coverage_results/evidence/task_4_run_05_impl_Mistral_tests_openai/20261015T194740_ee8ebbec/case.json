@@ -1,0 +1,8 @@
+{
+  "task": 4,
+  "run": 5,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\Mistral\\task_4\\run_05.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\openai\\task_4\\run_05_test.py",
+  "fingerprint": "707abe95529e50cedf2c9182b8eff9d9bb653eb4fff7ac7495a1646227caf6c4",
+  "timeout": 120
+}

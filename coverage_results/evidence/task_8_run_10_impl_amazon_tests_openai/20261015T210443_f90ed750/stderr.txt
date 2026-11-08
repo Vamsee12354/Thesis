@@ -1,0 +1,137 @@
+test_basic_slugification_default (test_module.TestSlugifyManual.test_basic_slugification_default) ... FAIL
+test_slugify_all_ignored_characters (test_module.TestSlugifyManual.test_slugify_all_ignored_characters) ... FAIL
+test_slugify_custom_separator_utf8 (test_module.TestSlugifyManual.test_slugify_custom_separator_utf8) ... FAIL
+test_slugify_empty_string (test_module.TestSlugifyManual.test_slugify_empty_string) ... ok
+test_slugify_ignore_as_string (test_module.TestSlugifyManual.test_slugify_ignore_as_string) ... FAIL
+test_slugify_ignore_preserves_characters (test_module.TestSlugifyManual.test_slugify_ignore_preserves_characters) ... FAIL
+test_slugify_leading_trailing_whitespace (test_module.TestSlugifyManual.test_slugify_leading_trailing_whitespace) ... FAIL
+test_slugify_non_ascii_transliteration (test_module.TestSlugifyManual.test_slugify_non_ascii_transliteration) ... FAIL
+test_slugify_only_punctuation (test_module.TestSlugifyManual.test_slugify_only_punctuation) ... ok
+test_slugify_repeated_whitespace (test_module.TestSlugifyManual.test_slugify_repeated_whitespace) ... FAIL
+test_slugify_separator_as_utf8_integer (test_module.TestSlugifyManual.test_slugify_separator_as_utf8_integer) ... FAIL
+test_slugify_truncate_too_small (test_module.TestSlugifyManual.test_slugify_truncate_too_small) ... FAIL
+test_slugify_with_empty_separator (test_module.TestSlugifyManual.test_slugify_with_empty_separator) ... FAIL
+test_slugify_with_ignore_characters (test_module.TestSlugifyManual.test_slugify_with_ignore_characters) ... FAIL
+test_slugify_with_no_lowercase (test_module.TestSlugifyManual.test_slugify_with_no_lowercase) ... FAIL
+test_slugify_with_truncate (test_module.TestSlugifyManual.test_slugify_with_truncate) ... FAIL
+
+======================================================================
+FAIL: test_basic_slugification_default (test_module.TestSlugifyManual.test_basic_slugification_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 13, in test_basic_slugification_default
+    self.assertEqual(result, expected)
+AssertionError: None != 'hello-world'
+
+======================================================================
+FAIL: test_slugify_all_ignored_characters (test_module.TestSlugifyManual.test_slugify_all_ignored_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 137, in test_slugify_all_ignored_characters
+    self.assertEqual(result, "!!!")
+AssertionError: None != '!!!'
+
+======================================================================
+FAIL: test_slugify_custom_separator_utf8 (test_module.TestSlugifyManual.test_slugify_custom_separator_utf8)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 102, in test_slugify_custom_separator_utf8
+    self.assertEqual(result, expected)
+AssertionError: None != 'foo_bar'
+
+======================================================================
+FAIL: test_slugify_ignore_as_string (test_module.TestSlugifyManual.test_slugify_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 111, in test_slugify_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_slugify_ignore_preserves_characters (test_module.TestSlugifyManual.test_slugify_ignore_preserves_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 120, in test_slugify_ignore_preserves_characters
+    self.assertEqual(result, expected)
+AssertionError: None != 'foo!-bar?'
+
+======================================================================
+FAIL: test_slugify_leading_trailing_whitespace (test_module.TestSlugifyManual.test_slugify_leading_trailing_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 84, in test_slugify_leading_trailing_whitespace
+    self.assertEqual(result, expected)
+AssertionError: None != 'foo-bar'
+
+======================================================================
+FAIL: test_slugify_non_ascii_transliteration (test_module.TestSlugifyManual.test_slugify_non_ascii_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 129, in test_slugify_non_ascii_transliteration
+    self.assertEqual(result, expected)
+AssertionError: None != 'cafe'
+
+======================================================================
+FAIL: test_slugify_repeated_whitespace (test_module.TestSlugifyManual.test_slugify_repeated_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 93, in test_slugify_repeated_whitespace
+    self.assertEqual(result, expected)
+AssertionError: None != 'foo-bar'
+
+======================================================================
+FAIL: test_slugify_separator_as_utf8_integer (test_module.TestSlugifyManual.test_slugify_separator_as_utf8_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 147, in test_slugify_separator_as_utf8_integer
+    self.assertEqual(result, expected)
+AssertionError: None != 'foo_bar'
+
+======================================================================
+FAIL: test_slugify_truncate_too_small (test_module.TestSlugifyManual.test_slugify_truncate_too_small)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 74, in test_slugify_truncate_too_small
+    self.assertIsNone(result1)
+AssertionError: 'h' is not None
+
+======================================================================
+FAIL: test_slugify_with_empty_separator (test_module.TestSlugifyManual.test_slugify_with_empty_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 22, in test_slugify_with_empty_separator
+    self.assertEqual(result, expected)
+AssertionError: None != 'madamimadam'
+
+======================================================================
+FAIL: test_slugify_with_ignore_characters (test_module.TestSlugifyManual.test_slugify_with_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 49, in test_slugify_with_ignore_characters
+    self.assertEqual(result, expected)
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_slugify_with_no_lowercase (test_module.TestSlugifyManual.test_slugify_with_no_lowercase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 31, in test_slugify_with_no_lowercase
+    self.assertEqual(result, expected)
+AssertionError: None != 'StUdLy-CaPs'
+
+======================================================================
+FAIL: test_slugify_with_truncate (test_module.TestSlugifyManual.test_slugify_with_truncate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_amazon_tests_openai\20261015T210443_f90ed750\test_module.py", line 40, in test_slugify_with_truncate
+    self.assertEqual(result, expected)
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
++ call-me
+
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.073s
+
+FAILED (failures=14)

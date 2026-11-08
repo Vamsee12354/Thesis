@@ -1,0 +1,60 @@
+test_all_invalid_or_missing_brands (test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands) ... FAIL
+test_brands_with_leading_and_trailing_spaces (test_module.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces) ... ok
+test_brands_with_non_string_values_ignored (test_module.TestGetUniqueBrands.test_brands_with_non_string_values_ignored) ... ERROR
+test_brands_with_only_spaces_are_filtered_out (test_module.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out) ... FAIL
+test_case_insensitivity_and_capitalization (test_module.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (test_module.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... FAIL
+test_multiple_unique_brands_with_varied_cases (test_module.TestGetUniqueBrands.test_multiple_unique_brands_with_varied_cases) ... ok
+test_normal_case_with_valid_brands (test_module.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ok
+test_single_valid_brand (test_module.TestGetUniqueBrands.test_single_valid_brand) ... ok
+
+======================================================================
+ERROR: test_brands_with_non_string_values_ignored (test_module.TestGetUniqueBrands.test_brands_with_non_string_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_03_impl_amazon_tests_openai\20261015T210414_ad28b5aa\test_module.py", line 123, in test_brands_with_non_string_values_ignored
+    result = get_unique(brands)
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_03_impl_amazon_tests_openai\20261015T210414_ad28b5aa\implementation_manual.py", line 10, in get_unique
+    normalized_brand = brand.strip().capitalize()
+                       ^^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'strip'
+
+======================================================================
+FAIL: test_all_invalid_or_missing_brands (test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_03_impl_amazon_tests_openai\20261015T210414_ad28b5aa\test_module.py", line 29, in test_all_invalid_or_missing_brands
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_brands_with_only_spaces_are_filtered_out (test_module.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_03_impl_amazon_tests_openai\20261015T210414_ad28b5aa\test_module.py", line 101, in test_brands_with_only_spaces_are_filtered_out
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_mixed_duplicates_and_blanks (test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_03_impl_amazon_tests_openai\20261015T210414_ad28b5aa\test_module.py", line 45, in test_mixed_duplicates_and_blanks
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.042s
+
+FAILED (failures=3, errors=1)

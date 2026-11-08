@@ -1,0 +1,13 @@
+test_all_none_values (test_module.TestGetMin2Attributes.test_all_none_values) ... ok
+test_empty_list (test_module.TestGetMin2Attributes.test_empty_list) ... ok
+test_happy_path_battery_life (test_module.TestGetMin2Attributes.test_happy_path_battery_life) ... ok
+test_happy_path_price (test_module.TestGetMin2Attributes.test_happy_path_price) ... ok
+test_mixed_numeric_and_none (test_module.TestGetMin2Attributes.test_mixed_numeric_and_none) ... ok
+test_non_existent_field (test_module.TestGetMin2Attributes.test_non_existent_field) ... ok
+test_non_numeric_values (test_module.TestGetMin2Attributes.test_non_numeric_values) ... ok
+test_rounding_to_two_decimals (test_module.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.029s
+
+OK

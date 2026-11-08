@@ -1,0 +1,45 @@
+test_empty_shopping_list (test_module.TestShoppingList.test_empty_shopping_list) ... ok
+test_normal_functionality_with_multiple_items (test_module.TestShoppingList.test_normal_functionality_with_multiple_items) ... ok
+test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title) ... FAIL
+test_product_with_html_content_in_title (test_module.TestShoppingList.test_product_with_html_content_in_title) ... ok
+test_product_with_missing_title_key (test_module.TestShoppingList.test_product_with_missing_title_key) ... FAIL
+test_product_with_non_string_title (test_module.TestShoppingList.test_product_with_non_string_title) ... ok
+test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title) ... FAIL
+test_product_with_special_characters_in_title (test_module.TestShoppingList.test_product_with_special_characters_in_title) ... ok
+test_product_with_unicode_characters_in_title (test_module.TestShoppingList.test_product_with_unicode_characters_in_title) ... ok
+test_single_item_in_list (test_module.TestShoppingList.test_single_item_in_list) ... ok
+
+======================================================================
+FAIL: test_product_with_empty_title (test_module.TestShoppingList.test_product_with_empty_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_02_impl_gemma_tests_Mistral\20261015T195124_a2f4dcfa\test_module.py", line 46, in test_product_with_empty_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li></li></ul>'
+- <ul></ul>
++ <ul><li></li></ul>
+
+
+======================================================================
+FAIL: test_product_with_missing_title_key (test_module.TestShoppingList.test_product_with_missing_title_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_02_impl_gemma_tests_Mistral\20261015T195124_a2f4dcfa\test_module.py", line 56, in test_product_with_missing_title_key
+    with self.assertRaises(KeyError):
+AssertionError: KeyError not raised
+
+======================================================================
+FAIL: test_product_with_none_title (test_module.TestShoppingList.test_product_with_none_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_02_impl_gemma_tests_Mistral\20261015T195124_a2f4dcfa\test_module.py", line 52, in test_product_with_none_title
+    self.assertEqual(result, expected)
+AssertionError: '<ul></ul>' != '<ul><li>None</li></ul>'
+- <ul></ul>
++ <ul><li>None</li></ul>
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.035s
+
+FAILED (failures=3)

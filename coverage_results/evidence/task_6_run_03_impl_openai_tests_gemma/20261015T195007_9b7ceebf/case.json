@@ -1,0 +1,8 @@
+{
+  "task": 6,
+  "run": 3,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\openai\\task_6\\run_03.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\gemma\\task_6\\run_03_test.py",
+  "fingerprint": "5a18235b14535c634834415d5abc2c74e5628ae419fd80b13005b3a996968f3a",
+  "timeout": 120
+}

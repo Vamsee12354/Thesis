@@ -1,0 +1,25 @@
+test_all_prices_none (test_module.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (test_module.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (test_module.TestGetAveragePrice.test_empty_price_list) ... ok
+test_prices_with_all_none_and_empty_dicts (test_module.TestGetAveragePrice.test_prices_with_all_none_and_empty_dicts) ... ERROR
+test_prices_with_float_values (test_module.TestGetAveragePrice.test_prices_with_float_values) ... ok
+test_prices_with_non_numeric_price (test_module.TestGetAveragePrice.test_prices_with_non_numeric_price) ... ok
+test_prices_with_zero_and_valid (test_module.TestGetAveragePrice.test_prices_with_zero_and_valid) ... ok
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+ERROR: test_prices_with_all_none_and_empty_dicts (test_module.TestGetAveragePrice.test_prices_with_all_none_and_empty_dicts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_06_impl_manual_tests_openai\20261015T194453_520e1cbf\test_module.py", line 58, in test_prices_with_all_none_and_empty_dicts
+    result = get_average_price(price_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_06_impl_manual_tests_openai\20261015T194453_520e1cbf\implementation_manual.py", line 6, in get_average_price
+    if i['price'] is not None:
+       ~^^^^^^^^^
+KeyError: 'price'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.027s
+
+FAILED (errors=1)

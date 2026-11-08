@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:21
+Timestamp: 2026-09-30T16:49:48
 Return code: 1
 ================================================================================
 
@@ -10,17 +10,19 @@ STANDARD OUTPUT
 STANDARD ERROR
 --------------------------------------------------------------------------------
 test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ERROR
+test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ERROR
 test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ERROR
 test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ERROR
-test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... ERROR
-test_invalid_truncate (selected_test.TestSlugifyManual.test_invalid_truncate) ... FAIL
-test_lowercase_conversion (selected_test.TestSlugifyManual.test_lowercase_conversion) ... ERROR
-test_mixed_language_with_ignore (selected_test.TestSlugifyManual.test_mixed_language_with_ignore) ... ERROR
-test_no_valid_words_after_cleanup (selected_test.TestSlugifyManual.test_no_valid_words_after_cleanup) ... ERROR
-test_non_ascii_transliteration (selected_test.TestSlugifyManual.test_non_ascii_transliteration) ... ERROR
-test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator) ... ERROR
+test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality) ... ERROR
+test_ignore_with_list_input (selected_test.TestSlugifyManual.test_ignore_with_list_input) ... ERROR
+test_invalid_truncate_values (selected_test.TestSlugifyManual.test_invalid_truncate_values) ... FAIL
+test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input) ... ERROR
+test_non_string_input (selected_test.TestSlugifyManual.test_non_string_input) ... FAIL
+test_numeric_input (selected_test.TestSlugifyManual.test_numeric_input) ... ERROR
 test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ERROR
-test_truncate_length (selected_test.TestSlugifyManual.test_truncate_length) ... FAIL
+test_special_characters (selected_test.TestSlugifyManual.test_special_characters) ... ERROR
+test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
 test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... ERROR
 
 ======================================================================
@@ -36,10 +38,22 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
+ERROR: test_case_handling (selected_test.TestSlugifyManual.test_case_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 26, in test_case_handling
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
+    if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
+                                                                                                                                                                                                                                    ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
 ERROR: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 19, in test_custom_separator
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 21, in test_custom_separator
     self.assertEqual(slugify_manual("Hello World", separator="_"), "hello_world")
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
@@ -51,7 +65,7 @@ TypeError: '<' not supported between instances of 'NoneType' and 'int'
 ERROR: test_empty_input (selected_test.TestSlugifyManual.test_empty_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 11, in test_empty_input
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 12, in test_empty_input
     self.assertIsNone(slugify_manual(""))
                       ^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
@@ -60,59 +74,35 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+ERROR: test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 28, in test_ignore_characters
-    slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60\u597d"]),
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 37, in test_ignore_functionality
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
     if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
                                                                                                                                                                                                                                     ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_lowercase_conversion (selected_test.TestSlugifyManual.test_lowercase_conversion)
+ERROR: test_ignore_with_list_input (selected_test.TestSlugifyManual.test_ignore_with_list_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 23, in test_lowercase_conversion
-    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=True), "studly-caps")
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 43, in test_ignore_with_list_input
+    self.assertEqual(slugify_manual("test@ing#now", ignore=["@", "#"]), "test@ing#now")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
     if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
                                                                                                                                                                                                                                     ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_mixed_language_with_ignore (selected_test.TestSlugifyManual.test_mixed_language_with_ignore)
+ERROR: test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 65, in test_mixed_language_with_ignore
-    slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60\u597d"]),
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
-    if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
-                                                                                                                                                                                                                                    ^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'NoneType' and 'int'
-
-======================================================================
-ERROR: test_no_valid_words_after_cleanup (selected_test.TestSlugifyManual.test_no_valid_words_after_cleanup)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 60, in test_no_valid_words_after_cleanup
-    self.assertIsNone(slugify_manual("!@#$%^"))
-                      ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
-    if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
-                                                                                                                                                                                                                                    ^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'NoneType' and 'int'
-
-======================================================================
-ERROR: test_non_ascii_transliteration (selected_test.TestSlugifyManual.test_non_ascii_transliteration)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 46, in test_non_ascii_transliteration
-    self.assertEqual(slugify_manual("\u3053\u3093\u306b\u3061\u306f\u4e16\u754c"), "konnichiha-shijie")
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 47, in test_mixed_language_input
+    self.assertEqual(slugify_manual("\u3053\u3093\u306b\u3061\u306f\u4e16\u754c"), "konnichiha-shi-jie")
                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
     if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
@@ -120,12 +110,12 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator)
+ERROR: test_numeric_input (selected_test.TestSlugifyManual.test_numeric_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 55, in test_preserve_ignore_with_separator
-    slugify_manual("foo bar baz", ignore=["bar"], separator="."),
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 52, in test_numeric_input
+    self.assertEqual(slugify_manual("123 456"), "123-456")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
     if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
                                                                                                                                                                                                                                     ^^^^^^^^^^^^
@@ -135,9 +125,21 @@ TypeError: '<' not supported between instances of 'NoneType' and 'int'
 ERROR: test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 15, in test_punctuation_only
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 17, in test_punctuation_only
     self.assertIsNone(slugify_manual("!@#$%^&*()"))
                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
+    if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
+                                                                                                                                                                                                                                    ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_special_characters (selected_test.TestSlugifyManual.test_special_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 57, in test_special_characters
+    self.assertEqual(slugify_manual("foo@bar#baz"), "foo-bar-baz")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
     if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
                                                                                                                                                                                                                                     ^^^^^^^^^^^^
@@ -147,37 +149,57 @@ TypeError: '<' not supported between instances of 'NoneType' and 'int'
 ERROR: test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 42, in test_whitespace_handling
-    self.assertEqual(slugify_manual("  foo   bar  "), "foo-bar")
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 70, in test_whitespace_handling
+    self.assertEqual(slugify_manual("  leading and trailing  "), "leading-and-trailing")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\implementation_manual.py", line 5, in slugify_manual
     if not isinstance(text, str) or not isinstance(separator, str) or not isinstance(lowercase, bool) or (ignore is not None and not isinstance(ignore, (str, list))) or (truncate is not None and not isinstance(truncate, int) or truncate < 0):
                                                                                                                                                                                                                                     ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-FAIL: test_invalid_truncate (selected_test.TestSlugifyManual.test_invalid_truncate)
+FAIL: test_invalid_truncate_values (selected_test.TestSlugifyManual.test_invalid_truncate_values)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 50, in test_invalid_truncate
-    self.assertEqual(slugify_manual("Hello world", truncate=0), "")
-AssertionError: 'hello – world' != ''
-- hello – world
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 66, in test_invalid_truncate_values
+    self.assertEqual(slugify_manual("foo bar", truncate=0), "")
+AssertionError: 'foo-bar' != ''
+- foo-bar
 + 
 
 
 ======================================================================
-FAIL: test_truncate_length (selected_test.TestSlugifyManual.test_truncate_length)
+FAIL: test_non_string_input (selected_test.TestSlugifyManual.test_non_string_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 37, in test_truncate_length
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 74, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 31, in test_truncate_functionality
     self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
-AssertionError: 'call – me ' != 'call-me'
-- call – me 
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
 + call-me
 
 
+======================================================================
+FAIL: test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore)
 ----------------------------------------------------------------------
-Ran 13 tests in 0.005s
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_01__tests_mistral__implementation_amazon\selected_test.py", line 63, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("foo bar baz", truncate=7, ignore=["foo"]), "foo-bar")
+AssertionError: 'foo' != 'foo-bar'
+- foo
++ foo-bar
 
-FAILED (failures=2, errors=11)
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.004s
+
+FAILED (failures=4, errors=11)

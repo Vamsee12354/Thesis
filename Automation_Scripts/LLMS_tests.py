@@ -7,13 +7,13 @@ from datetime import datetime
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="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"
 )
 
 
-LLM_NAME = "mistral"
-MODEL_ID = "mistralai/mistral-small-2603"
-TASK_NUMBER = "6"
+LLM_NAME = "deepseek"
+MODEL_ID = "deepseek/deepseek-chat"
+TASK_NUMBER = "8"
 RUNS = 10
 
 TEMPERATURE = 0.0
@@ -253,7 +253,7 @@ o	Non - latin characters (e .g. Chinese text ) may affect word counting accuracy
 Example Calls & Expected Outputs
 1. Normal paragraph get_read_duration (" This is a simple blog post with about fifty words total ...") # => 1
 2. Long Post
-get_read_duration ( String . duplicate (" word ", 450) )
+get_read_duration ((" word " * 450))
 # => 3
 3. Empty body
 get_read_duration ("")

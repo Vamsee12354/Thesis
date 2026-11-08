@@ -1,0 +1,15 @@
+test_check_same_product_repeating (test_module.Test_get_shopping_list.test_check_same_product_repeating) ... ok
+test_empty_list (test_module.Test_get_shopping_list.test_empty_list) ... ok
+test_normal_functionality (test_module.Test_get_shopping_list.test_normal_functionality) ... ok
+test_number_functionality (test_module.Test_get_shopping_list.test_number_functionality) ... ok
+test_other_language_functionality (test_module.Test_get_shopping_list.test_other_language_functionality) ... ok
+test_single_product (test_module.Test_get_shopping_list.test_single_product) ... ok
+test_symbols_as_shopping_list (test_module.Test_get_shopping_list.test_symbols_as_shopping_list) ... ok
+test_title_caps (test_module.Test_get_shopping_list.test_title_caps) ... ok
+test_title_functionality (test_module.Test_get_shopping_list.test_title_functionality) ... ok
+test_title_no_information (test_module.Test_get_shopping_list.test_title_no_information) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.028s
+
+OK

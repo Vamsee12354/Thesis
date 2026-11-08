@@ -3,78 +3,57 @@ import unicodedata
 
 
 def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    try:
-        if not isinstance(text, str):
-            return None
-        if ignore is None:
-            ignore = []
-        elif isinstance(ignore, str):
-            ignore = [ignore]
-        ignore_set = set(ignore)
-
-        def transliterate(char):
-            if char in ignore_set:
-                return char
-            name = unicodedata.name(char, None)
-            if name is None:
-                return ''
-            if 'LATIN' in name or 'GREEK' in name or 'CYRILLIC' in name:
-                return unicodedata.normalize('NFKD', char).encode('ascii', 'ignore').decode('ascii')
-            if char.isalnum():
-                return char
-            return ''
-
-        text = ''.join(transliterate(c) for c in text)
-        if not text:
-            return None
-
-        pattern_ignore = '|'.join(re.escape(i) for i in ignore_set) if ignore_set else None
-
-        if pattern_ignore:
-            parts = re.split(f'({pattern_ignore})', text)
-        else:
-            parts = [text]
-
-        cleaned_parts = []
-        for part in parts:
-            if pattern_ignore and re.fullmatch(pattern_ignore, part):
-                cleaned_parts.append(part)
-            else:
-                part = re.sub(r'[^\w\s]', '', part, flags=re.UNICODE)
-                cleaned_parts.append(part)
-
-        cleaned_text = ''.join(cleaned_parts)
-        cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
-        if not cleaned_text:
-            return None
-
-        words = cleaned_text.split()
-        if not words:
-            return None
-
-        if separator:
-            slug = separator.join(words)
-        else:
-            slug = ''.join(words)
-
-        if lowercase:
-            slug = slug.lower()
-
-        if truncate is not None and isinstance(truncate, int) and truncate > 0:
-            if len(slug) <= truncate:
-                return slug
-            truncated_slug = ''
-            for word in words:
-                candidate = (truncated_slug + separator + word) if truncated_slug else word
-                if len(candidate) > truncate:
-                    break
-                truncated_slug = candidate
-            slug = truncated_slug
-            if not slug:
-                return None
-
-        if all(c.isalnum() or c == separator or c in ignore_set for c in slug):
-            return slug
+    if not isinstance(text, str):
         return None
+    if ignore is None:
+        ignore = []
+    elif isinstance(ignore, str):
+        ignore = [ignore]
+    try:
+        text = text.encode('utf-8').decode('utf-8')
     except Exception:
         return None
+    ignore_set = set(ignore)
+    def transliterate(char):
+        if char in ignore_set:
+            return char
+        if char.isalnum():
+            return char
+        try:
+            name = unicodedata.name(char)
+        except ValueError:
+            return ''
+        decomp = unicodedata.normalize('NFKD', char)
+        ascii_equiv = ''.join(c for c in decomp if unicodedata.category(c) != 'Mn')
+        ascii_equiv = re.sub(r'[^a-zA-Z0-9]', '', ascii_equiv)
+        return ascii_equiv
+    text = ''.join(transliterate(c) for c in text)
+    if not text:
+        return None
+    pattern = f'[^{re.escape(separator)}a-zA-Z0-9{"".join(re.escape(c) for c in ignore_set)}]+'
+    text = re.sub(pattern, ' ', text)
+    text = re.sub(r'\s+', ' ', text).strip()
+    if not text:
+        return None
+    words = text.split()
+    if separator == '' or separator is None:
+        slug = ''.join(words)
+    else:
+        slug = separator.join(words)
+    if lowercase:
+        slug = slug.lower()
+    if truncate is not None and isinstance(truncate, int) and truncate > 0:
+        if len(slug) <= truncate:
+            return slug
+        truncated = ''
+        for word in words:
+            candidate = truncated + (separator if truncated else '') + word if separator else truncated + word
+            if len(candidate) > truncate:
+                break
+            truncated = candidate
+        slug = truncated
+        if not slug:
+            return None
+    if not slug or all(c == separator for c in slug):
+        return None
+    return slug

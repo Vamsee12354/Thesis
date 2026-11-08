@@ -3,17 +3,16 @@ import shutil
 import subprocess
 import sys
 
-
-TASK_NUMBER = "8"
+task_number = "8"
 # manual, gemma, deepseek, mistral, openai, amazon
-TEST_LLM = "gemma"
+test_llm = "deepseek"
 # manual, gemma, deepseek, mistral, openai, amazon
-IMPLEMENTATION_LLM = "deepseek"
-TEST_RUN = 1
-IMPLEMENTATION_RUN = 1
+impl_llm = "deepseek"
+test_run = 10
+impl_run = 10
 
 
-MANUAL_TASK_FOLDERS = {
+manual_task_folders = {
     "1": "task1_unique_brands",
     "2": "task2_get_average_price",
     "3": "task3_get_min_attribute",
@@ -33,10 +32,10 @@ work_directory = os.path.join(
     "single_check",
 )
 
-manual_task_folder = MANUAL_TASK_FOLDERS[TASK_NUMBER]
+manual_task_folder = manual_task_folders[task_number]
 
 
-if TEST_LLM.lower() == "manual":
+if test_llm.lower() == "manual":
     test_file_name = "tests.py"
 
     source_test_file = os.path.join(
@@ -46,22 +45,22 @@ if TEST_LLM.lower() == "manual":
         test_file_name,
     )
 
-    test_run_display = "Manual baseline"
+    test_run_display = "manual baseline"
 else:
-    test_file_name = f"run_{TEST_RUN:02d}_test.py"
+    test_file_name = f"run_{test_run:02d}_test.py"
 
     source_test_file = os.path.join(
         base_dir,
         "generated_tests",
-        TEST_LLM,
-        f"task_{TASK_NUMBER}",
+        test_llm,
+        f"task_{task_number}",
         test_file_name,
     )
 
-    test_run_display = f"{TEST_RUN:02d}"
+    test_run_display = f"{test_run:02d}"
 
 
-if IMPLEMENTATION_LLM.lower() == "manual":
+if impl_llm.lower() == "manual":
     implementation_file_name = "implementation_manual.py"
 
     source_implementation_file = os.path.join(
@@ -71,83 +70,71 @@ if IMPLEMENTATION_LLM.lower() == "manual":
         implementation_file_name,
     )
 
-    implementation_run_display = "Manual baseline"
+    impl_run_display = "manual baseline"
 else:
-    implementation_file_name = f"run_{IMPLEMENTATION_RUN:02d}.py"
+    implementation_file_name = f"run_{impl_run:02d}.py"
 
     source_implementation_file = os.path.join(
         base_dir,
         "results",
-        IMPLEMENTATION_LLM,
-        f"task_{TASK_NUMBER}",
+        impl_llm,
+        f"task_{task_number}",
         implementation_file_name,
     )
 
-    implementation_run_display = f"{IMPLEMENTATION_RUN:02d}"
+    impl_run_display = f"{impl_run:02d}"
 
 
 if not os.path.exists(source_test_file):
-    print("\nTEST FILE MISSING")
+    print("\ntest file missing")
     print(source_test_file)
 
 elif not os.path.exists(source_implementation_file):
-    print("\nIMPLEMENTATION FILE MISSING")
+    print("\nimplementation file missing")
     print(source_implementation_file)
 
 else:
     shutil.rmtree(work_directory, ignore_errors=True)
     os.makedirs(work_directory, exist_ok=True)
 
-    temporary_implementation_file = os.path.join(
+    tmp_impl_file = os.path.join(
         work_directory,
         "implementation_manual.py",
     )
 
-    temporary_test_file = os.path.join(
+    tmp_test_file = os.path.join(
         work_directory,
         "selected_test.py",
     )
 
-    shutil.copy2(
-        source_implementation_file,
-        temporary_implementation_file,
-    )
+    shutil.copy2(source_implementation_file, tmp_impl_file)
 
-    shutil.copy2(
-        source_test_file,
-        temporary_test_file,
-    )
+    shutil.copy2(source_test_file, tmp_test_file)
 
-    print("\n" + "=" * 75)
-    print("COPY VERIFICATION")
-    print("=" * 75)
-    print(f"Source test suite:       {source_test_file}")
-    print(f"Source implementation:   {source_implementation_file}")
-    print(f"Temporary test file:     {temporary_test_file}")
-    print(f"Copied implementation:   {temporary_implementation_file}")
-    print("=" * 75)
+    print("\n" + "="*75)
+    print("copy verification")
+    print("="*75)
+    print(f"source test suite:      {source_test_file}")
+    print(f"source implementation:  {source_implementation_file}")
+    print(f"temporary test file:    {tmp_test_file}")
+    print(f"copied implementation:  {tmp_impl_file}")
+    print("="*75)
 
-    print("\n" + "=" * 75)
-    print("ONE CONTROLLED TEST CHECK")
-    print("=" * 75)
-    print(f"Task:                    {TASK_NUMBER}")
-    print(f"Test suite source:       {TEST_LLM}")
-    print(f"Test suite run:          {test_run_display}")
-    print(f"Implementation source:   {IMPLEMENTATION_LLM}")
-    print(f"Implementation run:      {implementation_run_display}")
-    print("-" * 75)
-    print(f"Original test file:      {test_file_name}")
-    print(f"Original impl file:      {implementation_file_name}")
-    print("=" * 75 + "\n")
+    print( "\n" + "="*75)
+    print("one controlled test check")
+    print("="*75)
+    print(f"task:                   {task_number}")
+    print(f"test suite source:      {test_llm}")
+    print(f"test suite run:         {test_run_display}")
+    print(f"implementation source:  {impl_llm}")
+    print(f"implementation run:     {impl_run_display}")
+    print("-"*75)
+    print(f"original test file:     {test_file_name}")
+    print(f"original impl file:     {implementation_file_name}")
+    print("="*75 + "\n")
 
     result = subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "unittest",
-            "-v",
-            "selected_test",
-        ],
+        [sys.executable, "-m", "unittest", "-v", "selected_test"],
         cwd=work_directory,
         capture_output=True,
         text=True,
@@ -174,24 +161,24 @@ else:
 
     total_count = passed_count + failed_count + error_count
 
-    print("\n" + "=" * 75)
-    print("FINAL INDIVIDUAL-TEST SUMMARY")
-    print("=" * 75)
+    print("\n" + "="*75)
+    print("final individual-test summary")
+    print("="*75)
     print(
-        f"[{TEST_LLM} test suite, {test_run_display}] "
+        f"[{test_llm} test suite, {test_run_display}] "
         f"vs "
-        f"[{IMPLEMENTATION_LLM} implementation, "
-        f"{implementation_run_display}]"
+        f"[{impl_llm} implementation, "
+        f"{impl_run_display}]"
     )
-    print(f"Passed: {passed_count}/{total_count}")
-    print(f"Assertion failures: {failed_count}")
-    print(f"Runtime/import errors: {error_count}")
+    print(f"passed: {passed_count}/{total_count}")
+    print(f"assertion failures:  {failed_count}")
+    print(f"runtime/import errors: {error_count}")
 
     if result.returncode == 0:
-        print("Complete?: YES")
-        print("Needs investigation?: NO")
+        print("complete?: yes")
+        print("needs investigation?: no")
     else:
-        print("Complete?: NO")
-        print("Needs investigation?: YES")
+        print("complete?: no")
+        print("needs investigation?: yes")
 
-    print("=" * 75 + "\n")
+    print("="*75 + "\n")

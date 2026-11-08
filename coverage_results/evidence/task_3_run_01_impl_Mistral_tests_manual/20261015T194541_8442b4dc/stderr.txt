@@ -1,0 +1,122 @@
+test_diferent_langauge (test_module.Test_get_min.test_diferent_langauge) ... ERROR
+test_empty_list (test_module.Test_get_min.test_empty_list) ... ERROR
+test_equal_values (test_module.Test_get_min.test_equal_values) ... ERROR
+test_get_min_2_attributes (test_module.Test_get_min.test_get_min_2_attributes) ... ERROR
+test_get_wrongname_attribute (test_module.Test_get_min.test_get_wrongname_attribute) ... ERROR
+test_multiple_lines_different_keys (test_module.Test_get_min.test_multiple_lines_different_keys) ... ERROR
+test_multiple_lines_different_keys_same_meaning (test_module.Test_get_min.test_multiple_lines_different_keys_same_meaning) ... ERROR
+test_nulls_all_over (test_module.Test_get_min.test_nulls_all_over) ... ERROR
+test_with_one_value_in_dict (test_module.Test_get_min.test_with_one_value_in_dict) ... ERROR
+
+======================================================================
+ERROR: test_diferent_langauge (test_module.Test_get_min.test_diferent_langauge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 63, in test_diferent_langauge
+    self.assertEqual(get_min_2_attributes(data,"రేటింగ్"),2.0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_list (test_module.Test_get_min.test_empty_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 44, in test_empty_list
+    self.assertEqual(get_min_2_attributes(data,"price"),None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_equal_values (test_module.Test_get_min.test_equal_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 40, in test_equal_values
+    self.assertEquals(get_min_2_attributes(data,"battery_life"),49.99)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_get_min_2_attributes (test_module.Test_get_min.test_get_min_2_attributes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 13, in test_get_min_2_attributes
+    self.assertEquals(get_min_2_attributes(data,"price"),29.99)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_get_wrongname_attribute (test_module.Test_get_min.test_get_wrongname_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 31, in test_get_wrongname_attribute
+    self.assertFalse(get_min_2_attributes(data,"cost"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_multiple_lines_different_keys (test_module.Test_get_min.test_multiple_lines_different_keys)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 83, in test_multiple_lines_different_keys
+    self.assertEqual(get_min_2_attributes(data,'battery'),2.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_multiple_lines_different_keys_same_meaning (test_module.Test_get_min.test_multiple_lines_different_keys_same_meaning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 73, in test_multiple_lines_different_keys_same_meaning
+    self.assertEqual(get_min_2_attributes(data,'battery'),9.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_nulls_all_over (test_module.Test_get_min.test_nulls_all_over)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 22, in test_nulls_all_over
+    self.assertFalse(get_min_2_attributes(data,"price"))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_with_one_value_in_dict (test_module.Test_get_min.test_with_one_value_in_dict)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\test_module.py", line 54, in test_with_one_value_in_dict
+    self.assertEqual(get_min_2_attributes(data,"price"),29.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_manual\20261015T194541_8442b4dc\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.046s
+
+FAILED (errors=9)

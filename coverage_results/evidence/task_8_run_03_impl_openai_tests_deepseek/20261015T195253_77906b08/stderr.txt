@@ -1,0 +1,85 @@
+test_basic_slug (test_module.TestSlugifyManual.test_basic_slug) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_ignore_characters_not_in_input (test_module.TestSlugifyManual.test_ignore_characters_not_in_input) ... ok
+test_ignore_characters_with_separator (test_module.TestSlugifyManual.test_ignore_characters_with_separator) ... ok
+test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_ascii_characters (test_module.TestSlugifyManual.test_non_ascii_characters) ... FAIL
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_exact_length (test_module.TestSlugifyManual.test_truncate_exact_length) ... ok
+test_truncate_longer_than_input (test_module.TestSlugifyManual.test_truncate_longer_than_input) ... ok
+test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small) ... ok
+test_truncate_with_ignore_characters (test_module.TestSlugifyManual.test_truncate_with_ignore_characters) ... ok
+test_truncate_with_ignore_characters_exact_match (test_module.TestSlugifyManual.test_truncate_with_ignore_characters_exact_match) ... ok
+test_truncate_with_ignore_characters_longer_than_input (test_module.TestSlugifyManual.test_truncate_with_ignore_characters_longer_than_input) ... ok
+test_truncate_with_ignore_characters_no_match (test_module.TestSlugifyManual.test_truncate_with_ignore_characters_no_match) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_uppercase_output (test_module.TestSlugifyManual.test_uppercase_output) ... ok
+
+======================================================================
+ERROR: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_openai_tests_deepseek\20261015T195253_77906b08\test_module.py", line 15, in test_custom_separator
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_openai_tests_deepseek\20261015T195253_77906b08\implementation_manual.py", line 36, in slugify_manual
+    text = re.sub(f'{re.escape(separator)}+', separator, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 691, in _parse
+    raise source.error("nothing to repeat",
+re.error: nothing to repeat at position 0
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_openai_tests_deepseek\20261015T195253_77906b08\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好' != '你好-shi-jie'
+- 你好
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_openai_tests_deepseek\20261015T195253_77906b08\test_module.py", line 33, in test_mixed_language_input
+    self.assertEqual(slugify_manual("你好，世界"), "ni-hao-shi-jie")
+AssertionError: None != 'ni-hao-shi-jie'
+
+======================================================================
+FAIL: test_non_ascii_characters (test_module.TestSlugifyManual.test_non_ascii_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_openai_tests_deepseek\20261015T195253_77906b08\test_module.py", line 48, in test_non_ascii_characters
+    self.assertEqual(slugify_manual("Café au lait"), "cafe-au-lait")
+AssertionError: 'caf-au-lait' != 'cafe-au-lait'
+- caf-au-lait
++ cafe-au-lait
+?    +
+
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.075s
+
+FAILED (failures=3, errors=1)

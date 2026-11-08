@@ -1,0 +1,92 @@
+{
+  "key": "task_1_run_01_impl_amazon_tests_openai",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "amazon",
+  "test_llm": "openai",
+  "fingerprint": "464434099094da4fe43847fbb2a123a766fb3c4670f33cbcd64ea26c1be6410d",
+  "tests_run": 10,
+  "tests_passed": 6,
+  "tests_failed": 4,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 92.85714285714286,
+  "lines_covered": 13,
+  "lines_total": 14,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_01_impl_amazon_tests_openai\\20261015T194311_5c772482",
+  "started_utc": "2026-10-15T19:43:11+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_brands_with_only_spaces_are_filtered_out",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_case_insensitivity_and_capitalization",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_empty_list_returns_none",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_none_and_empty_string_among_valid_brands",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_normal_case_with_valid_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_preserves_order_of_first_occurrence",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_single_valid_brand",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    16
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.87,
+  "finished_utc": "2026-10-15T19:43:12+00:00",
+  "return_code": 0
+}

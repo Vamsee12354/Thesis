@@ -1,0 +1,80 @@
+{
+  "key": "task_6_run_03_impl_manual_tests_amazon",
+  "task": 6,
+  "task_name": "task6_validate_password",
+  "complexity": "Medium",
+  "run": 3,
+  "impl_llm": "manual",
+  "test_llm": "amazon",
+  "fingerprint": "45fb44ca513c2f0fd99dd6d4da656c5b39a67b29f4e511cc9e185e690a3b32dd",
+  "tests_run": 8,
+  "tests_passed": 3,
+  "tests_failed": 5,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 28,
+  "lines_total": 28,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_6_run_03_impl_manual_tests_amazon\\20261015T195006_e4cd2b53",
+  "started_utc": "2026-10-15T19:50:06+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 8,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestIsValidPassword.test_missing_password",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_too_long",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_with_all_requirements",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_strong_password",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_weak_password_missing_lowercase",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_weak_password_missing_special_or_number",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_weak_password_missing_uppercase",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_weak_password_short",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9313,
+  "finished_utc": "2026-10-15T19:50:07+00:00",
+  "return_code": 0
+}

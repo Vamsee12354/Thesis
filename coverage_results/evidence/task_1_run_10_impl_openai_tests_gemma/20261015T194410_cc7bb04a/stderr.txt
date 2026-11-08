@@ -1,0 +1,65 @@
+test_get_unique_all_invalid_values (test_module.TestGetUnique.test_get_unique_all_invalid_values) ... ERROR
+test_get_unique_case_insensitivity_and_normalization (test_module.TestGetUnique.test_get_unique_case_insensitivity_and_normalization) ... ERROR
+test_get_unique_empty_input (test_module.TestGetUnique.test_get_unique_empty_input) ... ERROR
+test_get_unique_mixed_valid_and_invalid (test_module.TestGetUnique.test_get_unique_mixed_valid_and_invalid) ... ERROR
+test_get_unique_normal_case (test_module.TestGetUnique.test_get_unique_normal_case) ... ERROR
+test_get_unique_preserves_order_of_first_appearance (test_module.TestGetUnique.test_get_unique_preserves_order_of_first_appearance) ... ERROR
+
+======================================================================
+ERROR: test_get_unique_all_invalid_values (test_module.TestGetUnique.test_get_unique_all_invalid_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_gemma\20261015T194410_cc7bb04a\test_module.py", line 34, in test_get_unique_all_invalid_values
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_get_unique_case_insensitivity_and_normalization (test_module.TestGetUnique.test_get_unique_case_insensitivity_and_normalization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_gemma\20261015T194410_cc7bb04a\test_module.py", line 52, in test_get_unique_case_insensitivity_and_normalization
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 6 were given
+
+======================================================================
+ERROR: test_get_unique_empty_input (test_module.TestGetUnique.test_get_unique_empty_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_gemma\20261015T194410_cc7bb04a\test_module.py", line 23, in test_get_unique_empty_input
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() missing 1 required positional argument: 'brand_list'
+
+======================================================================
+ERROR: test_get_unique_mixed_valid_and_invalid (test_module.TestGetUnique.test_get_unique_mixed_valid_and_invalid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_gemma\20261015T194410_cc7bb04a\test_module.py", line 69, in test_get_unique_mixed_valid_and_invalid
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 5 were given
+
+======================================================================
+ERROR: test_get_unique_normal_case (test_module.TestGetUnique.test_get_unique_normal_case)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_gemma\20261015T194410_cc7bb04a\test_module.py", line 12, in test_get_unique_normal_case
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 3 were given
+
+======================================================================
+ERROR: test_get_unique_preserves_order_of_first_appearance (test_module.TestGetUnique.test_get_unique_preserves_order_of_first_appearance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_10_impl_openai_tests_gemma\20261015T194410_cc7bb04a\test_module.py", line 87, in test_get_unique_preserves_order_of_first_appearance
+    result = get_unique(*brands)
+             ^^^^^^^^^^^^^^^^^^^
+TypeError: get_unique() takes 1 positional argument but 4 were given
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.019s
+
+FAILED (errors=6)

@@ -1,0 +1,84 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (test_module.TestSlugifyManual.test_case_handling) ... ok
+test_complex_mixed_input (test_module.TestSlugifyManual.test_complex_mixed_input) ... FAIL
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_custom_separator_with_ignore (test_module.TestSlugifyManual.test_custom_separator_with_ignore) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_with_list (test_module.TestSlugifyManual.test_ignore_with_list) ... ok
+test_ignore_with_mixed_language (test_module.TestSlugifyManual.test_ignore_with_mixed_language) ... FAIL
+test_ignore_with_numbers (test_module.TestSlugifyManual.test_ignore_with_numbers) ... ok
+test_ignore_with_string (test_module.TestSlugifyManual.test_ignore_with_string) ... ok
+test_lowercase_with_ignore (test_module.TestSlugifyManual.test_lowercase_with_ignore) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_alphanumeric_removal (test_module.TestSlugifyManual.test_non_alphanumeric_removal) ... ok
+test_preserve_numbers (test_module.TestSlugifyManual.test_preserve_numbers) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases) ... ok
+test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+FAIL: test_complex_mixed_input (test_module.TestSlugifyManual.test_complex_mixed_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_Mistral\20261015T195255_b3f33fe7\test_module.py", line 96, in test_complex_mixed_input
+    self.assertEqual(slugify_manual("  Hello, 世界! How's it going?  ", separator="-", lowercase=False, ignore=["世"]),
+AssertionError: 'Hello-Hows-it-going' != 'Hello-世界-How-s-it-going'
+- Hello-Hows-it-going
++ Hello-世界-How-s-it-going
+?       +++   +
+
+
+======================================================================
+FAIL: test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_Mistral\20261015T195255_b3f33fe7\test_module.py", line 43, in test_ignore_functionality
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_ignore_with_mixed_language (test_module.TestSlugifyManual.test_ignore_with_mixed_language)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_Mistral\20261015T195255_b3f33fe7\test_module.py", line 62, in test_ignore_with_mixed_language
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_Mistral\20261015T195255_b3f33fe7\test_module.py", line 57, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shi-jie")
+AssertionError: None != 'konnichiha-shi-jie'
+
+======================================================================
+FAIL: test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_Mistral\20261015T195255_b3f33fe7\test_module.py", line 34, in test_truncate_functionality
+    self.assertEqual(slugify_manual("a b c d e", truncate=3), "a-b")
+AssertionError: 'a' != 'a-b'
+- a
++ a-b
+
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_03_impl_deepseek_tests_Mistral\20261015T195255_b3f33fe7\test_module.py", line 84, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("a b c d e", ignore=["b"], truncate=5), "a-b-c")
+AssertionError: 'a-b' != 'a-b-c'
+- a-b
++ a-b-c
+?    ++
+
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.062s
+
+FAILED (failures=6)

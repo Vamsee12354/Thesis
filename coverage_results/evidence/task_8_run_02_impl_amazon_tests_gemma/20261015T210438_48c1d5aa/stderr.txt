@@ -1,0 +1,136 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ERROR
+test_casing_options (test_module.TestSlugifyManual.test_casing_options) ... ERROR
+test_complex_combination (test_module.TestSlugifyManual.test_complex_combination) ... FAIL
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... ERROR
+test_invalid_inputs_return_none (test_module.TestSlugifyManual.test_invalid_inputs_return_none) ... ERROR
+test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal) ... ERROR
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... ERROR
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ERROR
+
+======================================================================
+ERROR: test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 8, in test_basic_slugification
+    self.assertEqual(slugify_manual("Hello World"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_casing_options (test_module.TestSlugifyManual.test_casing_options)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 21, in test_casing_options
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 16, in test_custom_separator
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 33, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_invalid_inputs_return_none (test_module.TestSlugifyManual.test_invalid_inputs_return_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 48, in test_invalid_inputs_return_none
+    self.assertIsNone(slugify_manual(""))
+                      ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 12, in test_punctuation_removal
+    self.assertEqual(slugify_manual("Hello, World!"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 40, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 44, in test_whitespace_handling
+    self.assertEqual(slugify_manual("  foo   bar  "), "foo-bar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+FAIL: test_complex_combination (test_module.TestSlugifyManual.test_complex_combination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 59, in test_complex_combination
+    self.assertEqual(slugify_manual(" Hello , World ! ", separator="_", lowercase=False, truncate=5), "Hello")
+AssertionError: '_Hell' != 'Hello'
+- _Hell
+? -
++ Hello
+?     +
+
+
+======================================================================
+FAIL: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_amazon_tests_gemma\20261015T210438_48c1d5aa\test_module.py", line 27, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
++ call-me
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.064s
+
+FAILED (failures=2, errors=8)

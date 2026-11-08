@@ -1,0 +1,38 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_casing_options (test_module.TestSlugifyManual.test_casing_options) ... ok
+test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations) ... ok
+test_edge_cases_and_invalid_inputs (test_module.TestSlugifyManual.test_edge_cases_and_invalid_inputs) ... FAIL
+test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter) ... FAIL
+test_separator_customization (test_module.TestSlugifyManual.test_separator_customization) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+
+======================================================================
+FAIL: test_edge_cases_and_invalid_inputs (test_module.TestSlugifyManual.test_edge_cases_and_invalid_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_openai_tests_gemma\20261015T195237_b4e4bb8e\test_module.py", line 51, in test_edge_cases_and_invalid_inputs
+    self.assertIsNone(slugify_manual("!!!", ignore="!")) # If '!' is ignored but no alphanumerics exist
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: '!!!' is not None
+
+======================================================================
+FAIL: test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_openai_tests_gemma\20261015T195237_b4e4bb8e\test_module.py", line 36, in test_ignore_parameter
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_openai_tests_gemma\20261015T195237_b4e4bb8e\test_module.py", line 43, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+AssertionError: None != 'ni-hao'
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.035s
+
+FAILED (failures=3)

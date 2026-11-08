@@ -1,0 +1,22 @@
+test_empty_shopping_list (test_module.TestShoppingListView.test_empty_shopping_list) ... ok
+test_html_in_title (test_module.TestShoppingListView.test_html_in_title) ... FAIL
+test_normal_functionality (test_module.TestShoppingListView.test_normal_functionality) ... ok
+test_single_product (test_module.TestShoppingListView.test_single_product) ... ok
+
+======================================================================
+FAIL: test_html_in_title (test_module.TestShoppingListView.test_html_in_title)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_07_impl_manual_tests_amazon\20261015T195204_97909015\test_module.py", line 24, in test_html_in_title
+    self.assertEqual(shopping_list(products), expected_output)
+AssertionError: '<ul><li><Bold>Item</Bold></li></ul>' != '<ul><li>&lt;Bold&gt;Item&lt;/Bold&gt;</li></ul>'
+- <ul><li><Bold>Item</Bold></li></ul>
+?         ^    ^    ^     ^
++ <ul><li>&lt;Bold&gt;Item&lt;/Bold&gt;</li></ul>
+?         ^^^^    ^^^^    ^^^^     ^^^^
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.026s
+
+FAILED (failures=1)

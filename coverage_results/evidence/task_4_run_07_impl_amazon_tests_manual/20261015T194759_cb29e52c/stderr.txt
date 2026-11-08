@@ -1,0 +1,12 @@
+test_article (test_module.Test_get_read_duration.test_article) ... ok
+test_individual_letters (test_module.Test_get_read_duration.test_individual_letters) ... ok
+test_no_text (test_module.Test_get_read_duration.test_no_text) ... ok
+test_normal_functionality (test_module.Test_get_read_duration.test_normal_functionality) ... ok
+test_other_language (test_module.Test_get_read_duration.test_other_language) ... ok
+test_same_letter_working (test_module.Test_get_read_duration.test_same_letter_working) ... ok
+test_symbol_reading (test_module.Test_get_read_duration.test_symbol_reading) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.049s
+
+OK

@@ -1,70 +1,37 @@
 import re
 import unicodedata
 
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
     if not isinstance(text, str) or not text.strip():
         return None
-    
+
     if ignore is None:
         ignore = []
-    elif isinstance(ignore, str):
-        ignore = [ignore]
-    
-    normalized = unicodedata.normalize('NFKD', text)
-    allowed_chars = set()
-    
-    for c in normalized:
-        if ord(c) < 128 and c.isalnum() or c in ignore:
-            allowed_chars.add(c)
-    
-    cleaned = []
-    word = []
-    
-    for c in normalized:
-        if c in allowed_chars:
-            if c.isalnum():
-                word.append(c.lower() if lowercase else c)
-            else:
-                if word:
-                    cleaned.append(''.join(word))
-                    word = []
-                cleaned.append(c)
-        else:
-            if word:
-                cleaned.append(''.join(word))
-                word = []
-    
-    if word:
-        cleaned.append(''.join(word))
-    
-    slug_parts = []
-    for item in cleaned:
-        if item not in ignore:
-            if item.isalnum():
-                slug_parts.append(item)
-        else:
-            slug_parts.append(item)
-    
-    slug = separator.join(slug_parts)
-    slug = re.sub(rf'{re.escape(separator)}+', separator, slug)
-    slug = slug.strip(separator)
-    
-    if truncate is not None and truncate > 0:
-        parts = slug.split(separator)
-        truncated = []
-        length = 0
-        
-        for part in parts:
-            if length + len(part) + (1 if truncated else 0) <= truncate:
-                truncated.append(part)
-                length += len(part) + (1 if truncated else 0)
-            else:
-                break
-        
-        slug = separator.join(truncated)
-        slug = slug[:truncate].rstrip(separator)
-    
-    if not slug:
+
+    normalized_text = unicodedata.normalize('NFKD', text)
+    ascii_text = normalized_text.encode('ascii', 'ignore').decode('ascii')
+
+    pattern = r'[^\w\s{}]'.format(re.escape(''.join(ignore)))
+    cleaned_text = re.sub(pattern, '', ascii_text)
+
+    words = re.split(r'\s+', cleaned_text.strip())
+    filtered_words = [word for word in words if word]
+
+    if not filtered_words:
         return None
-    
-    return slug
+
+    slug = separator.join(filtered_words)
+
+    if lowercase:
+        slug = slug.lower()
+
+    if truncate is not None and truncate > 0:
+        if len(slug) <= truncate:
+            return slug
+        truncated_slug = slug[:truncate]
+        last_separator_index = truncated_slug.rfind(separator)
+        if last_separator_index != -1:
+            truncated_slug = truncated_slug[:last_separator_index]
+        slug = truncated_slug if truncated_slug else None
+
+    return slug if slug else None

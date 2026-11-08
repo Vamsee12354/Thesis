@@ -1,0 +1,22 @@
+test_all_values_none_for_attribute (test_module.TestGetMin2Attributes.test_all_values_none_for_attribute) ... ok
+test_attribute_not_present_in_any_product (test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product) ... ok
+test_attribute_values_are_not_numeric (test_module.TestGetMin2Attributes.test_attribute_values_are_not_numeric) ... ok
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_ignore_products_without_attribute (test_module.TestGetMin2Attributes.test_ignore_products_without_attribute) ... ok
+test_integer_and_float_values (test_module.TestGetMin2Attributes.test_integer_and_float_values) ... ok
+test_minimum_value_with_another_valid_numeric_attribute (test_module.TestGetMin2Attributes.test_minimum_value_with_another_valid_numeric_attribute) ... ok
+test_minimum_value_with_valid_numeric_attribute (test_module.TestGetMin2Attributes.test_minimum_value_with_valid_numeric_attribute) ... ok
+test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values) ... FAIL
+
+======================================================================
+FAIL: test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_09_impl_deepseek_tests_openai\20261015T194646_1a5e184c\test_module.py", line 84, in test_mixed_none_and_numeric_values
+    self.assertEqual(result, 5.56)
+AssertionError: 5.55 != 5.56
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.026s
+
+FAILED (failures=1)

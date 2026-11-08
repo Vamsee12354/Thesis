@@ -1,0 +1,96 @@
+{
+  "key": "task_3_run_01_impl_Mistral_tests_openai",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "Mistral",
+  "test_llm": "openai",
+  "fingerprint": "d3e62f7caee1f63255dc2cd1de3efd05170232a24381b0726dc30bff152376a6",
+  "tests_run": 9,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 9,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 33.333333333333336,
+  "lines_covered": 5,
+  "lines_total": 15,
+  "lines_missing": 10,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_01_impl_Mistral_tests_openai\\20261015T194541_7cacb76e",
+  "started_utc": "2026-10-15T19:45:42+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_values_non_numeric_or_none",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_values_none_for_attribute",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_empty_data_list",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_integer_and_float_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_minimum_battery_life_with_valid_data",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_minimum_price_with_valid_data",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_non_numeric_values_ignored",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8426,
+  "finished_utc": "2026-10-15T19:45:42+00:00",
+  "return_code": 0
+}

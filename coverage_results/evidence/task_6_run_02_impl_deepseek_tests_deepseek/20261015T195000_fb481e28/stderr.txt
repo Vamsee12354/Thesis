@@ -1,0 +1,13 @@
+test_missing_password (test_module.TestPasswordValidator.test_missing_password) ... ok
+test_multiple_errors (test_module.TestPasswordValidator.test_multiple_errors) ... ok
+test_password_missing_lowercase (test_module.TestPasswordValidator.test_password_missing_lowercase) ... ok
+test_password_missing_special_char_or_number (test_module.TestPasswordValidator.test_password_missing_special_char_or_number) ... ok
+test_password_missing_uppercase (test_module.TestPasswordValidator.test_password_missing_uppercase) ... ok
+test_password_too_long (test_module.TestPasswordValidator.test_password_too_long) ... ok
+test_password_too_short (test_module.TestPasswordValidator.test_password_too_short) ... ok
+test_valid_password (test_module.TestPasswordValidator.test_valid_password) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.025s
+
+OK

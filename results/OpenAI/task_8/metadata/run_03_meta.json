@@ -1,6 +1,6 @@
 {
     "run_number": 3,
-    "timestamp": "2026-07-04T22:42:17.490919",
+    "timestamp": "2026-09-30T13:55:43.745420",
     "llm_name": "openai",
     "model_id": "openai/gpt-4.1-mini",
     "task_number": "8",
@@ -9,10 +9,10 @@
     "top_k": 1,
     "seed": 42,
     "max_tokens": 3000,
-    "elapsed_time_seconds": 7.0334,
+    "elapsed_time_seconds": 4.1063,
     "usage": {
-        "prompt_tokens": 780,
-        "completion_tokens": 556,
-        "total_tokens": 1336
+        "prompt_tokens": 806,
+        "completion_tokens": 461,
+        "total_tokens": 1267
     }
 }

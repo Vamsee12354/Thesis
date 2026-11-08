@@ -1,0 +1,90 @@
+{
+  "key": "task_5_run_08_impl_amazon_tests_openai",
+  "task": 5,
+  "task_name": "task5_validate_contact_form",
+  "complexity": "Medium",
+  "run": 8,
+  "impl_llm": "amazon",
+  "test_llm": "openai",
+  "fingerprint": "2b9b1ec94c1631fbf59ad4072b588335766100f85e7e8b301dc08933ad364866",
+  "tests_run": 10,
+  "tests_passed": 8,
+  "tests_failed": 2,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 21,
+  "lines_total": 21,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_5_run_08_impl_amazon_tests_openai\\20261015T194924_51725b6f",
+  "started_utc": "2026-10-15T19:49:25+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestValidateForm.test_all_fields_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_email_empty_after_trim",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_email_empty_and_privacy_false",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_email_with_spaces_trimmed",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_fields_with_only_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_invalid_email_format",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_multiple_errors_all_fields_invalid",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_privacy_not_boolean",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_privacy_policy_not_confirmed",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_valid_form",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.4411,
+  "finished_utc": "2026-10-15T19:49:25+00:00",
+  "return_code": 0
+}

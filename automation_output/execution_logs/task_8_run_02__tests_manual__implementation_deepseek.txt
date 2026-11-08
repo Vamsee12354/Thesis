@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:29
+Timestamp: 2026-09-30T16:49:54
 Return code: 1
 ================================================================================
 
@@ -56,10 +56,7 @@ FAIL: test_truncate (selected_test.Test_slugify_text.test_truncate)
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_manual__implementation_deepseek\selected_test.py", line 53, in test_truncate
     self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"hello%")
-AssertionError: 'he' != 'hello%'
-- he
-+ hello%
-
+AssertionError: None != 'hello%'
 
 ----------------------------------------------------------------------
 Ran 16 tests in 0.002s

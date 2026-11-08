@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:17:08
+Timestamp: 2026-09-30T16:50:23
 Return code: 1
 ================================================================================
 
@@ -10,15 +10,12 @@ STANDARD OUTPUT
 STANDARD ERROR
 --------------------------------------------------------------------------------
 test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ERROR
-test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity) ... ERROR
-test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ERROR
-test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ERROR
-test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... ERROR
-test_ignore_list_vs_string (selected_test.TestSlugifyManual.test_ignore_list_vs_string) ... ERROR
-test_only_punctuation_input (selected_test.TestSlugifyManual.test_only_punctuation_input) ... ERROR
-test_separator_as_integer (selected_test.TestSlugifyManual.test_separator_as_integer) ... FAIL
-test_small_truncate_value (selected_test.TestSlugifyManual.test_small_truncate_value) ... FAIL
-test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
+test_complex_combinations (selected_test.TestSlugifyManual.test_complex_combinations) ... ERROR
+test_ignore_parameter (selected_test.TestSlugifyManual.test_ignore_parameter) ... ERROR
+test_invalid_inputs_and_edge_cases (selected_test.TestSlugifyManual.test_invalid_inputs_and_edge_cases) ... ERROR
+test_lowercase_option (selected_test.TestSlugifyManual.test_lowercase_option) ... ERROR
+test_separator_customization (selected_test.TestSlugifyManual.test_separator_customization) ... ERROR
+test_truncation (selected_test.TestSlugifyManual.test_truncation) ... ERROR
 test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... ERROR
 test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... ERROR
 
@@ -27,42 +24,42 @@ ERROR: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slug
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 8, in test_basic_slugification
-    result = slugify_manual(" Hello , World !")
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    self.assertEqual(slugify_manual("Hello World"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_case_sensitivity (selected_test.TestSlugifyManual.test_case_sensitivity)
+ERROR: test_complex_combinations (selected_test.TestSlugifyManual.test_complex_combinations)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 18, in test_case_sensitivity
-    result = slugify_manual(" StUdLy CaPs ", lowercase=False)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 61, in test_complex_combinations
+    self.assertEqual(slugify_manual("A! B? C", separator="_", lowercase=False, ignore="!"), "A!-B-C")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
+ERROR: test_ignore_parameter (selected_test.TestSlugifyManual.test_ignore_parameter)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 13, in test_custom_separator
-    result = slugify_manual(" Madam , I'm Adam ", separator="")
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 26, in test_ignore_parameter
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_empty_input (selected_test.TestSlugifyManual.test_empty_input)
+ERROR: test_invalid_inputs_and_edge_cases (selected_test.TestSlugifyManual.test_invalid_inputs_and_edge_cases)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 34, in test_empty_input
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 51, in test_invalid_inputs_and_edge_cases
     self.assertIsNone(slugify_manual(""))
                       ^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
@@ -71,48 +68,51 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+ERROR: test_lowercase_option (selected_test.TestSlugifyManual.test_lowercase_option)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 29, in test_ignore_characters
-    result = slugify_manual("\u4f60 \u597d \uff0c \u4e16 \u754c", ignore=["\u4f60", "\u597d"])
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 20, in test_lowercase_option
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_ignore_list_vs_string (selected_test.TestSlugifyManual.test_ignore_list_vs_string)
+ERROR: test_separator_customization (selected_test.TestSlugifyManual.test_separator_customization)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 60, in test_ignore_list_vs_string
-    result_str = slugify_manual("a!b", ignore="!")
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 14, in test_separator_customization
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-ERROR: test_only_punctuation_input (selected_test.TestSlugifyManual.test_only_punctuation_input)
+ERROR: test_truncation (selected_test.TestSlugifyManual.test_truncation)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 38, in test_only_punctuation_input
-    self.assertIsNone(slugify_manual("!!! @@@ ###"))
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
-    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
-                                                                 ^^^^^^^^^^^^
-TypeError: '<' not supported between instances of 'NoneType' and 'int'
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 32, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 26, in slugify_manual
+    text = transliterate(text)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 21, in transliterate
+    trans = str.maketrans('ÀÁÂÃÄÅàáâãäåÒÓÔÕÖòóôõöÈÉÊËèéêëÌÍÎÏìíîïÙÚÛÜùúûüÝŸýÿ',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: the first two maketrans arguments must have equal length
 
 ======================================================================
 ERROR: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 55, in test_unicode_transliteration
-    result = slugify_manual("\u4f60 \u597d")
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 47, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("\u4f60\u597d"), "ni-hao")
+                     ^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
@@ -122,44 +122,15 @@ TypeError: '<' not supported between instances of 'NoneType' and 'int'
 ERROR: test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 42, in test_whitespace_handling
-    result = slugify_manual("   foo    bar   ")
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 40, in test_whitespace_handling
+    self.assertEqual(slugify_manual("   foo    bar   "), "foo-bar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\implementation_manual.py", line 11, in slugify_manual
     if truncate is not None and not isinstance(truncate, int) or truncate < 0:
                                                                  ^^^^^^^^^^^^
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
-======================================================================
-FAIL: test_separator_as_integer (selected_test.TestSlugifyManual.test_separator_as_integer)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 72, in test_separator_as_integer
-    self.assertEqual(result, "a-b")
-AssertionError: None != 'a-b'
+Ran 9 tests in 0.002s
 
-======================================================================
-FAIL: test_small_truncate_value (selected_test.TestSlugifyManual.test_small_truncate_value)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 50, in test_small_truncate_value
-    self.assertIsNone(result)
-AssertionError: 'h' is not None
-
-======================================================================
-FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_gemma__implementation_amazon\selected_test.py", line 24, in test_truncation
-    self.assertEqual(result, "call - me")
-AssertionError: '-call-me-m' != 'call - me'
-- -call-me-m
-? -       --
-+ call - me
-?     + +
-
-
-----------------------------------------------------------------------
-Ran 12 tests in 0.004s
-
-FAILED (failures=3, errors=9)
+FAILED (errors=9)

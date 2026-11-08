@@ -1,0 +1,23 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_and_no_regex_check (test_module.TestValidateForm.test_email_empty_and_no_regex_check) ... ok
+test_fields_with_only_whitespace (test_module.TestValidateForm.test_fields_with_only_whitespace) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... ok
+test_leading_and_trailing_whitespace_trimmed (test_module.TestValidateForm.test_leading_and_trailing_whitespace_trimmed) ... ok
+test_multiple_errors_returned_in_order (test_module.TestValidateForm.test_multiple_errors_returned_in_order) ... ok
+test_privacy_none (test_module.TestValidateForm.test_privacy_none) ... ok
+test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean) ... FAIL
+test_privacy_policy_not_confirmed (test_module.TestValidateForm.test_privacy_policy_not_confirmed) ... ok
+test_valid_form (test_module.TestValidateForm.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_01_impl_amazon_tests_openai\20261015T194829_cfdf36c5\test_module.py", line 148, in test_privacy_not_boolean
+    self.assertEqual(result, ["Please confirm the privacy policy"])
+AssertionError: 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,yes' != ['Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.037s
+
+FAILED (failures=1)

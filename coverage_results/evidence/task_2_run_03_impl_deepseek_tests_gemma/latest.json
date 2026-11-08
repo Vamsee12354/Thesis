@@ -1,0 +1,75 @@
+{
+  "key": "task_2_run_03_impl_deepseek_tests_gemma",
+  "task": 2,
+  "task_name": "task2_get_average_price",
+  "complexity": "Low",
+  "run": 3,
+  "impl_llm": "deepseek",
+  "test_llm": "gemma",
+  "fingerprint": "fc62bcdc088075623a1c163436c093a2b5cbecc4b235cd8e0166fe490bcc0755",
+  "tests_run": 7,
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 10,
+  "lines_total": 10,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_2_run_03_impl_deepseek_tests_gemma\\20261015T194434_b61ef3da",
+  "started_utc": "2026-10-15T19:44:35+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetAveragePrice.test_all_products_missing_price",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_mixed_floats_and_integers",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_normal_case_with_valid_prices",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_rounding_to_two_decimals",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_single_product_with_price",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_single_product_without_price",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8273,
+  "finished_utc": "2026-10-15T19:44:35+00:00",
+  "return_code": 0
+}

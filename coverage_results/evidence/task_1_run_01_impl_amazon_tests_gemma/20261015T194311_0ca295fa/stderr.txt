@@ -1,0 +1,58 @@
+test_get_unique_all_invalid_values (test_module.TestGetUnique.test_get_unique_all_invalid_values) ... FAIL
+test_get_unique_case_insensitivity_and_normalization (test_module.TestGetUnique.test_get_unique_case_insensitivity_and_normalization) ... ok
+test_get_unique_empty_input (test_module.TestGetUnique.test_get_unique_empty_input) ... ok
+test_get_unique_mixed_duplicates_and_blanks (test_module.TestGetUnique.test_get_unique_mixed_duplicates_and_blanks) ... FAIL
+test_get_unique_normal_case (test_module.TestGetUnique.test_get_unique_normal_case) ... ok
+test_get_unique_preserves_order_of_first_appearance (test_module.TestGetUnique.test_get_unique_preserves_order_of_first_appearance) ... ok
+test_get_unique_with_whitespace_only_strings (test_module.TestGetUnique.test_get_unique_with_whitespace_only_strings) ... FAIL
+
+======================================================================
+FAIL: test_get_unique_all_invalid_values (test_module.TestGetUnique.test_get_unique_all_invalid_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_01_impl_amazon_tests_gemma\20261015T194311_0ca295fa\test_module.py", line 37, in test_get_unique_all_invalid_values
+    self.assertIsNone(result)
+AssertionError: [''] is not None
+
+======================================================================
+FAIL: test_get_unique_mixed_duplicates_and_blanks (test_module.TestGetUnique.test_get_unique_mixed_duplicates_and_blanks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_01_impl_amazon_tests_gemma\20261015T194311_0ca295fa\test_module.py", line 55, in test_get_unique_mixed_duplicates_and_blanks
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['Brandname', ''] != ['Brandname']
+
+First list contains 1 additional elements.
+First extra element 1:
+''
+
+- ['Brandname', '']
+?             ----
+
++ ['Brandname']
+
+======================================================================
+FAIL: test_get_unique_with_whitespace_only_strings (test_module.TestGetUnique.test_get_unique_with_whitespace_only_strings)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_01_impl_amazon_tests_gemma\20261015T194311_0ca295fa\test_module.py", line 93, in test_get_unique_with_whitespace_only_strings
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['', 'Valid'] != ['Valid']
+
+First differing element 0:
+''
+'Valid'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Valid'
+
+- ['', 'Valid']
+?  ----
+
++ ['Valid']
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.029s
+
+FAILED (failures=3)

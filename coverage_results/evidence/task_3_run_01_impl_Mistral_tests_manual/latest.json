@@ -1,0 +1,96 @@
+{
+  "key": "task_3_run_01_impl_Mistral_tests_manual",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "Mistral",
+  "test_llm": "manual",
+  "fingerprint": "cacafef8fe6916790fd541858cbd60c876fda8ffc52d00626218d25255b2a975",
+  "tests_run": 9,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 9,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 33.333333333333336,
+  "lines_covered": 5,
+  "lines_total": 15,
+  "lines_missing": 10,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_01_impl_Mistral_tests_manual\\20261015T194541_8442b4dc",
+  "started_utc": "2026-10-15T19:45:42+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.Test_get_min.test_diferent_langauge",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_empty_list",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_equal_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_get_min_2_attributes",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_get_wrongname_attribute",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_multiple_lines_different_keys",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_multiple_lines_different_keys_same_meaning",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_nulls_all_over",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_with_one_value_in_dict",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15,
+    16,
+    18
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8256,
+  "finished_utc": "2026-10-15T19:45:42+00:00",
+  "return_code": 0
+}

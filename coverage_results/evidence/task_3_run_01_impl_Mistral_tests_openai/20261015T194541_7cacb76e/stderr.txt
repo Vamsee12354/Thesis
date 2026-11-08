@@ -1,0 +1,122 @@
+test_all_values_non_numeric_or_none (test_module.TestGetMin2Attributes.test_all_values_non_numeric_or_none) ... ERROR
+test_all_values_none_for_attribute (test_module.TestGetMin2Attributes.test_all_values_none_for_attribute) ... ERROR
+test_attribute_not_present_in_any_product (test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product) ... ERROR
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ERROR
+test_integer_and_float_values (test_module.TestGetMin2Attributes.test_integer_and_float_values) ... ERROR
+test_minimum_battery_life_with_valid_data (test_module.TestGetMin2Attributes.test_minimum_battery_life_with_valid_data) ... ERROR
+test_minimum_price_with_valid_data (test_module.TestGetMin2Attributes.test_minimum_price_with_valid_data) ... ERROR
+test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values) ... ERROR
+test_non_numeric_values_ignored (test_module.TestGetMin2Attributes.test_non_numeric_values_ignored) ... ERROR
+
+======================================================================
+ERROR: test_all_values_non_numeric_or_none (test_module.TestGetMin2Attributes.test_all_values_non_numeric_or_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 149, in test_all_values_non_numeric_or_none
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_all_values_none_for_attribute (test_module.TestGetMin2Attributes.test_all_values_none_for_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 69, in test_all_values_none_for_attribute
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_attribute_not_present_in_any_product (test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 52, in test_attribute_not_present_in_any_product
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 81, in test_empty_data_list
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_integer_and_float_values (test_module.TestGetMin2Attributes.test_integer_and_float_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 116, in test_integer_and_float_values
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_minimum_battery_life_with_valid_data (test_module.TestGetMin2Attributes.test_minimum_battery_life_with_valid_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 35, in test_minimum_battery_life_with_valid_data
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_minimum_price_with_valid_data (test_module.TestGetMin2Attributes.test_minimum_price_with_valid_data)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 18, in test_minimum_price_with_valid_data
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 99, in test_mixed_none_and_numeric_values
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_numeric_values_ignored (test_module.TestGetMin2Attributes.test_non_numeric_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\test_module.py", line 133, in test_non_numeric_values_ignored
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_Mistral_tests_openai\20261015T194541_7cacb76e\implementation_manual.py", line 7, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.037s
+
+FAILED (errors=9)

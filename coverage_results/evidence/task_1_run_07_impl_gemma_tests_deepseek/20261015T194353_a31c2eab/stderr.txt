@@ -1,0 +1,15 @@
+test_all_invalid_brands (test_module.TestGetUnique.test_all_invalid_brands) ... ok
+test_case_insensitivity (test_module.TestGetUnique.test_case_insensitivity) ... ok
+test_empty_list (test_module.TestGetUnique.test_empty_list) ... ok
+test_empty_strings_and_none (test_module.TestGetUnique.test_empty_strings_and_none) ... ok
+test_mixed_case_duplicates (test_module.TestGetUnique.test_mixed_case_duplicates) ... ok
+test_mixed_valid_and_invalid (test_module.TestGetUnique.test_mixed_valid_and_invalid) ... ok
+test_multiple_duplicates (test_module.TestGetUnique.test_multiple_duplicates) ... ok
+test_no_brand_key (test_module.TestGetUnique.test_no_brand_key) ... ok
+test_normal_case (test_module.TestGetUnique.test_normal_case) ... ok
+test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.026s
+
+OK

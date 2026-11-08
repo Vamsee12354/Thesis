@@ -1,0 +1,125 @@
+{
+  "key": "task_5_run_01_impl_Mistral_tests_deepseek",
+  "task": 5,
+  "task_name": "task5_validate_contact_form",
+  "complexity": "Medium",
+  "run": 1,
+  "impl_llm": "Mistral",
+  "test_llm": "deepseek",
+  "fingerprint": "82fe5b9a9f2e112ad3767ac28ac9075f524c8531744e4b241dd2ab73c10fc94d",
+  "tests_run": 17,
+  "tests_passed": 17,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 27,
+  "lines_total": 27,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_5_run_01_impl_Mistral_tests_deepseek\\20261015T194828_5b934db2",
+  "started_utc": "2026-10-15T19:48:29+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 17,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestFormValidation.test_empty_fields",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_email_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_email_format",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_email_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_first_name_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_last_name_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_message_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_privacy",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_privacy_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_privacy_false",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_privacy_type",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_invalid_subject_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_multiple_errors",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_multiple_invalid_fields",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_valid_form",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_valid_form_with_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestFormValidation.test_whitespace_fields",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.7982,
+  "finished_utc": "2026-10-15T19:48:29+00:00",
+  "return_code": 0
+}

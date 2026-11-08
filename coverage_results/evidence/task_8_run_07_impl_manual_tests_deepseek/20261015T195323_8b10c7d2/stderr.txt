@@ -1,0 +1,61 @@
+test_basic_slug (test_module.TestSlugifyManual.test_basic_slug) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_ignore_characters_not_in_input (test_module.TestSlugifyManual.test_ignore_characters_not_in_input) ... ok
+test_ignore_characters_preserve_case (test_module.TestSlugifyManual.test_ignore_characters_preserve_case) ... ok
+test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_lowercase_false (test_module.TestSlugifyManual.test_lowercase_false) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate (test_module.TestSlugifyManual.test_truncate) ... ok
+test_truncate_eliminates_all_words (test_module.TestSlugifyManual.test_truncate_eliminates_all_words) ... FAIL
+test_truncate_small_value (test_module.TestSlugifyManual.test_truncate_small_value) ... ok
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_deepseek\20261015T195323_8b10c7d2\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_deepseek\20261015T195323_8b10c7d2\test_module.py", line 33, in test_mixed_language_input
+    self.assertEqual(slugify_manual("你好，世界"), "ni-hao-shi-jie")
+AssertionError: '你好-世界' != 'ni-hao-shi-jie'
+- 你好-世界
++ ni-hao-shi-jie
+
+
+======================================================================
+FAIL: test_truncate_eliminates_all_words (test_module.TestSlugifyManual.test_truncate_eliminates_all_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_deepseek\20261015T195323_8b10c7d2\test_module.py", line 39, in test_truncate_eliminates_all_words
+    self.assertIsNone(slugify_manual("foo bar", truncate=0))
+AssertionError: 'foo-bar' is not None
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_manual_tests_deepseek\20261015T195323_8b10c7d2\test_module.py", line 48, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"], truncate=5), "你好-shi")
+AssertionError: '你好' != '你好-shi'
+- 你好
++ 你好-shi
+
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.040s
+
+FAILED (failures=4)

@@ -1,0 +1,19 @@
+test_all_values_none (test_module.TestGetMin2Attributes.test_all_values_none) ... ok
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_mixed_data_types (test_module.TestGetMin2Attributes.test_mixed_data_types) ... FAIL
+test_non_existent_attribute (test_module.TestGetMin2Attributes.test_non_existent_attribute) ... ok
+test_non_numeric_attribute (test_module.TestGetMin2Attributes.test_non_numeric_attribute) ... ok
+test_valid_attribute_with_values (test_module.TestGetMin2Attributes.test_valid_attribute_with_values) ... ok
+
+======================================================================
+FAIL: test_mixed_data_types (test_module.TestGetMin2Attributes.test_mixed_data_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_07_impl_Mistral_tests_amazon\20261015T194632_120a986a\test_module.py", line 55, in test_mixed_data_types
+    self.assertEqual(get_min_2_attributes(data, "price"), 49.99)
+AssertionError: 29.99 != 49.99
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.022s
+
+FAILED (failures=1)

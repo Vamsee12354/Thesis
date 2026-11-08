@@ -1,0 +1,27 @@
+test_validate_form_all_fields_empty (test_module.TestValidateForm.test_validate_form_all_fields_empty) ... ok
+test_validate_form_empty_email_error_message (test_module.TestValidateForm.test_validate_form_empty_email_error_message) ... ok
+test_validate_form_invalid_email_format (test_module.TestValidateForm.test_validate_form_invalid_email_format) ... ok
+test_validate_form_missing_subject_and_message (test_module.TestValidateForm.test_validate_form_missing_subject_and_message) ... ok
+test_validate_form_multiple_errors_order (test_module.TestValidateForm.test_validate_form_multiple_errors_order) ... ok
+test_validate_form_privacy_false (test_module.TestValidateForm.test_validate_form_privacy_false) ... ok
+test_validate_form_privacy_not_boolean (test_module.TestValidateForm.test_validate_form_privacy_not_boolean) ... ok
+test_validate_form_success (test_module.TestValidateForm.test_validate_form_success) ... ok
+test_validate_form_success_with_whitespace (test_module.TestValidateForm.test_validate_form_success_with_whitespace) ... FAIL
+test_validate_form_whitespace_only_fields (test_module.TestValidateForm.test_validate_form_whitespace_only_fields) ... ok
+
+======================================================================
+FAIL: test_validate_form_success_with_whitespace (test_module.TestValidateForm.test_validate_form_success_with_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_09_impl_deepseek_tests_gemma\20261015T194930_a99a6442\test_module.py", line 22, in test_validate_form_success_with_whitespace
+    self.assertEqual(result, "Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True")
+AssertionError: 'Form is valid. Details:  Alexa  ,  James  ,abc@gmail.com,Question,Hallo!,True' != 'Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True'
+- Form is valid. Details:  Alexa  ,  James  ,abc@gmail.com,Question,Hallo!,True
+?                        --     -- --     --
++ Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.053s
+
+FAILED (failures=1)

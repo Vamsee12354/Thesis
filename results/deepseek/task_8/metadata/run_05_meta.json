@@ -1,6 +1,6 @@
 {
     "run_number": 5,
-    "timestamp": "2026-07-03T11:25:27.669704",
+    "timestamp": "2026-09-30T13:51:51.599507",
     "llm_name": "deepseek",
     "model_id": "deepseek/deepseek-chat",
     "task_number": "8",
@@ -8,11 +8,11 @@
     "top_p": 1.0,
     "top_k": 1,
     "seed": 42,
-    "max_tokens": 1000,
-    "elapsed_time_seconds": 9.5141,
+    "max_tokens": 3000,
+    "elapsed_time_seconds": 24.1428,
     "usage": {
-        "prompt_tokens": 797,
-        "completion_tokens": 300,
-        "total_tokens": 1097
+        "prompt_tokens": 822,
+        "completion_tokens": 312,
+        "total_tokens": 1134
     }
 }

@@ -1,0 +1,8 @@
+{
+  "task": 9,
+  "run": 8,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\amazon\\task_9\\run_08.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\Mistral\\task_9\\run_08_test.py",
+  "fingerprint": "c81482d1a17f9b2364df04360e0911b932f37d4c0eec5ffd9b80ed210b427939",
+  "timeout": 120
+}

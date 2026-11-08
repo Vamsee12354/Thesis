@@ -1,0 +1,8 @@
+{
+  "task": 4,
+  "run": 10,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task4_get_reading_duration\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\deepseek\\task_4\\run_10_test.py",
+  "fingerprint": "ce94c602b06d25e147c4adcb12efded590de4236fba08db7572d686c67342e6a",
+  "timeout": 120
+}

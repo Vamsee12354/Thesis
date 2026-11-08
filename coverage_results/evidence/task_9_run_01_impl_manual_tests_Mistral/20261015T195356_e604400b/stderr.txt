@@ -1,0 +1,25 @@
+test_cleanup (test_module.TestProductCacheGet.test_cleanup) ... ok
+test_cleanup_empty_cache (test_module.TestProductCacheGet.test_cleanup_empty_cache) ... ok
+test_delete_existing_key (test_module.TestProductCacheGet.test_delete_existing_key) ... ok
+test_delete_nonexistent_key (test_module.TestProductCacheGet.test_delete_nonexistent_key) ... ok
+test_get_after_cleanup (test_module.TestProductCacheGet.test_get_after_cleanup) ... ok
+test_get_nonexistent_key (test_module.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_initialization (test_module.TestProductCacheGet.test_initialization) ... ok
+test_multiple_operations (test_module.TestProductCacheGet.test_multiple_operations) ... ok
+test_set_and_get_happy_path (test_module.TestProductCacheGet.test_set_and_get_happy_path) ... ok
+test_set_with_custom_ttl (test_module.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (test_module.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+test_ttl_expiry (test_module.TestProductCacheGet.test_ttl_expiry) ... FAIL
+
+======================================================================
+FAIL: test_ttl_expiry (test_module.TestProductCacheGet.test_ttl_expiry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_01_impl_manual_tests_Mistral\20261015T195356_e604400b\test_module.py", line 83, in test_ttl_expiry
+    self.assertIsNone(result)
+AssertionError: {'id': '8', 'name': 'peach'} is not None
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.737s
+
+FAILED (failures=1)

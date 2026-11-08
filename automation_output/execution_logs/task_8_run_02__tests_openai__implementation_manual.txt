@@ -1,54 +1,49 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:28
+Timestamp: 2026-09-30T16:49:53
 Return code: 1
 ================================================================================
 
 STANDARD OUTPUT
 --------------------------------------------------------------------------------
+writing-slugify-code-helloworld
 
 
 STANDARD ERROR
 --------------------------------------------------------------------------------
-test_all_invalid_characters_after_ignore (selected_test.TestSlugifyManual.test_all_invalid_characters_after_ignore) ... FAIL
-test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
-test_case_preservation (selected_test.TestSlugifyManual.test_case_preservation) ... ok
+test_basic_slugification_default (selected_test.TestSlugifyManual.test_basic_slugification_default) ... ok
 test_empty_input_returns_none (selected_test.TestSlugifyManual.test_empty_input_returns_none) ... ok
-test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string) ... ok
-test_ignore_characters_preserved (selected_test.TestSlugifyManual.test_ignore_characters_preserved) ... FAIL
+test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string) ... FAIL
+test_ignore_preserves_characters (selected_test.TestSlugifyManual.test_ignore_preserves_characters) ... ok
+test_ignore_with_multiple_characters (selected_test.TestSlugifyManual.test_ignore_with_multiple_characters) ... ok
 test_leading_trailing_and_repeated_whitespace (selected_test.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... ok
-test_non_ascii_transliteration (selected_test.TestSlugifyManual.test_non_ascii_transliteration) ... FAIL
-test_punctuation_only_returns_none (selected_test.TestSlugifyManual.test_punctuation_only_returns_none) ... ok
-test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string) ... ok
-test_separator_utf8_integer (selected_test.TestSlugifyManual.test_separator_utf8_integer) ... ERROR
-test_slugify_with_multiple_ignore_characters (selected_test.TestSlugifyManual.test_slugify_with_multiple_ignore_characters) ... ok
-test_truncate_long_text (selected_test.TestSlugifyManual.test_truncate_long_text) ... ok
-test_truncate_small_value_eliminates_words (selected_test.TestSlugifyManual.test_truncate_small_value_eliminates_words) ... FAIL
+test_lowercase_false_with_ignore (selected_test.TestSlugifyManual.test_lowercase_false_with_ignore) ... ok
+test_mixed_language_transliteration (selected_test.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_punctuation_only_input_returns_none (selected_test.TestSlugifyManual.test_punctuation_only_input_returns_none) ... ok
+test_separator_as_utf8_integer (selected_test.TestSlugifyManual.test_separator_as_utf8_integer) ... ERROR
+test_slugify_with_empty_separator (selected_test.TestSlugifyManual.test_slugify_with_empty_separator) ... ok
+test_slugify_with_ignore_characters (selected_test.TestSlugifyManual.test_slugify_with_ignore_characters) ... FAIL
+test_slugify_with_no_lowercase (selected_test.TestSlugifyManual.test_slugify_with_no_lowercase) ... ok
+test_slugify_with_truncate (selected_test.TestSlugifyManual.test_slugify_with_truncate) ... ok
+test_truncate_exact_word_fit (selected_test.TestSlugifyManual.test_truncate_exact_word_fit) ... ok
+test_truncate_too_small_to_fit_any_word (selected_test.TestSlugifyManual.test_truncate_too_small_to_fit_any_word) ... FAIL
 
 ======================================================================
-ERROR: test_separator_utf8_integer (selected_test.TestSlugifyManual.test_separator_utf8_integer)
+ERROR: test_separator_as_utf8_integer (selected_test.TestSlugifyManual.test_separator_as_utf8_integer)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 110, in test_separator_utf8_integer
-    result = slugify_manual(text, separator=separator)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 89, in test_separator_as_utf8_integer
+    result = slugify_manual(text, separator=95)  # ASCII for underscore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\implementation_manual.py", line 18, in slugify_manual
     if not new_text.endswith(separator):
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: endswith first arg must be str or a tuple of str, not int
 
 ======================================================================
-FAIL: test_all_invalid_characters_after_ignore (selected_test.TestSlugifyManual.test_all_invalid_characters_after_ignore)
+FAIL: test_ignore_as_string (selected_test.TestSlugifyManual.test_ignore_as_string)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 121, in test_all_invalid_characters_after_ignore
-    self.assertIsNone(result)
-AssertionError: '!' is not None
-
-======================================================================
-FAIL: test_ignore_characters_preserved (selected_test.TestSlugifyManual.test_ignore_characters_preserved)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 74, in test_ignore_characters_preserved
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 100, in test_ignore_as_string
     self.assertEqual(result, expected)
 AssertionError: '\u4f60\u597d-\u4e16\u754c' != '\u4f60\u597d-shi-jie'
 - \u4f60\u597d-\u4e16\u754c
@@ -56,27 +51,33 @@ AssertionError: '\u4f60\u597d-\u4e16\u754c' != '\u4f60\u597d-shi-jie'
 
 
 ======================================================================
-FAIL: test_non_ascii_transliteration (selected_test.TestSlugifyManual.test_non_ascii_transliteration)
+FAIL: test_mixed_language_transliteration (selected_test.TestSlugifyManual.test_mixed_language_transliteration)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 102, in test_non_ascii_transliteration
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 108, in test_mixed_language_transliteration
+    self.assertTrue(result.startswith("privet-mir") or result == "privet-mir")
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_slugify_with_ignore_characters (selected_test.TestSlugifyManual.test_slugify_with_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 49, in test_slugify_with_ignore_characters
     self.assertEqual(result, expected)
-AssertionError: 'café' != 'cafe'
-- café
-?    ^
-+ cafe
-?    ^
+AssertionError: '\u4f60\u597d-\u4e16\u754c' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d-\u4e16\u754c
++ \u4f60\u597d-shi-jie
 
 
 ======================================================================
-FAIL: test_truncate_small_value_eliminates_words (selected_test.TestSlugifyManual.test_truncate_small_value_eliminates_words)
+FAIL: test_truncate_too_small_to_fit_any_word (selected_test.TestSlugifyManual.test_truncate_too_small_to_fit_any_word)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 64, in test_truncate_small_value_eliminates_words
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_02__tests_openai__implementation_manual\selected_test.py", line 73, in test_truncate_too_small_to_fit_any_word
     self.assertIsNone(result)
-AssertionError: 'call' is not None
+AssertionError: 'hello' is not None
 
 ----------------------------------------------------------------------
-Ran 14 tests in 0.003s
+Ran 16 tests in 0.002s
 
 FAILED (failures=4, errors=1)

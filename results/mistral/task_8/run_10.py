@@ -1,7 +1,4 @@
-from unicodedata import normalize, category
-import re
-
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
     if not isinstance(text, str):
         return None
 
@@ -13,16 +10,28 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     elif isinstance(ignore, str):
         ignore = [ignore]
 
+    if not isinstance(separator, str) or len(separator) != 1:
+        return None
+
+    if not isinstance(lowercase, bool):
+        return None
+
+    if truncate is not None and (not isinstance(truncate, int) or truncate <= 0):
+        return None
+
     try:
-        normalized_text = normalize('NFKD', text)
+        normalized = text.encode('utf-8', 'ignore').decode('utf-8')
     except Exception:
+        return None
+
+    if not normalized:
         return None
 
     slug_parts = []
     current_part = []
     in_word = False
 
-    for char in normalized_text:
+    for char in normalized:
         if char in ignore:
             if current_part:
                 slug_parts.append(''.join(current_part))
@@ -31,7 +40,7 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
             in_word = False
             continue
 
-        if category(char).startswith('L') or category(char).startswith('N'):
+        if char.isalnum():
             current_part.append(char)
             in_word = True
         else:
@@ -46,39 +55,34 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     if not slug_parts:
         return None
 
-    processed_parts = []
-    for part in slug_parts:
-        if part in ignore:
-            processed_parts.append(part)
-        else:
-            cleaned_part = re.sub(r'[^\w\s-]', '', part)
-            cleaned_part = re.sub(r'[\s]+', ' ', cleaned_part)
-            if cleaned_part:
-                processed_parts.append(cleaned_part)
-
-    if not processed_parts:
-        return None
-
-    slug = ' '.join(processed_parts)
-    slug = re.sub(r'[\s]+', separator, slug)
-
     if lowercase:
-        slug = slug.lower()
+        processed_parts = [part.lower() for part in slug_parts]
+    else:
+        processed_parts = slug_parts
 
-    if truncate is not None:
-        if not isinstance(truncate, int) or truncate <= 0:
-            return None
-        words = slug.split(separator)
-        truncated_words = []
-        current_length = 0
-        for word in words:
-            if current_length + len(word) <= truncate:
-                truncated_words.append(word)
-                current_length += len(word) + len(separator)
-            else:
-                break
-        slug = separator.join(truncated_words)
-        if not slug:
-            return None
+    if separator:
+        slug = separator.join(processed_parts)
+    else:
+        slug = ''.join(processed_parts)
+
+    if truncate is not None and len(slug) > truncate:
+        if separator:
+            words = slug.split(separator)
+            truncated_parts = []
+            current_length = 0
+            for word in words:
+                if current_length + len(word) + (1 if truncated_parts else 0) <= truncate:
+                    if truncated_parts:
+                        truncated_parts.append(separator)
+                    truncated_parts.append(word)
+                    current_length += len(word) + (1 if truncated_parts else 0)
+                else:
+                    break
+            slug = ''.join(truncated_parts)
+        else:
+            slug = slug[:truncate]
+
+    if not slug:
+        return None
 
     return slug

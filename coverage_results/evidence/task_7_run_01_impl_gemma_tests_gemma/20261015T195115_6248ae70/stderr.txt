@@ -1,0 +1,9 @@
+test_shopping_list_empty_input (test_module.TestShoppingList.test_shopping_list_empty_input) ... ok
+test_shopping_list_single_item (test_module.TestShoppingList.test_shopping_list_single_item) ... ok
+test_shopping_list_with_html_in_title (test_module.TestShoppingList.test_shopping_list_with_html_in_title) ... ok
+test_shopping_list_with_multiple_items (test_module.TestShoppingList.test_shopping_list_with_multiple_items) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.013s
+
+OK

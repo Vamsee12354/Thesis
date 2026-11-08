@@ -1,0 +1,122 @@
+{
+  "key": "task_8_run_02_impl_gemma_tests_Mistral",
+  "task": 8,
+  "task_name": "task8_slugify",
+  "complexity": "Medium",
+  "run": 2,
+  "impl_llm": "gemma",
+  "test_llm": "Mistral",
+  "fingerprint": "886706bc7774e727ceb4ca2f63d5591a82ba58549918c5a37941f07d3c2e88d9",
+  "tests_run": 12,
+  "tests_passed": 5,
+  "tests_failed": 7,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 71.62162162162163,
+  "lines_covered": 53,
+  "lines_total": 74,
+  "lines_missing": 21,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_8_run_02_impl_gemma_tests_Mistral\\20261015T195248_a5cc7c66",
+  "started_utc": "2026-10-15T19:52:49+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 12,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestSlugifyManual.test_basic_slugification",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_custom_separator",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_empty_and_punctuation_only",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_as_list_or_string",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_ignore_option",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_lowercase_option",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_mixed_language_input",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_non_string_input",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_repeated_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_special_characters",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_option",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestSlugifyManual.test_truncate_with_ignore",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    15,
+    19,
+    20,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    34,
+    35,
+    37,
+    38,
+    92,
+    93,
+    123,
+    130,
+    134
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.0025,
+  "finished_utc": "2026-10-15T19:52:49+00:00",
+  "return_code": 0
+}

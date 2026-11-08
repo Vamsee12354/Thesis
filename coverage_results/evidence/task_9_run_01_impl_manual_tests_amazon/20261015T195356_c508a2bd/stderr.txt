@@ -1,0 +1,13 @@
+test_cleanup (test_module.TestProductCache.test_cleanup) ... ok
+test_delete_existing_key (test_module.TestProductCache.test_delete_existing_key) ... ok
+test_delete_non_existent_key (test_module.TestProductCache.test_delete_non_existent_key) ... ok
+test_get_non_existent_key (test_module.TestProductCache.test_get_non_existent_key) ... ok
+test_initialization (test_module.TestProductCache.test_initialization) ... ok
+test_set_and_get (test_module.TestProductCache.test_set_and_get) ... ok
+test_set_with_custom_ttl (test_module.TestProductCache.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (test_module.TestProductCache.test_set_with_negative_ttl) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.013s
+
+OK

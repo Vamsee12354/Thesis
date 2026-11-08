@@ -1,0 +1,79 @@
+{
+  "key": "task_7_run_01_impl_openai_tests_openai",
+  "task": 7,
+  "task_name": "task7_product_list_live_v",
+  "complexity": "High",
+  "run": 1,
+  "impl_llm": "openai",
+  "test_llm": "openai",
+  "fingerprint": "52dd7827e29ad814b619424153cb783e85e36c436344fe543425bec92aea34a8",
+  "tests_run": 7,
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 62.5,
+  "lines_covered": 5,
+  "lines_total": 8,
+  "lines_missing": 3,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_7_run_01_impl_openai_tests_openai\\20261015T195112_a2ec16ea",
+  "started_utc": "2026-10-15T19:51:13+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingListFunction.test_empty_shopping_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListFunction.test_html_content_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListFunction.test_multiple_items_with_html_content",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListFunction.test_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListFunction.test_single_item_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListFunction.test_titles_are_non_empty_and_non_none",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListFunction.test_titles_with_whitespace",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    4,
+    7,
+    8
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8508,
+  "finished_utc": "2026-10-15T19:51:13+00:00",
+  "return_code": 0
+}

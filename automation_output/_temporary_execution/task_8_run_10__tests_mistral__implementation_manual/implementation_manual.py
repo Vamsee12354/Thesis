@@ -32,4 +32,4 @@ def slugify_manual(text,separator='-',lowercase=True,ignore=None,truncate=None):
         return None
     return new_text
 
- 
+print(slugify_manual("writing-slugify-code-helloworld"))

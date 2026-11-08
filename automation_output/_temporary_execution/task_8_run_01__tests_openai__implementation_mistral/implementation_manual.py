@@ -1,8 +1,8 @@
-from unicodedata import normalize, category
-import re
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str):
+        return None
 
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    if not isinstance(text, str) or not text.strip():
+    if not text:
         return None
 
     if ignore is None:
@@ -10,52 +10,87 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     elif isinstance(ignore, str):
         ignore = [ignore]
 
-    normalized_text = normalize('NFKD', text)
-    slug_parts = []
-
-    for char in normalized_text:
-        if char in ignore:
-            slug_parts.append(char)
-        elif category(char).startswith('P') or category(char).startswith('S'):
-            slug_parts.append(' ')
-        elif category(char).startswith('Z') or category(char) == 'Cc':
-            slug_parts.append(' ')
-        else:
-            slug_parts.append(char)
-
-    cleaned_text = ''.join(slug_parts)
-    cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
-
-    if not cleaned_text:
+    if not isinstance(separator, str) or len(separator) != 1:
         return None
 
-    slug = []
-    for char in cleaned_text:
-        if char.isalnum():
-            slug.append(char)
-        else:
-            slug.append(' ')
+    if not isinstance(lowercase, bool):
+        return None
 
-    slug = ''.join(slug)
-    slug = re.sub(r'\s+', separator, slug).strip(separator)
+    if truncate is not None and (not isinstance(truncate, int) or truncate <= 0):
+        return None
 
-    if lowercase:
-        slug = slug.lower()
-
-    if truncate is not None:
-        if truncate <= 0:
+    try:
+        normalized = text.strip()
+        if not normalized:
             return None
-        words = slug.split(separator)
-        truncated_words = []
-        current_length = 0
-        for word in words:
-            if current_length + len(word) <= truncate:
-                truncated_words.append(word)
-                current_length += len(word) + len(separator)
+
+        slug_parts = []
+        current_part = []
+        in_word = False
+
+        for char in normalized:
+            if char in ignore:
+                if current_part:
+                    slug_parts.append("".join(current_part))
+                    current_part = []
+                slug_parts.append(char)
+                in_word = False
+            elif char.isalnum():
+                current_part.append(char)
+                in_word = True
             else:
-                break
-        slug = separator.join(truncated_words)
+                if in_word:
+                    slug_parts.append("".join(current_part))
+                    current_part = []
+                    in_word = False
+
+        if current_part:
+            slug_parts.append("".join(current_part))
+
+        if not slug_parts:
+            return None
+
+        processed_parts = []
+        for part in slug_parts:
+            if part in ignore:
+                processed_parts.append(part)
+            else:
+                transliterated = []
+                for c in part:
+                    if c.isascii() and c.isalnum():
+                        transliterated.append(c)
+                    else:
+                        try:
+                            import unicodedata
+                            norm = unicodedata.normalize('NFKD', c)
+                            for n in norm:
+                                if n.isalnum():
+                                    transliterated.append(n.lower() if lowercase else n)
+                                    break
+                        except:
+                            pass
+                if transliterated:
+                    processed_parts.append("".join(transliterated))
+
+        if not processed_parts:
+            return None
+
+        slug = separator.join(processed_parts)
+
+        if lowercase:
+            slug = slug.lower()
+
+        if truncate is not None and len(slug) > truncate:
+            last_sep_index = slug.rfind(separator)
+            if last_sep_index == -1:
+                slug = slug[:truncate]
+            else:
+                slug = slug[:last_sep_index]
+
         if not slug:
             return None
 
-    return slug if slug else None
+        return slug
+
+    except Exception:
+        return None

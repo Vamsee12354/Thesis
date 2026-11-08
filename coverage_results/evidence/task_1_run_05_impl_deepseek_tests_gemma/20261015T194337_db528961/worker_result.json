@@ -1,0 +1,78 @@
+{
+  "tests_run": 7,
+  "tests_passed": 0,
+  "tests_failed": 0,
+  "tests_errored": 7,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "counts_complete": true,
+  "coverage_pct": 7.142857142857143,
+  "lines_covered": 1,
+  "lines_total": 14,
+  "lines_missing": 13,
+  "eligible": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "started_utc": "2026-10-15T19:43:38+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_all_invalid_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_case_insensitivity_and_normalization",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_empty_input",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_mixed_valid_and_invalid",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_normal_case",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_preserves_order_of_first_appearance",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_get_unique_whitespace_handling",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    4,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.2526,
+  "finished_utc": "2026-10-15T19:43:38+00:00"
+}

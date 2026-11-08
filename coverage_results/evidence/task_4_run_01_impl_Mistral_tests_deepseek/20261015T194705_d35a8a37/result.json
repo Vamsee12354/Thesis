@@ -1,0 +1,87 @@
+{
+  "key": "task_4_run_01_impl_Mistral_tests_deepseek",
+  "task": 4,
+  "task_name": "task4_get_reading_duration",
+  "complexity": "Medium",
+  "run": 1,
+  "impl_llm": "Mistral",
+  "test_llm": "deepseek",
+  "fingerprint": "93e67c36f3ae9e5ef83fa42cfe254cb0fe6ec1d16d5ed1060ff09be8d3eb8772",
+  "tests_run": 9,
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 88.88888888888889,
+  "lines_covered": 8,
+  "lines_total": 9,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_4_run_01_impl_Mistral_tests_deepseek\\20261015T194705_d35a8a37",
+  "started_utc": "2026-10-15T19:47:05+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetReadDuration.test_201_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_399_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_450_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_empty_string",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_exactly_200_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_mixed_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_single_word",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_whitespace_only",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    9
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8258,
+  "finished_utc": "2026-10-15T19:47:05+00:00",
+  "return_code": 0
+}

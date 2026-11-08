@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:17:12
+Timestamp: 2026-09-30T16:50:25
 Return code: 1
 ================================================================================
 
@@ -24,7 +24,7 @@ test_separator (selected_test.Test_slugify_text.test_separator) ... ERROR
 test_single_word (selected_test.Test_slugify_text.test_single_word) ... ERROR
 test_spaces_single_word (selected_test.Test_slugify_text.test_spaces_single_word) ... ERROR
 test_symbols_inbetween_text (selected_test.Test_slugify_text.test_symbols_inbetween_text) ... ERROR
-test_truncate (selected_test.Test_slugify_text.test_truncate) ... FAIL
+test_truncate (selected_test.Test_slugify_text.test_truncate) ... ERROR
 
 ======================================================================
 ERROR: test_all_capitals (selected_test.Test_slugify_text.test_all_capitals)
@@ -207,17 +207,21 @@ Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'NoneType' and 'int'
 
 ======================================================================
-FAIL: test_truncate (selected_test.Test_slugify_text.test_truncate)
+ERROR: test_truncate (selected_test.Test_slugify_text.test_truncate)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_manual__implementation_amazon\selected_test.py", line 53, in test_truncate
     self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"hello%")
-AssertionError: 'he' != 'hello%'
-- he
-+ hello%
-
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_manual__implementation_amazon\implementation_manual.py", line 26, in slugify_manual
+    text = transliterate(text)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_09__tests_manual__implementation_amazon\implementation_manual.py", line 21, in transliterate
+    trans = str.maketrans('ÀÁÂÃÄÅàáâãäåÒÓÔÕÖòóôõöÈÉÊËèéêëÌÍÎÏìíîïÙÚÛÜùúûüÝŸýÿ',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: the first two maketrans arguments must have equal length
 
 ----------------------------------------------------------------------
-Ran 16 tests in 0.005s
+Ran 16 tests in 0.004s
 
-FAILED (failures=1, errors=15)
+FAILED (errors=16)

@@ -1,0 +1,110 @@
+{
+  "key": "task_3_run_06_impl_deepseek_tests_Mistral",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 6,
+  "impl_llm": "deepseek",
+  "test_llm": "Mistral",
+  "fingerprint": "fb8b3b6c9132a0a30cb6f375fc0c2526d161ad04aeba8be7c3b05d17e48f8d89",
+  "tests_run": 14,
+  "tests_passed": 12,
+  "tests_failed": 2,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 13,
+  "lines_total": 13,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_06_impl_deepseek_tests_Mistral\\20261015T194621_b7997112",
+  "started_utc": "2026-10-15T19:46:21+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 14,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_with_all_none_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_with_mixed_none_and_valid_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_with_mixed_types_including_none",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_with_string_values_raises_error",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_non_existent_attribute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_rounded_output_to_two_decimals",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_all_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_float_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_integer_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_mixed_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_negative_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_none_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_single_product",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8531,
+  "finished_utc": "2026-10-15T19:46:21+00:00",
+  "return_code": 0
+}

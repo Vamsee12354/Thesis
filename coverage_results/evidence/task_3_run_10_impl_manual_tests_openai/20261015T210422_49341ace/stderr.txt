@@ -1,0 +1,35 @@
+test_all_values_none_for_attribute (test_module.TestGetMin2Attributes.test_all_values_none_for_attribute) ... ERROR
+test_attribute_not_present_in_any_product (test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product) ... ok
+test_attribute_values_all_none_and_missing (test_module.TestGetMin2Attributes.test_attribute_values_all_none_and_missing) ... ok
+test_attribute_values_are_zero (test_module.TestGetMin2Attributes.test_attribute_values_are_zero) ... ok
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_ignore_products_without_attribute (test_module.TestGetMin2Attributes.test_ignore_products_without_attribute) ... ok
+test_integer_and_float_values (test_module.TestGetMin2Attributes.test_integer_and_float_values) ... ok
+test_minimum_value_with_another_valid_numeric_attribute (test_module.TestGetMin2Attributes.test_minimum_value_with_another_valid_numeric_attribute) ... ok
+test_minimum_value_with_valid_numeric_attribute (test_module.TestGetMin2Attributes.test_minimum_value_with_valid_numeric_attribute) ... ok
+test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values) ... FAIL
+
+======================================================================
+ERROR: test_all_values_none_for_attribute (test_module.TestGetMin2Attributes.test_all_values_none_for_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_10_impl_manual_tests_openai\20261015T210422_49341ace\test_module.py", line 58, in test_all_values_none_for_attribute
+    result = get_min_2_attributes(data, attribute)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_10_impl_manual_tests_openai\20261015T210422_49341ace\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+======================================================================
+FAIL: test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_10_impl_manual_tests_openai\20261015T210422_49341ace\test_module.py", line 84, in test_mixed_none_and_numeric_values
+    self.assertEqual(result, 5.56)
+AssertionError: 5.55 != 5.56
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.037s
+
+FAILED (failures=1, errors=1)

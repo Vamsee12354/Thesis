@@ -1,0 +1,53 @@
+test_all_capitals (test_module.Test_slugify_text.test_all_capitals) ... ok
+test_already_slugified (test_module.Test_slugify_text.test_already_slugified) ... FAIL
+test_different_language (test_module.Test_slugify_text.test_different_language) ... FAIL
+test_functionality (test_module.Test_slugify_text.test_functionality) ... ok
+test_ignore (test_module.Test_slugify_text.test_ignore) ... ok
+test_letters_spaces (test_module.Test_slugify_text.test_letters_spaces) ... ok
+test_multiple_batches_text (test_module.Test_slugify_text.test_multiple_batches_text) ... ok
+test_no_text (test_module.Test_slugify_text.test_no_text) ... ok
+test_repeated_spaces_between_words (test_module.Test_slugify_text.test_repeated_spaces_between_words) ... ok
+test_sentence_with_no_space (test_module.Test_slugify_text.test_sentence_with_no_space) ... ok
+test_sentence_with_punctuations (test_module.Test_slugify_text.test_sentence_with_punctuations) ... ok
+test_separator (test_module.Test_slugify_text.test_separator) ... ok
+test_single_word (test_module.Test_slugify_text.test_single_word) ... ok
+test_spaces_single_word (test_module.Test_slugify_text.test_spaces_single_word) ... ok
+test_symbols_inbetween_text (test_module.Test_slugify_text.test_symbols_inbetween_text) ... ok
+test_truncate (test_module.Test_slugify_text.test_truncate) ... FAIL
+
+======================================================================
+FAIL: test_already_slugified (test_module.Test_slugify_text.test_already_slugified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_manual\20261015T195310_cf69888b\test_module.py", line 38, in test_already_slugified
+    self.assertEqual(slugify_manual('writing-slugify-code-helloworld'),'writing-slugify-code-helloworld')
+AssertionError: 'writingslugifycodehelloworld' != 'writing-slugify-code-helloworld'
+- writingslugifycodehelloworld
++ writing-slugify-code-helloworld
+?        +       +    +
+
+
+======================================================================
+FAIL: test_different_language (test_module.Test_slugify_text.test_different_language)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_manual\20261015T195310_cf69888b\test_module.py", line 35, in test_different_language
+    self.assertEqual(slugify_manual('Für die WMCE wählen Radiosprecher von Weltmusikprogrammen aus 24 Europäischen Ländern jeden Monat ihre persönliche Top 10 der aktuellen Albumveröffentlichungen.'),'fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-')
+AssertionError: 'fur-[94 chars]ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen' != 'fur-[94 chars]ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-'
+- fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen
++ fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-
+?                                                                                                                                                                +
+
+
+======================================================================
+FAIL: test_truncate (test_module.Test_slugify_text.test_truncate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_deepseek_tests_manual\20261015T195310_cf69888b\test_module.py", line 53, in test_truncate
+    self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"hello%")
+AssertionError: None != 'hello%'
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.055s
+
+FAILED (failures=3)

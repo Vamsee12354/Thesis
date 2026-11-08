@@ -1,0 +1,15 @@
+test_missing_lowercase (test_module.TestIsValidPassword.test_missing_lowercase) ... ok
+test_missing_password (test_module.TestIsValidPassword.test_missing_password) ... ok
+test_missing_special_or_number (test_module.TestIsValidPassword.test_missing_special_or_number) ... ok
+test_missing_uppercase (test_module.TestIsValidPassword.test_missing_uppercase) ... ok
+test_multiple_errors (test_module.TestIsValidPassword.test_multiple_errors) ... ok
+test_password_too_long (test_module.TestIsValidPassword.test_password_too_long) ... ok
+test_password_too_short (test_module.TestIsValidPassword.test_password_too_short) ... ok
+test_valid_password (test_module.TestIsValidPassword.test_valid_password) ... ok
+test_valid_password_max_length (test_module.TestIsValidPassword.test_valid_password_max_length) ... ok
+test_valid_password_with_special_chars (test_module.TestIsValidPassword.test_valid_password_with_special_chars) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.025s
+
+OK

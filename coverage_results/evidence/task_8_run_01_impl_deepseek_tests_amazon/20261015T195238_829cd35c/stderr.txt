@@ -1,0 +1,43 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_lowercase_false (test_module.TestSlugifyManual.test_lowercase_false) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_punctuation_only_input (test_module.TestSlugifyManual.test_punctuation_only_input) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_separator_empty_string (test_module.TestSlugifyManual.test_separator_empty_string) ... ok
+test_truncate_value (test_module.TestSlugifyManual.test_truncate_value) ... ok
+test_very_small_truncate_value (test_module.TestSlugifyManual.test_very_small_truncate_value) ... FAIL
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_amazon\20261015T195238_829cd35c\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界 ", ignore=["你","好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_amazon\20261015T195238_829cd35c\test_module.py", line 33, in test_mixed_language_input
+    self.assertEqual(slugify_manual("Hello, 你好"), "hello-ni-hao")
+AssertionError: 'hello' != 'hello-ni-hao'
+- hello
++ hello-ni-hao
+
+
+======================================================================
+FAIL: test_very_small_truncate_value (test_module.TestSlugifyManual.test_very_small_truncate_value)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_amazon\20261015T195238_829cd35c\test_module.py", line 36, in test_very_small_truncate_value
+    self.assertIsNone(slugify_manual("a", truncate=1))
+AssertionError: 'a' is not None
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.035s
+
+FAILED (failures=3)

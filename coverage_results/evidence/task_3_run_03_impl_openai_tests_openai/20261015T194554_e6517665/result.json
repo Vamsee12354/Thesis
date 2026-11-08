@@ -1,0 +1,93 @@
+{
+  "key": "task_3_run_03_impl_openai_tests_openai",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 3,
+  "impl_llm": "openai",
+  "test_llm": "openai",
+  "fingerprint": "25a8a1816246839d90e360425ef1c54cd5ecea291106e916dd8355b012c8d6b2",
+  "tests_run": 10,
+  "tests_passed": 9,
+  "tests_failed": 1,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 75.0,
+  "lines_covered": 6,
+  "lines_total": 8,
+  "lines_missing": 2,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_03_impl_openai_tests_openai\\20261015T194554_e6517665",
+  "started_utc": "2026-10-15T19:45:54+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_values_none_for_attribute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_values_are_zero",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_values_with_negative_numbers",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_empty_data_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_ignore_products_without_attribute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_integer_and_float_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_minimum_value_with_another_valid_numeric_attribute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_minimum_value_with_valid_numeric_attribute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    11,
+    12
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8687,
+  "finished_utc": "2026-10-15T19:45:55+00:00",
+  "return_code": 0
+}

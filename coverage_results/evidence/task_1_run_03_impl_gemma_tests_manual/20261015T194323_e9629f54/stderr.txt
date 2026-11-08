@@ -1,0 +1,16 @@
+test_capital_can_distinguish_uniqueness (test_module.Test_unique_brands.test_capital_can_distinguish_uniqueness) ... ok
+test_if_list_unique (test_module.Test_unique_brands.test_if_list_unique) ... ok
+test_japenese_words (test_module.Test_unique_brands.test_japenese_words) ... ok
+test_list_is_empty (test_module.Test_unique_brands.test_list_is_empty) ... ok
+test_multiple_characters (test_module.Test_unique_brands.test_multiple_characters) ... ok
+test_numbers_as_strings_uniqueness (test_module.Test_unique_brands.test_numbers_as_strings_uniqueness) ... ok
+test_same_letter_uniqueness (test_module.Test_unique_brands.test_same_letter_uniqueness) ... ok
+test_symbols_uniqueness (test_module.Test_unique_brands.test_symbols_uniqueness) ... ok
+test_whitespace_only_brand (test_module.Test_unique_brands.test_whitespace_only_brand) ... ok
+test_with_nike_case_variants (test_module.Test_unique_brands.test_with_nike_case_variants) ... ok
+test_with_none_values (test_module.Test_unique_brands.test_with_none_values) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.026s
+
+OK

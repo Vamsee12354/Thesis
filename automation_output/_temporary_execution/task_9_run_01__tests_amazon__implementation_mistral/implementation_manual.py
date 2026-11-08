@@ -1,7 +1,6 @@
-
 from time import time
 
-class ProductCacheGet:
+class Product_cache_get:
     def __init__(self, expiry_time):
         self.expiry_time = expiry_time
         self.cache = {}
@@ -32,4 +31,3 @@ class ProductCacheGet:
     def cleanup(self):
         self.cache.clear()
         return "Cleaned successfully"
-```

@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:39
+Timestamp: 2026-09-30T16:50:01
 Return code: 1
 ================================================================================
 
@@ -10,108 +10,135 @@ STANDARD OUTPUT
 STANDARD ERROR
 --------------------------------------------------------------------------------
 test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... FAIL
-test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... FAIL
+test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
 test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ok
-test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases) ... ok
-test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
-test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator) ... FAIL
-test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling) ... FAIL
-test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
-test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
-test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup) ... FAIL
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... FAIL
+test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_nonexistent_chars (selected_test.TestSlugifyManual.test_ignore_nonexistent_chars) ... ok
+test_ignore_with_empty_string (selected_test.TestSlugifyManual.test_ignore_with_empty_string) ... ok
+test_ignore_with_list_input (selected_test.TestSlugifyManual.test_ignore_with_list_input) ... FAIL
+test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_string_input (selected_test.TestSlugifyManual.test_non_string_input) ... FAIL
+test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ok
+test_special_characters (selected_test.TestSlugifyManual.test_special_characters) ... FAIL
+test_truncate_edge_cases (selected_test.TestSlugifyManual.test_truncate_edge_cases) ... FAIL
+test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling) ... FAIL
 
 ======================================================================
 FAIL: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 7, in test_basic_slugification
-    self.assertEqual(slugify_manual("Hello, World!"), "hello-world")
-AssertionError: 'hello – world' != 'hello-world'
-- hello – world
-?      ^^^
-+ hello-world
-?      ^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 9, in test_basic_slugification
+    self.assertEqual(slugify_manual("  leading and trailing  "), "leading-and-trailing")
+AssertionError: '-leading-and-trailing-' != 'leading-and-trailing'
+- -leading-and-trailing-
+? -                    -
++ leading-and-trailing
 
 
 ======================================================================
-FAIL: test_case_handling (selected_test.TestSlugifyManual.test_case_handling)
+FAIL: test_empty_input (selected_test.TestSlugifyManual.test_empty_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 17, in test_case_handling
-    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
-AssertionError: 'StUdLy – CaPs' != 'StUdLy-CaPs'
-- StUdLy – CaPs
-?       ^^^
-+ StUdLy-CaPs
-?       ^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 13, in test_empty_input
+    self.assertIsNone(slugify_manual("   "))
+AssertionError: '-' is not None
+
+======================================================================
+FAIL: test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 43, in test_ignore_functionality
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: None != '\u4f60\u597d-shi-jie'
+
+======================================================================
+FAIL: test_ignore_with_list_input (selected_test.TestSlugifyManual.test_ignore_with_list_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 49, in test_ignore_with_list_input
+    self.assertEqual(slugify_manual("a!b@c#d", ignore=["!", "@"]), "a!b@c-d")
+AssertionError: 'abcd' != 'a!b@c-d'
+- abcd
++ a!b@c-d
+?  + + +
 
 
 ======================================================================
-FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
+FAIL: test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 28, in test_ignore_characters
-    self.assertEqual(
-AssertionError: None != '\u4f60\u597d-\u4e16\u754c'
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 53, in test_mixed_language_input
+    self.assertEqual(slugify_manual("\u3053\u3093\u306b\u3061\u306f\u4e16\u754c"), "konnichiha-shi-jie")
+AssertionError: None != 'konnichiha-shi-jie'
 
 ======================================================================
-FAIL: test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator)
+FAIL: test_non_string_input (selected_test.TestSlugifyManual.test_non_string_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 66, in test_preserve_ignore_with_separator
-    self.assertEqual(
-AssertionError: 'test123' != 'test_@_123'
-- test123
-+ test_@_123
-?     +++
-
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 67, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
 
 ======================================================================
-FAIL: test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling)
+FAIL: test_special_characters (selected_test.TestSlugifyManual.test_special_characters)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 61, in test_punctuation_handling
-    self.assertEqual(slugify_manual("Hello... World!!!"), "hello-world")
-AssertionError: 'hello – world' != 'hello-world'
-- hello – world
-?      ^^^
-+ hello-world
-?      ^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 63, in test_special_characters
+    self.assertEqual(slugify_manual("foo-bar_baz"), "foo-bar-baz")
+AssertionError: 'foo-bar_baz' != 'foo-bar-baz'
+- foo-bar_baz
+?        ^
++ foo-bar-baz
+?        ^
 
 
 ======================================================================
-FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
+FAIL: test_truncate_edge_cases (selected_test.TestSlugifyManual.test_truncate_edge_cases)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 22, in test_truncation
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 37, in test_truncate_edge_cases
+    self.assertIsNone(slugify_manual("Hello", truncate=1))
+AssertionError: 'h' is not None
+
+======================================================================
+FAIL: test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 31, in test_truncate_functionality
     self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
-AssertionError: 'call – me ' != 'call-me'
-- call – me 
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
 + call-me
 
 
 ======================================================================
-FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+FAIL: test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 42, in test_unicode_transliteration
-    self.assertEqual(slugify_manual("\u4f60\u597d\u4e16\u754c"), "ni-hao-shi-jie")
-AssertionError: None != 'ni-hao-shi-jie'
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 82, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("hello world", truncate=8, ignore=["l"]), "hel-lo-w")
+AssertionError: 'heo-word' != 'hel-lo-w'
+- heo-word
++ hel-lo-w
+
 
 ======================================================================
-FAIL: test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup)
+FAIL: test_whitespace_handling (selected_test.TestSlugifyManual.test_whitespace_handling)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 57, in test_whitespace_cleanup
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_mistral__implementation_amazon\selected_test.py", line 58, in test_whitespace_handling
     self.assertEqual(slugify_manual("  multiple   spaces  "), "multiple-spaces")
-AssertionError: 'multiple – spaces' != 'multiple-spaces'
-- multiple – spaces
-?         ^^^
+AssertionError: '-multiple-spaces-' != 'multiple-spaces'
+- -multiple-spaces-
+? -               -
 + multiple-spaces
-?         ^
 
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.003s
+Ran 16 tests in 0.003s
 
-FAILED (failures=8)
+FAILED (failures=11)

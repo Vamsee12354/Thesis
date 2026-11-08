@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:17:13
+Timestamp: 2026-09-30T16:50:26
 Return code: 1
 ================================================================================
 
@@ -30,7 +30,6 @@ Traceback (most recent call last):
   File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\unittest\loader.py", line 162, in loadTestsFromName
     module = __import__(module_name)
              ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_10__tests_deepseek__implementation_openai\selected_test.py", line 393
-    def test_truncate_with_all_options_multiple_characters_separator_and_multiple_ignore_case_sensitive_multiple_characters_separator_and_multiple_ignore_case_sensitive_multiple_char
-                                                                                                                                                                                      ^
-SyntaxError: expected '('
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_10__tests_deepseek__implementation_openai\selected_test.py", line 1, in <module>
+    Error
+NameError: name 'Error' is not defined. Did you mean: 'OSError'?

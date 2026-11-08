@@ -1,0 +1,30 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_email_regex_edge_cases (test_module.TestValidateForm.test_email_regex_edge_cases) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... ok
+test_missing_email (test_module.TestValidateForm.test_missing_email) ... ok
+test_missing_first_name (test_module.TestValidateForm.test_missing_first_name) ... ok
+test_missing_last_name (test_module.TestValidateForm.test_missing_last_name) ... ok
+test_missing_message (test_module.TestValidateForm.test_missing_message) ... ok
+test_missing_subject (test_module.TestValidateForm.test_missing_subject) ... ok
+test_multiple_errors_order (test_module.TestValidateForm.test_multiple_errors_order) ... ok
+test_privacy_non_boolean (test_module.TestValidateForm.test_privacy_non_boolean) ... ok
+test_privacy_not_confirmed (test_module.TestValidateForm.test_privacy_not_confirmed) ... ok
+test_valid_form_submission (test_module.TestValidateForm.test_valid_form_submission) ... ok
+test_valid_form_with_whitespace_trimming (test_module.TestValidateForm.test_valid_form_with_whitespace_trimming) ... FAIL
+
+======================================================================
+FAIL: test_valid_form_with_whitespace_trimming (test_module.TestValidateForm.test_valid_form_with_whitespace_trimming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_04_impl_openai_tests_gemma\20261015T194848_9383b649\test_module.py", line 36, in test_valid_form_with_whitespace_trimming
+    self.assertEqual(result, expected)
+AssertionError: 'Form[13 chars]tails:  Alexa  , James ,abc@gmail.com, Question , Hallo! ,True' != 'Form[13 chars]tails:Alexa,James,abc@gmail.com,Question,Hallo!,True'
+- Form is valid. Details:  Alexa  , James ,abc@gmail.com, Question , Hallo! ,True
+?                        --     -- -     -               -        - -      -
++ Form is valid. Details:Alexa,James,abc@gmail.com,Question,Hallo!,True
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.041s
+
+FAILED (failures=1)

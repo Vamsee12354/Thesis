@@ -1,0 +1,22 @@
+test_diferent_langauge (test_module.Test_get_min.test_diferent_langauge) ... ok
+test_empty_list (test_module.Test_get_min.test_empty_list) ... ok
+test_equal_values (test_module.Test_get_min.test_equal_values) ... ok
+test_get_min_2_attributes (test_module.Test_get_min.test_get_min_2_attributes) ... ok
+test_get_wrongname_attribute (test_module.Test_get_min.test_get_wrongname_attribute) ... ok
+test_multiple_lines_different_keys (test_module.Test_get_min.test_multiple_lines_different_keys) ... ok
+test_multiple_lines_different_keys_same_meaning (test_module.Test_get_min.test_multiple_lines_different_keys_same_meaning) ... FAIL
+test_nulls_all_over (test_module.Test_get_min.test_nulls_all_over) ... ok
+test_with_one_value_in_dict (test_module.Test_get_min.test_with_one_value_in_dict) ... ok
+
+======================================================================
+FAIL: test_multiple_lines_different_keys_same_meaning (test_module.Test_get_min.test_multiple_lines_different_keys_same_meaning)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_10_impl_openai_tests_manual\20261015T194652_18ec2153\test_module.py", line 73, in test_multiple_lines_different_keys_same_meaning
+    self.assertEqual(get_min_2_attributes(data,'battery'),9.99)
+AssertionError: 19.99 != 9.99
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.026s
+
+FAILED (failures=1)

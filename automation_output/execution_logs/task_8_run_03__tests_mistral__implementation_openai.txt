@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:33
+Timestamp: 2026-09-30T16:49:57
 Return code: 1
 ================================================================================
 
@@ -9,131 +9,123 @@ STANDARD OUTPUT
 
 STANDARD ERROR
 --------------------------------------------------------------------------------
-test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... FAIL
-test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... FAIL
-test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... FAIL
-test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases) ... FAIL
-test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
-test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator) ... FAIL
-test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling) ... FAIL
-test_truncation (selected_test.TestSlugifyManual.test_truncation) ... FAIL
-test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration) ... FAIL
-test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup) ... FAIL
+test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (selected_test.TestSlugifyManual.test_case_handling) ... ok
+test_complex_mixed_input (selected_test.TestSlugifyManual.test_complex_mixed_input) ... FAIL
+test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator) ... ERROR
+test_custom_separator_with_ignore (selected_test.TestSlugifyManual.test_custom_separator_with_ignore) ... ok
+test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_with_list (selected_test.TestSlugifyManual.test_ignore_with_list) ... ok
+test_ignore_with_mixed_language (selected_test.TestSlugifyManual.test_ignore_with_mixed_language) ... FAIL
+test_ignore_with_numbers (selected_test.TestSlugifyManual.test_ignore_with_numbers) ... ok
+test_ignore_with_string (selected_test.TestSlugifyManual.test_ignore_with_string) ... ok
+test_lowercase_with_ignore (selected_test.TestSlugifyManual.test_lowercase_with_ignore) ... ok
+test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_alphanumeric_removal (selected_test.TestSlugifyManual.test_non_alphanumeric_removal) ... FAIL
+test_preserve_numbers (selected_test.TestSlugifyManual.test_preserve_numbers) ... FAIL
+test_punctuation_only (selected_test.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (selected_test.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_edge_cases (selected_test.TestSlugifyManual.test_truncate_edge_cases) ... ok
+test_truncate_functionality (selected_test.TestSlugifyManual.test_truncate_functionality) ... ok
+test_truncate_with_ignore (selected_test.TestSlugifyManual.test_truncate_with_ignore) ... ok
 
 ======================================================================
-FAIL: test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugification)
+ERROR: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 7, in test_basic_slugification
-    self.assertEqual(slugify_manual("Hello, World!"), "hello-world")
-AssertionError: 'helloworld' != 'hello-world'
-- helloworld
-+ hello-world
-?      +
-
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 22, in test_custom_separator
+    self.assertEqual(slugify_manual("foo bar", separator=""), "foobar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\implementation_manual.py", line 36, in slugify_manual
+    text = re.sub(f'{re.escape(separator)}+', separator, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 691, in _parse
+    raise source.error("nothing to repeat",
+re.error: nothing to repeat at position 0
 
 ======================================================================
-FAIL: test_case_handling (selected_test.TestSlugifyManual.test_case_handling)
+FAIL: test_complex_mixed_input (selected_test.TestSlugifyManual.test_complex_mixed_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 17, in test_case_handling
-    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
-AssertionError: 'StUdLyCaPs' != 'StUdLy-CaPs'
-- StUdLyCaPs
-+ StUdLy-CaPs
-?       +
-
-
-======================================================================
-FAIL: test_custom_separator (selected_test.TestSlugifyManual.test_custom_separator)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 12, in test_custom_separator
-    self.assertEqual(slugify_manual("Hello World", separator="_"), "hello_world")
-AssertionError: 'helloworld' != 'hello_world'
-- helloworld
-+ hello_world
-?      +
-
-
-======================================================================
-FAIL: test_edge_cases (selected_test.TestSlugifyManual.test_edge_cases)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 54, in test_edge_cases
-    self.assertEqual(slugify_manual("a b", truncate=1), "a")
-AssertionError: None != 'a'
-
-======================================================================
-FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 32, in test_ignore_characters
-    self.assertEqual(
-AssertionError: 'helloworld-!' != 'hello-world!'
-- helloworld-!
-?           -
-+ hello-world!
-?      +
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 96, in test_complex_mixed_input
+    self.assertEqual(slugify_manual("  Hello, \u4e16\u754c! How's it going?  ", separator="-", lowercase=False, ignore=["\u4e16"]),
+AssertionError: 'Hello-\u4e16-How-s-it-going' != 'Hello-\u4e16\u754c-How-s-it-going'
+- Hello-\u4e16-How-s-it-going
++ Hello-\u4e16\u754c-How-s-it-going
+?        +
 
 
 ======================================================================
-FAIL: test_preserve_ignore_with_separator (selected_test.TestSlugifyManual.test_preserve_ignore_with_separator)
+FAIL: test_ignore_functionality (selected_test.TestSlugifyManual.test_ignore_functionality)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 70, in test_preserve_ignore_with_separator
-    self.assertEqual(
-AssertionError: 'helloworld' != 'HelloWorld'
-- helloworld
-? ^    ^
-+ HelloWorld
-? ^    ^
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 43, in test_ignore_functionality
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60", "\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: '\u4f60\u597d' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d
++ \u4f60\u597d-shi-jie
 
 
 ======================================================================
-FAIL: test_punctuation_handling (selected_test.TestSlugifyManual.test_punctuation_handling)
+FAIL: test_ignore_with_mixed_language (selected_test.TestSlugifyManual.test_ignore_with_mixed_language)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 61, in test_punctuation_handling
-    self.assertEqual(slugify_manual("Hello... World!!!"), "hello-world")
-AssertionError: 'helloworld' != 'hello-world'
-- helloworld
-+ hello-world
-?      +
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 62, in test_ignore_with_mixed_language
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c", ignore=["\u4f60"]), "\u4f60\u597d-shi-jie")
+AssertionError: '\u4f60' != '\u4f60\u597d-shi-jie'
+- \u4f60
++ \u4f60\u597d-shi-jie
 
 
 ======================================================================
-FAIL: test_truncation (selected_test.TestSlugifyManual.test_truncation)
+FAIL: test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 22, in test_truncation
-    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
-AssertionError: None != 'call-me'
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 57, in test_mixed_language_input
+    self.assertEqual(slugify_manual("\u3053\u3093\u306b\u3061\u306f\u4e16\u754c"), "konnichiha-shi-jie")
+AssertionError: None != 'konnichiha-shi-jie'
 
 ======================================================================
-FAIL: test_unicode_transliteration (selected_test.TestSlugifyManual.test_unicode_transliteration)
+FAIL: test_non_alphanumeric_removal (selected_test.TestSlugifyManual.test_non_alphanumeric_removal)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 42, in test_unicode_transliteration
-    self.assertEqual(slugify_manual("\u4f60\u597d\u4e16\u754c"), "ni-hao-shi-jie")
-AssertionError: '\u4f60\u597d\u4e16\u754c' != 'ni-hao-shi-jie'
-- \u4f60\u597d\u4e16\u754c
-+ ni-hao-shi-jie
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 70, in test_non_alphanumeric_removal
+    self.assertEqual(slugify_manual("foo@bar#baz"), "foobarbaz")
+AssertionError: 'foo-bar-baz' != 'foobarbaz'
+- foo-bar-baz
+?    -   -
++ foobarbaz
 
 
 ======================================================================
-FAIL: test_whitespace_cleanup (selected_test.TestSlugifyManual.test_whitespace_cleanup)
+FAIL: test_preserve_numbers (selected_test.TestSlugifyManual.test_preserve_numbers)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 57, in test_whitespace_cleanup
-    self.assertEqual(slugify_manual("  multiple   spaces  "), "multiple-spaces")
-AssertionError: 'multiplespaces' != 'multiple-spaces'
-- multiplespaces
-+ multiple-spaces
-?         +
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_03__tests_mistral__implementation_openai\selected_test.py", line 77, in test_preserve_numbers
+    self.assertEqual(slugify_manual("version 2.0"), "version-20")
+AssertionError: 'version-2-0' != 'version-20'
+- version-2-0
+?          -
++ version-20
 
 
 ----------------------------------------------------------------------
-Ran 10 tests in 0.004s
+Ran 20 tests in 0.004s
 
-FAILED (failures=10)
+FAILED (failures=6, errors=1)

@@ -1,0 +1,124 @@
+{
+  "tests_run": 19,
+  "tests_passed": 18,
+  "tests_failed": 1,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "counts_complete": true,
+  "coverage_pct": 100.0,
+  "lines_covered": 20,
+  "lines_total": 20,
+  "lines_missing": 0,
+  "eligible": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "started_utc": "2026-10-15T19:49:44+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 19,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.Test_get_min.test_email_autheticity1",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_email_autheticity2",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_email_autheticity3",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_email_functionality",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_email_replacing_symbol_with_literalmeaning",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_longname",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_message",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_name_with_diff_language",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_no_firstname_but_other_details",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_no_information",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_normalfunctionalityof_name",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_null_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_one_lettername",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_privacy_Null",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_privacy_reject",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_same_name_written",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_subject",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_try_different_extensions_email",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_min.test_try_different_extensions_email2",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.3047,
+  "finished_utc": "2026-10-15T19:49:44+00:00"
+}

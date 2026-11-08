@@ -1,0 +1,77 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_casing_options (test_module.TestSlugifyManual.test_casing_options) ... ok
+test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_invalid_inputs_and_edge_cases (test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... FAIL
+
+======================================================================
+ERROR: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_openai_tests_gemma\20261015T195333_b18efd3c\test_module.py", line 12, in test_custom_separator
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_openai_tests_gemma\20261015T195333_b18efd3c\implementation_manual.py", line 36, in slugify_manual
+    text = re.sub(f'{re.escape(separator)}+', separator, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 294, in _compile
+    p = _compiler.compile(pattern, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_compiler.py", line 745, in compile
+    p = _parser.parse(p, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 989, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 464, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 691, in _parse
+    raise source.error("nothing to repeat",
+re.error: nothing to repeat at position 0
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_openai_tests_gemma\20261015T195333_b18efd3c\test_module.py", line 34, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_openai_tests_gemma\20261015T195333_b18efd3c\test_module.py", line 41, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+AssertionError: '你好' != 'ni-hao'
+- 你好
++ ni-hao
+
+
+======================================================================
+FAIL: test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_openai_tests_gemma\20261015T195333_b18efd3c\test_module.py", line 46, in test_whitespace_handling
+    self.assertEqual(slugify_manual("\tnew\nline\r"), "new-line")
+AssertionError: 'newline' != 'new-line'
+- newline
++ new-line
+?    +
+
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.053s
+
+FAILED (failures=3, errors=1)

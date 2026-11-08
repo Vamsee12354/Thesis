@@ -1,0 +1,76 @@
+test_cleanup_on_empty_cache (test_module.TestProductCacheGetCleanup.test_cleanup_on_empty_cache) ... ok
+test_cleanup_removes_all_items (test_module.TestProductCacheGetCleanup.test_cleanup_removes_all_items) ... ok
+test_delete_existing_key (test_module.TestProductCacheGetDelete.test_delete_existing_key) ... ok
+test_delete_non_existent_key (test_module.TestProductCacheGetDelete.test_delete_non_existent_key) ... FAIL
+test_get_with_none_key (test_module.TestProductCacheGetEdgeCases.test_get_with_none_key) ... ok
+test_multiple_operations (test_module.TestProductCacheGetEdgeCases.test_multiple_operations) ... ok
+test_set_with_none_key (test_module.TestProductCacheGetEdgeCases.test_set_with_none_key) ... FAIL
+test_set_with_none_value (test_module.TestProductCacheGetEdgeCases.test_set_with_none_value) ... ok
+test_get_existing_key (test_module.TestProductCacheGetGet.test_get_existing_key) ... ok
+test_get_expired_key (test_module.TestProductCacheGetGet.test_get_expired_key) ... ok
+test_get_non_existent_key (test_module.TestProductCacheGetGet.test_get_non_existent_key) ... ok
+test_init_with_negative_expiry_time (test_module.TestProductCacheGetInitialization.test_init_with_negative_expiry_time) ... ERROR
+test_init_with_positive_expiry_time (test_module.TestProductCacheGetInitialization.test_init_with_positive_expiry_time) ... ERROR
+test_init_with_zero_expiry_time (test_module.TestProductCacheGetInitialization.test_init_with_zero_expiry_time) ... ERROR
+test_set_overwrites_existing_key (test_module.TestProductCacheGetSet.test_set_overwrites_existing_key) ... ok
+test_set_with_custom_ttl (test_module.TestProductCacheGetSet.test_set_with_custom_ttl) ... ok
+test_set_with_dict_value (test_module.TestProductCacheGetSet.test_set_with_dict_value) ... ok
+test_set_with_negative_ttl (test_module.TestProductCacheGetSet.test_set_with_negative_ttl) ... ok
+test_set_with_string_value (test_module.TestProductCacheGetSet.test_set_with_string_value) ... ok
+test_set_with_zero_ttl (test_module.TestProductCacheGetSet.test_set_with_zero_ttl) ... FAIL
+
+======================================================================
+ERROR: test_init_with_negative_expiry_time (test_module.TestProductCacheGetInitialization.test_init_with_negative_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_10_impl_gemma_tests_Mistral\20261015T200853_d9333350\test_module.py", line 16, in test_init_with_negative_expiry_time
+    self.assertEqual(cache.expiry_time, -1000)
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Product_cache_get' object has no attribute 'expiry_time'
+
+======================================================================
+ERROR: test_init_with_positive_expiry_time (test_module.TestProductCacheGetInitialization.test_init_with_positive_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_10_impl_gemma_tests_Mistral\20261015T200853_d9333350\test_module.py", line 8, in test_init_with_positive_expiry_time
+    self.assertEqual(cache.expiry_time, 60000)
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Product_cache_get' object has no attribute 'expiry_time'
+
+======================================================================
+ERROR: test_init_with_zero_expiry_time (test_module.TestProductCacheGetInitialization.test_init_with_zero_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_10_impl_gemma_tests_Mistral\20261015T200853_d9333350\test_module.py", line 12, in test_init_with_zero_expiry_time
+    self.assertEqual(cache.expiry_time, 0)
+                     ^^^^^^^^^^^^^^^^^
+AttributeError: 'Product_cache_get' object has no attribute 'expiry_time'
+
+======================================================================
+FAIL: test_delete_non_existent_key (test_module.TestProductCacheGetDelete.test_delete_non_existent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_10_impl_gemma_tests_Mistral\20261015T200853_d9333350\test_module.py", line 77, in test_delete_non_existent_key
+    self.assertEqual(result, 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_set_with_none_key (test_module.TestProductCacheGetEdgeCases.test_set_with_none_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_10_impl_gemma_tests_Mistral\20261015T200853_d9333350\test_module.py", line 104, in test_set_with_none_key
+    self.assertIsNone(cache.get(None))
+AssertionError: 'value' is not None
+
+======================================================================
+FAIL: test_set_with_zero_ttl (test_module.TestProductCacheGetSet.test_set_with_zero_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_10_impl_gemma_tests_Mistral\20261015T200853_d9333350\test_module.py", line 37, in test_set_with_zero_ttl
+    self.assertIsNone(self.cache.get('temp'))
+AssertionError: 'temporary' is not None
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.362s
+
+FAILED (failures=3, errors=3)

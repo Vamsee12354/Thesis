@@ -1,0 +1,97 @@
+{
+  "key": "task_6_run_06_impl_Mistral_tests_amazon",
+  "task": 6,
+  "task_name": "task6_validate_password",
+  "complexity": "Medium",
+  "run": 6,
+  "impl_llm": "Mistral",
+  "test_llm": "amazon",
+  "fingerprint": "314dd515ed0ff0c71b4264dbe88292c0ef89cd7d943b5efec93502e0075031db",
+  "tests_run": 11,
+  "tests_passed": 3,
+  "tests_failed": 8,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 94.73684210526316,
+  "lines_covered": 18,
+  "lines_total": 19,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_6_run_06_impl_Mistral_tests_amazon\\20261015T195036_ae86e830",
+  "started_utc": "2026-10-15T19:50:37+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 11,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestIsValidPassword.test_empty_string_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_missing_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_no_lowercase_letter",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_no_special_character_or_number",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_no_uppercase_letter",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_too_long",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_too_short",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_strong_password",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_valid_password_with_numbers",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_valid_password_with_special_characters",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_valid_password_with_uppercase_lowercase_special_and_numbers",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    23
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8147,
+  "finished_utc": "2026-10-15T19:50:37+00:00",
+  "return_code": 0
+}

@@ -1,0 +1,110 @@
+{
+  "key": "task_6_run_07_impl_manual_tests_manual",
+  "task": 6,
+  "task_name": "task6_validate_password",
+  "complexity": "Medium",
+  "run": 7,
+  "impl_llm": "manual",
+  "test_llm": "manual",
+  "fingerprint": "c6eaf03113d70be602ab3f02df756595423a91492892c85e486cd4a31852dc58",
+  "tests_run": 14,
+  "tests_passed": 14,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 28,
+  "lines_total": 28,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_6_run_07_impl_manual_tests_manual\\20261015T195038_52dc41e6",
+  "started_utc": "2026-10-15T19:50:38+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 14,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.Test_password_valid.test_diff_language",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_long_len_pwd",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_lower_upper_no_symbol",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_mix_languages",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_no_lowercase",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_no_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_no_symbols",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_no_upprcase",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_nolower_upper_symbol",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_noupper_lower_symbol",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_only_symbols",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_short_len_pwd",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_spaces_in_pwd",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_password_valid.test_working_pwd",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.7698,
+  "finished_utc": "2026-10-15T19:50:39+00:00",
+  "return_code": 0
+}

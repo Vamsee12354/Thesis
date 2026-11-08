@@ -1,0 +1,13 @@
+test_all_none_values (test_module.TestGetMin2Attributes.test_all_none_values) ... ok
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_happy_path_numeric_attributes (test_module.TestGetMin2Attributes.test_happy_path_numeric_attributes) ... ok
+test_mixed_none_values (test_module.TestGetMin2Attributes.test_mixed_none_values) ... ok
+test_non_existent_attribute (test_module.TestGetMin2Attributes.test_non_existent_attribute) ... ok
+test_non_numeric_values (test_module.TestGetMin2Attributes.test_non_numeric_values) ... ok
+test_rounding_to_two_decimals (test_module.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+test_single_valid_value (test_module.TestGetMin2Attributes.test_single_valid_value) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.021s
+
+OK

@@ -1,0 +1,19 @@
+test_empty_string_returns_one (test_module.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_excessive_whitespace_returns_one (test_module.TestGetReadDuration.test_excessive_whitespace_returns_one) ... ok
+test_fifty_words_returns_one (test_module.TestGetReadDuration.test_fifty_words_returns_one) ... ok
+test_five_hundred_words_returns_three (test_module.TestGetReadDuration.test_five_hundred_words_returns_three) ... ok
+test_four_hundred_fifty_words_returns_three (test_module.TestGetReadDuration.test_four_hundred_fifty_words_returns_three) ... ok
+test_four_hundred_ninety_nine_words_returns_three (test_module.TestGetReadDuration.test_four_hundred_ninety_nine_words_returns_three) ... ok
+test_minimum_one_minute_for_short_text (test_module.TestGetReadDuration.test_minimum_one_minute_for_short_text) ... ok
+test_mixed_languages_with_spaces_returns_correct_duration (test_module.TestGetReadDuration.test_mixed_languages_with_spaces_returns_correct_duration) ... ok
+test_non_latin_characters_with_spaces_returns_correct_duration (test_module.TestGetReadDuration.test_non_latin_characters_with_spaces_returns_correct_duration) ... ok
+test_non_latin_characters_without_spaces_returns_one (test_module.TestGetReadDuration.test_non_latin_characters_without_spaces_returns_one) ... ok
+test_single_word_returns_one (test_module.TestGetReadDuration.test_single_word_returns_one) ... ok
+test_two_words_returns_one (test_module.TestGetReadDuration.test_two_words_returns_one) ... ok
+test_very_long_text_returns_correct_duration (test_module.TestGetReadDuration.test_very_long_text_returns_correct_duration) ... ok
+test_whitespace_with_words_returns_correct_duration (test_module.TestGetReadDuration.test_whitespace_with_words_returns_correct_duration) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.032s
+
+OK

@@ -1,0 +1,50 @@
+test_400_words_returns_two (test_module.TestGetReadDuration.test_400_words_returns_two) ... ok
+test_401_words_returns_three (test_module.TestGetReadDuration.test_401_words_returns_three) ... FAIL
+test_450_words_returns_three (test_module.TestGetReadDuration.test_450_words_returns_three) ... FAIL
+test_empty_string_returns_one (test_module.TestGetReadDuration.test_empty_string_returns_one) ... ok
+test_excessive_whitespace_returns_one (test_module.TestGetReadDuration.test_excessive_whitespace_returns_one) ... ok
+test_fifty_one_words_returns_two (test_module.TestGetReadDuration.test_fifty_one_words_returns_two) ... FAIL
+test_fifty_words_returns_one (test_module.TestGetReadDuration.test_fifty_words_returns_one) ... ok
+test_long_text_with_newlines (test_module.TestGetReadDuration.test_long_text_with_newlines) ... ok
+test_mixed_whitespace (test_module.TestGetReadDuration.test_mixed_whitespace) ... ok
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... FAIL
+test_punctuation_handling (test_module.TestGetReadDuration.test_punctuation_handling) ... ok
+test_single_word_returns_one (test_module.TestGetReadDuration.test_single_word_returns_one) ... ok
+test_two_words_returns_one (test_module.TestGetReadDuration.test_two_words_returns_one) ... ok
+
+======================================================================
+FAIL: test_401_words_returns_three (test_module.TestGetReadDuration.test_401_words_returns_three)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_09_impl_Mistral_tests_Mistral\20261015T194813_e6012cdb\test_module.py", line 34, in test_401_words_returns_three
+    self.assertEqual(get_read_duration(text), 3)
+AssertionError: 2 != 3
+
+======================================================================
+FAIL: test_450_words_returns_three (test_module.TestGetReadDuration.test_450_words_returns_three)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_09_impl_Mistral_tests_Mistral\20261015T194813_e6012cdb\test_module.py", line 38, in test_450_words_returns_three
+    self.assertEqual(get_read_duration(text), 3)
+AssertionError: 2 != 3
+
+======================================================================
+FAIL: test_fifty_one_words_returns_two (test_module.TestGetReadDuration.test_fifty_one_words_returns_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_09_impl_Mistral_tests_Mistral\20261015T194813_e6012cdb\test_module.py", line 26, in test_fifty_one_words_returns_two
+    self.assertEqual(get_read_duration(text), 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_09_impl_Mistral_tests_Mistral\20261015T194813_e6012cdb\test_module.py", line 42, in test_non_latin_characters
+    self.assertEqual(get_read_duration(text), 2)
+AssertionError: 1 != 2
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.039s
+
+FAILED (failures=4)

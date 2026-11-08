@@ -1,0 +1,49 @@
+test_check_same_product_repeating (test_module.Test_get_shopping_list.test_check_same_product_repeating) ... ok
+test_empty_list (test_module.Test_get_shopping_list.test_empty_list) ... ok
+test_normal_functionality (test_module.Test_get_shopping_list.test_normal_functionality) ... ok
+test_number_functionality (test_module.Test_get_shopping_list.test_number_functionality) ... ok
+test_other_language_functionality (test_module.Test_get_shopping_list.test_other_language_functionality) ... ok
+test_single_product (test_module.Test_get_shopping_list.test_single_product) ... ok
+test_symbols_as_shopping_list (test_module.Test_get_shopping_list.test_symbols_as_shopping_list) ... ok
+test_title_caps (test_module.Test_get_shopping_list.test_title_caps) ... FAIL
+test_title_functionality (test_module.Test_get_shopping_list.test_title_functionality) ... FAIL
+test_title_no_information (test_module.Test_get_shopping_list.test_title_no_information) ... FAIL
+
+======================================================================
+FAIL: test_title_caps (test_module.Test_get_shopping_list.test_title_caps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_08_impl_deepseek_tests_manual\20261015T195214_4cdf0fd7\test_module.py", line 31, in test_title_caps
+    self.assertEqual(shopping_list([{"TITLE":"Plátano"},{"title":"Mango"},{"Title":"Manzana"},{"TiTlE":"Aguacate"}]),"<ul><li>Mango</li></ul>")
+AssertionError: '<ul><li></li><li>Mango</li><li></li><li></li></ul>' != '<ul><li>Mango</li></ul>'
+- <ul><li></li><li>Mango</li><li></li><li></li></ul>
++ <ul><li>Mango</li></ul>
+
+
+======================================================================
+FAIL: test_title_functionality (test_module.Test_get_shopping_list.test_title_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_08_impl_deepseek_tests_manual\20261015T195214_4cdf0fd7\test_module.py", line 25, in test_title_functionality
+    self.assertEqual(shopping_list([{"title1":"Sample Product 1"},{"title2":"Sample Product 2"},{"title":"Sample Product 3"}]),"<ul><li>Sample Product 3</li></ul>")
+AssertionError: '<ul><li></li><li></li><li>Sample Product 3</li></ul>' != '<ul><li>Sample Product 3</li></ul>'
+- <ul><li></li><li></li><li>Sample Product 3</li></ul>
+?    ------------------
++ <ul><li>Sample Product 3</li></ul>
+
+
+======================================================================
+FAIL: test_title_no_information (test_module.Test_get_shopping_list.test_title_no_information)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_7_run_08_impl_deepseek_tests_manual\20261015T195214_4cdf0fd7\test_module.py", line 34, in test_title_no_information
+    self.assertEqual(shopping_list([{'title':'','title':'','title':''}]),'<ul></ul>')
+AssertionError: '<ul><li></li></ul>' != '<ul></ul>'
+- <ul><li></li></ul>
++ <ul></ul>
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.033s
+
+FAILED (failures=3)

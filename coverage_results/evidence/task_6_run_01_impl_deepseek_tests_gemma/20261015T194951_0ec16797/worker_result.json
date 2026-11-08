@@ -1,0 +1,22 @@
+{
+  "tests_run": null,
+  "tests_passed": null,
+  "tests_failed": null,
+  "tests_errored": null,
+  "tests_skipped": null,
+  "expected_failures": null,
+  "unexpected_successes": null,
+  "counts_complete": false,
+  "coverage_pct": null,
+  "lines_covered": null,
+  "lines_total": null,
+  "lines_missing": null,
+  "eligible": false,
+  "status": "test_syntax_error",
+  "error_detail": "Traceback (most recent call last):\n  File \"C:\\Users\\kalup\\Desktop\\Thesis\\thesis_coverage.py\", line 206, in case_child\n    compile(filename.read_bytes(), str(filename), \"exec\")\n  File \"C:\\Users\\kalup\\Desktop\\Thesis\\coverage_results\\evidence\\task_6_run_01_impl_deepseek_tests_gemma\\20261015T194951_0ec16797\\test_module.py\", line 83\n    def test_missing_special\n                            ^\nSyntaxError: expected '('\n",
+  "started_utc": "2026-10-15T19:49:51+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "elapsed_seconds": 0.0037,
+  "finished_utc": "2026-10-15T19:49:51+00:00"
+}

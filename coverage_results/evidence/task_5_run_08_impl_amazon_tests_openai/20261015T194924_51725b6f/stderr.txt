@@ -1,0 +1,35 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_after_trim (test_module.TestValidateForm.test_email_empty_after_trim) ... ok
+test_email_empty_and_privacy_false (test_module.TestValidateForm.test_email_empty_and_privacy_false) ... ok
+test_email_with_spaces_trimmed (test_module.TestValidateForm.test_email_with_spaces_trimmed) ... FAIL
+test_fields_with_only_whitespace (test_module.TestValidateForm.test_fields_with_only_whitespace) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... ok
+test_multiple_errors_all_fields_invalid (test_module.TestValidateForm.test_multiple_errors_all_fields_invalid) ... ok
+test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean) ... FAIL
+test_privacy_policy_not_confirmed (test_module.TestValidateForm.test_privacy_policy_not_confirmed) ... ok
+test_valid_form (test_module.TestValidateForm.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_email_with_spaces_trimmed (test_module.TestValidateForm.test_email_with_spaces_trimmed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_08_impl_amazon_tests_openai\20261015T194924_51725b6f\test_module.py", line 168, in test_email_with_spaces_trimmed
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True' != 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True
+?                                 --                --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+======================================================================
+FAIL: test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_08_impl_amazon_tests_openai\20261015T194924_51725b6f\test_module.py", line 152, in test_privacy_not_boolean
+    self.assertEqual(result, ["Please confirm the privacy policy"])
+AssertionError: 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,yes' != ['Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.067s
+
+FAILED (failures=2)

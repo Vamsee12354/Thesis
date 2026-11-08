@@ -1,0 +1,102 @@
+{
+  "key": "task_6_run_01_impl_amazon_tests_deepseek",
+  "task": 6,
+  "task_name": "task6_validate_password",
+  "complexity": "Medium",
+  "run": 1,
+  "impl_llm": "amazon",
+  "test_llm": "deepseek",
+  "fingerprint": "e57a05620d02edc649895f941fac3af46a4662679b3d4dc4989b62b4c7a1c710",
+  "tests_run": 12,
+  "tests_passed": 9,
+  "tests_failed": 3,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 94.44444444444444,
+  "lines_covered": 17,
+  "lines_total": 18,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_6_run_01_impl_amazon_tests_deepseek\\20261015T194955_876d1689",
+  "started_utc": "2026-10-15T19:49:56+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 12,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestPasswordValidator.test_empty_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_long_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_missing_lowercase",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_missing_special_or_number",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_missing_uppercase",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_multiple_errors",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_none_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_short_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_valid_long_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_valid_max_length_password",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_valid_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestPasswordValidator.test_valid_password_with_special_chars",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    16
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.0454,
+  "finished_utc": "2026-10-15T19:49:56+00:00",
+  "return_code": 0
+}

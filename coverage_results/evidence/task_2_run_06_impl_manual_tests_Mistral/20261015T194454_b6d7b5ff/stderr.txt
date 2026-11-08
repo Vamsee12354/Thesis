@@ -1,0 +1,23 @@
+test_all_prices_none (test_module.TestGetAveragePrice.test_all_prices_none) ... ok
+test_all_prices_zero (test_module.TestGetAveragePrice.test_all_prices_zero) ... ok
+test_empty_price_list (test_module.TestGetAveragePrice.test_empty_price_list) ... ok
+test_float_prices (test_module.TestGetAveragePrice.test_float_prices) ... ok
+test_large_numbers (test_module.TestGetAveragePrice.test_large_numbers) ... ok
+test_mixed_prices_with_none (test_module.TestGetAveragePrice.test_mixed_prices_with_none) ... ok
+test_negative_prices (test_module.TestGetAveragePrice.test_negative_prices) ... ok
+test_normal_case_with_valid_prices (test_module.TestGetAveragePrice.test_normal_case_with_valid_prices) ... ok
+test_rounding_to_two_decimals (test_module.TestGetAveragePrice.test_rounding_to_two_decimals) ... FAIL
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_rounding_to_two_decimals (test_module.TestGetAveragePrice.test_rounding_to_two_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_06_impl_manual_tests_Mistral\20261015T194454_b6d7b5ff\test_module.py", line 54, in test_rounding_to_two_decimals
+    self.assertEqual(result, 20.45)
+AssertionError: 20.46 != 20.45
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.042s
+
+FAILED (failures=1)

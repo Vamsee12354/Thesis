@@ -1,0 +1,85 @@
+{
+  "key": "task_4_run_04_impl_deepseek_tests_openai",
+  "task": 4,
+  "task_name": "task4_get_reading_duration",
+  "complexity": "Medium",
+  "run": 4,
+  "impl_llm": "deepseek",
+  "test_llm": "openai",
+  "fingerprint": "bc1a895b7dba7f06edab4c4fd4b0de4c65db1de4b1da0b9967a435405f3be93f",
+  "tests_run": 9,
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 8,
+  "lines_total": 8,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_4_run_04_impl_deepseek_tests_openai\\20261015T194728_a1183e59",
+  "started_utc": "2026-10-15T19:47:29+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetReadDuration.test_201_words_returns_two",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_450_words_returns_three",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_empty_string_returns_minimum_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_exactly_200_words_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters_counted_as_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_short_text_less_than_200_words_returns_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_text_with_multiple_spaces_between_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_text_with_newlines_and_tabs",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.2836,
+  "finished_utc": "2026-10-15T19:47:29+00:00",
+  "return_code": 0
+}

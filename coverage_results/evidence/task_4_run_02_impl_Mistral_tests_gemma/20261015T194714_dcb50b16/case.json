@@ -1,0 +1,8 @@
+{
+  "task": 4,
+  "run": 2,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\results\\Mistral\\task_4\\run_02.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\gemma\\task_4\\run_02_test.py",
+  "fingerprint": "a89462e9d6346f2d3de15a0805a32dd88bc01b7c7374595750f405d7a4805057",
+  "timeout": 120
+}

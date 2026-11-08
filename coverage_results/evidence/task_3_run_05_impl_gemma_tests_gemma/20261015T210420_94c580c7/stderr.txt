@@ -1,0 +1,14 @@
+test_all_non_numeric_values_returns_none (test_module.TestGetMin2Attributes.test_all_non_numeric_values_returns_none) ... ok
+test_all_values_are_none_returns_none (test_module.TestGetMin2Attributes.test_all_values_are_none_returns_none) ... ok
+test_empty_list_returns_none (test_module.TestGetMin2Attributes.test_empty_list_returns_none) ... ok
+test_happy_path_float_values (test_module.TestGetMin2Attributes.test_happy_path_float_values) ... ok
+test_happy_path_integer_values (test_module.TestGetMin2Attributes.test_happy_path_integer_values) ... ok
+test_mixed_missing_and_none_values (test_module.TestGetMin2Attributes.test_mixed_missing_and_none_values) ... ok
+test_non_existent_attribute_returns_none (test_module.TestGetMin2Attributes.test_non_existent_attribute_returns_none) ... ok
+test_non_numeric_values_ignored (test_module.TestGetMin2Attributes.test_non_numeric_values_ignored) ... ok
+test_rounding_to_two_decimals (test_module.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.033s
+
+OK

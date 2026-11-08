@@ -1,48 +1,53 @@
 import re
 import unicodedata
 
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    if not text:
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str) or not text.strip():
         return None
-    
+
     if ignore is None:
         ignore = []
-    
-    normalized_text = unicodedata.normalize('NFKD', text)
-    cleaned_text = []
-    
-    for char in normalized_text:
+    elif isinstance(ignore, str):
+        ignore = [ignore]
+
+    normalized = unicodedata.normalize('NFKD', text)
+    ascii_text = []
+    for char in normalized:
         if char in ignore:
-            cleaned_text.append(char)
-        elif char.isalnum():
-            cleaned_text.append(char)
-        elif char.isspace():
-            cleaned_text.append(' ')
+            ascii_text.append(char)
+            continue
+        category = unicodedata.category(char)
+        if category == 'Mn':
+            continue
+        if char.isalnum():
+            ascii_text.append(char)
         else:
-            cleaned_text.append('')
-    
-    cleaned_text = ''.join(cleaned_text)
+            ascii_text.append(' ')
+
+    cleaned_text = ''.join(ascii_text)
+    cleaned_text = re.sub(r'[^\w\s' + re.escape(''.join(ignore)) + ']', '', cleaned_text)
     cleaned_text = re.sub(r'\s+', ' ', cleaned_text).strip()
-    
-    if lowercase:
-        cleaned_text = cleaned_text.lower()
-    
-    slug = re.sub(r'\s+', separator, cleaned_text)
-    
-    if truncate is not None and truncate > 0:
-        words = slug.split(separator)
-        truncated_slug = []
-        length = 0
-        for word in words:
-            if length + len(word) + len(truncated_slug) > truncate:
-                break
-            truncated_slug.append(word)
-            length += len(word)
-        slug = separator.join(truncated_slug)
-    
-    if not slug:
+
+    if not cleaned_text:
         return None
-    
+
+    slug = re.sub(r'\s+', separator, cleaned_text)
+
+    if lowercase:
+        slug = slug.lower()
+
+    if truncate is not None and truncate > 0:
+        parts = slug.split(separator)
+        truncated = []
+        length = 0
+        for part in parts:
+            if length + len(part) + (1 if truncated else 0) <= truncate:
+                truncated.append(part)
+                length += len(part) + (1 if truncated else 0)
+            else:
+                break
+        slug = separator.join(truncated)
+        if not slug:
+            return None
+
     return slug
-
-

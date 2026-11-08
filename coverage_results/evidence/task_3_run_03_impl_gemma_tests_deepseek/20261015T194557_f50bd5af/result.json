@@ -1,0 +1,86 @@
+{
+  "key": "task_3_run_03_impl_gemma_tests_deepseek",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 3,
+  "impl_llm": "gemma",
+  "test_llm": "deepseek",
+  "fingerprint": "4df5e76d5db256bbc6d31f60831afea9eba7b5cc43c74b1f0ba3ebd55d1a153c",
+  "tests_run": 8,
+  "tests_passed": 8,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 76.19047619047619,
+  "lines_covered": 16,
+  "lines_total": 21,
+  "lines_missing": 5,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_03_impl_gemma_tests_deepseek\\20261015T194557_f50bd5af",
+  "started_utc": "2026-10-15T19:45:58+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 8,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_none_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_empty_data_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_happy_path_numeric_attributes",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_mixed_none_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_non_existent_attribute",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_non_numeric_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_rounding_to_two_decimals",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_single_valid_value",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    10,
+    16,
+    17,
+    25,
+    26
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9463,
+  "finished_utc": "2026-10-15T19:45:58+00:00",
+  "return_code": 0
+}

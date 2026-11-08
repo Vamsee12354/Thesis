@@ -1,0 +1,74 @@
+{
+  "tests_run": 9,
+  "tests_passed": 9,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "counts_complete": true,
+  "coverage_pct": 100.0,
+  "lines_covered": 9,
+  "lines_total": 9,
+  "lines_missing": 0,
+  "eligible": true,
+  "status": "completed",
+  "error_detail": "",
+  "started_utc": "2026-10-15T19:45:13+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetAveragePrice.test_all_prices_none",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_average_with_valid_prices",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_empty_price_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_mixed_none_and_valid_prices",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_prices_with_float_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_prices_with_negative_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_prices_with_zero_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_single_valid_price",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.2587,
+  "finished_utc": "2026-10-15T19:45:14+00:00"
+}

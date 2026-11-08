@@ -1,0 +1,93 @@
+{
+  "key": "task_1_run_10_impl_gemma_tests_Mistral",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 10,
+  "impl_llm": "gemma",
+  "test_llm": "Mistral",
+  "fingerprint": "2b76723551c2fbfc5f1ad5284376794a1ab66e480deb19d2d23c7a84a335414a",
+  "tests_run": 10,
+  "tests_passed": 10,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 90.47619047619048,
+  "lines_covered": 19,
+  "lines_total": 21,
+  "lines_missing": 2,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_10_impl_gemma_tests_Mistral\\20261015T194413_5d7fcc27",
+  "started_utc": "2026-10-15T19:44:13+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_all_invalid_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_all_same_brand_case_variations",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_case_insensitive_duplicates",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_mixed_valid_and_invalid_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_mixed_with_duplicates_and_blanks",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_normal_case_with_valid_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_single_invalid_brand",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_single_valid_brand",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_whitespace_only_brand",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    16,
+    17
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.6774,
+  "finished_utc": "2026-10-15T19:44:14+00:00",
+  "return_code": 0
+}

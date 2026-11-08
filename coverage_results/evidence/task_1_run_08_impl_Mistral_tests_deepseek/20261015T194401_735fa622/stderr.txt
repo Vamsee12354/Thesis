@@ -1,0 +1,50 @@
+test_all_none_or_empty_brands (test_module.TestGetUnique.test_all_none_or_empty_brands) ... ok
+test_case_insensitive_deduplication (test_module.TestGetUnique.test_case_insensitive_deduplication) ... ok
+test_empty_input (test_module.TestGetUnique.test_empty_input) ... ok
+test_mixed_valid_and_invalid (test_module.TestGetUnique.test_mixed_valid_and_invalid) ... ok
+test_normal_case_with_valid_brands (test_module.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_preserve_order_first_occurrence (test_module.TestGetUnique.test_preserve_order_first_occurrence) ... FAIL
+test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand) ... FAIL
+
+======================================================================
+FAIL: test_preserve_order_first_occurrence (test_module.TestGetUnique.test_preserve_order_first_occurrence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_08_impl_Mistral_tests_deepseek\20261015T194401_735fa622\test_module.py", line 55, in test_preserve_order_first_occurrence
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Branda', 'Brandb'] != ['BrandA', 'BrandB']
+
+First differing element 0:
+'Branda'
+'BrandA'
+
+- ['Branda', 'Brandb']
+?        ^         ^
+
++ ['BrandA', 'BrandB']
+?        ^         ^
+
+
+======================================================================
+FAIL: test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_08_impl_Mistral_tests_deepseek\20261015T194401_735fa622\test_module.py", line 45, in test_single_valid_brand
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Singlebrand'] != ['SingleBrand']
+
+First differing element 0:
+'Singlebrand'
+'SingleBrand'
+
+- ['Singlebrand']
+?         ^
+
++ ['SingleBrand']
+?         ^
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.027s
+
+FAILED (failures=2)

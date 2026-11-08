@@ -1,0 +1,35 @@
+test_all_fields_valid_with_minimal_input (test_module.TestValidateForm.test_all_fields_valid_with_minimal_input) ... ok
+test_email_empty_and_invalid_privacy (test_module.TestValidateForm.test_email_empty_and_invalid_privacy) ... ok
+test_email_with_leading_trailing_spaces (test_module.TestValidateForm.test_email_with_leading_trailing_spaces) ... FAIL
+test_empty_body (test_module.TestValidateForm.test_empty_body) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... FAIL
+test_multiple_errors_all_fields_invalid (test_module.TestValidateForm.test_multiple_errors_all_fields_invalid) ... ok
+test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean) ... ok
+test_reject_privacy_policy (test_module.TestValidateForm.test_reject_privacy_policy) ... ok
+test_valid_form (test_module.TestValidateForm.test_valid_form) ... ok
+test_whitespace_only_fields (test_module.TestValidateForm.test_whitespace_only_fields) ... ok
+
+======================================================================
+FAIL: test_email_with_leading_trailing_spaces (test_module.TestValidateForm.test_email_with_leading_trailing_spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_10_impl_Mistral_tests_openai\20261015T194943_9fedd913\test_module.py", line 168, in test_email_with_leading_trailing_spaces
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True' != 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True
+?                                 --                --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+======================================================================
+FAIL: test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_10_impl_Mistral_tests_openai\20261015T194943_9fedd913\test_module.py", line 95, in test_invalid_email_format
+    self.assertEqual(result, ["Email standards not followed"])
+AssertionError: 'Form is valid. Details:John,Doe,john.doe@invalid-email,Hello,Test message,True' != ['Email standards not followed']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.041s
+
+FAILED (failures=2)

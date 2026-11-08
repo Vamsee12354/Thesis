@@ -1,0 +1,66 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_complex_combination (test_module.TestSlugifyManual.test_complex_combination) ... FAIL
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_invalid_inputs_and_edge_cases (test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases) ... ok
+test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option) ... ok
+test_punctuation_and_whitespace_cleanup (test_module.TestSlugifyManual.test_punctuation_and_whitespace_cleanup) ... FAIL
+test_separator_customization (test_module.TestSlugifyManual.test_separator_customization) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+
+======================================================================
+FAIL: test_complex_combination (test_module.TestSlugifyManual.test_complex_combination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_gemma\20261015T195314_e1460d21\test_module.py", line 54, in test_complex_combination
+    self.assertEqual(slugify_manual("Hello, World!", truncate=8), "hello")
+AssertionError: 'hello-wo' != 'hello'
+- hello-wo
+?      ---
++ hello
+
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_gemma\20261015T195314_e1460d21\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_punctuation_and_whitespace_cleanup (test_module.TestSlugifyManual.test_punctuation_and_whitespace_cleanup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_gemma\20261015T195314_e1460d21\test_module.py", line 36, in test_punctuation_and_whitespace_cleanup
+    self.assertEqual(slugify_manual("  Hello , World !  "), "hello-world")
+AssertionError: '-hello-world-' != 'hello-world'
+- -hello-world-
+? -           -
++ hello-world
+
+
+======================================================================
+FAIL: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_gemma\20261015T195314_e1460d21\test_module.py", line 30, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
++ call-me
+
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_gemma\20261015T195314_e1460d21\test_module.py", line 41, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+AssertionError: None != 'ni-hao'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.041s
+
+FAILED (failures=5)

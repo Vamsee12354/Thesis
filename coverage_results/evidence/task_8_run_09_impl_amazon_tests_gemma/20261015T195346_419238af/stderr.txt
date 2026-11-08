@@ -1,0 +1,125 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ERROR
+test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations) ... ERROR
+test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter) ... ERROR
+test_invalid_inputs_and_edge_cases (test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases) ... ERROR
+test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option) ... ERROR
+test_separator_customization (test_module.TestSlugifyManual.test_separator_customization) ... ERROR
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ERROR
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... ERROR
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ERROR
+
+======================================================================
+ERROR: test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 8, in test_basic_slugification
+    self.assertEqual(slugify_manual("Hello World"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_complex_combinations (test_module.TestSlugifyManual.test_complex_combinations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 61, in test_complex_combinations
+    self.assertEqual(slugify_manual("A! B? C", separator="_", lowercase=False, ignore="!"), "A!-B-C")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 26, in test_ignore_parameter
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_invalid_inputs_and_edge_cases (test_module.TestSlugifyManual.test_invalid_inputs_and_edge_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 51, in test_invalid_inputs_and_edge_cases
+    self.assertIsNone(slugify_manual(""))
+                      ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 20, in test_lowercase_option
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_separator_customization (test_module.TestSlugifyManual.test_separator_customization)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 14, in test_separator_customization
+    self.assertEqual(slugify_manual("Madam, I'm Adam", separator=""), "madamimadam")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 32, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 26, in slugify_manual
+    text = transliterate(text)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 21, in transliterate
+    trans = str.maketrans('ÀÁÂÃÄÅàáâãäåÒÓÔÕÖòóôõöÈÉÊËèéêëÌÍÎÏìíîïÙÚÛÜùúûüÝŸýÿ',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: the first two maketrans arguments must have equal length
+
+======================================================================
+ERROR: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 47, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\test_module.py", line 40, in test_whitespace_handling
+    self.assertEqual(slugify_manual("   foo    bar   "), "foo-bar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_09_impl_amazon_tests_gemma\20261015T195346_419238af\implementation_manual.py", line 11, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.042s
+
+FAILED (errors=9)

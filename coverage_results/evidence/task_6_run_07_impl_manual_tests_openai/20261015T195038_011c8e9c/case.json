@@ -1,0 +1,8 @@
+{
+  "task": 6,
+  "run": 7,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task6_validate_password\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\openai\\task_6\\run_07_test.py",
+  "fingerprint": "e4584926c051208da1a6fecbb897d18bc37d4b5601a16b94c5fd0386b29062c6",
+  "timeout": 120
+}

@@ -8,10 +8,10 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-TASK_NUMBER = 8
+TASK_NUMBER = 1
 PILOT_MODE = False
 OVERWRITE_PREVIOUS_RESULTS = True
-TIMEOUT_SECONDS = 60
+TIMEOUT_SECONDS = 600
 
 BASE_DIR = Path(r"C:\Users\kalup\Desktop\Thesis")
 MODELS = ["deepseek", "gemma", "mistral", "openai", "amazon"]
@@ -33,13 +33,19 @@ MANUAL_TASK_FOLDERS = {
 OUTPUT_DIR = BASE_DIR / "automation_output"
 WORK_DIR = OUTPUT_DIR / "_temporary_execution"
 LOG_DIR = OUTPUT_DIR / "execution_logs"
-MATRIX_CSV = OUTPUT_DIR / f"task_{TASK_NUMBER}_execution_matrix.csv"
-FAILED_TESTS_CSV = OUTPUT_DIR / f"task_{TASK_NUMBER}_failed_tests.csv"
 REVIEW_CSV = OUTPUT_DIR / f"task_{TASK_NUMBER}_review_sheet.csv"
 
-MATRIX_HEADERS = ["task", "run", "test_source", "implementation_source", "test_file", "implementation_file", "passed_tests", "failed_tests", "error_tests", "skipped_tests", "total_tests", "complete", "return_code", "log_file", "investigation_status", "failure_cause", "error_category", "manual_notes"]
-FAILED_TEST_HEADERS = ["task", "run", "test_source", "implementation_source", "test_name", "result_type", "log_file", "failure_cause", "error_category", "manual_notes"]
 REVIEW_HEADERS = ["Run", "Test LLM", "Implementation LLM", "Passed tests", "Total Tests", "Complete?", "Notes"]
+
+DISPLAY_NAMES = {
+    "deepseek": "Deepseek",
+    "gemma": "Gemma",
+    "mistral": "Mistral",
+    "openai": "OpenAI",
+    "amazon": "Amazon",
+    "manual": "Manual",
+}
+REVERSE_DISPLAY_NAMES = {v.lower(): k for k, v in DISPLAY_NAMES.items()}
 
 
 def get_test_file(task: int, run: int, test_source: str) -> Path:
@@ -54,33 +60,44 @@ def get_implementation_file(task: int, run: int, implementation_source: str) -> 
     return BASE_DIR / "results" / implementation_source / f"task_{task}" / f"run_{run:02d}.py"
 
 
-def create_csv_if_missing(path: Path, headers: list[str]) -> None:
-    if not path.exists():
-        with path.open("w", newline="", encoding="utf-8") as csv_file:
-            csv.DictWriter(csv_file, fieldnames=headers).writeheader()
-
-
-def append_csv_row(path: Path, headers: list[str], row: dict) -> None:
-    with path.open("a", newline="", encoding="utf-8") as csv_file:
-        csv.DictWriter(csv_file, fieldnames=headers).writerow(row)
-
-
 def load_completed_combinations() -> set[tuple[str, str, str]]:
     completed = set()
-    if OVERWRITE_PREVIOUS_RESULTS or not MATRIX_CSV.exists():
+    if OVERWRITE_PREVIOUS_RESULTS or not REVIEW_CSV.exists():
         return completed
-    with MATRIX_CSV.open("r", newline="", encoding="utf-8") as csv_file:
+    with REVIEW_CSV.open("r", newline="", encoding="utf-8") as csv_file:
         for row in csv.DictReader(csv_file):
-            completed.add((row["run"], row["test_source"], row["implementation_source"]))
+            run = row.get("Run", "").strip()
+            test_llm = row.get("Test LLM", "").strip().lower()
+            impl_llm = row.get("Implementation LLM", "").strip().lower()
+            if run and test_llm and impl_llm:
+                test_src = REVERSE_DISPLAY_NAMES.get(test_llm, test_llm)
+                impl_src = REVERSE_DISPLAY_NAMES.get(impl_llm, impl_llm)
+                completed.add((run, test_src, impl_src))
     return completed
 
 
-def create_review_sheet() -> None:
-    if not MATRIX_CSV.exists():
-        return
-    display_names = {"deepseek": "Deepseek", "gemma": "Gemma", "mistral": "Mistral", "openai": "OpenAI", "amazon": "Amazon", "manual": "Manual"}
-    with MATRIX_CSV.open("r", newline="", encoding="utf-8") as csv_file:
-        matrix_rows = list(csv.DictReader(csv_file))
+def load_existing_review_rows() -> list[dict]:
+    rows = []
+    if OVERWRITE_PREVIOUS_RESULTS or not REVIEW_CSV.exists():
+        return rows
+    with REVIEW_CSV.open("r", newline="", encoding="utf-8") as csv_file:
+        for r in csv.DictReader(csv_file):
+            run = r.get("Run", "").strip()
+            test_llm = r.get("Test LLM", "").strip().lower()
+            impl_llm = r.get("Implementation LLM", "").strip().lower()
+            if run and test_llm and impl_llm:
+                rows.append({
+                    "run": run,
+                    "test_source": REVERSE_DISPLAY_NAMES.get(test_llm, test_llm),
+                    "implementation_source": REVERSE_DISPLAY_NAMES.get(impl_llm, impl_llm),
+                    "passed_tests": r.get("Passed tests", "0"),
+                    "total_tests": r.get("Total Tests", "0"),
+                    "complete": r.get("Complete?", "No"),
+                })
+    return rows
+
+
+def write_review_sheet(matrix_rows: list[dict]) -> None:
     blank = {header: "" for header in REVIEW_HEADERS}
     with REVIEW_CSV.open("w", newline="", encoding="utf-8") as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=REVIEW_HEADERS)
@@ -93,8 +110,8 @@ def create_review_sheet() -> None:
                 for row in suite_rows:
                     writer.writerow({
                         "Run": row["run"],
-                        "Test LLM": display_names[row["test_source"]],
-                        "Implementation LLM": display_names[row["implementation_source"]],
+                        "Test LLM": DISPLAY_NAMES.get(row["test_source"], row["test_source"]),
+                        "Implementation LLM": DISPLAY_NAMES.get(row["implementation_source"], row["implementation_source"]),
                         "Passed tests": row["passed_tests"],
                         "Total Tests": row["total_tests"],
                         "Complete?": row["complete"],
@@ -115,17 +132,6 @@ def parse_unittest_output(output: str) -> dict:
     skipped = int(skipped_match.group(1)) if skipped_match else 0
     return {"passed": max(total - failures - errors - skipped, 0), "failed": failures, "errors": errors, "skipped": skipped, "total": total}
 
-
-def get_failed_test_events(output: str) -> list[tuple[str, str]]:
-    events = []
-    pattern = r"^(.+?)\s+\((.+?)\)\s+\.\.\.\s+(FAIL|ERROR|UNEXPECTED SUCCESS)$"
-    for line in output.splitlines():
-        match = re.match(pattern, line.strip())
-        if match:
-            events.append((f"{match.group(1)} ({match.group(2)})", match.group(3).lower().replace(" ", "_")))
-    if not events and any(text in output for text in ["ImportError", "ModuleNotFoundError", "SyntaxError", "IndentationError", "NameError"]):
-        events.append(("Test module setup/import", "execution_error"))
-    return events
 
 
 def decode_subprocess_output(output: bytes | None) -> str:
@@ -181,22 +187,19 @@ def main() -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     LOG_DIR.mkdir(parents=True, exist_ok=True)
     if OVERWRITE_PREVIOUS_RESULTS:
-        MATRIX_CSV.unlink(missing_ok=True)
-        FAILED_TESTS_CSV.unlink(missing_ok=True)
-    create_csv_if_missing(MATRIX_CSV, MATRIX_HEADERS)
-    create_csv_if_missing(FAILED_TESTS_CSV, FAILED_TEST_HEADERS)
+        REVIEW_CSV.unlink(missing_ok=True)
     completed_combinations = load_completed_combinations()
+    matrix_rows = load_existing_review_rows()
     selected_runs = [1] if PILOT_MODE else list(RUNS)
     total_combinations = len(selected_runs) * len(ALL_SOURCES) * len(ALL_SOURCES)
     executed_count = 0
     skipped_count = 0
     print("\n" + "=" * 78)
-    print(f"TASK {TASK_NUMBER}: CROSS-EVALUATION MATRIX")
+    print(f"TASK {TASK_NUMBER}: CROSS-EVALUATION REVIEW SHEET")
     print("=" * 78)
     print(f"Runs selected: {selected_runs}")
     print(f"Expected combinations: {total_combinations}")
-    print(f"Matrix CSV: {MATRIX_CSV}")
-    print(f"Individual-failure CSV: {FAILED_TESTS_CSV}")
+    print(f"Review CSV: {REVIEW_CSV}")
     print("=" * 78 + "\n")
     for run in selected_runs:
         print(f"\n--- TASK {TASK_NUMBER}, RUN {run:02d} ---\n")
@@ -211,22 +214,22 @@ def main() -> None:
                 print(f"RUN  | Run {run:02d} | {test_source:8} tests vs {implementation_source:8} implementation")
                 result = run_one_combination(TASK_NUMBER, run, test_source, implementation_source)
                 complete = result["return_code"] == 0 and result["total"] > 0 and result["failed"] == 0 and result["errors"] == 0
-                matrix_row = {"task": TASK_NUMBER, "run": run, "test_source": test_source, "implementation_source": implementation_source, "test_file": str(result["test_file"]), "implementation_file": str(result["implementation_file"]), "passed_tests": result["passed"], "failed_tests": result["failed"], "error_tests": result["errors"], "skipped_tests": result["skipped"], "total_tests": result["total"], "complete": "Yes" if complete else "No", "return_code": result["return_code"], "log_file": str(result["log_file"]), "investigation_status": "Not required" if complete else "To investigate", "failure_cause": "", "error_category": "", "manual_notes": ""}
-                append_csv_row(MATRIX_CSV, MATRIX_HEADERS, matrix_row)
-                if not complete:
-                    failure_events = get_failed_test_events(result["output"]) or [("Unidentified execution issue", "error")]
-                    for test_name, result_type in failure_events:
-                        append_csv_row(FAILED_TESTS_CSV, FAILED_TEST_HEADERS, {"task": TASK_NUMBER, "run": run, "test_source": test_source, "implementation_source": implementation_source, "test_name": test_name, "result_type": result_type, "log_file": str(result["log_file"]), "failure_cause": "", "error_category": "", "manual_notes": ""})
+                matrix_rows.append({
+                    "run": str(run),
+                    "test_source": test_source,
+                    "implementation_source": implementation_source,
+                    "passed_tests": result["passed"],
+                    "total_tests": result["total"],
+                    "complete": "Yes" if complete else "No",
+                })
                 print(f"       Passed {result['passed']}/{result['total']} | Failed {result['failed']} | Errors {result['errors']} | Skipped {result['skipped']} | Complete: {'Yes' if complete else 'No'}\n")
-    create_review_sheet()
+        write_review_sheet(matrix_rows)
     print("\n" + "=" * 78)
     print("EXECUTION FINISHED")
     print("=" * 78)
     print(f"New combinations executed: {executed_count}")
     print(f"Existing combinations skipped: {skipped_count}")
-    print(f"Matrix CSV: {MATRIX_CSV}")
-    print(f"Readable review CSV: {REVIEW_CSV}")
-    print(f"Failure CSV: {FAILED_TESTS_CSV}")
+    print(f"Review CSV: {REVIEW_CSV}")
     print(f"Traceback logs: {LOG_DIR}")
     print("=" * 78 + "\n")
 

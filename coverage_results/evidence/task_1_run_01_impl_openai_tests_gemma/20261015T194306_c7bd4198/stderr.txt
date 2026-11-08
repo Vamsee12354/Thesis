@@ -1,0 +1,12 @@
+test_get_unique_all_invalid_values (test_module.TestGetUnique.test_get_unique_all_invalid_values) ... ok
+test_get_unique_case_insensitivity_and_normalization (test_module.TestGetUnique.test_get_unique_case_insensitivity_and_normalization) ... ok
+test_get_unique_empty_input (test_module.TestGetUnique.test_get_unique_empty_input) ... ok
+test_get_unique_mixed_duplicates_and_blanks (test_module.TestGetUnique.test_get_unique_mixed_duplicates_and_blanks) ... ok
+test_get_unique_normal_case (test_module.TestGetUnique.test_get_unique_normal_case) ... ok
+test_get_unique_preserves_order_of_first_appearance (test_module.TestGetUnique.test_get_unique_preserves_order_of_first_appearance) ... ok
+test_get_unique_with_whitespace_only_strings (test_module.TestGetUnique.test_get_unique_with_whitespace_only_strings) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.022s
+
+OK

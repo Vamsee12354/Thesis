@@ -1,0 +1,70 @@
+{
+  "key": "task_2_run_01_impl_amazon_tests_gemma",
+  "task": 2,
+  "task_name": "task2_get_average_price",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "amazon",
+  "test_llm": "gemma",
+  "fingerprint": "e609250ed8e198cad181afaf3d70d19d2e9b4060a7a8bc1026aefd3bbf8cedf9",
+  "tests_run": 6,
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "tests_errored": 1,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 6,
+  "lines_total": 6,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_2_run_01_impl_amazon_tests_gemma\\20261015T194423_9b0cf6b5",
+  "started_utc": "2026-10-15T19:44:24+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 6,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetAveragePrice.test_all_prices_are_none",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_average_calculation_with_rounding",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_average_calculation_with_valid_prices",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_list_with_empty_dictionary_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_single_valid_price",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9551,
+  "finished_utc": "2026-10-15T19:44:24+00:00",
+  "return_code": 0
+}

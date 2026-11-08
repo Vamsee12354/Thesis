@@ -1,0 +1,95 @@
+{
+  "key": "task_1_run_07_impl_deepseek_tests_manual",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 7,
+  "impl_llm": "deepseek",
+  "test_llm": "manual",
+  "fingerprint": "cfba00952c5116269d00f32c187670acb5d6c79decfea7c3a8b41add2f3e7325",
+  "tests_run": 11,
+  "tests_passed": 11,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 13,
+  "lines_total": 13,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_07_impl_deepseek_tests_manual\\20261015T194351_4ad9dded",
+  "started_utc": "2026-10-15T19:43:52+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 11,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.Test_unique_brands.test_capital_can_distinguish_uniqueness",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_if_list_unique",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_japenese_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_list_is_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_multiple_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_numbers_as_strings_uniqueness",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_same_letter_uniqueness",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_symbols_uniqueness",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_whitespace_only_brand",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_with_nike_case_variants",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_unique_brands.test_with_none_values",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9752,
+  "finished_utc": "2026-10-15T19:43:52+00:00",
+  "return_code": 0
+}

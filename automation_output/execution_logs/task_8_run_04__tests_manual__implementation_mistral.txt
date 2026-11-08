@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:42
+Timestamp: 2026-09-30T16:50:03
 Return code: 1
 ================================================================================
 
@@ -32,8 +32,12 @@ FAIL: test_different_language (selected_test.Test_slugify_text.test_different_la
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_manual__implementation_mistral\selected_test.py", line 35, in test_different_language
     self.assertEqual(slugify_manual('Für die WMCE wählen Radiosprecher von Weltmusikprogrammen aus 24 Europäischen Ländern jeden Monat ihre persönliche Top 10 der aktuellen Albumveröffentlichungen.'),'fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-')
-AssertionError: 'fu-r-die-wmce-wa-hlen-radiosprecher-von-wel[118 chars]ngen' != 'fur-die-wmce-wahlen-radiosprecher-von-weltm[113 chars]gen-'
-Diff is 649 characters long. Set self.maxDiff to None to see it.
+AssertionError: 'für-die-wmce-wählen-radiosprecher-von-welt[113 chars]ngen' != 'fur-die-wmce-wahlen-radiosprecher-von-welt[114 chars]gen-'
+- für-die-wmce-wählen-radiosprecher-von-weltmusikprogrammen-aus-24-europäischen-ländern-jeden-monat-ihre-persönliche-top-10-der-aktuellen-albumveröffentlichungen
+?  ^            ^                                                       ^        ^                           ^                                    ^
++ fur-die-wmce-wahlen-radiosprecher-von-weltmusikprogrammen-aus-24-europaischen-landern-jeden-monat-ihre-personliche-top-10-der-aktuellen-albumveroffentlichungen-
+?  ^            ^                                                       ^        ^                           ^                                    ^              +
+
 
 ======================================================================
 FAIL: test_ignore (selected_test.Test_slugify_text.test_ignore)
@@ -65,7 +69,11 @@ FAIL: test_truncate (selected_test.Test_slugify_text.test_truncate)
 Traceback (most recent call last):
   File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_04__tests_manual__implementation_mistral\selected_test.py", line 53, in test_truncate
     self.assertEqual(slugify_manual("hello%  world",separator='+', ignore="%", truncate=2),"hello%")
-AssertionError: None != 'hello%'
+AssertionError: 'hello+%' != 'hello%'
+- hello+%
+?      -
++ hello%
+
 
 ----------------------------------------------------------------------
 Ran 16 tests in 0.003s

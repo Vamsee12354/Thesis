@@ -1,0 +1,86 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (test_module.TestSlugifyManual.test_case_handling) ... FAIL
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_and_punctuation_only (test_module.TestSlugifyManual.test_empty_and_punctuation_only) ... ok
+test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_string_input (test_module.TestSlugifyManual.test_non_string_input) ... FAIL
+test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars) ... FAIL
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+FAIL: test_case_handling (test_module.TestSlugifyManual.test_case_handling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 21, in test_case_handling
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=False), "StUdLy-CaPs")
+AssertionError: 't-d-y-a-s' != 'StUdLy-CaPs'
+- t-d-y-a-s
++ StUdLy-CaPs
+
+
+======================================================================
+FAIL: test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 32, in test_ignore_functionality
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好' != '你好-shi-jie'
+- 你好
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 38, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shijie")
+AssertionError: None != 'konnichiha-shijie'
+
+======================================================================
+FAIL: test_non_string_input (test_module.TestSlugifyManual.test_non_string_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 47, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_preserve_ignore_chars (test_module.TestSlugifyManual.test_preserve_ignore_chars)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 58, in test_preserve_ignore_chars
+    self.assertEqual(slugify_manual("C++ is fun", ignore=["+", " "]), "c++is+fun")
+AssertionError: 'c++-is-fun' != 'c++is+fun'
+- c++-is-fun
+?    -  ^
++ c++is+fun
+?      ^
+
+
+======================================================================
+FAIL: test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 29, in test_truncate_functionality
+    self.assertEqual(slugify_manual("Hello world", truncate=1), "")
+AssertionError: None != ''
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_10_impl_openai_tests_Mistral\20261015T195349_73149074\test_module.py", line 53, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("Hello world test", truncate=8, ignore=["test"]), "hello-world")
+AssertionError: 'hello' != 'hello-world'
+- hello
++ hello-world
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.054s
+
+FAILED (failures=7)

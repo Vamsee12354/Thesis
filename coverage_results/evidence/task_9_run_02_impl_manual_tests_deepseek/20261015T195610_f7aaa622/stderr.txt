@@ -1,0 +1,14 @@
+test_cleanup (test_module.TestProductCacheGet.test_cleanup) ... ok
+test_delete (test_module.TestProductCacheGet.test_delete) ... ok
+test_delete_nonexistent_key (test_module.TestProductCacheGet.test_delete_nonexistent_key) ... ok
+test_expiry (test_module.TestProductCacheGet.test_expiry) ... ok
+test_get_nonexistent_key (test_module.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_initialization (test_module.TestProductCacheGet.test_initialization) ... ok
+test_set_and_get (test_module.TestProductCacheGet.test_set_and_get) ... ok
+test_set_with_negative_ttl (test_module.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+test_set_with_ttl (test_module.TestProductCacheGet.test_set_with_ttl) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.318s
+
+OK

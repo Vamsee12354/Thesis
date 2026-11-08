@@ -6,7 +6,7 @@ from datetime import datetime
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="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"
 )
 
 LLM_NAME = "mistral"
@@ -29,7 +29,7 @@ Code Style:
 - Use snake_case for variable names and file names. Preserve any exact function or class name specified in the task.
 - Write concise, readable code with meaningful variable and function names.
 - Do not add any text, explanation, or code fences. Return only raw Python code.
--Return plain raw Python only
+- Return plain raw Python only
 - Never rename a function whose exact name is specified in the task.
 - Entire response should be executable python code only. Do not include any comments or explanations
 
@@ -38,26 +38,21 @@ Code Structure:
 - Do not use external libraries unless the task explicitly requires them.
 - Do not generate example usage, main blocks, or print statements unless asked.
 
-
 Error Handling:
 - Handle edge cases where appropriate using try-except.
 - Return None for invalid inputs rather than crashing silently.
 
 Output:
 - Return only the implementation code.
-- Do not include explanations or comments outside the code. 
+- Do not include explanations or comments outside the code.
 - Return raw executable Python source code only.
 - Do not wrap the code in Markdown fences such as ```python or ```.
 - Do not begin or end the response with ```, '''python, ''', or any other delimiter.
 - The first character and final character of the response must be valid Python code.
-
 """
 
 
-
-
 TASK_PROMPT = """
-
 Module Name: Slug
 Function_Name: slugify_manual()
 Purpose
@@ -101,14 +96,20 @@ slugify_manual ("Call me maybe ", truncate : 10)
 => "call-me"
 slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c ", ignore : ["\u4f60","\u597d"])
 # => "\u4f60\u597d-shi-jie"
-
-	 
-
-
 """
 
-TASK_DIR = os.path.join("results", LLM_NAME, f"task_{TASK_NUMBER}")
-METADATA_DIR = os.path.join(TASK_DIR, "metadata")
+
+TASK_DIR = os.path.join(
+    "results",
+    LLM_NAME,
+    f"task_{TASK_NUMBER}"
+)
+
+METADATA_DIR = os.path.join(
+    TASK_DIR,
+    "metadata"
+)
+
 
 def ensure_output_dirs():
     os.makedirs(TASK_DIR, exist_ok=True)
@@ -116,8 +117,15 @@ def ensure_output_dirs():
 
 
 def save_run(run_number, content, usage, elapsed_time):
-    run_file = os.path.join(TASK_DIR, f"run_{run_number:02d}.py")
-    meta_file = os.path.join(METADATA_DIR, f"run_{run_number:02d}_meta.json")
+    run_file = os.path.join(
+        TASK_DIR,
+        f"run_{run_number:02d}.py"
+    )
+
+    meta_file = os.path.join(
+        METADATA_DIR,
+        f"run_{run_number:02d}_meta.json"
+    )
 
     with open(run_file, "w", encoding="utf-8") as file:
         file.write(content or "")
@@ -135,9 +143,21 @@ def save_run(run_number, content, usage, elapsed_time):
         "max_tokens": MAX_TOKENS,
         "elapsed_time_seconds": round(elapsed_time, 4),
         "usage": {
-            "prompt_tokens": getattr(usage, "prompt_tokens", None),
-            "completion_tokens": getattr(usage, "completion_tokens", None),
-            "total_tokens": getattr(usage, "total_tokens", None)
+            "prompt_tokens": getattr(
+                usage,
+                "prompt_tokens",
+                None
+            ),
+            "completion_tokens": getattr(
+                usage,
+                "completion_tokens",
+                None
+            ),
+            "total_tokens": getattr(
+                usage,
+                "total_tokens",
+                None
+            )
         }
     }
 
@@ -159,25 +179,53 @@ for i in range(1, RUNS + 1):
             temperature=TEMPERATURE,
             top_p=TOP_P,
             seed=SEED,
-            extra_body={"top_k": TOP_K},
+            extra_body={
+                "top_k": TOP_K
+            },
             messages=[
-                {"role": "system", "content": UNIVERSAL_PROMPT},
-                {"role": "user", "content": TASK_PROMPT}
+                {
+                    "role": "system",
+                    "content": UNIVERSAL_PROMPT
+                },
+                {
+                    "role": "user",
+                    "content": TASK_PROMPT
+                }
             ]
         )
 
         elapsed_time = time.time() - start_time
+
         output = response.choices[0].message.content
         usage = getattr(response, "usage", None)
 
-        save_run(i, output, usage, elapsed_time)
+        save_run(
+            i,
+            output,
+            usage,
+            elapsed_time
+        )
 
         print(output)
-        print(f"\nSaved to results/{LLM_NAME}/task_{TASK_NUMBER}/run_{i:02d}.py")
-        print(f"Metadata saved to results/{LLM_NAME}/task_{TASK_NUMBER}/metadata/run_{i:02d}_meta.json")
+
+        print(
+            f"\nSaved to results/{LLM_NAME}/"
+            f"task_{TASK_NUMBER}/run_{i:02d}.py"
+        )
+
+        print(
+            f"Metadata saved to results/{LLM_NAME}/"
+            f"task_{TASK_NUMBER}/metadata/"
+            f"run_{i:02d}_meta.json"
+        )
 
     except Exception as error:
-        print(f"ERROR IN RUN {i}: {error}")
+        print(
+            f"ERROR IN RUN {i}: {error}"
+        )
 
-    print(f"\n{'=' * 50}\n")
+    print(
+        f"\n{'=' * 50}\n"
+    )
+
     time.sleep(SLEEP_SECONDS)

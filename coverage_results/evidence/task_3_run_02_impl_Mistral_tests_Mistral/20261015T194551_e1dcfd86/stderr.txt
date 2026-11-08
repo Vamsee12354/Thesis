@@ -1,0 +1,163 @@
+test_attribute_with_all_none_values (test_module.TestGetMin2Attributes.test_attribute_with_all_none_values) ... ERROR
+test_attribute_with_mixed_none_and_valid_values (test_module.TestGetMin2Attributes.test_attribute_with_mixed_none_and_valid_values) ... ERROR
+test_attribute_with_mixed_types_including_none (test_module.TestGetMin2Attributes.test_attribute_with_mixed_types_including_none) ... ok
+test_attribute_with_string_values_raises_error (test_module.TestGetMin2Attributes.test_attribute_with_string_values_raises_error) ... ok
+test_non_existent_attribute (test_module.TestGetMin2Attributes.test_non_existent_attribute) ... ERROR
+test_rounded_output_to_two_decimals (test_module.TestGetMin2Attributes.test_rounded_output_to_two_decimals) ... ERROR
+test_valid_numeric_attribute_with_all_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_all_values) ... ERROR
+test_valid_numeric_attribute_with_empty_list (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_empty_list) ... ERROR
+test_valid_numeric_attribute_with_float_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_float_values) ... ERROR
+test_valid_numeric_attribute_with_integer_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_integer_values) ... ERROR
+test_valid_numeric_attribute_with_mixed_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_mixed_values) ... ERROR
+test_valid_numeric_attribute_with_negative_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_negative_values) ... ERROR
+test_valid_numeric_attribute_with_none_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_none_values) ... ERROR
+test_valid_numeric_attribute_with_single_product (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_single_product) ... ERROR
+
+======================================================================
+ERROR: test_attribute_with_all_none_values (test_module.TestGetMin2Attributes.test_attribute_with_all_none_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 85, in test_attribute_with_all_none_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_attribute_with_mixed_none_and_valid_values (test_module.TestGetMin2Attributes.test_attribute_with_mixed_none_and_valid_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 95, in test_attribute_with_mixed_none_and_valid_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_non_existent_attribute (test_module.TestGetMin2Attributes.test_non_existent_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 76, in test_non_existent_attribute
+    result = get_min_2_attributes(data, "non_existent_field")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_rounded_output_to_two_decimals (test_module.TestGetMin2Attributes.test_rounded_output_to_two_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 104, in test_rounded_output_to_two_decimals
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_all_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_all_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 22, in test_valid_numeric_attribute_with_all_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_empty_list (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_empty_list)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 36, in test_valid_numeric_attribute_with_empty_list
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_float_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_float_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 68, in test_valid_numeric_attribute_with_float_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_integer_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_integer_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 59, in test_valid_numeric_attribute_with_integer_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_mixed_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_mixed_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 13, in test_valid_numeric_attribute_with_mixed_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_negative_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_negative_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 50, in test_valid_numeric_attribute_with_negative_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_none_values (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_none_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 31, in test_valid_numeric_attribute_with_none_values
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+======================================================================
+ERROR: test_valid_numeric_attribute_with_single_product (test_module.TestGetMin2Attributes.test_valid_numeric_attribute_with_single_product)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\test_module.py", line 41, in test_valid_numeric_attribute_with_single_product
+    result = get_min_2_attributes(data, "price")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_02_impl_Mistral_tests_Mistral\20261015T194551_e1dcfd86\implementation_manual.py", line 4, in get_min_2_attributes
+    if dict_search in product:
+       ^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'in <string>' requires string as left operand, not list
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.046s
+
+FAILED (errors=12)

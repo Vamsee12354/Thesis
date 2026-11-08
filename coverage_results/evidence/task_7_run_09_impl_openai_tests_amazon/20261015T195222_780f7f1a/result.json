@@ -1,0 +1,54 @@
+{
+  "key": "task_7_run_09_impl_openai_tests_amazon",
+  "task": 7,
+  "task_name": "task7_product_list_live_v",
+  "complexity": "High",
+  "run": 9,
+  "impl_llm": "openai",
+  "test_llm": "amazon",
+  "fingerprint": "b13ecda8482ecfdb707d1707b8e1da956b17825b45f2543ab06156d63f9db19a",
+  "tests_run": 2,
+  "tests_passed": 2,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 76.92307692307692,
+  "lines_covered": 10,
+  "lines_total": 13,
+  "lines_missing": 3,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_7_run_09_impl_openai_tests_amazon\\20261015T195222_780f7f1a",
+  "started_utc": "2026-10-15T19:52:22+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 2,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingListView.test_empty_shopping_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListView.test_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    4,
+    12,
+    13
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8605,
+  "finished_utc": "2026-10-15T19:52:22+00:00",
+  "return_code": 0
+}

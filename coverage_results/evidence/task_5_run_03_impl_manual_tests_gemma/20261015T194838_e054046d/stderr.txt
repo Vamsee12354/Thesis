@@ -1,0 +1,27 @@
+test_validate_form_all_fields_empty (test_module.TestValidateForm.test_validate_form_all_fields_empty) ... ok
+test_validate_form_all_fields_whitespace_only (test_module.TestValidateForm.test_validate_form_all_fields_whitespace_only) ... ok
+test_validate_form_email_empty_after_trim (test_module.TestValidateForm.test_validate_form_email_empty_after_trim) ... ok
+test_validate_form_email_invalid_format_with_other_errors (test_module.TestValidateForm.test_validate_form_email_invalid_format_with_other_errors) ... ok
+test_validate_form_invalid_email_format (test_module.TestValidateForm.test_validate_form_invalid_email_format) ... ok
+test_validate_form_invalid_privacy_false (test_module.TestValidateForm.test_validate_form_invalid_privacy_false) ... ok
+test_validate_form_invalid_privacy_none (test_module.TestValidateForm.test_validate_form_invalid_privacy_none) ... ok
+test_validate_form_multiple_errors_order (test_module.TestValidateForm.test_validate_form_multiple_errors_order) ... ok
+test_validate_form_success (test_module.TestValidateForm.test_validate_form_success) ... ok
+test_validate_form_success_with_whitespace_trimming (test_module.TestValidateForm.test_validate_form_success_with_whitespace_trimming) ... FAIL
+
+======================================================================
+FAIL: test_validate_form_success_with_whitespace_trimming (test_module.TestValidateForm.test_validate_form_success_with_whitespace_trimming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_03_impl_manual_tests_gemma\20261015T194838_e054046d\test_module.py", line 32, in test_validate_form_success_with_whitespace_trimming
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Marston  ,  john@example.com  [22 chars]True' != 'Form[14 chars]ails:John,Marston,john@example.com,Frage,Hallo!,True'
+- Form is valid. Details:  John  ,  Marston  ,  john@example.com  ,  Frage  ,  Hallo!  ,True
+?                        --    -- --       -- --                -- --     -- --      --
++ Form is valid. Details:John,Marston,john@example.com,Frage,Hallo!,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.039s
+
+FAILED (failures=1)

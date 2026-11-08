@@ -1,0 +1,22 @@
+test_all_non_numeric_values (test_module.TestGetMin2Attributes.test_all_non_numeric_values) ... ok
+test_all_values_none_for_attribute (test_module.TestGetMin2Attributes.test_all_values_none_for_attribute) ... ok
+test_attribute_not_present_in_any_product (test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product) ... ok
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_integer_and_float_values (test_module.TestGetMin2Attributes.test_integer_and_float_values) ... ok
+test_minimum_battery_life_with_valid_data (test_module.TestGetMin2Attributes.test_minimum_battery_life_with_valid_data) ... ok
+test_minimum_price_with_valid_data (test_module.TestGetMin2Attributes.test_minimum_price_with_valid_data) ... ok
+test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values) ... FAIL
+test_non_numeric_values_ignored (test_module.TestGetMin2Attributes.test_non_numeric_values_ignored) ... ok
+
+======================================================================
+FAIL: test_mixed_none_and_numeric_values (test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_08_impl_openai_tests_openai\20261015T194635_2278ae11\test_module.py", line 102, in test_mixed_none_and_numeric_values
+    self.assertEqual(result, expected)
+AssertionError: 5.55 != 5.56
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.038s
+
+FAILED (failures=1)

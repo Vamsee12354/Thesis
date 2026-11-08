@@ -1,0 +1,21 @@
+test_cleanup_clears_all_items (test_module.TestProductCacheGet.test_cleanup_clears_all_items) ... ok
+test_delete_existing_key (test_module.TestProductCacheGet.test_delete_existing_key) ... ok
+test_get_non_existent_key (test_module.TestProductCacheGet.test_get_non_existent_key) ... ok
+test_init_initialization (test_module.TestProductCacheGet.test_init_initialization) ... ok
+test_set_and_get_happy_path (test_module.TestProductCacheGet.test_set_and_get_happy_path) ... ok
+test_set_with_custom_ttl (test_module.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl_invalidates_immediately (test_module.TestProductCacheGet.test_set_with_negative_ttl_invalidates_immediately) ... ok
+test_ttl_expiration (test_module.TestProductCacheGet.test_ttl_expiration) ... FAIL
+
+======================================================================
+FAIL: test_ttl_expiration (test_module.TestProductCacheGet.test_ttl_expiration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_09_impl_amazon_tests_gemma\20261015T200717_f560e6ed\test_module.py", line 101, in test_ttl_expiration
+    self.assertIsNone(result)
+AssertionError: 'temporary' is not None
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.071s
+
+FAILED (failures=1)

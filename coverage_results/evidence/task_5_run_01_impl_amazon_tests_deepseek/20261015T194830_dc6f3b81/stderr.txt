@@ -1,0 +1,30 @@
+test_empty_fields (test_module.TestFormValidation.test_empty_fields) ... ok
+test_invalid_email_empty (test_module.TestFormValidation.test_invalid_email_empty) ... ok
+test_invalid_email_format (test_module.TestFormValidation.test_invalid_email_format) ... ok
+test_invalid_email_whitespace (test_module.TestFormValidation.test_invalid_email_whitespace) ... ok
+test_invalid_first_name_empty (test_module.TestFormValidation.test_invalid_first_name_empty) ... ok
+test_invalid_last_name_empty (test_module.TestFormValidation.test_invalid_last_name_empty) ... ok
+test_invalid_message_empty (test_module.TestFormValidation.test_invalid_message_empty) ... ok
+test_invalid_privacy (test_module.TestFormValidation.test_invalid_privacy) ... ok
+test_invalid_privacy_empty (test_module.TestFormValidation.test_invalid_privacy_empty) ... ok
+test_invalid_privacy_false (test_module.TestFormValidation.test_invalid_privacy_false) ... ok
+test_invalid_privacy_type (test_module.TestFormValidation.test_invalid_privacy_type) ... FAIL
+test_invalid_subject_empty (test_module.TestFormValidation.test_invalid_subject_empty) ... ok
+test_multiple_errors (test_module.TestFormValidation.test_multiple_errors) ... ok
+test_multiple_invalid_fields (test_module.TestFormValidation.test_multiple_invalid_fields) ... ok
+test_valid_form (test_module.TestFormValidation.test_valid_form) ... ok
+test_valid_form_with_whitespace (test_module.TestFormValidation.test_valid_form_with_whitespace) ... ok
+test_whitespace_fields (test_module.TestFormValidation.test_whitespace_fields) ... ok
+
+======================================================================
+FAIL: test_invalid_privacy_type (test_module.TestFormValidation.test_invalid_privacy_type)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_01_impl_amazon_tests_deepseek\20261015T194830_dc6f3b81\test_module.py", line 35, in test_invalid_privacy_type
+    self.assertEqual(result, ["Please confirm the privacy policy"])
+AssertionError: 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,True' != ['Please confirm the privacy policy']
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.052s
+
+FAILED (failures=1)

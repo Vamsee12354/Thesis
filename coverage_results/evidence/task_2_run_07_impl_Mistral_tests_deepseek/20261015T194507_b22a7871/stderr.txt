@@ -1,0 +1,20 @@
+test_all_missing_prices (test_module.TestGetAveragePrice.test_all_missing_prices) ... ok
+test_all_valid_prices (test_module.TestGetAveragePrice.test_all_valid_prices) ... ok
+test_empty_list (test_module.TestGetAveragePrice.test_empty_list) ... ok
+test_mixed_valid_and_missing_prices (test_module.TestGetAveragePrice.test_mixed_valid_and_missing_prices) ... ok
+test_multiple_prices_with_decimals (test_module.TestGetAveragePrice.test_multiple_prices_with_decimals) ... FAIL
+test_normal_case (test_module.TestGetAveragePrice.test_normal_case) ... ok
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_multiple_prices_with_decimals (test_module.TestGetAveragePrice.test_multiple_prices_with_decimals)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_07_impl_Mistral_tests_deepseek\20261015T194507_b22a7871\test_module.py", line 23, in test_multiple_prices_with_decimals
+    self.assertEqual(get_average_price(price_list), 20.83)
+AssertionError: 20.5 != 20.83
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.030s
+
+FAILED (failures=1)

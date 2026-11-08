@@ -1,0 +1,15 @@
+test_empty_email (test_module.TestFormValidation.test_empty_email) ... ok
+test_empty_fields (test_module.TestFormValidation.test_empty_fields) ... ok
+test_invalid_email_and_privacy (test_module.TestFormValidation.test_invalid_email_and_privacy) ... ok
+test_invalid_email_format (test_module.TestFormValidation.test_invalid_email_format) ... ok
+test_invalid_privacy (test_module.TestFormValidation.test_invalid_privacy) ... ok
+test_invalid_privacy_type (test_module.TestFormValidation.test_invalid_privacy_type) ... ok
+test_multiple_errors (test_module.TestFormValidation.test_multiple_errors) ... ok
+test_valid_form (test_module.TestFormValidation.test_valid_form) ... ok
+test_valid_form_with_whitespace (test_module.TestFormValidation.test_valid_form_with_whitespace) ... ok
+test_whitespace_fields (test_module.TestFormValidation.test_whitespace_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.025s
+
+OK

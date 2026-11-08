@@ -1,0 +1,30 @@
+test_validate_form_all_fields_empty (test_module.TestValidateForm.test_validate_form_all_fields_empty) ... ok
+test_validate_form_all_fields_whitespace_only (test_module.TestValidateForm.test_validate_form_all_fields_whitespace_only) ... ok
+test_validate_form_email_empty_after_trim (test_module.TestValidateForm.test_validate_form_email_empty_after_trim) ... ok
+test_validate_form_invalid_email_format (test_module.TestValidateForm.test_validate_form_invalid_email_format) ... ok
+test_validate_form_multiple_errors_order (test_module.TestValidateForm.test_validate_form_multiple_errors_order) ... ok
+test_validate_form_privacy_false (test_module.TestValidateForm.test_validate_form_privacy_false) ... ok
+test_validate_form_privacy_not_boolean (test_module.TestValidateForm.test_validate_form_privacy_not_boolean) ... ok
+test_validate_form_single_error_first_name (test_module.TestValidateForm.test_validate_form_single_error_first_name) ... ok
+test_validate_form_single_error_last_name (test_module.TestValidateForm.test_validate_form_single_error_last_name) ... ok
+test_validate_form_single_error_message (test_module.TestValidateForm.test_validate_form_single_error_message) ... ok
+test_validate_form_single_error_subject (test_module.TestValidateForm.test_validate_form_single_error_subject) ... ok
+test_validate_form_success (test_module.TestValidateForm.test_validate_form_success) ... ok
+test_validate_form_success_with_whitespace_trimming (test_module.TestValidateForm.test_validate_form_success_with_whitespace_trimming) ... FAIL
+
+======================================================================
+FAIL: test_validate_form_success_with_whitespace_trimming (test_module.TestValidateForm.test_validate_form_success_with_whitespace_trimming)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_07_impl_Mistral_tests_gemma\20261015T194915_bc326c5a\test_module.py", line 32, in test_validate_form_success_with_whitespace_trimming
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Marston  ,  john@example.com  [22 chars]True' != 'Form[14 chars]ails:John,Marston,john@example.com,Frage,Hallo!,True'
+- Form is valid. Details:  John  ,  Marston  ,  john@example.com  ,  Frage  ,  Hallo!  ,True
+?                        --    -- --       -- --                -- --     -- --      --
++ Form is valid. Details:John,Marston,john@example.com,Frage,Hallo!,True
+
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.044s
+
+FAILED (failures=1)

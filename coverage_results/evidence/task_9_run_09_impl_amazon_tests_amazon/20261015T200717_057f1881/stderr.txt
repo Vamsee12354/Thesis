@@ -1,0 +1,20 @@
+test_cleanup (test_module.TestProductCache.test_cleanup) ... ok
+test_delete_existing_key (test_module.TestProductCache.test_delete_existing_key) ... ok
+test_delete_non_existent_key (test_module.TestProductCache.test_delete_non_existent_key) ... FAIL
+test_get_non_existent_key (test_module.TestProductCache.test_get_non_existent_key) ... ok
+test_set_and_get (test_module.TestProductCache.test_set_and_get) ... ok
+test_set_with_custom_ttl (test_module.TestProductCache.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (test_module.TestProductCache.test_set_with_negative_ttl) ... ok
+
+======================================================================
+FAIL: test_delete_non_existent_key (test_module.TestProductCache.test_delete_non_existent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_09_impl_amazon_tests_amazon\20261015T200717_057f1881\test_module.py", line 26, in test_delete_non_existent_key
+    self.assertEqual(self.cache.delete('non-existent'), 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.024s
+
+FAILED (failures=1)

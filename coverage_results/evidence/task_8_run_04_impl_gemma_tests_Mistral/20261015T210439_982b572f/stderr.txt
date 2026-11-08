@@ -1,0 +1,94 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_case_handling (test_module.TestSlugifyManual.test_case_handling) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality) ... FAIL
+test_ignore_nonexistent_chars (test_module.TestSlugifyManual.test_ignore_nonexistent_chars) ... ok
+test_ignore_with_empty_string (test_module.TestSlugifyManual.test_ignore_with_empty_string) ... ok
+test_ignore_with_list_input (test_module.TestSlugifyManual.test_ignore_with_list_input) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_string_input (test_module.TestSlugifyManual.test_non_string_input) ... FAIL
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_special_characters (test_module.TestSlugifyManual.test_special_characters) ... FAIL
+test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases) ... FAIL
+test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ok
+
+======================================================================
+FAIL: test_ignore_functionality (test_module.TestSlugifyManual.test_ignore_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 43, in test_ignore_functionality
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 53, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shi-jie")
+AssertionError: 'こんにちは世界' != 'konnichiha-shi-jie'
+- こんにちは世界
++ konnichiha-shi-jie
+
+
+======================================================================
+FAIL: test_non_string_input (test_module.TestSlugifyManual.test_non_string_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 67, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_special_characters (test_module.TestSlugifyManual.test_special_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 62, in test_special_characters
+    self.assertEqual(slugify_manual("foo@bar#baz"), "foobarbaz")
+AssertionError: 'foo-bar-baz' != 'foobarbaz'
+- foo-bar-baz
+?    -   -
++ foobarbaz
+
+
+======================================================================
+FAIL: test_truncate_edge_cases (test_module.TestSlugifyManual.test_truncate_edge_cases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 37, in test_truncate_edge_cases
+    self.assertIsNone(slugify_manual("Hello", truncate=1))
+AssertionError: 'h' is not None
+
+======================================================================
+FAIL: test_truncate_functionality (test_module.TestSlugifyManual.test_truncate_functionality)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 34, in test_truncate_functionality
+    self.assertEqual(slugify_manual("a b c d e", truncate=3), "a-b")
+AssertionError: 'a' != 'a-b'
+- a
++ a-b
+
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_gemma_tests_Mistral\20261015T210439_982b572f\test_module.py", line 82, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("hello world", truncate=8, ignore=["l"]), "hel-lo-w")
+AssertionError: 'hello' != 'hel-lo-w'
+- hello
++ hel-lo-w
+?    +  ++
+
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.054s
+
+FAILED (failures=7)

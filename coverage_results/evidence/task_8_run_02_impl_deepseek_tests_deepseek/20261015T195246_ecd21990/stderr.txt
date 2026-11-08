@@ -1,0 +1,46 @@
+test_basic_conversion (test_module.TestSlugifyManual.test_basic_conversion) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_edge_case_truncation (test_module.TestSlugifyManual.test_edge_case_truncation) ... FAIL
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter) ... FAIL
+test_lowercase_parameter (test_module.TestSlugifyManual.test_lowercase_parameter) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... ok
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ok
+
+======================================================================
+FAIL: test_edge_case_truncation (test_module.TestSlugifyManual.test_edge_case_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_deepseek_tests_deepseek\20261015T195246_ecd21990\test_module.py", line 45, in test_edge_case_truncation
+    self.assertIsNone(slugify_manual("a b c", truncate=0))
+AssertionError: 'a-b-c' is not None
+
+======================================================================
+FAIL: test_ignore_parameter (test_module.TestSlugifyManual.test_ignore_parameter)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_deepseek_tests_deepseek\20261015T195246_ecd21990\test_module.py", line 27, in test_ignore_parameter
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你","好"]), "你好-shi-jie")
+AssertionError: '你好世界' != '你好-shi-jie'
+- 你好世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_deepseek_tests_deepseek\20261015T195246_ecd21990\test_module.py", line 48, in test_mixed_language_input
+    self.assertEqual(slugify_manual("Hello 你好"), "hello-ni-hao")
+AssertionError: 'hello-你好' != 'hello-ni-hao'
+- hello-你好
++ hello-ni-hao
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.054s
+
+FAILED (failures=3)

@@ -1,0 +1,40 @@
+test_all_duplicates (test_module.TestGetUnique.test_all_duplicates) ... ok
+test_all_none_or_empty_brands (test_module.TestGetUnique.test_all_none_or_empty_brands) ... ok
+test_case_insensitive_deduplication (test_module.TestGetUnique.test_case_insensitive_deduplication) ... ok
+test_empty_input (test_module.TestGetUnique.test_empty_input) ... ok
+test_mixed_valid_and_invalid (test_module.TestGetUnique.test_mixed_valid_and_invalid) ... ok
+test_no_brand_key_raises_error (test_module.TestGetUnique.test_no_brand_key_raises_error) ... FAIL
+test_normal_case_with_valid_brands (test_module.TestGetUnique.test_normal_case_with_valid_brands) ... ok
+test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand) ... FAIL
+
+======================================================================
+FAIL: test_no_brand_key_raises_error (test_module.TestGetUnique.test_no_brand_key_raises_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_09_impl_manual_tests_deepseek\20261015T194403_145f1025\test_module.py", line 57, in test_no_brand_key_raises_error
+    with self.assertRaises(KeyError):
+AssertionError: KeyError not raised
+
+======================================================================
+FAIL: test_single_valid_brand (test_module.TestGetUnique.test_single_valid_brand)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_09_impl_manual_tests_deepseek\20261015T194403_145f1025\test_module.py", line 44, in test_single_valid_brand
+    self.assertEqual(get_unique(input_data), expected)
+AssertionError: Lists differ: ['Singlebrand'] != ['SingleBrand']
+
+First differing element 0:
+'Singlebrand'
+'SingleBrand'
+
+- ['Singlebrand']
+?         ^
+
++ ['SingleBrand']
+?         ^
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.023s
+
+FAILED (failures=2)

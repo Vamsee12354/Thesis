@@ -1,0 +1,12 @@
+test_empty_string (test_module.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (test_module.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_long_post (test_module.TestGetReadDuration.test_long_post) ... ok
+test_minimum_return_value (test_module.TestGetReadDuration.test_minimum_return_value) ... ok
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (test_module.TestGetReadDuration.test_normal_paragraph) ... ok
+test_single_word (test_module.TestGetReadDuration.test_single_word) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.023s
+
+OK

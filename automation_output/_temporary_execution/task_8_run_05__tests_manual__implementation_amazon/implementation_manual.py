@@ -9,21 +9,19 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     if isinstance(ignore, str):
         ignore = [ignore]
     try:
-        text = str(text, 'utf-8')
-    except (TypeError, UnicodeDecodeError):
+        text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
+    except UnicodeDecodeError:
         return None
-    text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore').decode('ascii')
+    text = re.sub(r'[^\w\s-]', '', text)
+    if lowercase:
+        text = text.lower()
     for char in ignore:
         text = text.replace(char, char)
-    for char in ".,!?;:()[]{}'\"/\\":
-        text = text.replace(char, ' ' if char in ignore else '')
-    text = re.sub(r'\s+','', text).strip()
-    if not text:
+    text = re.sub(r'[-\s]+', separator, text)
+    if truncate is not None and len(text) > truncate:
+        text = text[:truncate]
+        if separator in text[-len(separator):]:
+            text = text[:text.rfind(separator)]
+    if not text.strip(separator):
         return None
-    words = text.split()
-    if lowercase:
-        words = [word.lower() for word in words]
-    joined_text = separator.join(words)
-    if truncate is not None and len(joined_text) > truncate:
-        joined_text = joined_text[:truncate]
-    return joined_text
+    return text

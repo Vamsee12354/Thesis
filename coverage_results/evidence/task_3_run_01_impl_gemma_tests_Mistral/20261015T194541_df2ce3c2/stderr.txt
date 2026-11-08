@@ -1,0 +1,23 @@
+test_all_none_values_returns_none (test_module.TestGetMin2Attributes.test_all_none_values_returns_none) ... ok
+test_empty_list_returns_none (test_module.TestGetMin2Attributes.test_empty_list_returns_none) ... ok
+test_happy_path_battery_life_attribute (test_module.TestGetMin2Attributes.test_happy_path_battery_life_attribute) ... ok
+test_happy_path_price_attribute (test_module.TestGetMin2Attributes.test_happy_path_price_attribute) ... ok
+test_large_numbers_returns_min (test_module.TestGetMin2Attributes.test_large_numbers_returns_min) ... FAIL
+test_mixed_numeric_types_returns_min_float (test_module.TestGetMin2Attributes.test_mixed_numeric_types_returns_min_float) ... ok
+test_negative_values_returns_min (test_module.TestGetMin2Attributes.test_negative_values_returns_min) ... ok
+test_non_existent_field_returns_none (test_module.TestGetMin2Attributes.test_non_existent_field_returns_none) ... ok
+test_rounding_to_two_decimals (test_module.TestGetMin2Attributes.test_rounding_to_two_decimals) ... ok
+test_single_valid_value_returns_that_value (test_module.TestGetMin2Attributes.test_single_valid_value_returns_that_value) ... ok
+
+======================================================================
+FAIL: test_large_numbers_returns_min (test_module.TestGetMin2Attributes.test_large_numbers_returns_min)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_01_impl_gemma_tests_Mistral\20261015T194541_df2ce3c2\test_module.py", line 84, in test_large_numbers_returns_min
+    self.assertEqual(result, 999999.999)
+AssertionError: 1000000.0 != 999999.999
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.029s
+
+FAILED (failures=1)

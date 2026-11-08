@@ -1,0 +1,38 @@
+test_cleanup (test_module.TestProductCacheGet.test_cleanup) ... ok
+test_delete (test_module.TestProductCacheGet.test_delete) ... ok
+test_delete_nonexistent_key (test_module.TestProductCacheGet.test_delete_nonexistent_key) ... FAIL
+test_expiry_time (test_module.TestProductCacheGet.test_expiry_time) ... FAIL
+test_get_nonexistent_key (test_module.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_init (test_module.TestProductCacheGet.test_init) ... ok
+test_set_and_get (test_module.TestProductCacheGet.test_set_and_get) ... ok
+test_set_with_negative_ttl (test_module.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+test_set_with_ttl (test_module.TestProductCacheGet.test_set_with_ttl) ... FAIL
+
+======================================================================
+FAIL: test_delete_nonexistent_key (test_module.TestProductCacheGet.test_delete_nonexistent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_01_impl_amazon_tests_deepseek\20261015T195559_69ef6f5b\test_module.py", line 35, in test_delete_nonexistent_key
+    self.assertEqual(self.cache.delete('nonexistent'), 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+======================================================================
+FAIL: test_expiry_time (test_module.TestProductCacheGet.test_expiry_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_01_impl_amazon_tests_deepseek\20261015T195559_69ef6f5b\test_module.py", line 48, in test_expiry_time
+    self.assertIsNone(cache.get('a'))
+AssertionError: 'apple' is not None
+
+======================================================================
+FAIL: test_set_with_ttl (test_module.TestProductCacheGet.test_set_with_ttl)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_01_impl_amazon_tests_deepseek\20261015T195559_69ef6f5b\test_module.py", line 23, in test_set_with_ttl
+    self.assertIsNone(self.cache.get('fruit'))
+AssertionError: {'id': 'fruit', 'name': 'apple'} is not None
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.423s
+
+FAILED (failures=3)

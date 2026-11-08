@@ -1,69 +1,91 @@
-from unicodedata import normalize
-from typing import Optional, Union
-
-def slugify_manual(
-    text: str,
-    separator: str = "-",
-    lowercase: bool = True,
-    ignore: Optional[Union[str, list[str]]] = None,
-    truncate: Optional[int] = None,
-) -> Optional[str]:
-    if not isinstance(text, str):
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str) or not text.strip():
         return None
 
-    if not text:
+    if ignore is None:
+        ignore = []
+    elif isinstance(ignore, str):
+        ignore = [ignore]
+
+    if not isinstance(separator, str) or len(separator) != 1:
         return None
 
-    if ignore is not None:
-        if isinstance(ignore, str):
-            ignore = [ignore]
-        ignore_set = set(ignore)
-    else:
-        ignore_set = set()
-
-    normalized_text = normalize("NFKD", text)
-
-    slug_parts = []
-    current_part = []
-
-    for char in normalized_text:
-        if char in ignore_set:
-            if current_part:
-                slug_parts.append("".join(current_part))
-                current_part = []
-            slug_parts.append(char)
-        elif char.isalnum():
-            current_part.append(char)
-        else:
-            if current_part:
-                slug_parts.append("".join(current_part))
-                current_part = []
-
-    if current_part:
-        slug_parts.append("".join(current_part))
-
-    if not slug_parts:
+    if not isinstance(lowercase, bool):
         return None
 
-    filtered_parts = []
-    for part in slug_parts:
-        if part.isalnum():
-            filtered_parts.append(part)
-        elif part in ignore_set:
-            filtered_parts.append(part)
-
-    if not filtered_parts:
+    if truncate is not None and (not isinstance(truncate, int) or truncate <= 0):
         return None
 
-    slug = separator.join(filtered_parts)
-
-    if lowercase:
-        slug = slug.lower()
-
-    if truncate is not None:
-        if truncate <= 0:
+    try:
+        normalized = text.strip()
+        if not normalized:
             return None
-        if len(slug) > truncate:
-            slug = slug[:truncate]
 
-    return slug
+        slug_parts = []
+        current_part = []
+        in_word = False
+
+        for char in normalized:
+            if char in ignore:
+                if current_part:
+                    slug_parts.append("".join(current_part))
+                    current_part = []
+                slug_parts.append(char)
+                in_word = False
+                continue
+
+            if char.isalnum():
+                current_part.append(char)
+                in_word = True
+            else:
+                if in_word:
+                    slug_parts.append("".join(current_part))
+                    current_part = []
+                    in_word = False
+
+        if current_part:
+            slug_parts.append("".join(current_part))
+
+        if not slug_parts:
+            return None
+
+        processed_parts = []
+        for part in slug_parts:
+            if part.isalnum():
+                processed_parts.append(part)
+            else:
+                transliterated = part.encode('ascii', 'ignore').decode('ascii')
+                if transliterated:
+                    processed_parts.append(transliterated)
+
+        if not processed_parts:
+            return None
+
+        if lowercase:
+            processed_parts = [part.lower() for part in processed_parts]
+
+        slug = separator.join(processed_parts)
+
+        if truncate is not None and len(slug) > truncate:
+            words = slug.split(separator)
+            truncated_parts = []
+            current_length = 0
+
+            for word in words:
+                if current_length + len(word) + (1 if truncated_parts else 0) <= truncate:
+                    if truncated_parts:
+                        truncated_parts.append(separator)
+                    truncated_parts.append(word)
+                    current_length += len(word) + (1 if truncated_parts else 0)
+                else:
+                    break
+
+            slug = "".join(truncated_parts)
+
+        if not slug:
+            return None
+
+        return slug
+
+    except Exception:
+        return None

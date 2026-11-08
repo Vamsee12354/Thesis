@@ -1,0 +1,21 @@
+test_all_prices_none (test_module.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (test_module.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (test_module.TestGetAveragePrice.test_empty_price_list) ... ok
+test_prices_all_zero (test_module.TestGetAveragePrice.test_prices_all_zero) ... ok
+test_prices_with_floats_and_rounding (test_module.TestGetAveragePrice.test_prices_with_floats_and_rounding) ... ok
+test_prices_with_non_numeric_values_ignored (test_module.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored) ... FAIL
+test_prices_with_zero_and_none (test_module.TestGetAveragePrice.test_prices_with_zero_and_none) ... ok
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+FAIL: test_prices_with_non_numeric_values_ignored (test_module.TestGetAveragePrice.test_prices_with_non_numeric_values_ignored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_01_impl_openai_tests_openai\20261015T194417_57323138\test_module.py", line 71, in test_prices_with_non_numeric_values_ignored
+    self.assertEqual(result, 150.0)
+AssertionError: None != 150.0
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.025s
+
+FAILED (failures=1)

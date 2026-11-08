@@ -1,0 +1,45 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_casing_options (test_module.TestSlugifyManual.test_casing_options) ... ok
+test_complex_combination (test_module.TestSlugifyManual.test_complex_combination) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_invalid_inputs_return_none (test_module.TestSlugifyManual.test_invalid_inputs_return_none) ... ok
+test_punctuation_removal (test_module.TestSlugifyManual.test_punctuation_removal) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... FAIL
+test_whitespace_handling (test_module.TestSlugifyManual.test_whitespace_handling) ... ok
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_gemma_tests_gemma\20261015T195247_71333fd3\test_module.py", line 33, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你hao-世界' != '你好-shi-jie'
+- 你hao-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_gemma_tests_gemma\20261015T195247_71333fd3\test_module.py", line 29, in test_truncation
+    self.assertEqual(slugify_manual("Hello World", truncate=1), None)
+AssertionError: 'h' != None
+
+======================================================================
+FAIL: test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_gemma_tests_gemma\20261015T195247_71333fd3\test_module.py", line 40, in test_unicode_transliteration
+    self.assertEqual(slugify_manual("你好"), "ni-hao")
+AssertionError: '你好' != 'ni-hao'
+- 你好
++ ni-hao
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.033s
+
+FAILED (failures=3)

@@ -1,0 +1,73 @@
+{
+  "key": "task_2_run_01_impl_openai_tests_gemma",
+  "task": 2,
+  "task_name": "task2_get_average_price",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "openai",
+  "test_llm": "gemma",
+  "fingerprint": "88d9818390b028e6a1c06740aad7966824b30cdfde4ba4bb1cdadae09c1863ae",
+  "tests_run": 6,
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 75.0,
+  "lines_covered": 6,
+  "lines_total": 8,
+  "lines_missing": 2,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_2_run_01_impl_openai_tests_gemma\\20261015T194417_5e1f9869",
+  "started_utc": "2026-10-15T19:44:18+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 6,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetAveragePrice.test_all_prices_are_none",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_average_calculation_with_rounding",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_average_calculation_with_valid_prices",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_list_with_empty_dictionary_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetAveragePrice.test_single_valid_price",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7,
+    8
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8699,
+  "finished_utc": "2026-10-15T19:44:18+00:00",
+  "return_code": 0
+}

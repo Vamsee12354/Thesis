@@ -1,0 +1,63 @@
+test_basic_slug (test_module.TestSlugifyManual.test_basic_slug) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_custom_separator_multiple_chars (test_module.TestSlugifyManual.test_custom_separator_multiple_chars) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_all_characters (test_module.TestSlugifyManual.test_ignore_all_characters) ... FAIL
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_ignore_characters_not_in_input (test_module.TestSlugifyManual.test_ignore_characters_not_in_input) ... ok
+test_ignore_characters_with_separator (test_module.TestSlugifyManual.test_ignore_characters_with_separator) ... ok
+test_ignore_list_of_characters (test_module.TestSlugifyManual.test_ignore_list_of_characters) ... ok
+test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_mixed_language (test_module.TestSlugifyManual.test_mixed_language) ... FAIL
+test_no_valid_characters (test_module.TestSlugifyManual.test_no_valid_characters) ... ok
+test_preserve_case (test_module.TestSlugifyManual.test_preserve_case) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate (test_module.TestSlugifyManual.test_truncate) ... ok
+test_truncate_exact_length (test_module.TestSlugifyManual.test_truncate_exact_length) ... ok
+test_truncate_longer_than_input (test_module.TestSlugifyManual.test_truncate_longer_than_input) ... ok
+test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small) ... FAIL
+test_truncate_without_breaking_words (test_module.TestSlugifyManual.test_truncate_without_breaking_words) ... ok
+test_unicode_characters (test_module.TestSlugifyManual.test_unicode_characters) ... ok
+
+======================================================================
+FAIL: test_ignore_all_characters (test_module.TestSlugifyManual.test_ignore_all_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_deepseek\20261015T195238_d5b9d1d1\test_module.py", line 39, in test_ignore_all_characters
+    self.assertEqual(slugify_manual("foo bar", ignore="foobar"), "foo bar")
+AssertionError: 'foo-bar' != 'foo bar'
+- foo-bar
+?    ^
++ foo bar
+?    ^
+
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_deepseek\20261015T195238_d5b9d1d1\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_mixed_language (test_module.TestSlugifyManual.test_mixed_language)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_deepseek\20261015T195238_d5b9d1d1\test_module.py", line 33, in test_mixed_language
+    self.assertEqual(slugify_manual("你好，世界"), "ni-hao-shi-jie")
+AssertionError: None != 'ni-hao-shi-jie'
+
+======================================================================
+FAIL: test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_deepseek_tests_deepseek\20261015T195238_d5b9d1d1\test_module.py", line 36, in test_truncate_too_small
+    self.assertIsNone(slugify_manual("foo bar", truncate=1))
+AssertionError: 'f' is not None
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.072s
+
+FAILED (failures=4)

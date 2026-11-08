@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 206, in case_child
+    compile(filename.read_bytes(), str(filename), "exec")
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_06_impl_gemma_tests_manual\20261015T195319_e34fd58a\implementation_manual.py", line 302
+    # If the
+            ^
+IndentationError: expected an indented block after 'if' statement on line 301
+

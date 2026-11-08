@@ -1,0 +1,135 @@
+{
+  "key": "task_9_run_05_impl_amazon_tests_Mistral",
+  "task": 9,
+  "task_name": "task9_product_cache_get",
+  "complexity": "High",
+  "run": 5,
+  "impl_llm": "amazon",
+  "test_llm": "Mistral",
+  "fingerprint": "59fe9ba6ad51dbcdff15526fdd256be45857246ad3348f3ef1f0b1c0cd2e9e9f",
+  "tests_run": 19,
+  "tests_passed": 16,
+  "tests_failed": 3,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 26,
+  "lines_total": 26,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_9_run_05_impl_amazon_tests_Mistral\\20261015T195934_3284066c",
+  "started_utc": "2026-10-15T19:59:34+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 19,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestProductCacheGetCleanup.test_cleanup_on_empty_cache",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetCleanup.test_cleanup_removes_all_items",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetDelete.test_delete_existing_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetDelete.test_delete_non_existent_key",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_get_before_set",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_multiple_sets_and_gets",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_ttl_with_large_value",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetEdgeCases.test_ttl_with_small_value",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetGet.test_get_existing_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetGet.test_get_expired_key",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetGet.test_get_non_existent_key",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetInitialization.test_init_with_negative_expiry_time",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetInitialization.test_init_with_positive_expiry_time",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetInitialization.test_init_with_zero_expiry_time",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_and_get_basic_value",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_overwrites_existing_value",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_custom_ttl",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_negative_ttl",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestProductCacheGetSet.test_set_with_zero_ttl",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.5911,
+  "finished_utc": "2026-10-15T19:59:35+00:00",
+  "return_code": 0
+}

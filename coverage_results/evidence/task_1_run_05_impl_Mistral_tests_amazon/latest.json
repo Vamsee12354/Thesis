@@ -1,0 +1,65 @@
+{
+  "key": "task_1_run_05_impl_Mistral_tests_amazon",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 5,
+  "impl_llm": "Mistral",
+  "test_llm": "amazon",
+  "fingerprint": "8d33793ea5db7b8200114f6a6c0fa298309a34d187c6ebea57da3a511f6b349c",
+  "tests_run": 5,
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 12,
+  "lines_total": 12,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_05_impl_Mistral_tests_amazon\\20261015T194340_788d197f",
+  "started_utc": "2026-10-15T19:43:41+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 5,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUnique.test_all_brand_values_are_none_or_empty_string",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_empty_input_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_mixed_with_duplicates_and_blanks",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_normal_case_with_valid_brands",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUnique.test_only_invalid_or_missing_brands",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8684,
+  "finished_utc": "2026-10-15T19:43:41+00:00",
+  "return_code": 0
+}

@@ -1,0 +1,89 @@
+test_missing_password (test_module.TestIsValidPassword.test_missing_password) ... FAIL
+test_password_meets_all_requirements (test_module.TestIsValidPassword.test_password_meets_all_requirements) ... ok
+test_password_missing_lowercase (test_module.TestIsValidPassword.test_password_missing_lowercase) ... ok
+test_password_missing_multiple_requirements (test_module.TestIsValidPassword.test_password_missing_multiple_requirements) ... ok
+test_password_missing_special_or_number (test_module.TestIsValidPassword.test_password_missing_special_or_number) ... ok
+test_password_missing_uppercase (test_module.TestIsValidPassword.test_password_missing_uppercase) ... ok
+test_password_none (test_module.TestIsValidPassword.test_password_none) ... ERROR
+test_password_too_long (test_module.TestIsValidPassword.test_password_too_long) ... FAIL
+test_password_too_short (test_module.TestIsValidPassword.test_password_too_short) ... FAIL
+test_password_with_all_special_characters (test_module.TestIsValidPassword.test_password_with_all_special_characters) ... ok
+test_password_with_maximum_length (test_module.TestIsValidPassword.test_password_with_maximum_length) ... ok
+test_password_with_minimum_length (test_module.TestIsValidPassword.test_password_with_minimum_length) ... ok
+test_password_with_numbers_only (test_module.TestIsValidPassword.test_password_with_numbers_only) ... FAIL
+test_password_with_spaces (test_module.TestIsValidPassword.test_password_with_spaces) ... ok
+
+======================================================================
+ERROR: test_password_none (test_module.TestIsValidPassword.test_password_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_manual_tests_Mistral\20261015T194948_9a3fdc8f\test_module.py", line 11, in test_password_none
+    result = IsValidPassword(None)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_manual_tests_Mistral\20261015T194948_9a3fdc8f\implementation_manual.py", line 3, in IsValidPassword
+    if len(password)==0:
+       ^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()
+
+======================================================================
+FAIL: test_missing_password (test_module.TestIsValidPassword.test_missing_password)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_manual_tests_Mistral\20261015T194948_9a3fdc8f\test_module.py", line 8, in test_missing_password
+    self.assertEqual(result, ["Please fill the password"])
+AssertionError: 'Please fill the password' != ['Please fill the password']
+
+======================================================================
+FAIL: test_password_too_long (test_module.TestIsValidPassword.test_password_too_long)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_manual_tests_Mistral\20261015T194948_9a3fdc8f\test_module.py", line 20, in test_password_too_long
+    self.assertEqual(result, ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_password_too_short (test_module.TestIsValidPassword.test_password_too_short)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_manual_tests_Mistral\20261015T194948_9a3fdc8f\test_module.py", line 16, in test_password_too_short
+    self.assertEqual(result, ["Length must be between 12 and 72 characters"])
+AssertionError: Lists differ: ['Len[36 chars]ters', 'Password must contain an uppercase let[57 chars]ber'] != ['Len[36 chars]ters']
+
+First list contains 2 additional elements.
+First extra element 1:
+'Password must contain an uppercase letter'
+
+- ['Length must be between 12 and 72 characters',
+?                                               ^
+
++ ['Length must be between 12 and 72 characters']
+?                                               ^
+
+-  'Password must contain an uppercase letter',
+-  'Password must contain a special character or a number']
+
+======================================================================
+FAIL: test_password_with_numbers_only (test_module.TestIsValidPassword.test_password_with_numbers_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_manual_tests_Mistral\20261015T194948_9a3fdc8f\test_module.py", line 53, in test_password_with_numbers_only
+    self.assertEqual(result, "The password is valid")
+AssertionError: ['Password must contain a special character or a number'] != 'The password is valid'
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.078s
+
+FAILED (failures=4, errors=1)

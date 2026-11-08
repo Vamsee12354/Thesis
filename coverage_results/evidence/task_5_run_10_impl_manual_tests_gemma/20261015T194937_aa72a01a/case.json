@@ -1,0 +1,8 @@
+{
+  "task": 5,
+  "run": 10,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task5_validate_contact_form\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\gemma\\task_5\\run_10_test.py",
+  "fingerprint": "6ad915672b675abd460ef8e0704fdfb64bfe18cf3bc4cdf138995d779183507f",
+  "timeout": 120
+}

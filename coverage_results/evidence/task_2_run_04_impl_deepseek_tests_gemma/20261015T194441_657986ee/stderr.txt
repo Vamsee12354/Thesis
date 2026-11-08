@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 206, in case_child
+    compile(filename.read_bytes(), str(filename), "exec")
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_04_impl_deepseek_tests_gemma\20261015T194441_657986ee\test_module.py", line 74
+    if __name__ most_likely_to_be_called_if_run_directly:
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax
+

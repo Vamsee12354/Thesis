@@ -1,0 +1,155 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ERROR
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ERROR
+test_empty_and_punctuation_only (test_module.TestSlugifyManual.test_empty_and_punctuation_only) ... ERROR
+test_ignore_as_list_or_string (test_module.TestSlugifyManual.test_ignore_as_list_or_string) ... ERROR
+test_ignore_option (test_module.TestSlugifyManual.test_ignore_option) ... ERROR
+test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option) ... ERROR
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... ERROR
+test_non_string_input (test_module.TestSlugifyManual.test_non_string_input) ... FAIL
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ERROR
+test_special_characters (test_module.TestSlugifyManual.test_special_characters) ... ERROR
+test_truncate_option (test_module.TestSlugifyManual.test_truncate_option) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+ERROR: test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 6, in test_basic_slugification
+    self.assertEqual(slugify_manual("Hello, World!"), "hello-world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_custom_separator (test_module.TestSlugifyManual.test_custom_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 16, in test_custom_separator
+    self.assertEqual(slugify_manual("Hello World", separator="_"), "hello_world")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_empty_and_punctuation_only (test_module.TestSlugifyManual.test_empty_and_punctuation_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 11, in test_empty_and_punctuation_only
+    self.assertIsNone(slugify_manual(""))
+                      ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_ignore_as_list_or_string (test_module.TestSlugifyManual.test_ignore_as_list_or_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 61, in test_ignore_as_list_or_string
+    self.assertEqual(slugify_manual("Hello, World!", ignore="!"), "hello-world!")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_ignore_option (test_module.TestSlugifyManual.test_ignore_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 31, in test_ignore_option
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 21, in test_lowercase_option
+    self.assertEqual(slugify_manual("StUdLy CaPs", lowercase=True), "studly-caps")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 37, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shi-jie")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 42, in test_repeated_whitespace
+    self.assertEqual(slugify_manual("foo    bar"), "foo-bar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+ERROR: test_special_characters (test_module.TestSlugifyManual.test_special_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 46, in test_special_characters
+    self.assertEqual(slugify_manual("foo@bar#baz"), "foobarbaz")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\implementation_manual.py", line 13, in slugify_manual
+    if truncate is not None and not isinstance(truncate, int) or truncate < 0:
+                                                                 ^^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'NoneType' and 'int'
+
+======================================================================
+FAIL: test_non_string_input (test_module.TestSlugifyManual.test_non_string_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 55, in test_non_string_input
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+======================================================================
+FAIL: test_truncate_option (test_module.TestSlugifyManual.test_truncate_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 25, in test_truncate_option
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+AssertionError: 'call-me-maybe' != 'call-me'
+- call-me-maybe
++ call-me
+
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_amazon_tests_Mistral\20261015T195339_f575ad40\test_module.py", line 51, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("Hello world", truncate=5, ignore=["world"]), "hello")
+AssertionError: 'hello-world' != 'hello'
+- hello-world
++ hello
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.058s
+
+FAILED (failures=3, errors=9)

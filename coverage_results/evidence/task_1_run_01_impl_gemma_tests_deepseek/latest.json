@@ -1,0 +1,91 @@
+{
+  "key": "task_1_run_01_impl_gemma_tests_deepseek",
+  "task": 1,
+  "task_name": "task1_unique_brands",
+  "complexity": "Low",
+  "run": 1,
+  "impl_llm": "gemma",
+  "test_llm": "deepseek",
+  "fingerprint": "0847dd1351af1734b98ab4bfdc35245da05eaf37b19c8ba030d8c765176a8185",
+  "tests_run": 8,
+  "tests_passed": 2,
+  "tests_failed": 1,
+  "tests_errored": 5,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 52.38095238095238,
+  "lines_covered": 11,
+  "lines_total": 21,
+  "lines_missing": 10,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_1_run_01_impl_gemma_tests_deepseek\\20261015T210414_249e7adc",
+  "started_utc": "2026-10-15T21:04:14+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 8,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetUniqueBrands.test_all_identical_brands",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_all_invalid_brands",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_case_insensitive_deduplication",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_empty_input",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_mixed_valid_and_invalid",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_no_valid_brands_empty_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_normal_case_with_valid_brands",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetUniqueBrands.test_single_valid_brand",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    22,
+    23,
+    24,
+    26
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.5013,
+  "finished_utc": "2026-10-15T21:04:15+00:00",
+  "return_code": 0
+}

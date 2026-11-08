@@ -1,0 +1,35 @@
+{
+  "version": "1.0.1",
+  "script_sha256": "651e2b6be5f74bda938a02578331e7de16bde731c9600d7a11dc3e074c2014c0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "dependencies": {
+    "coverage": "7.16.2",
+    "openpyxl": "3.1.5"
+  },
+  "timeout": 120,
+  "started_utc": "2026-10-15T21:04:14+00:00",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "base_dir": "C:\\Users\\kalup\\Desktop\\Thesis",
+  "workers": 4,
+  "selected_combinations": 3240,
+  "cache_compatible_script_signatures": [
+    {
+      "version": "1.0",
+      "script_sha256": "ee5b2663e9d837825bbc187094fe8012779de4f4c57ed1b9d3ac735ba794f92e"
+    }
+  ],
+  "complexity": {
+    "1": "Low",
+    "2": "Low",
+    "3": "Low",
+    "4": "Medium",
+    "5": "Medium",
+    "6": "Medium",
+    "7": "High",
+    "8": "Medium",
+    "9": "High"
+  },
+  "averaging_policy": "Completed nonempty suites only. Failing tests included. Import/load/fixture errors, empty suites, timeouts and unavailable coverage excluded.",
+  "coverage_policy": "Statement coverage of the selected implementation only, including import/definition lines. Measurement ends when unittest returns; no interpreter-shutdown/background-timer waiting.",
+  "counting_policy": "Disjoint completed test-method outcomes. Failed subtests mark the parent method failed/errored once. Expected failures and unexpected successes are retained in per-case JSON."
+}

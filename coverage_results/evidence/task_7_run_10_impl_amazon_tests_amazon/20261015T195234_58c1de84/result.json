@@ -1,0 +1,58 @@
+{
+  "key": "task_7_run_10_impl_amazon_tests_amazon",
+  "task": 7,
+  "task_name": "task7_product_list_live_v",
+  "complexity": "High",
+  "run": 10,
+  "impl_llm": "amazon",
+  "test_llm": "amazon",
+  "fingerprint": "388be054a6144cf8bdd35d23dae2eeb52d43f2bb8ab69580131e3f13246e81d9",
+  "tests_run": 3,
+  "tests_passed": 2,
+  "tests_failed": 1,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 80.0,
+  "lines_covered": 8,
+  "lines_total": 10,
+  "lines_missing": 2,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_7_run_10_impl_amazon_tests_amazon\\20261015T195234_58c1de84",
+  "started_utc": "2026-10-15T19:52:35+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 3,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingListView.test_empty_shopping_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListView.test_html_content_in_titles",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingListView.test_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3,
+    8
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8164,
+  "finished_utc": "2026-10-15T19:52:35+00:00",
+  "return_code": 0
+}

@@ -1,0 +1,64 @@
+test_all_ignored_chars (test_module.TestSlugifyManual.test_all_ignored_chars) ... ok
+test_basic_conversion (test_module.TestSlugifyManual.test_basic_conversion) ... ok
+test_complex_case (test_module.TestSlugifyManual.test_complex_case) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
+test_mixed_language (test_module.TestSlugifyManual.test_mixed_language) ... FAIL
+test_none_input (test_module.TestSlugifyManual.test_none_input) ... ok
+test_preserve_case (test_module.TestSlugifyManual.test_preserve_case) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_separator_as_codepoint (test_module.TestSlugifyManual.test_separator_as_codepoint) ... ERROR
+test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... ok
+test_unicode_transliteration (test_module.TestSlugifyManual.test_unicode_transliteration) ... ok
+
+======================================================================
+ERROR: test_separator_as_codepoint (test_module.TestSlugifyManual.test_separator_as_codepoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_deepseek_tests_deepseek\20261015T195302_d5dce1f8\test_module.py", line 48, in test_separator_as_codepoint
+    self.assertEqual(slugify_manual("foo bar", separator=95), "foo_bar")
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_deepseek_tests_deepseek\20261015T195302_d5dce1f8\implementation_manual.py", line 28, in slugify_manual
+    slug = re.sub(r'\s+', separator, cleaned_text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 185, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 317, in _subx
+    template = _compile_repl(template, pattern)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\__init__.py", line 308, in _compile_repl
+    return _parser.parse_template(repl, pattern)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 1009, in parse_template
+    s = Tokenizer(source)
+        ^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.2544.0_x64__qbz5n2kfra8p0\Lib\re\_parser.py", line 235, in __init__
+    string = str(string, 'latin1')
+             ^^^^^^^^^^^^^^^^^^^^^
+TypeError: decoding to str: need a bytes-like object, int found
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_deepseek_tests_deepseek\20261015T195302_d5dce1f8\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你","好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_mixed_language (test_module.TestSlugifyManual.test_mixed_language)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_04_impl_deepseek_tests_deepseek\20261015T195302_d5dce1f8\test_module.py", line 33, in test_mixed_language
+    self.assertEqual(slugify_manual("Привет мир"), "privet-mir")
+AssertionError: None != 'privet-mir'
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.059s
+
+FAILED (failures=2, errors=1)

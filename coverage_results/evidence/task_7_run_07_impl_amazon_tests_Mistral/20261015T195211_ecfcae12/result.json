@@ -1,0 +1,87 @@
+{
+  "key": "task_7_run_07_impl_amazon_tests_Mistral",
+  "task": 7,
+  "task_name": "task7_product_list_live_v",
+  "complexity": "High",
+  "run": 7,
+  "impl_llm": "amazon",
+  "test_llm": "Mistral",
+  "fingerprint": "6aae141b98e8ae13f75217c22558f3f60eb30aeafd8e4e772646389c62ecd332",
+  "tests_run": 9,
+  "tests_passed": 6,
+  "tests_failed": 3,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 90.0,
+  "lines_covered": 9,
+  "lines_total": 10,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_7_run_07_impl_amazon_tests_Mistral\\20261015T195211_ecfcae12",
+  "started_utc": "2026-10-15T19:52:11+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestShoppingList.test_empty_shopping_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_multiple_products_with_mixed_titles",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_normal_functionality_with_multiple_products",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_empty_title",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_html_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_none_title",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_special_characters_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_product_with_unicode_in_title",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestShoppingList.test_single_product_in_list",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    3
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9311,
+  "finished_utc": "2026-10-15T19:52:11+00:00",
+  "return_code": 0
+}

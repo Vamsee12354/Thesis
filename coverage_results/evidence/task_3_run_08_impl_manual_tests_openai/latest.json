@@ -1,0 +1,85 @@
+{
+  "key": "task_3_run_08_impl_manual_tests_openai",
+  "task": 3,
+  "task_name": "task3_get_min_attribute",
+  "complexity": "Low",
+  "run": 8,
+  "impl_llm": "manual",
+  "test_llm": "openai",
+  "fingerprint": "2e0a1c2292143e6a141e9f648360cf397edbc87b218b0e8830dd255076f66ac3",
+  "tests_run": 9,
+  "tests_passed": 5,
+  "tests_failed": 1,
+  "tests_errored": 3,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 9,
+  "lines_total": 9,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_3_run_08_impl_manual_tests_openai\\20261015T194633_6d5b0c02",
+  "started_utc": "2026-10-15T19:46:34+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 9,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_non_numeric_values",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_all_values_none_for_attribute",
+      "outcome": "errored",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_attribute_not_present_in_any_product",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_empty_data_list",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_integer_and_float_values",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_minimum_battery_life_with_valid_data",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_minimum_price_with_valid_data",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_mixed_none_and_numeric_values",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetMin2Attributes.test_non_numeric_values_ignored",
+      "outcome": "errored",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9612,
+  "finished_utc": "2026-10-15T19:46:34+00:00",
+  "return_code": 0
+}

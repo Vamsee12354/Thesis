@@ -1,0 +1,99 @@
+{
+  "key": "task_4_run_06_impl_gemma_tests_deepseek",
+  "task": 4,
+  "task_name": "task4_get_reading_duration",
+  "complexity": "Medium",
+  "run": 6,
+  "impl_llm": "gemma",
+  "test_llm": "deepseek",
+  "fingerprint": "395ba8139f29abbc37c1c914a1bce689f8d3e365c424d30ece701cb44cbf9b75",
+  "tests_run": 11,
+  "tests_passed": 11,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 78.57142857142857,
+  "lines_covered": 11,
+  "lines_total": 14,
+  "lines_missing": 3,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_4_run_06_impl_gemma_tests_deepseek\\20261015T194748_1f9492b7",
+  "started_utc": "2026-10-15T19:47:48+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 11,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestGetReadDuration.test_201_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_450_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_empty_string",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_exactly_200_words",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_mixed_content",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_newlines_and_tabs",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_non_latin_characters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_punctuation_handling",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_short_paragraph",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_single_word",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestGetReadDuration.test_whitespace_only",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    5,
+    18,
+    19
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.0044,
+  "finished_utc": "2026-10-15T19:47:49+00:00",
+  "return_code": 0
+}

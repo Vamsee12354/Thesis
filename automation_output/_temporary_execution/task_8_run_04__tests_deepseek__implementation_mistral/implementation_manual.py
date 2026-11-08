@@ -1,11 +1,5 @@
-from unicodedata import normalize, category
-import re
-
-def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
-    if not isinstance(text, str):
-        return None
-
-    if not text:
+def slugify_manual(text, separator="-", lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str) or not text:
         return None
 
     if ignore is None:
@@ -13,72 +7,113 @@ def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=No
     elif isinstance(ignore, str):
         ignore = [ignore]
 
+    if not isinstance(separator, str) or len(separator) != 1:
+        return None
+
+    if not isinstance(lowercase, bool):
+        return None
+
+    if truncate is not None and (not isinstance(truncate, int) or truncate <= 0):
+        return None
+
+    translit_map = {
+        ' ': separator,
+        '，': separator,
+        '。': separator,
+        '！': separator,
+        '？': separator,
+        '、': separator,
+        '；': separator,
+        '：': separator,
+        '（': separator,
+        '）': separator,
+        '【': separator,
+        '】': separator,
+        '「': separator,
+        '」': separator,
+        '『': separator,
+        '』': separator,
+        '“': separator,
+        '”': separator,
+        '‘': separator,
+        '’': separator,
+        '—': separator,
+        '…': separator,
+        '～': separator,
+        '·': separator,
+        '、': separator,
+        '。': separator,
+        '，': separator,
+        '；': separator,
+        '：': separator,
+        '（': separator,
+        '）': separator,
+        '【': separator,
+        '】': separator,
+        '「': separator,
+        '」': separator,
+        '『': separator,
+        '』': separator,
+        '“': separator,
+        '”': separator,
+        '‘': separator,
+        '’': separator,
+    }
+
     try:
-        normalized_text = normalize('NFKD', text)
-    except Exception:
-        return None
-
-    slug_parts = []
-    current_part = []
-    in_word = False
-
-    for char in normalized_text:
-        if char in ignore:
-            if current_part:
-                slug_parts.append(''.join(current_part))
-                current_part = []
-            slug_parts.append(char)
-            in_word = False
-            continue
-
-        if category(char).startswith('L') or category(char).startswith('N'):
-            current_part.append(char)
-            in_word = True
-        else:
-            if in_word:
-                slug_parts.append(''.join(current_part))
-                current_part = []
-                in_word = False
-
-    if current_part:
-        slug_parts.append(''.join(current_part))
-
-    if not slug_parts:
-        return None
-
-    processed_parts = []
-    for part in slug_parts:
-        if part in ignore:
-            processed_parts.append(part)
-        else:
-            cleaned_part = re.sub(r'[^\w\s-]', '', part)
-            cleaned_part = re.sub(r'[\s]+', ' ', cleaned_part)
-            if cleaned_part:
-                processed_parts.append(cleaned_part)
-
-    if not processed_parts:
-        return None
-
-    slug = ' '.join(processed_parts)
-    slug = re.sub(r'[\s]+', separator, slug)
-
-    if lowercase:
-        slug = slug.lower()
-
-    if truncate is not None:
-        if not isinstance(truncate, int) or truncate <= 0:
+        normalized = text.strip()
+        if not normalized:
             return None
-        words = slug.split(separator)
-        truncated_words = []
-        current_length = 0
-        for word in words:
-            if current_length + len(word) <= truncate:
-                truncated_words.append(word)
-                current_length += len(word) + len(separator)
+
+        slug_parts = []
+        current_part = []
+
+        for char in normalized:
+            if char in ignore:
+                if current_part:
+                    slug_parts.append(''.join(current_part))
+                    current_part = []
+                slug_parts.append(char)
             else:
-                break
-        slug = separator.join(truncated_words)
+                lower_char = char.lower()
+                if lower_char in translit_map:
+                    replacement = translit_map[lower_char]
+                    if replacement == separator:
+                        if current_part:
+                            slug_parts.append(''.join(current_part))
+                            current_part = []
+                    else:
+                        current_part.append(replacement)
+                else:
+                    if char.isalnum():
+                        current_part.append(char)
+                    else:
+                        if current_part:
+                            slug_parts.append(''.join(current_part))
+                            current_part = []
+
+        if current_part:
+            slug_parts.append(''.join(current_part))
+
+        if not slug_parts:
+            return None
+
+        slug = separator.join(slug_parts)
+
+        if lowercase:
+            slug = slug.lower()
+
+        if truncate is not None and len(slug) > truncate:
+            last_sep_index = slug.rfind(separator)
+            if last_sep_index == -1:
+                slug = slug[:truncate]
+            else:
+                slug = slug[:last_sep_index]
+
         if not slug:
             return None
 
-    return slug
+        return slug
+
+    except Exception:
+        return None

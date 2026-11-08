@@ -1,0 +1,22 @@
+test_cleanup (test_module.TestProductCacheGet.test_cleanup) ... ok
+test_cleanup_empty_cache (test_module.TestProductCacheGet.test_cleanup_empty_cache) ... ok
+test_delete_existing_key (test_module.TestProductCacheGet.test_delete_existing_key) ... ok
+test_delete_nonexistent_key (test_module.TestProductCacheGet.test_delete_nonexistent_key) ... FAIL
+test_get_nonexistent_key (test_module.TestProductCacheGet.test_get_nonexistent_key) ... ok
+test_initialization (test_module.TestProductCacheGet.test_initialization) ... ok
+test_set_and_get (test_module.TestProductCacheGet.test_set_and_get) ... ok
+test_set_with_custom_ttl (test_module.TestProductCacheGet.test_set_with_custom_ttl) ... ok
+test_set_with_negative_ttl (test_module.TestProductCacheGet.test_set_with_negative_ttl) ... ok
+
+======================================================================
+FAIL: test_delete_nonexistent_key (test_module.TestProductCacheGet.test_delete_nonexistent_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_9_run_08_impl_deepseek_tests_Mistral\20261015T200405_133d7013\test_module.py", line 37, in test_delete_nonexistent_key
+    self.assertEqual(result, 'deleted successfully')
+AssertionError: None != 'deleted successfully'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.033s
+
+FAILED (failures=1)

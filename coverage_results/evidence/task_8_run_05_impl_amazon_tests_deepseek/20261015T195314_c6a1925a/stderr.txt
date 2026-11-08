@@ -1,0 +1,110 @@
+test_basic_slug (test_module.TestSlugifyManual.test_basic_slug) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_custom_separator_multiple_chars (test_module.TestSlugifyManual.test_custom_separator_multiple_chars) ... ok
+test_empty_input (test_module.TestSlugifyManual.test_empty_input) ... ok
+test_ignore_all_characters (test_module.TestSlugifyManual.test_ignore_all_characters) ... ok
+test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters) ... FAIL
+test_ignore_characters_with_separator (test_module.TestSlugifyManual.test_ignore_characters_with_separator) ... FAIL
+test_ignore_characters_with_truncate (test_module.TestSlugifyManual.test_ignore_characters_with_truncate) ... ok
+test_ignore_characters_with_truncate_and_separator (test_module.TestSlugifyManual.test_ignore_characters_with_truncate_and_separator) ... FAIL
+test_ignore_characters_with_truncate_and_uppercase (test_module.TestSlugifyManual.test_ignore_characters_with_truncate_and_uppercase) ... FAIL
+test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace) ... FAIL
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_no_valid_characters (test_module.TestSlugifyManual.test_no_valid_characters) ... ok
+test_punctuation_only (test_module.TestSlugifyManual.test_punctuation_only) ... ok
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_truncate_exact_length (test_module.TestSlugifyManual.test_truncate_exact_length) ... ok
+test_truncate_longer_than_input (test_module.TestSlugifyManual.test_truncate_longer_than_input) ... ok
+test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small) ... FAIL
+test_truncate_without_breaking_words (test_module.TestSlugifyManual.test_truncate_without_breaking_words) ... ok
+test_truncation (test_module.TestSlugifyManual.test_truncation) ... FAIL
+test_uppercase_output (test_module.TestSlugifyManual.test_uppercase_output) ... ok
+
+======================================================================
+FAIL: test_ignore_characters (test_module.TestSlugifyManual.test_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: None != '你好-shi-jie'
+
+======================================================================
+FAIL: test_ignore_characters_with_separator (test_module.TestSlugifyManual.test_ignore_characters_with_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 51, in test_ignore_characters_with_separator
+    self.assertEqual(slugify_manual("foo, bar", ignore=[","]), "foo,-bar")
+AssertionError: 'foo-bar' != 'foo,-bar'
+- foo-bar
++ foo,-bar
+?    +
+
+
+======================================================================
+FAIL: test_ignore_characters_with_truncate_and_separator (test_module.TestSlugifyManual.test_ignore_characters_with_truncate_and_separator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 63, in test_ignore_characters_with_truncate_and_separator
+    self.assertEqual(slugify_manual("foo bar baz", ignore=["baz"], separator="++", truncate=9), "foo++bar")
+AssertionError: 'foo++bar+' != 'foo++bar'
+- foo++bar+
+?         -
++ foo++bar
+
+
+======================================================================
+FAIL: test_ignore_characters_with_truncate_and_uppercase (test_module.TestSlugifyManual.test_ignore_characters_with_truncate_and_uppercase)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 66, in test_ignore_characters_with_truncate_and_uppercase
+    self.assertEqual(slugify_manual("foo bar baz", ignore=["baz"], lowercase=False, truncate=9), "foo-bar")
+AssertionError: 'foo-bar-b' != 'foo-bar'
+- foo-bar-b
+?        --
++ foo-bar
+
+
+======================================================================
+FAIL: test_leading_trailing_whitespace (test_module.TestSlugifyManual.test_leading_trailing_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 27, in test_leading_trailing_whitespace
+    self.assertEqual(slugify_manual("  foo bar  "), "foo-bar")
+AssertionError: '-foo-bar-' != 'foo-bar'
+- -foo-bar-
+? -       -
++ foo-bar
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 33, in test_mixed_language_input
+    self.assertEqual(slugify_manual("你好，世界"), "ni-hao-shi-jie")
+AssertionError: None != 'ni-hao-shi-jie'
+
+======================================================================
+FAIL: test_truncate_too_small (test_module.TestSlugifyManual.test_truncate_too_small)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 36, in test_truncate_too_small
+    self.assertIsNone(slugify_manual("foo bar", truncate=1))
+AssertionError: 'f' is not None
+
+======================================================================
+FAIL: test_truncation (test_module.TestSlugifyManual.test_truncation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_05_impl_amazon_tests_deepseek\20261015T195314_c6a1925a\test_module.py", line 21, in test_truncation
+    self.assertEqual(slugify_manual("Call me maybe", truncate=10), "call-me")
+AssertionError: 'call-me-ma' != 'call-me'
+- call-me-ma
+?        ---
++ call-me
+
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.063s
+
+FAILED (failures=8)

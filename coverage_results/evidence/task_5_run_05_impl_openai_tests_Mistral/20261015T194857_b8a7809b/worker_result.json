@@ -1,0 +1,104 @@
+{
+  "tests_run": 15,
+  "tests_passed": 13,
+  "tests_failed": 2,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "counts_complete": true,
+  "coverage_pct": 100.0,
+  "lines_covered": 21,
+  "lines_total": 21,
+  "lines_missing": 0,
+  "eligible": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "started_utc": "2026-10-15T19:48:57+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 15,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestValidateForm.test_all_fields_valid_with_whitespace",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_email_empty_after_trim",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_email_with_whitespace",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_empty_fields",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_invalid_email_format",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_email",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_first_name",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_last_name",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_message",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_subject",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_multiple_errors",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_privacy_false",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_privacy_not_boolean",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_whitespace_only_fields",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.2941,
+  "finished_utc": "2026-10-15T19:48:57+00:00"
+}

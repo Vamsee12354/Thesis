@@ -1,0 +1,92 @@
+{
+  "key": "task_6_run_05_impl_openai_tests_openai",
+  "task": 6,
+  "task_name": "task6_validate_password",
+  "complexity": "Medium",
+  "run": 5,
+  "impl_llm": "openai",
+  "test_llm": "openai",
+  "fingerprint": "344c2fbd6f3d83900aecfd1d86ee8b7ecd9427676fdb2c9a8c86c26ba69d47d0",
+  "tests_run": 10,
+  "tests_passed": 9,
+  "tests_failed": 1,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 94.73684210526316,
+  "lines_covered": 18,
+  "lines_total": 19,
+  "lines_missing": 1,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_6_run_05_impl_openai_tests_openai\\20261015T195023_93c3d6a2",
+  "started_utc": "2026-10-15T19:50:24+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 10,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestIsValidPassword.test_missing_password",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_at_maximum_length",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_at_minimum_length",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_missing_lowercase",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_missing_special_or_number",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_missing_uppercase",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_multiple_errors",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_too_long",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_password_too_short",
+      "outcome": "failed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestIsValidPassword.test_valid_password",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [
+    7
+  ],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.9121,
+  "finished_utc": "2026-10-15T19:50:24+00:00",
+  "return_code": 0
+}

@@ -1,0 +1,63 @@
+test_basic_slugification_default (test_module.TestSlugifyManual.test_basic_slugification_default) ... ok
+test_slugify_custom_separator_utf8 (test_module.TestSlugifyManual.test_slugify_custom_separator_utf8) ... ok
+test_slugify_empty_string (test_module.TestSlugifyManual.test_slugify_empty_string) ... ok
+test_slugify_ignore_as_string (test_module.TestSlugifyManual.test_slugify_ignore_as_string) ... FAIL
+test_slugify_ignore_preserves_characters (test_module.TestSlugifyManual.test_slugify_ignore_preserves_characters) ... ok
+test_slugify_leading_trailing_repeated_whitespace (test_module.TestSlugifyManual.test_slugify_leading_trailing_repeated_whitespace) ... ok
+test_slugify_mixed_language_transliteration (test_module.TestSlugifyManual.test_slugify_mixed_language_transliteration) ... FAIL
+test_slugify_only_punctuation (test_module.TestSlugifyManual.test_slugify_only_punctuation) ... ok
+test_slugify_truncate_does_not_break_words (test_module.TestSlugifyManual.test_slugify_truncate_does_not_break_words) ... FAIL
+test_slugify_truncate_too_small (test_module.TestSlugifyManual.test_slugify_truncate_too_small) ... ok
+test_slugify_with_empty_separator (test_module.TestSlugifyManual.test_slugify_with_empty_separator) ... ok
+test_slugify_with_ignore_characters (test_module.TestSlugifyManual.test_slugify_with_ignore_characters) ... FAIL
+test_slugify_with_no_lowercase (test_module.TestSlugifyManual.test_slugify_with_no_lowercase) ... ok
+test_slugify_with_truncate (test_module.TestSlugifyManual.test_slugify_with_truncate) ... ok
+
+======================================================================
+FAIL: test_slugify_ignore_as_string (test_module.TestSlugifyManual.test_slugify_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_gemma_tests_openai\20261015T195326_48f2d997\test_module.py", line 102, in test_slugify_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_slugify_mixed_language_transliteration (test_module.TestSlugifyManual.test_slugify_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_gemma_tests_openai\20261015T195326_48f2d997\test_module.py", line 93, in test_slugify_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: '你好世界' != 'ni-hao-shi-jie'
+- 你好世界
++ ni-hao-shi-jie
+
+
+======================================================================
+FAIL: test_slugify_truncate_does_not_break_words (test_module.TestSlugifyManual.test_slugify_truncate_does_not_break_words)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_gemma_tests_openai\20261015T195326_48f2d997\test_module.py", line 129, in test_slugify_truncate_does_not_break_words
+    self.assertEqual(result, expected)
+AssertionError: 'one' != 'one-two'
+- one
++ one-two
+
+
+======================================================================
+FAIL: test_slugify_with_ignore_characters (test_module.TestSlugifyManual.test_slugify_with_ignore_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_07_impl_gemma_tests_openai\20261015T195326_48f2d997\test_module.py", line 49, in test_slugify_with_ignore_characters
+    self.assertEqual(result, expected)
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.057s
+
+FAILED (failures=4)

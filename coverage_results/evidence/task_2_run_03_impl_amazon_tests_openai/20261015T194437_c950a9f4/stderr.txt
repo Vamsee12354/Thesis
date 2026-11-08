@@ -1,0 +1,44 @@
+test_all_prices_none (test_module.TestGetAveragePrice.test_all_prices_none) ... ok
+test_average_with_valid_prices (test_module.TestGetAveragePrice.test_average_with_valid_prices) ... ok
+test_empty_price_list (test_module.TestGetAveragePrice.test_empty_price_list) ... ok
+test_prices_all_none_and_empty_dicts (test_module.TestGetAveragePrice.test_prices_all_none_and_empty_dicts) ... ERROR
+test_prices_with_floats_and_rounding (test_module.TestGetAveragePrice.test_prices_with_floats_and_rounding) ... ok
+test_prices_with_missing_price_key (test_module.TestGetAveragePrice.test_prices_with_missing_price_key) ... ERROR
+test_prices_with_non_numeric_price (test_module.TestGetAveragePrice.test_prices_with_non_numeric_price) ... ok
+test_prices_with_zero_and_none (test_module.TestGetAveragePrice.test_prices_with_zero_and_none) ... ok
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+
+======================================================================
+ERROR: test_prices_all_none_and_empty_dicts (test_module.TestGetAveragePrice.test_prices_all_none_and_empty_dicts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_03_impl_amazon_tests_openai\20261015T194437_c950a9f4\test_module.py", line 58, in test_prices_all_none_and_empty_dicts
+    result = get_average_price(price_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_03_impl_amazon_tests_openai\20261015T194437_c950a9f4\implementation_manual.py", line 2, in get_average_price
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_03_impl_amazon_tests_openai\20261015T194437_c950a9f4\implementation_manual.py", line 2, in <listcomp>
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                                                              ~~~~~^^^^^^^^^
+KeyError: 'price'
+
+======================================================================
+ERROR: test_prices_with_missing_price_key (test_module.TestGetAveragePrice.test_prices_with_missing_price_key)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_03_impl_amazon_tests_openai\20261015T194437_c950a9f4\test_module.py", line 66, in test_prices_with_missing_price_key
+    result = get_average_price(price_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_03_impl_amazon_tests_openai\20261015T194437_c950a9f4\implementation_manual.py", line 2, in get_average_price
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_2_run_03_impl_amazon_tests_openai\20261015T194437_c950a9f4\implementation_manual.py", line 2, in <listcomp>
+    valid_prices = [price['price'] for price in price_list if price['price'] is not None]
+                                                              ~~~~~^^^^^^^^^
+KeyError: 'price'
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.029s
+
+FAILED (errors=2)

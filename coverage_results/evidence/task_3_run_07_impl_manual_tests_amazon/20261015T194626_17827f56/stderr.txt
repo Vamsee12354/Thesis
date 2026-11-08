@@ -1,0 +1,35 @@
+test_all_values_none (test_module.TestGetMin2Attributes.test_all_values_none) ... ok
+test_empty_data_list (test_module.TestGetMin2Attributes.test_empty_data_list) ... ok
+test_mixed_data_types (test_module.TestGetMin2Attributes.test_mixed_data_types) ... ERROR
+test_non_existent_attribute (test_module.TestGetMin2Attributes.test_non_existent_attribute) ... ok
+test_non_numeric_attribute (test_module.TestGetMin2Attributes.test_non_numeric_attribute) ... ERROR
+test_valid_attribute_with_values (test_module.TestGetMin2Attributes.test_valid_attribute_with_values) ... ok
+
+======================================================================
+ERROR: test_mixed_data_types (test_module.TestGetMin2Attributes.test_mixed_data_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_07_impl_manual_tests_amazon\20261015T194626_17827f56\test_module.py", line 55, in test_mixed_data_types
+    self.assertEqual(get_min_2_attributes(data, "price"), 49.99)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_07_impl_manual_tests_amazon\20261015T194626_17827f56\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+======================================================================
+ERROR: test_non_numeric_attribute (test_module.TestGetMin2Attributes.test_non_numeric_attribute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_07_impl_manual_tests_amazon\20261015T194626_17827f56\test_module.py", line 46, in test_non_numeric_attribute
+    self.assertIsNone(get_min_2_attributes(data, "title"))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_3_run_07_impl_manual_tests_amazon\20261015T194626_17827f56\implementation_manual.py", line 7, in get_min_2_attributes
+    if value is not None and value<cheap:
+                             ^^^^^^^^^^^
+TypeError: '<' not supported between instances of 'str' and 'float'
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.017s
+
+FAILED (errors=2)

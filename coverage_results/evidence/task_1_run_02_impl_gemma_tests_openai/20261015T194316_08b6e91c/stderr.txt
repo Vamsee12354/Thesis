@@ -1,0 +1,36 @@
+test_all_invalid_or_missing_brands (test_module.TestGetUniqueBrands.test_all_invalid_or_missing_brands) ... ok
+test_brands_with_leading_and_trailing_spaces (test_module.TestGetUniqueBrands.test_brands_with_leading_and_trailing_spaces) ... ok
+test_brands_with_non_string_values (test_module.TestGetUniqueBrands.test_brands_with_non_string_values) ... FAIL
+test_brands_with_only_spaces (test_module.TestGetUniqueBrands.test_brands_with_only_spaces) ... ok
+test_case_insensitivity_and_capitalization (test_module.TestGetUniqueBrands.test_case_insensitivity_and_capitalization) ... ok
+test_empty_list_returns_none (test_module.TestGetUniqueBrands.test_empty_list_returns_none) ... ok
+test_mixed_duplicates_and_blanks (test_module.TestGetUniqueBrands.test_mixed_duplicates_and_blanks) ... ok
+test_multiple_unique_brands_with_varied_cases_and_spaces (test_module.TestGetUniqueBrands.test_multiple_unique_brands_with_varied_cases_and_spaces) ... ok
+test_normal_case_with_valid_brands (test_module.TestGetUniqueBrands.test_normal_case_with_valid_brands) ... ok
+test_single_valid_brand (test_module.TestGetUniqueBrands.test_single_valid_brand) ... ok
+
+======================================================================
+FAIL: test_brands_with_non_string_values (test_module.TestGetUniqueBrands.test_brands_with_non_string_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_1_run_02_impl_gemma_tests_openai\20261015T194316_08b6e91c\test_module.py", line 116, in test_brands_with_non_string_values
+    self.assertEqual(result, expected)
+AssertionError: Lists differ: ['123', 'Validbrand'] != ['Validbrand']
+
+First differing element 0:
+'123'
+'Validbrand'
+
+First list contains 1 additional elements.
+First extra element 1:
+'Validbrand'
+
+- ['123', 'Validbrand']
+?  -------
+
++ ['Validbrand']
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.029s
+
+FAILED (failures=1)

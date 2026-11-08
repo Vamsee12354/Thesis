@@ -1,0 +1,105 @@
+{
+  "key": "task_5_run_05_impl_manual_tests_gemma",
+  "task": 5,
+  "task_name": "task5_validate_contact_form",
+  "complexity": "Medium",
+  "run": 5,
+  "impl_llm": "manual",
+  "test_llm": "gemma",
+  "fingerprint": "3453b24085c20eb20e4e043a9c0b4dc58a13f343ede0c9649b5fd492b6388f48",
+  "tests_run": 13,
+  "tests_passed": 12,
+  "tests_failed": 1,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 27,
+  "lines_total": 27,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "tests_failed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_5_run_05_impl_manual_tests_gemma\\20261015T194855_d2527e93",
+  "started_utc": "2026-10-15T19:48:55+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 13,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.TestValidateForm.test_all_fields_empty",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_email_empty_does_not_trigger_regex_error",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_empty_email_after_trimming",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_invalid_email_format",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_first_name",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_last_name",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_message",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_missing_subject",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_multiple_errors_order",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_privacy_not_boolean",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_privacy_not_true",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_valid_form_submission",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.TestValidateForm.test_valid_form_with_whitespace_trimming",
+      "outcome": "failed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 0.8869,
+  "finished_utc": "2026-10-15T19:48:56+00:00",
+  "return_code": 0
+}

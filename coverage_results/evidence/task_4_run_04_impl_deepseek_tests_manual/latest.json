@@ -1,0 +1,75 @@
+{
+  "key": "task_4_run_04_impl_deepseek_tests_manual",
+  "task": 4,
+  "task_name": "task4_get_reading_duration",
+  "complexity": "Medium",
+  "run": 4,
+  "impl_llm": "deepseek",
+  "test_llm": "manual",
+  "fingerprint": "40b0d6916f3154ac45c5cc04299b88044c5056d4c3eaf37bb6674e46b007d5c7",
+  "tests_run": 7,
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "tests_errored": 0,
+  "tests_skipped": 0,
+  "expected_failures": 0,
+  "unexpected_successes": 0,
+  "coverage_pct": 100.0,
+  "lines_covered": 8,
+  "lines_total": 8,
+  "lines_missing": 0,
+  "eligible": true,
+  "counts_complete": true,
+  "status": "completed",
+  "error_detail": "",
+  "reused": false,
+  "evidence": "evidence\\task_4_run_04_impl_deepseek_tests_manual\\20261015T194728_a3ec45d2",
+  "started_utc": "2026-10-15T19:47:29+00:00",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "coverage_version": "7.16.2",
+  "unittest_tests_run": 7,
+  "subtest_failure_events": 0,
+  "subtest_error_events": 0,
+  "case_outcomes": [
+    {
+      "id": "test_module.Test_get_read_duration.test_article",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_read_duration.test_individual_letters",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_read_duration.test_no_text",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_read_duration.test_normal_functionality",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_read_duration.test_other_language",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_read_duration.test_same_letter_working",
+      "outcome": "passed",
+      "complete": true
+    },
+    {
+      "id": "test_module.Test_get_read_duration.test_symbol_reading",
+      "outcome": "passed",
+      "complete": true
+    }
+  ],
+  "missing_line_numbers": [],
+  "excluded_line_numbers": [],
+  "elapsed_seconds": 1.3386,
+  "finished_utc": "2026-10-15T19:47:29+00:00",
+  "return_code": 0
+}

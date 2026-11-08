@@ -1,0 +1,143 @@
+test_all_ignored_characters_only (test_module.TestSlugifyManual.test_all_ignored_characters_only) ... FAIL
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... FAIL
+test_case_preservation (test_module.TestSlugifyManual.test_case_preservation) ... FAIL
+test_custom_separator_utf8_integer (test_module.TestSlugifyManual.test_custom_separator_utf8_integer) ... FAIL
+test_empty_input_returns_none (test_module.TestSlugifyManual.test_empty_input_returns_none) ... ok
+test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string) ... FAIL
+test_ignore_characters_preserved (test_module.TestSlugifyManual.test_ignore_characters_preserved) ... FAIL
+test_ignore_with_punctuation_and_spaces (test_module.TestSlugifyManual.test_ignore_with_punctuation_and_spaces) ... FAIL
+test_leading_trailing_and_repeated_whitespace (test_module.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... FAIL
+test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_punctuation_only_returns_none (test_module.TestSlugifyManual.test_punctuation_only_returns_none) ... ok
+test_separator_empty_string (test_module.TestSlugifyManual.test_separator_empty_string) ... FAIL
+test_truncate_long_text (test_module.TestSlugifyManual.test_truncate_long_text) ... FAIL
+test_truncate_too_small_eliminates_all (test_module.TestSlugifyManual.test_truncate_too_small_eliminates_all) ... FAIL
+
+======================================================================
+FAIL: test_all_ignored_characters_only (test_module.TestSlugifyManual.test_all_ignored_characters_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 117, in test_all_ignored_characters_only
+    self.assertEqual(result, "!!!")
+AssertionError: None != '!!!'
+
+======================================================================
+FAIL: test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 13, in test_basic_slugification
+    self.assertEqual(result, expected)
+AssertionError: 'helloworld' != 'hello-world'
+- helloworld
++ hello-world
+?      +
+
+
+======================================================================
+FAIL: test_case_preservation (test_module.TestSlugifyManual.test_case_preservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 47, in test_case_preservation
+    self.assertEqual(result, expected)
+AssertionError: 'StUdLyCaPs' != 'StUdLy-CaPs'
+- StUdLyCaPs
++ StUdLy-CaPs
+?       +
+
+
+======================================================================
+FAIL: test_custom_separator_utf8_integer (test_module.TestSlugifyManual.test_custom_separator_utf8_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 91, in test_custom_separator_utf8_integer
+    self.assertEqual(result, expected)
+AssertionError: None != 'hello_world'
+
+======================================================================
+FAIL: test_ignore_as_string (test_module.TestSlugifyManual.test_ignore_as_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 82, in test_ignore_as_string
+    self.assertEqual(result, expected)
+AssertionError: '世界' != '你好-shi-jie'
+- 世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_ignore_characters_preserved (test_module.TestSlugifyManual.test_ignore_characters_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 73, in test_ignore_characters_preserved
+    self.assertEqual(result, expected)
+AssertionError: '世界' != '你好-shi-jie'
+- 世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_ignore_with_punctuation_and_spaces (test_module.TestSlugifyManual.test_ignore_with_punctuation_and_spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 126, in test_ignore_with_punctuation_and_spaces
+    self.assertEqual(result, expected)
+AssertionError: 'helloworld' != 'hello,-world!'
+- helloworld
++ hello,-world!
+?      ++     +
+
+
+======================================================================
+FAIL: test_leading_trailing_and_repeated_whitespace (test_module.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 100, in test_leading_trailing_and_repeated_whitespace
+    self.assertEqual(result, expected)
+AssertionError: 'foobar' != 'foo-bar'
+- foobar
++ foo-bar
+?    +
+
+
+======================================================================
+FAIL: test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 109, in test_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: '你好世界' != 'ni-hao-shi-jie'
+- 你好世界
++ ni-hao-shi-jie
+
+
+======================================================================
+FAIL: test_separator_empty_string (test_module.TestSlugifyManual.test_separator_empty_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 38, in test_separator_empty_string
+    self.assertEqual(result, expected)
+AssertionError: None != 'madamimadam'
+
+======================================================================
+FAIL: test_truncate_long_text (test_module.TestSlugifyManual.test_truncate_long_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 56, in test_truncate_long_text
+    self.assertEqual(result, expected)
+AssertionError: 'callmemayb' != 'call-me'
+- callmemayb
++ call-me
+
+
+======================================================================
+FAIL: test_truncate_too_small_eliminates_all (test_module.TestSlugifyManual.test_truncate_too_small_eliminates_all)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_08_impl_Mistral_tests_openai\20261015T195337_f81d1f9d\test_module.py", line 64, in test_truncate_too_small_eliminates_all
+    self.assertIsNone(result)
+AssertionError: 'c' is not None
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.046s
+
+FAILED (failures=12)

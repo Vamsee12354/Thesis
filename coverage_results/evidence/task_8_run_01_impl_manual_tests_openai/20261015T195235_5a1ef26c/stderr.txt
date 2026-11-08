@@ -1,0 +1,80 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_custom_separator_utf8_integer (test_module.TestSlugifyManual.test_custom_separator_utf8_integer) ... ERROR
+test_empty_input_returns_none (test_module.TestSlugifyManual.test_empty_input_returns_none) ... ok
+test_ignore_as_string_preserves_characters (test_module.TestSlugifyManual.test_ignore_as_string_preserves_characters) ... FAIL
+test_ignore_characters_preserved (test_module.TestSlugifyManual.test_ignore_characters_preserved) ... FAIL
+test_ignore_with_punctuation (test_module.TestSlugifyManual.test_ignore_with_punctuation) ... ok
+test_leading_trailing_and_repeated_whitespace (test_module.TestSlugifyManual.test_leading_trailing_and_repeated_whitespace) ... ok
+test_lowercase_false_preserves_case (test_module.TestSlugifyManual.test_lowercase_false_preserves_case) ... ok
+test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration) ... FAIL
+test_punctuation_only_input_returns_none (test_module.TestSlugifyManual.test_punctuation_only_input_returns_none) ... ok
+test_separator_empty_string (test_module.TestSlugifyManual.test_separator_empty_string) ... ok
+test_slugify_with_no_valid_characters_after_ignore (test_module.TestSlugifyManual.test_slugify_with_no_valid_characters_after_ignore) ... FAIL
+test_truncate_shortens_without_breaking_words (test_module.TestSlugifyManual.test_truncate_shortens_without_breaking_words) ... ok
+test_truncate_too_small_returns_none (test_module.TestSlugifyManual.test_truncate_too_small_returns_none) ... FAIL
+
+======================================================================
+ERROR: test_custom_separator_utf8_integer (test_module.TestSlugifyManual.test_custom_separator_utf8_integer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\test_module.py", line 89, in test_custom_separator_utf8_integer
+    result = slugify_manual(text, separator=95)  # ASCII for underscore
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\implementation_manual.py", line 18, in slugify_manual
+    if not new_text.endswith(separator):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: endswith first arg must be str or a tuple of str, not int
+
+======================================================================
+FAIL: test_ignore_as_string_preserves_characters (test_module.TestSlugifyManual.test_ignore_as_string_preserves_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\test_module.py", line 82, in test_ignore_as_string_preserves_characters
+    self.assertEqual(result, expected)
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_ignore_characters_preserved (test_module.TestSlugifyManual.test_ignore_characters_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\test_module.py", line 73, in test_ignore_characters_preserved
+    self.assertEqual(result, expected)
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_transliteration (test_module.TestSlugifyManual.test_mixed_language_transliteration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\test_module.py", line 109, in test_mixed_language_transliteration
+    self.assertEqual(result, expected)
+AssertionError: '你好世界' != 'ni-hao-shi-jie'
+- 你好世界
++ ni-hao-shi-jie
+
+
+======================================================================
+FAIL: test_slugify_with_no_valid_characters_after_ignore (test_module.TestSlugifyManual.test_slugify_with_no_valid_characters_after_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\test_module.py", line 126, in test_slugify_with_no_valid_characters_after_ignore
+    self.assertIsNone(result)
+AssertionError: '!!!' is not None
+
+======================================================================
+FAIL: test_truncate_too_small_returns_none (test_module.TestSlugifyManual.test_truncate_too_small_returns_none)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_01_impl_manual_tests_openai\20261015T195235_5a1ef26c\test_module.py", line 64, in test_truncate_too_small_returns_none
+    self.assertIsNone(result)
+AssertionError: 'call' is not None
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.057s
+
+FAILED (failures=5, errors=1)

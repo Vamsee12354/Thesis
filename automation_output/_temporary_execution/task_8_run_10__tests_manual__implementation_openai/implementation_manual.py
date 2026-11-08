@@ -3,56 +3,57 @@ import unicodedata
 
 
 def slugify_manual(text, separator='-', lowercase=True, ignore=None, truncate=None):
+    if not isinstance(text, str):
+        return None
+    if ignore is None:
+        ignore = []
+    elif isinstance(ignore, str):
+        ignore = [ignore]
     try:
-        if not isinstance(text, str):
+        text = text.strip()
+        if not text:
             return None
-        if isinstance(separator, int):
-            separator = chr(separator)
-        if ignore is None:
-            ignore = []
-        elif isinstance(ignore, str):
-            ignore = [ignore]
         ignore_set = set(ignore)
-
-        def transliterate(char):
+        normalized = []
+        for char in text:
             if char in ignore_set:
-                return char
-            name = unicodedata.name(char, None)
-            if name is None:
-                return ''
-            decomp = unicodedata.normalize('NFKD', char)
-            ascii_chars = ''.join(c for c in decomp if unicodedata.category(c).startswith('L') or c.isdigit())
-            return ascii_chars
-
-        text = ''.join(transliterate(c) for c in text)
-        if not text:
+                normalized.append(char)
+            else:
+                decomposed = unicodedata.normalize('NFKD', char)
+                filtered = ''.join(c for c in decomposed if not unicodedata.combining(c))
+                normalized.append(filtered)
+        normalized_text = ''.join(normalized)
+        normalized_text = normalized_text.lower() if lowercase else normalized_text
+        pattern = f'[^{re.escape(separator)}a-z0-9{"".join(re.escape(c) for c in ignore_set)}]+'
+        cleaned = re.sub(pattern, ' ', normalized_text)
+        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+        if not cleaned:
             return None
-
-        pattern = f'[^{re.escape(separator)}\\w{"".join(re.escape(c) for c in ignore_set)}]+'
-        text = re.sub(pattern, separator, text)
-        text = re.sub(f'{re.escape(separator)}+', separator, text)
-        text = text.strip(separator)
-        if lowercase:
-            text = text.lower()
-        if not text:
+        words = cleaned.split()
+        if not words:
             return None
+        slug = separator.join(words)
         if truncate is not None and isinstance(truncate, int) and truncate > 0:
-            if len(text) <= truncate:
-                return text
-            parts = text.split(separator)
-            truncated_parts = []
+            if len(slug) <= truncate:
+                return slug
+            truncated_words = []
             length = 0
-            for part in parts:
-                part_len = len(part)
-                if truncated_parts:
-                    part_len += len(separator)
-                if length + part_len > truncate:
+            for word in words:
+                word_len = len(word)
+                if truncated_words:
+                    sep_len = len(separator)
+                else:
+                    sep_len = 0
+                if length + sep_len + word_len > truncate:
                     break
-                truncated_parts.append(part)
-                length += part_len
-            text = separator.join(truncated_parts)
-            if not text:
+                if truncated_words:
+                    truncated_words.append(separator)
+                    length += sep_len
+                truncated_words.append(word)
+                length += word_len
+            slug = ''.join(truncated_words)
+            if not slug:
                 return None
-        return text
+        return slug
     except Exception:
         return None

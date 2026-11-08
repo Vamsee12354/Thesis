@@ -1,0 +1,20 @@
+test_empty_string (test_module.TestGetReadDuration.test_empty_string) ... ok
+test_excessive_whitespace (test_module.TestGetReadDuration.test_excessive_whitespace) ... ok
+test_long_post (test_module.TestGetReadDuration.test_long_post) ... FAIL
+test_minimum_return_value (test_module.TestGetReadDuration.test_minimum_return_value) ... ok
+test_non_latin_characters (test_module.TestGetReadDuration.test_non_latin_characters) ... ok
+test_normal_paragraph (test_module.TestGetReadDuration.test_normal_paragraph) ... ok
+test_single_word (test_module.TestGetReadDuration.test_single_word) ... ok
+
+======================================================================
+FAIL: test_long_post (test_module.TestGetReadDuration.test_long_post)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_07_impl_Mistral_tests_amazon\20261015T194758_6854c4e3\test_module.py", line 17, in test_long_post
+    self.assertEqual(get_read_duration(long_post), 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.036s
+
+FAILED (failures=1)

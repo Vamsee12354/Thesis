@@ -1,0 +1,97 @@
+test_basic_slugification (test_module.TestSlugifyManual.test_basic_slugification) ... ok
+test_custom_separator (test_module.TestSlugifyManual.test_custom_separator) ... ok
+test_empty_and_punctuation_only (test_module.TestSlugifyManual.test_empty_and_punctuation_only) ... ok
+test_ignore_as_list_or_string (test_module.TestSlugifyManual.test_ignore_as_list_or_string) ... FAIL
+test_ignore_option (test_module.TestSlugifyManual.test_ignore_option) ... FAIL
+test_lowercase_option (test_module.TestSlugifyManual.test_lowercase_option) ... ok
+test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input) ... FAIL
+test_non_string_input (test_module.TestSlugifyManual.test_non_string_input) ... ERROR
+test_repeated_whitespace (test_module.TestSlugifyManual.test_repeated_whitespace) ... ok
+test_special_characters (test_module.TestSlugifyManual.test_special_characters) ... FAIL
+test_truncate_option (test_module.TestSlugifyManual.test_truncate_option) ... FAIL
+test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore) ... FAIL
+
+======================================================================
+ERROR: test_non_string_input (test_module.TestSlugifyManual.test_non_string_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 56, in test_non_string_input
+    slugify_manual(123)
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\implementation_manual.py", line 5, in slugify_manual
+    text=text.strip()
+         ^^^^^^^^^^
+AttributeError: 'int' object has no attribute 'strip'
+
+======================================================================
+FAIL: test_ignore_as_list_or_string (test_module.TestSlugifyManual.test_ignore_as_list_or_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 62, in test_ignore_as_list_or_string
+    self.assertEqual(slugify_manual("Hello, World!", ignore=["!", ","]), "hello-world!")
+AssertionError: 'hello,-world!' != 'hello-world!'
+- hello,-world!
+?      -
++ hello-world!
+
+
+======================================================================
+FAIL: test_ignore_option (test_module.TestSlugifyManual.test_ignore_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 31, in test_ignore_option
+    self.assertEqual(slugify_manual("你好，世界", ignore=["你", "好"]), "你好-shi-jie")
+AssertionError: '你好-世界' != '你好-shi-jie'
+- 你好-世界
++ 你好-shi-jie
+
+
+======================================================================
+FAIL: test_mixed_language_input (test_module.TestSlugifyManual.test_mixed_language_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 37, in test_mixed_language_input
+    self.assertEqual(slugify_manual("こんにちは世界"), "konnichiha-shi-jie")
+AssertionError: 'こんにちは世界' != 'konnichiha-shi-jie'
+- こんにちは世界
++ konnichiha-shi-jie
+
+
+======================================================================
+FAIL: test_special_characters (test_module.TestSlugifyManual.test_special_characters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 46, in test_special_characters
+    self.assertEqual(slugify_manual("foo@bar#baz"), "foobarbaz")
+AssertionError: 'foo-bar-baz' != 'foobarbaz'
+- foo-bar-baz
+?    -   -
++ foobarbaz
+
+
+======================================================================
+FAIL: test_truncate_option (test_module.TestSlugifyManual.test_truncate_option)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 27, in test_truncate_option
+    self.assertEqual(slugify_manual("Call me maybe", truncate=3), "ca")
+AssertionError: 'call' != 'ca'
+- call
+?   --
++ ca
+
+
+======================================================================
+FAIL: test_truncate_with_ignore (test_module.TestSlugifyManual.test_truncate_with_ignore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_8_run_02_impl_manual_tests_Mistral\20261015T195244_e6a910c2\test_module.py", line 52, in test_truncate_with_ignore
+    self.assertEqual(slugify_manual("Hello world", truncate=10, ignore=["world"]), "hello-world")
+AssertionError: 'hello' != 'hello-world'
+- hello
++ hello-world
+
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.050s
+
+FAILED (failures=6, errors=1)

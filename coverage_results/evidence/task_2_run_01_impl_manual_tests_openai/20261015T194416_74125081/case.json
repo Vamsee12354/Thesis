@@ -1,0 +1,8 @@
+{
+  "task": 2,
+  "run": 1,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task2_get_average_price\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\openai\\task_2\\run_01_test.py",
+  "fingerprint": "517f34f404520f87a3096f44beaa719db80f95d932f97188ab902895ea2cbbf9",
+  "timeout": 120
+}

@@ -1,0 +1,27 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_and_no_regex_check (test_module.TestValidateForm.test_email_empty_and_no_regex_check) ... ok
+test_fields_with_only_whitespace (test_module.TestValidateForm.test_fields_with_only_whitespace) ... ok
+test_invalid_email_format (test_module.TestValidateForm.test_invalid_email_format) ... ok
+test_leading_and_trailing_whitespace_trimmed (test_module.TestValidateForm.test_leading_and_trailing_whitespace_trimmed) ... FAIL
+test_multiple_errors_returned_in_order (test_module.TestValidateForm.test_multiple_errors_returned_in_order) ... ok
+test_privacy_none (test_module.TestValidateForm.test_privacy_none) ... ok
+test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean) ... ok
+test_privacy_policy_not_confirmed (test_module.TestValidateForm.test_privacy_policy_not_confirmed) ... ok
+test_valid_form (test_module.TestValidateForm.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_leading_and_trailing_whitespace_trimmed (test_module.TestValidateForm.test_leading_and_trailing_whitespace_trimmed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_01_impl_manual_tests_openai\20261015T194823_624d4a5e\test_module.py", line 179, in test_leading_and_trailing_whitespace_trimmed
+    self.assertEqual(result, expected)
+AssertionError: 'Form[14 chars]ails:  John  ,  Doe  ,  john@example.com  ,  S[21 chars]True' != 'Form[14 chars]ails:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:  John  ,  Doe  ,  john@example.com  ,  Subject  ,  Message  ,True
+?                        --    -- --   -- --                -- --       -- --       --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.030s
+
+FAILED (failures=1)

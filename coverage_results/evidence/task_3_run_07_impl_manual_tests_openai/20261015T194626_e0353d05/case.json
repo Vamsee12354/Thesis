@@ -1,0 +1,8 @@
+{
+  "task": 3,
+  "run": 7,
+  "implementation": "C:\\Users\\kalup\\Desktop\\Thesis\\src\\task3_get_min_attribute\\implementation_manual.py",
+  "test": "C:\\Users\\kalup\\Desktop\\Thesis\\generated_tests\\openai\\task_3\\run_07_test.py",
+  "fingerprint": "df1bfda8dc41fef127e69aee680e032b28493fa14605b7a508b9d825c91f328c",
+  "timeout": 120
+}

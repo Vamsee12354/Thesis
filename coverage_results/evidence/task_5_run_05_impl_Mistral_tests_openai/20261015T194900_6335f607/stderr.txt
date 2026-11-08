@@ -1,0 +1,35 @@
+test_all_fields_empty (test_module.TestValidateForm.test_all_fields_empty) ... ok
+test_email_empty_after_trim (test_module.TestValidateForm.test_email_empty_after_trim) ... ok
+test_email_empty_and_privacy_false (test_module.TestValidateForm.test_email_empty_and_privacy_false) ... ok
+test_email_invalid_format (test_module.TestValidateForm.test_email_invalid_format) ... FAIL
+test_email_with_leading_trailing_spaces (test_module.TestValidateForm.test_email_with_leading_trailing_spaces) ... FAIL
+test_fields_with_only_whitespace (test_module.TestValidateForm.test_fields_with_only_whitespace) ... ok
+test_multiple_errors_all_fields_invalid (test_module.TestValidateForm.test_multiple_errors_all_fields_invalid) ... ok
+test_privacy_not_boolean (test_module.TestValidateForm.test_privacy_not_boolean) ... ok
+test_privacy_policy_not_confirmed (test_module.TestValidateForm.test_privacy_policy_not_confirmed) ... ok
+test_valid_form (test_module.TestValidateForm.test_valid_form) ... ok
+
+======================================================================
+FAIL: test_email_invalid_format (test_module.TestValidateForm.test_email_invalid_format)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_05_impl_Mistral_tests_openai\20261015T194900_6335f607\test_module.py", line 95, in test_email_invalid_format
+    self.assertEqual(result, ["Email standards not followed"])
+AssertionError: 'Form is valid. Details:John,Doe,john.doe@invalid-email,Hello,Test message,True' != ['Email standards not followed']
+
+======================================================================
+FAIL: test_email_with_leading_trailing_spaces (test_module.TestValidateForm.test_email_with_leading_trailing_spaces)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_5_run_05_impl_Mistral_tests_openai\20261015T194900_6335f607\test_module.py", line 168, in test_email_with_leading_trailing_spaces
+    self.assertEqual(result, expected)
+AssertionError: 'Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True' != 'Form is valid. Details:John,Doe,john@example.com,Subject,Message,True'
+- Form is valid. Details:John,Doe,  john@example.com  ,Subject,Message,True
+?                                 --                --
++ Form is valid. Details:John,Doe,john@example.com,Subject,Message,True
+
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.038s
+
+FAILED (failures=2)

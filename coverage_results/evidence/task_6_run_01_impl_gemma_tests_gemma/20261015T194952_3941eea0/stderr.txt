@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\thesis_coverage.py", line 206, in case_child
+    compile(filename.read_bytes(), str(filename), "exec")
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_6_run_01_impl_gemma_tests_gemma\20261015T194952_3941eea0\test_module.py", line 83
+    def test_missing_special
+                            ^
+SyntaxError: expected '('
+

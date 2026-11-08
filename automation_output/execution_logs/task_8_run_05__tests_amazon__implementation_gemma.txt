@@ -1,5 +1,5 @@
 Command: C:\Users\kalup\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m unittest -v selected_test
-Timestamp: 2026-09-28T12:11:47
+Timestamp: 2026-09-30T16:50:07
 Return code: 1
 ================================================================================
 
@@ -13,11 +13,11 @@ test_basic_slugification (selected_test.TestSlugifyManual.test_basic_slugificati
 test_empty_input (selected_test.TestSlugifyManual.test_empty_input) ... ok
 test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters) ... FAIL
 test_leading_trailing_whitespace (selected_test.TestSlugifyManual.test_leading_trailing_whitespace) ... ok
-test_lowercase_false (selected_test.TestSlugifyManual.test_lowercase_false) ... ok
+test_lowercase_false (selected_test.TestSlugifyManual.test_lowercase_false) ... FAIL
 test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input) ... FAIL
 test_punctuation_only_input (selected_test.TestSlugifyManual.test_punctuation_only_input) ... ok
 test_repeated_whitespace (selected_test.TestSlugifyManual.test_repeated_whitespace) ... ok
-test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string) ... ok
+test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string) ... FAIL
 test_truncate_value (selected_test.TestSlugifyManual.test_truncate_value) ... ok
 test_very_small_truncate_value (selected_test.TestSlugifyManual.test_very_small_truncate_value) ... FAIL
 
@@ -25,30 +25,57 @@ test_very_small_truncate_value (selected_test.TestSlugifyManual.test_very_small_
 FAIL: test_ignore_characters (selected_test.TestSlugifyManual.test_ignore_characters)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 25, in test_ignore_characters
-    self.assertEqual(slugify_manual("\u4f60 \u597d \uff0c \u4e16 \u754c", ignore=["\u4f60 "," \u597d "]), "\u4f60\u597d-shi-jie")
-AssertionError: '\u4f60-\u597d' != '\u4f60\u597d-shi-jie'
-- \u4f60-\u597d
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 24, in test_ignore_characters
+    self.assertEqual(slugify_manual("\u4f60\u597d\uff0c\u4e16\u754c ", ignore=["\u4f60","\u597d"]), "\u4f60\u597d-shi-jie")
+AssertionError: '\u4f60\u597d' != '\u4f60\u597d-shi-jie'
+- \u4f60\u597d
 + \u4f60\u597d-shi-jie
+
+
+======================================================================
+FAIL: test_lowercase_false (selected_test.TestSlugifyManual.test_lowercase_false)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 18, in test_lowercase_false
+    self.assertEqual(slugify_manual("StUdLy CaPs "), "StUdLy-CaPs")
+AssertionError: 'studly-caps' != 'StUdLy-CaPs'
+- studly-caps
++ StUdLy-CaPs
 
 
 ======================================================================
 FAIL: test_mixed_language_input (selected_test.TestSlugifyManual.test_mixed_language_input)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 34, in test_mixed_language_input
-    self.assertEqual(slugify_manual("\u4f60 \u597d"), "ni-hao")
-AssertionError: None != 'ni-hao'
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 33, in test_mixed_language_input
+    self.assertEqual(slugify_manual("Hello \u4f60\u597d"), "hello-ni-hao")
+AssertionError: 'hello-nihao' != 'hello-ni-hao'
+- hello-nihao
++ hello-ni-hao
+?         +
+
+
+======================================================================
+FAIL: test_separator_empty_string (selected_test.TestSlugifyManual.test_separator_empty_string)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 15, in test_separator_empty_string
+    self.assertEqual(slugify_manual("Madam, I ’m Adam "), "madamimadam")
+AssertionError: 'madam-i-m-adam' != 'madamimadam'
+- madam-i-m-adam
+?      - - -
++ madamimadam
+
 
 ======================================================================
 FAIL: test_very_small_truncate_value (selected_test.TestSlugifyManual.test_very_small_truncate_value)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 37, in test_very_small_truncate_value
+  File "C:\Users\kalup\Desktop\Thesis\automation_output\_temporary_execution\task_8_run_05__tests_amazon__implementation_gemma\selected_test.py", line 36, in test_very_small_truncate_value
     self.assertIsNone(slugify_manual("a", truncate=1))
 AssertionError: 'a' is not None
 
 ----------------------------------------------------------------------
 Ran 11 tests in 0.002s
 
-FAILED (failures=3)
+FAILED (failures=5)

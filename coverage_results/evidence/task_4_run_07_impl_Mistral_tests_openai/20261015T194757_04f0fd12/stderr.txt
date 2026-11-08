@@ -1,0 +1,31 @@
+test_201_words_returns_two_minutes (test_module.TestGetReadDuration.test_201_words_returns_two_minutes) ... FAIL
+test_450_words_returns_three_minutes (test_module.TestGetReadDuration.test_450_words_returns_three_minutes) ... FAIL
+test_empty_string_returns_minimum_one (test_module.TestGetReadDuration.test_empty_string_returns_minimum_one) ... ok
+test_exact_200_words_returns_one_minute (test_module.TestGetReadDuration.test_exact_200_words_returns_one_minute) ... ok
+test_long_non_latin_text_with_spaces (test_module.TestGetReadDuration.test_long_non_latin_text_with_spaces) ... ok
+test_non_latin_characters_counted_as_words (test_module.TestGetReadDuration.test_non_latin_characters_counted_as_words) ... ok
+test_single_word_returns_one_minute (test_module.TestGetReadDuration.test_single_word_returns_one_minute) ... ok
+test_string_with_only_whitespace_returns_minimum_one (test_module.TestGetReadDuration.test_string_with_only_whitespace_returns_minimum_one) ... ok
+test_text_with_multiple_spaces_between_words (test_module.TestGetReadDuration.test_text_with_multiple_spaces_between_words) ... ok
+test_text_with_newlines_and_tabs (test_module.TestGetReadDuration.test_text_with_newlines_and_tabs) ... ok
+
+======================================================================
+FAIL: test_201_words_returns_two_minutes (test_module.TestGetReadDuration.test_201_words_returns_two_minutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_07_impl_Mistral_tests_openai\20261015T194757_04f0fd12\test_module.py", line 44, in test_201_words_returns_two_minutes
+    self.assertEqual(result, 2)
+AssertionError: 1 != 2
+
+======================================================================
+FAIL: test_450_words_returns_three_minutes (test_module.TestGetReadDuration.test_450_words_returns_three_minutes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\kalup\Desktop\Thesis\coverage_results\evidence\task_4_run_07_impl_Mistral_tests_openai\20261015T194757_04f0fd12\test_module.py", line 52, in test_450_words_returns_three_minutes
+    self.assertEqual(result, 3)
+AssertionError: 2 != 3
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.034s
+
+FAILED (failures=2)

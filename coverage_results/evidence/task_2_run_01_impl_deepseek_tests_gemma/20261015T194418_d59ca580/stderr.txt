@@ -1,0 +1,11 @@
+test_all_prices_are_none (test_module.TestGetAveragePrice.test_all_prices_are_none) ... ok
+test_average_calculation_with_rounding (test_module.TestGetAveragePrice.test_average_calculation_with_rounding) ... ok
+test_average_calculation_with_valid_prices (test_module.TestGetAveragePrice.test_average_calculation_with_valid_prices) ... ok
+test_empty_list (test_module.TestGetAveragePrice.test_empty_list) ... ok
+test_list_with_empty_dictionary_values (test_module.TestGetAveragePrice.test_list_with_empty_dictionary_values) ... ok
+test_single_valid_price (test_module.TestGetAveragePrice.test_single_valid_price) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.034s
+
+OK
